@@ -1,0 +1,51 @@
+---
+title: "{{< var course.full-title >}}"
+listing:
+  id: most-recent-announcement
+  contents: posts
+  sort: "date desc"
+  type: default
+  max-items: 1
+  fields: [title, subtitle, description, date, image, reading-time]
+execute:
+  freeze: false
+---
+
+**Instructor:** {{< var instructor.name >}} ({{< var instructor.pronouns >}})\
+
+::::: columns
+::: {.column width="50%"}
+**Contact**\
+{{< var icon.mail >}} [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})\
+{{< var icon.time >}} Mon 2–4pm [appointment](<link>)\
+{{< var icon.building >}} ICCS 233 · <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
+:::
+
+::: {.column width="50%"}
+**Class**\
+{{< var course.time >}}\
+{{< var building.name >}} ({{< var building.code >}}, {{< var building.ubc-wayfinding >}}, {{< var building.google-maps >}})\
+Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
+:::
+:::::
+
+## Weekly announcement
+
+::: {#most-recent-announcement}
+:::
+
+```{r}
+#| label: schedule
+#| echo: false
+#| message: false
+#| renderings: [light, dark]
+
+light_theme <- quarto::theme_brand_gt("light-brand.yml")
+dark_theme <- quarto::theme_brand_gt("dark-brand.yml")
+
+source(here::here("R", "render-schedule.R"))
+schedule <- render_schedule()
+
+schedule |> light_theme()
+schedule |> dark_theme()
+```

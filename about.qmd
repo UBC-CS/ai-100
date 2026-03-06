@@ -1,0 +1,7 @@
+---
+title: About
+---
+
+## Contributors
+
+The website and slides templates were created in [Quarto](https://quarto.org/) by [Dr. Stephan Koenig](https://stephankoenig.io).

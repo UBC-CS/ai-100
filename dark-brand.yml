@@ -1,0 +1,46 @@
+# Bootswatch Darkly theme
+# https://github.com/thomaspark/bootswatch/blob/v5/dist/darkly/_variables.scss
+color:
+  palette:
+    white:    "#FFF"
+    gray-100: "#F8F9FA"
+    gray-200: "#EBEBEB"
+    gray-300: "#DEE2E6"
+    gray-400: "#CED4DA"
+    gray-500: "#ADB5BD"
+    gray-600: "#888"
+    gray-700: "#444"
+    gray-800: "#303030"
+    gray-900: "#222"
+    black:    "#000"
+    blue:     "#375A7F"
+    indigo:   "#6610F2"
+    purple:   "#6F42C1"
+    pink:     "#E83E8C"
+    red:      "#E74C3C"
+    orange:   "#FD7E14"
+    yellow:   "#F39C12"
+    green:    "#00BC8C"
+    teal:     "#20C997"
+    cyan:     "#3498DB"
+
+  foreground: white
+  background: gray-900
+  primary:    blue
+  secondary:  gray-700
+  success:    green
+  info:       cyan
+  warning:    yellow
+  danger:     red
+  light:      gray-500
+  dark:       gray-800
+
+typography:
+  fonts:
+    - family: Lato
+      source: bunny
+
+  base: Lato
+  headings: Lato
+  link:
+    color: success

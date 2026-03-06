@@ -1,0 +1,10 @@
+---
+title: "{{< var icon.computer-activity >}} Lab: First lab"
+---
+
+## {{< var icon.task >}} Steps
+
+-   [ ] First step.
+-   [ ] Second step.
+
+## {{< var icon.resource >}} Resources
