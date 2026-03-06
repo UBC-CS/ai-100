@@ -1,0 +1,23 @@
+---
+title: "Lesson plan: Class 1"
+---
+
+## Learning outcomes
+
+{{< include /_includes/learning-outcomes/_class-01_learning-outcomes.qmd >}}
+
+## Example content
+
+This content will appear in all versions.
+
+::: {.content-visible when-profile="instructor"}
+This content will only appear in the instructor version.
+:::
+
+::: {.content-visible when-profile="ta"}
+This content will only appear in the TA version.
+:::
+
+::: {.content-visible when-profile="coordinator"}
+This content will only appear in the coordinator version.
+:::

@@ -1,0 +1,39 @@
+---
+title: "Syllabus"
+---
+
+## Introduction
+
+## Teaching team
+
+## Course description and learning objectives
+
+## Lecture Material and Course Content
+
+## Course structure
+
+## Grading and exam policies
+
+## Accessibility
+
+If you have a disability or ongoing medical condition that may
+require accommodations, please contact the UBC Centre for
+Accessibility [accessibility@ubc.ca](mailto:accessibility@ubc.ca) to
+determine your eligibility and
+receive an accommodation letter.
+
+If you have a specific concern about accessing course materials or if you
+would like to suggest improvements to the accessibility of this course,
+please do not hesitate to speak with me.
+
+## Academic misconduct
+
+All instances of academic misconduct will be handled in a manner consistent with
+UBC policies. This includes reporting to the CS Department's Associate Head of Undergraduate Affairs, and Faculty of Science Associate Dean of Students. No credit
+will be given for any assignment which was completed with inappropriate
+collaboration.
+
+## Land Acknowledgement
+
+UBC's Point Grey Campus is located on the traditional, ancestral, and unceded territory of the [xʷməθkʷəy̓əm (Musqueam)](https://www.musqueam.bc.ca/) people.
+The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.

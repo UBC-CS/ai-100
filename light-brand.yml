@@ -1,0 +1,47 @@
+# Bootswatch Flatly theme
+# https://github.com/thomaspark/bootswatch/blob/v5/dist/flatly/_variables.scss
+color:
+  palette:
+    white:    "#FFF"
+    gray-100: "#F8F9FA"
+    gray-200: "#ECF0F1"
+    gray-300: "#DEE2E6"
+    gray-400: "#CED4DA"
+    gray-500: "#B4BCC2"
+    gray-600: "#95A5A6"
+    gray-700: "#7B8A8B"
+    gray-800: "#343A40"
+    gray-900: "#212529"
+    black:    "#000"
+    blue:     "#2C3E50"
+    indigo:   "#6610F2"
+    purple:   "#6F42C1"
+    pink:     "#E83E8C"
+    red:      "#E74C3C"
+    orange:   "#FD7E14"
+    yellow:   "#F39C12"
+    green:    "#18BC9C"
+    teal:     "#20C997"
+    cyan:     "#3498DB"
+
+
+  foreground: black
+  background: white
+  primary:    blue
+  secondary:  gray-600
+  success:    green
+  info:       cyan
+  warning:    yellow
+  danger:     red
+  light:      gray-200
+  dark:       gray-700
+
+typography:
+  fonts:
+    - family: Lato
+      source: bunny
+
+  base: Lato
+  headings: Lato
+  link:
+    color: success
