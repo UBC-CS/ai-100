@@ -9,6 +9,7 @@ There are a few things you need to do to adapt this template for your course.
 
 1. In `_variables.yml`, you can define variables that are used across the entire Quarto project using the shortcode `{{< var <key> >}}` (reference sub-keys using the dot, `.`, delimiter, e.g.,`code` listed under `course` is referenced as `course.code`; [more details](https://quarto.org/docs/authoring/variables.html#var)).
 Replace the placeholders provided for the variables, for example, update `course.code` and `course.title`.
+You must update `course.monday-of-the-first-term-week` to the date of the Monday of the first week of the term (format `YYYY-MM-DD`) as it will be used to calculate dates in the schedule table.
 
 2. The `_quarto.yml` file controls [Quarto project settings](https://quarto.org/docs/projects/quarto-projects.html) including [website options (such as navigation)](https://quarto.org/docs/reference/projects/websites.html).
 Most important, update `site-url` and `repo-url`.

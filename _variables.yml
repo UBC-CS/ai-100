@@ -3,6 +3,7 @@ course:
   title: "A course template"
   full-title: "{{< var course.code >}}: {{< var course.title >}}"
   term: "<term>"
+  monday-of-first-term-week: "2026-09-07"
   term-end-date: "<term-end-date>"
   time: "Days, start time--end time"
   website: "https://stephan-koenig.github.io/course-template"

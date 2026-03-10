@@ -8,9 +8,16 @@ library(lubridate)
 library(readr)
 library(stringr)
 library(tidyr)
+library(yaml)
+
+source(here("R", "convert-to-date.R"))
 
 get_schedule <- function() {
   current_date <- today()
+
+  monday_of_first_term_week <- read_yaml(
+    "_variables.yml"
+  )$course$`monday-of-first-term-week`
 
   # Used to sort column names when using `pivot_wider()`
   sorted_types <- c(
@@ -36,11 +43,11 @@ get_schedule <- function() {
       path("summaries")
     )
 
-  schedule <- read_csv(here("data", "schedule.csv"), show_col_types = FALSE)
-  sections <- read_csv(here("data", "sections.csv"), show_col_types = FALSE)
+  schedule <- read_csv(here("data", "schedule.csv"), col_types = "icc")
+  sections <- read_csv(here("data", "sections.csv"), col_types = "Dc")
   additional_resources <- read_csv(
     here("data", "additional-resources.csv"),
-    show_col_types = FALSE
+    col_types = "ccc"
   )
 
   resources <-
@@ -61,13 +68,12 @@ get_schedule <- function() {
 
   detailed_schedule <- schedule |>
     mutate(
-      week = date |> isoweek() |> consecutive_id(),
+      date = convert_to_date(monday_of_first_term_week, week, day),
       monday = floor_date(date, unit = "week", week_start = "Mon"),
       current_week = isoweek(date) == isoweek(current_date),
       show_week = isoweek(date) >= isoweek(current_date),
-      day = wday(date, label = TRUE, week_start = "Mon") |>
-        str_to_lower(),
       day = day |>
+        str_to_lower() |>
         fct(levels = intersect(str_to_lower(days), str_to_lower(day))),
       unit = id |> str_extract("^[^-]+"),
       # Only use levels present in data
@@ -76,6 +82,8 @@ get_schedule <- function() {
       show_exam = between(next_exam, current_date, current_date + days(13)),
       .after = date
     ) |>
+    # `arrange()` ensures that fill()` propagates `next_exam` to prior dates
+    arrange(date, unit) |>
     fill(next_exam, show_exam, .direction = "up") |>
     left_join(
       sections,
