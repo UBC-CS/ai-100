@@ -1,8 +1,5 @@
-library(fs)
-library(qpdf)
-
-worksheets <- path("_site", "activities", "tbd_tbd_analysis-review.pdf")
-output <- path("_site", "activities", "analysis.pdf")
-combined_pdf <- file_temp(ext = "pdf")
-combined_pdf <- pdf_combine(c(worksheets, output), combined_pdf)
-file_copy(combined_pdf, worksheets, overwrite = TRUE)
+worksheets <- fs::path("_site", "activities", "tbd_tbd_analysis-review.pdf")
+output <- fs::path("_site", "activities", "analysis.pdf")
+combined_pdf <- fs::file_temp(ext = "pdf")
+combined_pdf <- qpdf::pdf_combine(c(worksheets, output), combined_pdf)
+fs::file_copy(combined_pdf, worksheets, overwrite = TRUE)

@@ -1,100 +1,95 @@
-library(conflicted)
-library(dplyr)
-conflicts_prefer(dplyr::filter)
-library(fontawesome)
-library(glue)
-library(gt)
-library(gtExtras)
-library(here)
-
-source(here("R", "get-schedule.R"))
+source(here::here("R", "get-schedule.R"))
 
 render_schedule <- function() {
   get_schedule() |>
-    mutate(
-      week = if_else(
+    dplyr::mutate(
+      week = dplyr::if_else(
         !is.na(summary),
-        glue("[{week} {fa('circle-info')}]({summary})"),
+        glue::glue("[{week} {fontawesome::fa('circle-info')}]({summary})"),
         as.character(week)
       ),
-      exam = if_else(
+      exam = dplyr::if_else(
         show_exam,
-        glue("[{exam}](https://us.prairietest.com)", .na = NULL),
+        glue::glue("[{exam}](https://us.prairietest.com)", .na = NULL),
         exam
       ),
-      exam_practice = if_else(
+      exam_practice = dplyr::if_else(
         show_exam | (show_week),
         exam_practice,
         NA
       ),
       # Remove any resources from future weeks
-      across(
-        c(starts_with(c("tue", "thu")), ends_with("studio"), potw),
-        \(column) if_else(show_week, column, NA)
+      dplyr::across(
+        c(
+          dplyr::starts_with(c("tue", "thu")),
+          dplyr::ends_with("studio"),
+          potw
+        ),
+        \(column) dplyr::if_else(show_week, column, NA)
       )
     ) |>
-    gt(
+    gt::gt(
       # groupname_col = "part"
     ) |>
-    fmt_url(
+    gt::fmt_url(
       columns = week,
       rows = !is.na(summary),
       show_underline = FALSE
     ) |>
-    fmt_date(
+    gt::fmt_date(
       monday,
       date_style = "MMMd"
     ) |>
-    sub_missing(
+    gt::sub_missing(
       missing_text = ""
     ) |>
-    fmt_url(
-      columns = ends_with("slides"),
-      label = fa("window-maximize")
+    gt::fmt_url(
+      columns = dplyr::ends_with("slides"),
+      label = fontawesome::fa("window-maximize")
     ) |>
-    sub_missing(
-      columns = ends_with("slides"),
-      missing_text = fa("window-maximize", fill_opacity = 0.1)
+    gt::sub_missing(
+      columns = dplyr::ends_with("slides"),
+      missing_text = fontawesome::fa("window-maximize", fill_opacity = 0.1)
     ) |>
-    fmt_url(
-      columns = ends_with("activities"),
-      label = fa("file-alt")
+    gt::fmt_url(
+      columns = dplyr::ends_with("activities"),
+      label = fontawesome::fa("file-alt")
     ) |>
-    sub_missing(
-      columns = ends_with("activities"),
-      missing_text = fa("file-alt", fill_opacity = 0.1)
+    gt::sub_missing(
+      columns = dplyr::ends_with("activities"),
+      missing_text = fontawesome::fa("file-alt", fill_opacity = 0.1)
     ) |>
-    fmt_url(
-      columns = ends_with("pre_activities"),
-      label = fa("book")
+    gt::fmt_url(
+      columns = dplyr::ends_with("pre_activities"),
+      label = fontawesome::fa("book")
     ) |>
-    sub_missing(
-      columns = ends_with("pre_activities"),
-      missing_text = fa("book", fill_opacity = 0.1)
+    gt::sub_missing(
+      columns = dplyr::ends_with("pre_activities"),
+      missing_text = fontawesome::fa("book", fill_opacity = 0.1)
     ) |>
-    fmt_url(
-      columns = ends_with("recording"),
-      label = fa("circle-play")
+    gt::fmt_url(
+      columns = dplyr::ends_with("recording"),
+      label = fontawesome::fa("circle-play")
     ) |>
-    sub_missing(
-      columns = ends_with("recording"),
-      missing_text = fa("circle-play", fill_opacity = 0.1)
+    gt::sub_missing(
+      columns = dplyr::ends_with("recording"),
+      missing_text = fontawesome::fa("circle-play", fill_opacity = 0.1)
     ) |>
-    fmt_url(
-      columns = ends_with("studio"),
-      label = fa("laptop-code")
+    gt::fmt_url(
+      columns = dplyr::ends_with("studio"),
+      label = fontawesome::fa("laptop-code")
     ) |>
-    sub_missing(
-      columns = ends_with("studio"),
-      missing_text = fa("laptop-code", fill_opacity = 0.1)
+    gt::sub_missing(
+      columns = dplyr::ends_with("studio"),
+      missing_text = fontawesome::fa("laptop-code", fill_opacity = 0.1)
     ) |>
-    fmt_url(
+    gt::fmt_url(
       columns = potw,
-      label = fa("calendar-week")
+      label = fontawesome::fa("calendar-week")
     ) |>
-    sub_missing(
+    gt::sub_missing(
       columns = potw,
-      missing_text = fa("calendar-week", fill_opacity = 0.1)
+      missing_text = fontawesome::fa("calendar-week", fill_opacity = 0.1)
     ) |>
     # fmt_url(
     #   columns = project,
@@ -108,20 +103,20 @@ render_schedule <- function() {
     #   project_due,
     #   date_style = "MMMd"
     # ) |>
-    fmt_url(
+    gt::fmt_url(
       columns = exam,
       rows = show_exam,
       show_underline = FALSE
     ) |>
-    fmt_date(
+    gt::fmt_date(
       exam_due,
       date_style = "MMMd"
     ) |>
-    fmt_url(
+    gt::fmt_url(
       columns = exam_practice,
-      label = fa("pen-to-square")
+      label = fontawesome::fa("pen-to-square")
     ) |>
-    cols_label(
+    gt::cols_label(
       week = "Week",
       monday = "Mon",
       tue_class_pre_activities = "P",
@@ -141,52 +136,52 @@ render_schedule <- function() {
       exam_due = "Due",
       exam_practice = "Practice"
     ) |>
-    tab_spanner(
+    gt::tab_spanner(
       label = "Tue",
-      columns = starts_with("tue_class"),
+      columns = dplyr::starts_with("tue_class"),
       id = "tue_class"
     ) |>
-    tab_spanner(
+    gt::tab_spanner(
       label = "Thu",
-      columns = starts_with("thu_class"),
+      columns = dplyr::starts_with("thu_class"),
       id = "thu_class"
     ) |>
-    tab_spanner(
+    gt::tab_spanner(
       label = "Classes",
       spanners = c("tue_class", "thu_class")
     ) |>
-    tab_spanner(
+    gt::tab_spanner(
       label = "Studios",
-      columns = ends_with("studio")
+      columns = dplyr::ends_with("studio")
     ) |>
     # tab_spanner(
     #   label = "Project",
     #   columns = starts_with("project")
     # ) |>
-    tab_spanner(
+    gt::tab_spanner(
       label = "Examlet",
       columns = c(exam, exam_due, exam_practice)
     ) |>
-    cols_align(
+    gt::cols_align(
       align = "center",
       columns = c(potw, exam_practice)
     ) |>
-    tab_style(
+    gt::tab_style(
       style = list(
-        cell_text(weight = "bold")
+        gt::cell_text(weight = "bold")
       ),
       locations = list(
-        cells_row_groups(),
-        cells_stubhead(),
-        cells_column_labels(),
-        cells_column_spanners()
+        gt::cells_row_groups(),
+        gt::cells_stubhead(),
+        gt::cells_column_labels(),
+        gt::cells_column_spanners()
       )
     ) |>
-    gt_highlight_rows(
+    gtExtras::gt_highlight_rows(
       row = current_week,
       fill = "#ccefff"
     ) |>
-    cols_hide(
+    gt::cols_hide(
       c(
         summary,
         current_week,
@@ -194,7 +189,7 @@ render_schedule <- function() {
         show_exam
       )
     ) |>
-    tab_options(
+    gt::tab_options(
       quarto.disable_processing = TRUE,
       table.width = "100%"
     )

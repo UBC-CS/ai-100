@@ -1,21 +1,9 @@
-library(conflicted)
-library(dplyr)
-conflicts_prefer(dplyr::filter)
-library(forcats)
-library(fs)
-library(here)
-library(lubridate)
-library(readr)
-library(stringr)
-library(tidyr)
-library(yaml)
-
-source(here("R", "convert-to-date.R"))
+source(here::here("R", "convert-to-date.R"))
 
 get_schedule <- function() {
-  current_date <- today()
+  current_date <- lubridate::today()
 
-  monday_of_first_term_week <- read_yaml(
+  monday_of_first_term_week <- yaml::read_yaml(
     "_variables.yml"
   )$course$`monday-of-first-term-week`
 
@@ -37,85 +25,103 @@ get_schedule <- function() {
   # Generate ids for each link to join into schedule
   resources_paths <-
     c(
-      path("pre-activities"),
-      path("activities"),
-      path("slides"),
-      path("summaries")
+      fs::path("pre-activities"),
+      fs::path("activities"),
+      fs::path("slides"),
+      fs::path("summaries")
     )
 
-  schedule <- read_csv(here("data", "schedule.csv"), col_types = "icc")
-  sections <- read_csv(here("data", "sections.csv"), col_types = "Dc")
-  additional_resources <- read_csv(
-    here("data", "additional-resources.csv"),
+  schedule <- readr::read_csv(
+    here::here("data", "schedule.csv"),
+    col_types = "icc"
+  )
+  sections <- readr::read_csv(
+    here::here("data", "sections.csv"),
+    col_types = "Dc"
+  )
+  additional_resources <- readr::read_csv(
+    here::here("data", "additional-resources.csv"),
     col_types = "ccc"
   )
 
   resources <-
-    tibble(
-      resource = dir_ls(resources_paths, glob = "*.qmd"),
-      id = path_file(resource) |> str_extract("^[^_]+"),
+    tibble::tibble(
+      resource = fs::dir_ls(resources_paths, glob = "*.qmd"),
+      id = fs::path_file(resource) |> stringr::str_extract("^[^_]+"),
       type = resource |>
-        path_dir() |>
-        str_replace("-", "_")
+        fs::path_dir() |>
+        stringr::str_replace("-", "_")
     ) |>
     # Remove unassigned resources indicated by "tbd"
-    filter(!str_detect(resource, "tbd")) |>
-    relocate(resource, .after = type)
+    dplyr::filter(!stringr::str_detect(resource, "tbd")) |>
+    dplyr::relocate(resource, .after = type)
 
-  all_resources <- bind_rows(resources, additional_resources) |>
-    mutate(type = fct(type, levels = intersect(sorted_types, type))) |>
-    arrange(type)
+  all_resources <- dplyr::bind_rows(resources, additional_resources) |>
+    dplyr::mutate(
+      type = forcats::fct(type, levels = intersect(sorted_types, type))
+    ) |>
+    dplyr::arrange(type)
 
   detailed_schedule <- schedule |>
-    mutate(
+    dplyr::mutate(
       date = convert_to_date(monday_of_first_term_week, week, day),
-      monday = floor_date(date, unit = "week", week_start = "Mon"),
-      current_week = isoweek(date) == isoweek(current_date),
-      show_week = isoweek(date) >= isoweek(current_date),
+      monday = lubridate::floor_date(date, unit = "week", week_start = "Mon"),
+      current_week = lubridate::isoweek(date) ==
+        lubridate::isoweek(current_date),
+      show_week = lubridate::isoweek(date) >= lubridate::isoweek(current_date),
       day = day |>
-        str_to_lower() |>
-        fct(levels = intersect(str_to_lower(days), str_to_lower(day))),
-      unit = id |> str_extract("^[^-]+"),
+        stringr::str_to_lower() |>
+        forcats::fct(
+          levels = intersect(
+            stringr::str_to_lower(days),
+            stringr::str_to_lower(day)
+          )
+        ),
+      unit = id |> stringr::str_extract("^[^-]+"),
       # Only use levels present in data
-      unit = unit |> fct(levels = intersect(sorted_units, unit)),
-      next_exam = if_else(unit == "exam", date, NA),
-      show_exam = between(next_exam, current_date, current_date + days(13)),
+      unit = unit |> forcats::fct(levels = intersect(sorted_units, unit)),
+      next_exam = dplyr::if_else(unit == "exam", date, NA),
+      show_exam = dplyr::between(
+        next_exam,
+        current_date,
+        current_date + lubridate::days(13)
+      ),
       .after = date
     ) |>
     # `arrange()` ensures that fill()` propagates `next_exam` to prior dates
-    arrange(date, unit) |>
-    fill(next_exam, show_exam, .direction = "up") |>
-    left_join(
+    dplyr::arrange(date, unit) |>
+    tidyr::fill(next_exam, show_exam, .direction = "up") |>
+    dplyr::left_join(
       sections,
-      by = join_by(closest(date >= start_date)),
+      by = dplyr::join_by(dplyr::closest(date >= start_date)),
       relationship = "many-to-one"
     ) |>
-    left_join(
+    dplyr::left_join(
       all_resources,
-      by = join_by(id),
+      by = dplyr::join_by(id),
       relationship = "one-to-many"
     )
 
   weeks <- detailed_schedule |>
-    distinct(week, monday, current_week, show_week, show_exam)
+    dplyr::distinct(week, monday, current_week, show_week, show_exam)
 
   classes <- detailed_schedule |>
-    filter(unit == "class", !is.na(resource)) |>
+    dplyr::filter(unit == "class", !is.na(resource)) |>
     # Ensure the column order after pivoting follows day order
-    arrange(day) |>
-    select(week, day, unit, type, resource) |>
-    pivot_wider(
+    dplyr::arrange(day) |>
+    dplyr::select(week, day, unit, type, resource) |>
+    tidyr::pivot_wider(
       names_from = c(day, unit, type),
       names_sep = "_",
       values_from = resource
     )
 
   studios <- detailed_schedule |>
-    filter(unit == "studio", !is.na(resource)) |>
+    dplyr::filter(unit == "studio", !is.na(resource)) |>
     # Ensure the column order after pivoting follows day order
-    arrange(day) |>
-    select(week, day, unit, resource) |>
-    pivot_wider(
+    dplyr::arrange(day) |>
+    dplyr::select(week, day, unit, resource) |>
+    tidyr::pivot_wider(
       names_from = c(day, unit),
       names_sep = "_",
       values_from = resource
@@ -123,32 +129,38 @@ get_schedule <- function() {
 
   # Units with only a single resource
   other_units <- detailed_schedule |>
-    filter(unit %in% single_resource_units, !is.na(resource)) |>
-    select(week, unit, resource) |>
-    pivot_wider(names_from = unit, values_from = resource)
+    dplyr::filter(unit %in% single_resource_units, !is.na(resource)) |>
+    dplyr::select(week, unit, resource) |>
+    tidyr::pivot_wider(names_from = unit, values_from = resource)
 
   exams <- detailed_schedule |>
-    filter(unit == "exam", !is.na(resource)) |>
-    mutate(exam = id |> str_replace("-", " ") |> str_to_title()) |>
-    select(week, exam, exam_due = date, exam_practice = resource)
+    dplyr::filter(unit == "exam", !is.na(resource)) |>
+    dplyr::mutate(
+      exam = id |> stringr::str_replace("-", " ") |> stringr::str_to_title()
+    ) |>
+    dplyr::select(week, exam, exam_due = date, exam_practice = resource)
 
   weekly_schedule <- weeks |>
-    left_join(
+    dplyr::left_join(
       classes,
-      by = join_by(week),
+      by = dplyr::join_by(week),
       relationship = "one-to-one"
     ) |>
-    left_join(
+    dplyr::left_join(
       studios,
-      by = join_by(week),
+      by = dplyr::join_by(week),
       relationship = "one-to-one"
     ) |>
-    left_join(
+    dplyr::left_join(
       other_units,
-      by = join_by(week),
+      by = dplyr::join_by(week),
       relationship = "one-to-one"
     ) |>
-    left_join(exams, by = join_by(week), relationship = "one-to-one")
+    dplyr::left_join(
+      exams,
+      by = dplyr::join_by(week),
+      relationship = "one-to-one"
+    )
 
   weekly_schedule
 }
