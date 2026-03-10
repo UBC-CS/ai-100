@@ -22,7 +22,7 @@ Most important, update `site-url` and `repo-url`.
 The course schedule is dynamically generated from the files the directories `pre-activities`, `activities`, `slides` and `summaries` using R (more specifically, `render_schedule()` in `/R/render-schedule.csv`).
 Having documents organized this way allows them to be formatted with `_metadata.yml` files in their directories.
 
-- There are four different types of `<unit>`s: `class`, `lab`, `potw` and `exam`.
+- There are four different types of `<unit>`s: `class`, `studio`, `potw` and `exam`.
 - There are the following `<types>` of resources: `summaries`, `pre-activities`, `activities`, `slides`, `recording`, `practice` and `link`.
 - All resources belonging together have a unique `<id>` consisting of their `<unit>` followed by a two-digit number, e.g., `class-01`.
 - Files belonging to one unit should be named following the pattern: `<id>_<type>`.

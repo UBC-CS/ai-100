@@ -22,9 +22,10 @@ get_schedule <- function() {
     "link",
     "practice"
   )
-  sorted_units <- c("summary", "class", "potw", "lab", "exam")
+  sorted_units <- c("summary", "class", "potw", "studio", "exam")
+  days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
 
-  single_resource_units <- c("summary", "potw", "lab")
+  single_resource_units <- c("summary", "potw")
 
   # Generate ids for each link to join into schedule
   resources_paths <-
@@ -96,6 +97,15 @@ get_schedule <- function() {
       values_from = resource
     )
 
+  studios <- detailed_schedule |>
+    filter(unit == "studio", !is.na(resource)) |>
+    select(week, day, unit, resource) |>
+    pivot_wider(
+      names_from = c(day, unit),
+      names_sep = "_",
+      values_from = resource
+    )
+
   # Units with only a single resource
   other_units <- detailed_schedule |>
     filter(unit %in% single_resource_units, !is.na(resource)) |>
@@ -110,6 +120,11 @@ get_schedule <- function() {
   weekly_schedule <- weeks |>
     left_join(
       classes,
+      by = join_by(week),
+      relationship = "one-to-one"
+    ) |>
+    left_join(
+      studios,
       by = join_by(week),
       relationship = "one-to-one"
     ) |>
