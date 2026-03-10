@@ -29,7 +29,7 @@ render_schedule <- function() {
       ),
       # Remove any resources from future weeks
       across(
-        c(starts_with(c("tue", "thu")), lab, potw),
+        c(starts_with(c("tue", "thu")), ends_with("studio"), potw),
         \(column) if_else(show_week, column, NA)
       )
     ) |>
@@ -81,11 +81,11 @@ render_schedule <- function() {
       missing_text = fa("circle-play", fill_opacity = 0.1)
     ) |>
     fmt_url(
-      columns = lab,
+      columns = ends_with("studio"),
       label = fa("laptop-code")
     ) |>
     sub_missing(
-      columns = lab,
+      columns = ends_with("studio"),
       missing_text = fa("laptop-code", fill_opacity = 0.1)
     ) |>
     fmt_url(
@@ -132,7 +132,8 @@ render_schedule <- function() {
       thu_class_slides = "S",
       thu_class_activities = "A",
       thu_class_recording = "V",
-      lab = "Lab",
+      thu_studio = "Thu",
+      fri_studio = "Ind",
       potw = "POTW",
       # project = "Guide",
       # project_due = "Due",
@@ -142,11 +143,21 @@ render_schedule <- function() {
     ) |>
     tab_spanner(
       label = "Tue",
-      columns = starts_with("tue")
+      columns = starts_with("tue_class"),
+      id = "tue_class"
     ) |>
     tab_spanner(
       label = "Thu",
-      columns = starts_with("thu")
+      columns = starts_with("thu_class"),
+      id = "thu_class"
+    ) |>
+    tab_spanner(
+      label = "Classes",
+      spanners = c("tue_class", "thu_class")
+    ) |>
+    tab_spanner(
+      label = "Studios",
+      columns = ends_with("studio")
     ) |>
     # tab_spanner(
     #   label = "Project",
@@ -158,7 +169,7 @@ render_schedule <- function() {
     ) |>
     cols_align(
       align = "center",
-      columns = c(lab, potw, exam_practice)
+      columns = c(potw, exam_practice)
     ) |>
     tab_style(
       style = list(
