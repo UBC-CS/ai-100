@@ -68,7 +68,8 @@ get_schedule <- function() {
       monday = lubridate::floor_date(date, unit = "week", week_start = "Mon"),
       current_week = lubridate::isoweek(date) ==
         lubridate::isoweek(current_date),
-      show_week = lubridate::isoweek(date) >= lubridate::isoweek(current_date),
+      show_week = TRUE,
+      # show_week = lubridate::isoweek(current_date) >= lubridate::isoweek(date),
       day = day |>
         stringr::str_to_lower() |>
         forcats::fct(
