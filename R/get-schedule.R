@@ -65,7 +65,10 @@ get_schedule <- function() {
       monday = floor_date(date, unit = "week", week_start = "Mon"),
       current_week = isoweek(date) == isoweek(current_date),
       show_week = isoweek(date) >= isoweek(current_date),
-      day = wday(date, label = TRUE, week_start = "Mon") |> str_to_lower(),
+      day = wday(date, label = TRUE, week_start = "Mon") |>
+        str_to_lower(),
+      day = day |>
+        fct(levels = intersect(str_to_lower(days), str_to_lower(day))),
       unit = id |> str_extract("^[^-]+"),
       # Only use levels present in data
       unit = unit |> fct(levels = intersect(sorted_units, unit)),
@@ -90,6 +93,8 @@ get_schedule <- function() {
 
   classes <- detailed_schedule |>
     filter(unit == "class", !is.na(resource)) |>
+    # Ensure the column order after pivoting follows day order
+    arrange(day) |>
     select(week, day, unit, type, resource) |>
     pivot_wider(
       names_from = c(day, unit, type),
@@ -99,6 +104,8 @@ get_schedule <- function() {
 
   studios <- detailed_schedule |>
     filter(unit == "studio", !is.na(resource)) |>
+    # Ensure the column order after pivoting follows day order
+    arrange(day) |>
     select(week, day, unit, resource) |>
     pivot_wider(
       names_from = c(day, unit),
