@@ -17,8 +17,8 @@ execute:
 ::: {.column width="50%"}
 **Contact**\
 {{< var icon.mail >}} [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})\
-{{< var icon.time >}} Mon 2–4pm [appointment](<link>)\
-{{< var icon.building >}} ICCS 233 · <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
+{{< var icon.time >}} Day, start – end [appointment](<link>)\
+{{< var icon.building >}} Building Room · <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
 :::
 
 ::: {.column width="50%"}

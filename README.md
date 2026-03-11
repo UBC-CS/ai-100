@@ -1,9 +1,9 @@
-# Course template
+# AI 100
 
 The main feature of this course template is a landing page with a schedule table allowing students to navigate to all the course materials.
 Website is automatically deployed using GH Actions to GitHub Pages.
 
-## Edit the template for your course
+## Edit the template
 
 There are a few things you need to do to adapt this template for your course.
 
@@ -12,9 +12,8 @@ Replace the placeholders provided for the variables, for example, update `course
 You must update `course.monday-of-the-first-term-week` to the date of the Monday of the first week of the term (format `YYYY-MM-DD`) as it will be used to calculate dates in the schedule table.
 
 2. The `_quarto.yml` file controls [Quarto project settings](https://quarto.org/docs/projects/quarto-projects.html) including [website options (such as navigation)](https://quarto.org/docs/reference/projects/websites.html).
-Most important, update `site-url` and `repo-url`.
 
-3. To enable the schedule table, you will need to provide the dates when different units of the course will happen in the `/data/schedules.csv` file.
+3. To enable the schedule table, you will need to provide week numbers and day of the week when different units of the course will happen in the `/data/schedules.csv` file.
 
 4. In addition, any extra resources that are not Quarto documents, such as links to lecture recordings and to PrairieLearn, are provided in the file `/data/additional-resources.csv`.
 
@@ -38,7 +37,7 @@ After cloning this repo locally to your computer, open the directory using the c
 
 ## Attribution
 
-This website design is based on:
+The course template can be found at <https://github.com/stephan-koenig/course-template> and is based on:
 
 - [STA 199 by Mine Çetinkaya-Rundel](https://sta199-s24.github.io/)
 - [ESPM 157 by Carl Boettinger](https://espm-157.carlboettiger.info/)
