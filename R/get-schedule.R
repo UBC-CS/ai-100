@@ -137,7 +137,9 @@ get_schedule <- function() {
   exams <- detailed_schedule |>
     dplyr::filter(unit == "exam", !is.na(resource)) |>
     dplyr::mutate(
-      exam = id |> stringr::str_replace("-", " ") |> stringr::str_to_title()
+      exam = id |>
+        stringr::str_replace("-0{0,1}", " ") |>
+        stringr::str_to_title()
     ) |>
     dplyr::select(week, exam, exam_due = date, exam_practice = resource)
 
