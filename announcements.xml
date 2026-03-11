@@ -6,11 +6,11 @@
       version="2.0">
 <channel>
 <title>{{&lt; var course.full-title &gt;}}</title>
-<link>https://stephan-koenig.github.io/course-template/announcements.html</link>
-<atom:link href="https://stephan-koenig.github.io/course-template/announcements.xml" rel="self" type="application/rss+xml"/>
+<link>https://ubc-cs.github.io/ai-100/announcements.html</link>
+<atom:link href="https://ubc-cs.github.io/ai-100/announcements.xml" rel="self" type="application/rss+xml"/>
 <description>Course website for &quot;{{&lt; var course.code &gt;}}&quot;
 </description>
 <generator>quarto-1.8.27</generator>
-<lastBuildDate>Wed, 11 Mar 2026 00:47:33 GMT</lastBuildDate>
+<lastBuildDate>Wed, 11 Mar 2026 22:46:59 GMT</lastBuildDate>
 </channel>
 </rss>
