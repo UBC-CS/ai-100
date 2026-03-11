@@ -1,5 +1,5 @@
 ---
-title: "{{< var icon.computer-activity >}} Studio: Seventh studio"
+title: "{{< var icon.computer-activity >}} Studio: Activity"
 ---
 
 ## {{< var icon.task >}} Steps

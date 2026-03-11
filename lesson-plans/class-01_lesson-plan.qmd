@@ -21,3 +21,14 @@ This content will only appear in the TA version.
 ::: {.content-visible when-profile="coordinator"}
 This content will only appear in the coordinator version.
 :::
+
+1. How different from previous topic
+2. Algorithmic idea
+    - Foundations
+    - Representation
+    - Algorithm
+3. Historical impact and applications
+4. Worked example
+    - NLP
+    - Graphs
+5. Breakout

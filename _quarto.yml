@@ -10,8 +10,8 @@ website:
     Course website for "{{< var course.code >}}"
   open-graph: true
   twitter-card: true
-  site-url: "https://stephan-koenig.github.io/course-template/"
-  repo-url: "https://github.com/stephan-koenig/course-template"
+  site-url: "https://ubc-cs.github.io/ai-100/"
+  repo-url: "https://github.com/UBC-CS/ai-100"
   repo-actions: [source, edit, issue]
   bread-crumbs: false
 
@@ -63,6 +63,7 @@ website:
         text: About
       - href: faq.qmd
         text: FAQ
+      - auto: lesson-plans
 
   # comments:
   #   giscus:
