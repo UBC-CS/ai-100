@@ -35,6 +35,9 @@ Follow the setup instructions outlined in [Developing inside a Container using V
 As of Positron version 2026.01.0-147, you need to enable the experimental [Dev Containers](https://containers.dev/) support with the [`dev.containers.enable`](positron://settings/dev.containers.enable) setting.
 After cloning this repo locally to your computer, open the directory using the command **Dev Containers: Open Folder in Container...** from the Command Palette in Positron.
 
+When working on Quarto reveal.js slides, precise layout can be very challenging.
+Use the installed Quarto extension [Editable](https://emilhvitfeldt.github.io/quarto-revealjs-editable/) to help. [Slidecrafting](https://slidecrafting-book.com/) is an excellent resource for general tips on how to get the most out of your slides.
+
 ## Attribution
 
 The course template can be found at <https://github.com/stephan-koenig/course-template> and is based on:
