@@ -35,9 +35,9 @@ get_schedule <- function() {
     here::here("data", "schedule.csv"),
     col_types = "icc"
   )
-  sections <- readr::read_csv(
-    here::here("data", "sections.csv"),
-    col_types = "Dc"
+  parts <- readr::read_csv(
+    here::here("data", "parts.csv"),
+    col_types = "ic"
   )
   additional_resources <- readr::read_csv(
     here::here("data", "additional-resources.csv"),
@@ -93,8 +93,8 @@ get_schedule <- function() {
     dplyr::arrange(date, unit) |>
     tidyr::fill(next_exam, show_exam, .direction = "up") |>
     dplyr::left_join(
-      sections,
-      by = dplyr::join_by(dplyr::closest(date >= start_date)),
+      parts,
+      by = dplyr::join_by(dplyr::closest(week >= start_week)),
       relationship = "many-to-one"
     ) |>
     dplyr::left_join(
