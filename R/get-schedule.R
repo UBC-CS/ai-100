@@ -104,7 +104,7 @@ get_schedule <- function() {
     )
 
   weeks <- detailed_schedule |>
-    dplyr::distinct(week, monday, current_week, show_week, show_exam)
+    dplyr::distinct(part, week, monday, current_week, show_week, show_exam)
 
   classes <- detailed_schedule |>
     dplyr::filter(unit == "class", !is.na(resource)) |>

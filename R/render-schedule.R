@@ -29,7 +29,7 @@ render_schedule <- function() {
       )
     ) |>
     gt::gt(
-      # groupname_col = "part"
+      groupname_col = "part"
     ) |>
     gt::fmt_url(
       columns = week,
