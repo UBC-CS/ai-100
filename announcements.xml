@@ -10,7 +10,7 @@
 <atom:link href="https://ubc-cs.github.io/ai-100/announcements.xml" rel="self" type="application/rss+xml"/>
 <description>Course website for &quot;{{&lt; var course.code &gt;}}&quot;
 </description>
-<generator>quarto-1.8.27</generator>
-<lastBuildDate>Thu, 19 Mar 2026 19:29:09 GMT</lastBuildDate>
+<generator>quarto-1.9.36</generator>
+<lastBuildDate>Sat, 21 Mar 2026 11:45:51 GMT</lastBuildDate>
 </channel>
 </rss>
