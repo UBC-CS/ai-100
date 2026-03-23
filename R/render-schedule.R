@@ -1,8 +1,10 @@
 source(here::here("R", "get-schedule.R"))
+source(here::here("R", "convert-to-title-link.R"))
 
 render_schedule <- function() {
   get_schedule() |>
     dplyr::mutate(
+      part = convert_to_title_link(part),
       week = dplyr::if_else(
         !is.na(summary),
         glue::glue("[{week} {fontawesome::fa('circle-info')}]({summary})"),
@@ -29,7 +31,8 @@ render_schedule <- function() {
       )
     ) |>
     gt::gt(
-      groupname_col = "part"
+      groupname_col = "part",
+      process_md = TRUE
     ) |>
     gt::fmt_url(
       columns = week,
@@ -171,8 +174,6 @@ render_schedule <- function() {
         gt::cell_text(weight = "bold")
       ),
       locations = list(
-        gt::cells_row_groups(),
-        gt::cells_stubhead(),
         gt::cells_column_labels(),
         gt::cells_column_spanners()
       )
@@ -192,5 +193,15 @@ render_schedule <- function() {
     gt::tab_options(
       quarto.disable_processing = TRUE,
       table.width = "100%"
+    ) |>
+    gt::opt_css(
+      css = "
+        /* Styling for hyperlinks in row group headings */
+        .gt_group_heading a {
+          color: #008B8B;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      "
     )
 }

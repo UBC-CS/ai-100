@@ -17,10 +17,10 @@ get_schedule <- function() {
     "link",
     "practice"
   )
-  sorted_units <- c("summary", "class", "potw", "studio", "exam")
+  sorted_units <- c("part", "summary", "class", "studio", "potw", "exam")
   days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
 
-  single_resource_units <- c("summary", "potw")
+  single_resource_units <- c("part", "summary", "potw")
 
   # Generate ids for each link to join into schedule
   resources_paths <-
@@ -34,10 +34,6 @@ get_schedule <- function() {
   schedule <- readr::read_csv(
     here::here("data", "schedule.csv"),
     col_types = "icc"
-  )
-  parts <- readr::read_csv(
-    here::here("data", "parts.csv"),
-    col_types = "ic"
   )
   additional_resources <- readr::read_csv(
     here::here("data", "additional-resources.csv"),
@@ -93,18 +89,13 @@ get_schedule <- function() {
     dplyr::arrange(date, unit) |>
     tidyr::fill(next_exam, show_exam, .direction = "up") |>
     dplyr::left_join(
-      parts,
-      by = dplyr::join_by(dplyr::closest(week >= start_week)),
-      relationship = "many-to-one"
-    ) |>
-    dplyr::left_join(
       all_resources,
       by = dplyr::join_by(id),
       relationship = "one-to-many"
     )
 
   weeks <- detailed_schedule |>
-    dplyr::distinct(part, week, monday, current_week, show_week, show_exam)
+    dplyr::distinct(week, monday, current_week, show_week, show_exam)
 
   classes <- detailed_schedule |>
     dplyr::filter(unit == "class", !is.na(resource)) |>
@@ -129,10 +120,11 @@ get_schedule <- function() {
     )
 
   # Units with only a single resource
-  other_units <- detailed_schedule |>
+  parts_and_other_units <- detailed_schedule |>
     dplyr::filter(unit %in% single_resource_units, !is.na(resource)) |>
     dplyr::select(week, unit, resource) |>
-    tidyr::pivot_wider(names_from = unit, values_from = resource)
+    tidyr::pivot_wider(names_from = unit, values_from = resource) |>
+    tidyr::fill(part)
 
   exams <- detailed_schedule |>
     dplyr::filter(unit == "exam", !is.na(resource)) |>
@@ -155,7 +147,7 @@ get_schedule <- function() {
       relationship = "one-to-one"
     ) |>
     dplyr::left_join(
-      other_units,
+      parts_and_other_units,
       by = dplyr::join_by(week),
       relationship = "one-to-one"
     ) |>
@@ -163,7 +155,8 @@ get_schedule <- function() {
       exams,
       by = dplyr::join_by(week),
       relationship = "one-to-one"
-    )
+    ) |>
+    dplyr::relocate(part)
 
   weekly_schedule
 }
