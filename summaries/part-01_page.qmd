@@ -1,3 +1,16 @@
 ---
 title: "Part I: Introduction---What is AI?"
 ---
+
+## Learning outcomes
+
+Students will be able to:
+
+{{< include /_includes/learning-outcomes/_part-01_learning-outcomes.qmd >}}
+
+## Select topics
+
+-   Motivating examples
+-   How is it being used?
+-   Why is it happening?
+    (Technological breakthroughs in how to learn from data; availability of massive amounts of data; the adaptation of GPU hardware to AI tasks; global connectivity; the existence of massive data centers; and the ability to compute in the cloud.)

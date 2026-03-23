@@ -1,0 +1,16 @@
+1.  *(Economic impacts)* Analyze automation-related job displacement claims using the lump of labour fallacy.
+2.  *(Economic impacts)* Predict which job categories are more/less automatable and justify reasoning.
+3.  *(Economic impacts)* Describe scenarios for a post-scarcity economy.
+4.  *(Bias)* Differentiate bias sources: training data, model alignment, and designer demographics.
+5.  *(Bias)* Explain how transparency and standardization can mitigate bias.
+6.  *(Content creators)* Evaluate the legal and cultural implications of generative AI on fair use and creative craft.
+7.  *(Education)* Assess AI’s impact on student assessment and curriculum design.
+8.  *(Education)* Propose strategies for adapting teaching in AI-rich environments.
+9.  *(Human relationships)* Analyze the developmental and societal effects of AI companions.
+10.	*(Human relationships)* Compare AI-based relationships to those that emerged from prior communication technologies.
+11. *(Military use)* Describe AI-enabled military technologies (e.g., drones, missile defense).
+12. *(Military use)* Debate the security and geopolitical implications of military AI.
+13. *(Climate)* Assess the environmental costs of AI training and inference.
+14. *(Climate)* Identify AI applications that could improve energy efficiency and reduce emissions.
+
+**Theme**: Examine the broad economic, ethical, cultural, and environmental implications of AI’s growing role in society.

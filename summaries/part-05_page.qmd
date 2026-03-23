@@ -1,3 +1,72 @@
 ---
 title: "Part V: Social impacts of AI systems"
 ---
+
+## Learning outcomes
+
+Students will be able to:
+
+{{< include /_includes/learning-outcomes/_part-05_learning-outcomes.qmd >}}
+
+## Select topics
+
+### Original category 1 proposal topics
+
+-   Economic impacts
+    -   Lump of labour fallacy
+    -   Jobs that are likely to be automated
+    -   Jobs that are likely not to be automated
+    -   Jobs that are likely to be created
+    -   What would a post-scarcity economy look like?
+-   Bias
+    -   Bias introduced via training data
+    -   Bias introduced via alignment
+    -   Bias introduced via AI designers being poorly representative of broader society
+    -   Bias reduced via standardization and transparency (everyone gets the same AI system; the system can be audited)
+-   Content creators
+    -   Relationship to fair use
+    -   The role of taste vs the role of craft
+-   Education
+    -   How is assessment affected?
+    -   In what ways should we change what we teach?
+    -   How can the role of the teacher change?
+    -   What skills do students need to develop to learn in this new environment?
+-   Human Relationships
+    -   Social impacts of AI companions, AI therapists
+    -   Developmental impacts of these tools being used by children
+    -   Downstream social consequences; contrast with social networking
+-   Military use
+    -   Current state of the art; lessons from recent military conflicts (drone warfare; missile defense; surveillance)
+    -   What's around the corner?
+    -   Will these changes make the world safer or less safe?
+    -   What political structures will they foster (insurgency vs large states; democracy vs authoritarianism)
+-   Intentionally harmful use
+    -   Deep fakes
+    -   Disinformation
+    -   Risks to privacy, safety, security
+-   Climate
+    -   Energy intensity of generative AI
+    -   Prospect of reducing carbon emissions
+        -   Making other systems more energy efficient
+        -   Advancing electrification of transportation
+        -   Compatibility of AI data centers with green energy
+
+### Suggested revised topics
+
+-   Economic impact
+-   Possible biases
+-   Climate impact
+-   Impact on human relationships
+-   Impact on relationships to governments
+-   Impact on relationships to companies (surveillance capitalism)
+-   Inadvertent vs. intentional negative impacts
+-   Human-machine relationships
+
+### Dongwook's suggested topics
+
+-  Work: work, productivity and the economy
+-  Culture: culture, creativity and education
+-  Fairness: bias, fairness, power, and inequality
+-  Power: governance, law, and poliitics
+-  Sustainability: sustainability, infrastructure, and global impacts
+-  Futures: future trajectories, existential risk, and philosophical questions

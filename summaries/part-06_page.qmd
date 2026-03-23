@@ -1,3 +1,24 @@
 ---
 title: "Part VI: Social impacts of AI systems"
 ---
+
+## Learning outcomes
+
+Students will be able to:
+
+{{< include /_includes/learning-outcomes/_part-06_learning-outcomes.qmd >}}
+
+## Select topics
+
+-   How will our society change?
+    -   AI entertainment and new art forms
+    -   Changes in the structure of the workforce
+    -   AI-powered social connections with real people
+    -   AI friends
+-   AGI and Superhuman intelligence
+    -   Using the metaphor of a corporation to understand superhuman AI
+    -   Benefits: problems we may need superhuman intelligence to address
+    -   Risks and potential mitigations; existential risk
+-   Sentience
+    -   Reasons to believe current AI systems are not sentient
+    -   Philosophical view on “the hard problem of consciousness”

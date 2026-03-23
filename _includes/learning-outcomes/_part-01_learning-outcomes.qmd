@@ -1,0 +1,6 @@
+1.  Define artificial intelligence and its major subfields.
+2.  Identify and describe at least three current real-world applications of AI.
+3.  Explain the role of technological drivers such as how to learn from data, availability of massive amounts of data, the adaptation of GPU hardware to AI tasks, global connectivity, the existence of massive data centers, and the ability to compute in the cloud.
+4.  Differentiate between AI as a research discipline and AI as deployed technology.
+
+**Theme**: Explore what AI is, why it matters today, and the foundational context behind its rapid growth.

@@ -1,0 +1,6 @@
+1.  Compare and contrast explicit programming, rule-based systems, search, machine learning, deep learning, reinforcement learning, and self-supervised learning.
+2.  Trace the historical development of AI paradigms and explain their significance in AI history.
+3.  Implement or simulate small-scale examples of each paradigm.
+4.  Explain the concepts of loss functions, gradient descent, and backpropagation.
+
+**Theme**: Understand the key AI paradigms and their historical evolution to appreciate how AI techniques have developed over time.

@@ -1,3 +1,19 @@
 ---
 title: "Part III: Understanding recent AI systems"
 ---
+
+## Learning outcomes
+
+Students will be able to:
+
+{{< include /_includes/learning-outcomes/_part-03_learning-outcomes.qmd >}}
+
+## Select topics
+
+-   How do large-scale, pretrained generative models work?
+-   Applications of generative models:
+-   How do chat models work?
+-   How do image generation systems work?
+-   How do reasoning models work?
+-   How are AI systems aligned to human preferences?
+-   What is the current state of the art in robotics?

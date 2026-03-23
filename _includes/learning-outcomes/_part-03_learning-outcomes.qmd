@@ -1,0 +1,8 @@
+1.  Describe the training and inference processes of large language models.
+2.  Explain how alignment modifies base models to create chatbots.
+3.  Summarize how diffusion models generate images from noise.
+4.  Differentiate reasoning models from general text-generation models.
+5.  Explain current AI applications in robotics and their limitations.
+6.  Evaluate the effectiveness and limitations of alignment strategies for AI systems.
+
+**Theme**: Learn how state-of-the-art AI models work, including language, vision, and robotics systems, and how they are aligned to human needs.

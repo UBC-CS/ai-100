@@ -1,3 +1,15 @@
 ---
 title: "Part IV: Limitations of current AI systems"
 ---
+
+## Learning outcomes
+
+Students will be able to:
+
+{{< include /_includes/learning-outcomes/_part-04_learning-outcomes.qmd >}}
+
+## Select topics
+
+-   Hallucinations
+-   Flaws in reasoning
+-   Alignment tax

@@ -1,3 +1,20 @@
 ---
 title: "Part II: AI paradigms and their role in AI history"
 ---
+
+## Learning outcomes
+
+Students will be able to:
+
+{{< include /_includes/learning-outcomes/_part-02_learning-outcomes.qmd >}}
+
+## Select topics
+
+-   Explicit programming; rule-based systems.
+-   Search: teach a computer to represent a problem and recognize a solution via algorithms and pattern matching.
+-   Problem decomposition: agents, human-in-the-loop, graphical models.
+-   Machine learning: infer patterns from examples, mapping features to labels
+-   Deep learning: featureless inference, escaping the curse of dimensionality.
+-   Reinforcement learning: learn complex policies based on sparse rewards.
+-   Self-supervision and generative AI: eliminate dependence on manual labels by turning input data into completion puzzles (examples: next token prediction; image diffusion)
+-   Key elements of neural network optimization: Loss functions, gradient descent, and back-propagation.
