@@ -17,19 +17,19 @@ jobs:
       contents: write
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Set up Quarto
       uses: quarto-dev/quarto-actions/setup@v2
 
-    - name: Install uv
-      uses: astral-sh/setup-uv@v6
-
     # GitHub caches Python versions with the runner thus likely faster than uv
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version-file: pyproject.toml
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v7
 
     - name: Install R
       uses: r-lib/actions/setup-r@v2
