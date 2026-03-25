@@ -1,0 +1,11 @@
+project:
+  output-dir: _site/access
+
+website:
+  title: "{{< var course.full-title >}}---Accessibility version"
+
+format:
+  html:
+    theme:
+      light: styles/access.scss
+      dark: styles/access.scss

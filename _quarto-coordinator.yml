@@ -1,0 +1,11 @@
+project:
+  output-dir: _site/coordinator
+
+website:
+  title: "{{< var course.full-title >}}---Coordinator version"
+
+format:
+  html:
+    theme:
+      light: styles/coordinator.scss
+      dark: styles/coordinator.scss

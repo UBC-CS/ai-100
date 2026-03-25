@@ -1,0 +1,11 @@
+project:
+  output-dir: _site/instructor
+
+website:
+  title: "{{< var course.full-title >}}---Instructor version"
+
+format:
+  html:
+    theme:
+      light: styles/instructor.scss
+      dark: styles/instructor.scss

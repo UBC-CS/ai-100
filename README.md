@@ -39,6 +39,16 @@ After cloning this repo locally to your computer, open the directory using the c
 When working on Quarto reveal.js slides, precise layout can be very challenging.
 Use the installed Quarto extension [Editable](https://emilhvitfeldt.github.io/quarto-revealjs-editable/) to help. [Slidecrafting](https://slidecrafting-book.com/) is an excellent resource for general tips on how to get the most out of your slides.
 
+Different versions of the website are rendered to different subdirectories by defining Quarto project profiles. To render a profile, it has to be added to the GitHub actions step.
+
+| Target audience                        | Quarto project profile(s) | Website subdirectory   |
+| -------------------------------------- | ------------------------- | ---------------------- |
+| Student                                | `student`                 | `/`                    |
+| Student with accessibility needs       | `student,access`          | `/access`              |
+| Instructor                             | `instructor`              | `/instructor`          |
+| Teaching assistant (TA)                | `ta`                      | `/ta`                  |
+| Coordinator                            | `coordinator`             | `/coordinator`         |
+
 ## Attribution
 
 The course template can be found at <https://github.com/stephan-koenig/course-template> and is based on:

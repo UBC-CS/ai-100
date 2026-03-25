@@ -1,3 +1,6 @@
+profile:
+  default: student
+
 project:
   preview:
     port: 4200

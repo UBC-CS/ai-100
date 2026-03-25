@@ -39,8 +39,11 @@ jobs:
     - name: Install R dependencies
       uses: r-lib/actions/setup-renv@v2
 
-    - name: Install Python dependencies and render Quarto
-      run: uv run quarto render
+    - name: Render Quarto project profiles
+      run: |
+        for profile in student student,access instructor ta coordinator; do
+          uv run quarto render --profile "$profile"
+        done
 
     - name: Publish Quarto project
       uses: quarto-dev/quarto-actions/publish@v2

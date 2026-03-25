@@ -1,0 +1,11 @@
+project:
+  output-dir: _site/ta
+
+website:
+  title: "{{< var course.full-title >}}---TA version"
+
+format:
+  html:
+    theme:
+      light: styles/ta.scss
+      dark: styles/ta.scss
