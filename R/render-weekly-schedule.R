@@ -1,8 +1,76 @@
 source(here::here("R", "get-schedule.R"))
 source(here::here("R", "convert-to-title-link.R"))
 
-render_schedule <- function() {
-  get_schedule() |>
+render_weekly_schedule <- function() {
+  single_resource_units <- c("part", "summary", "potw")
+
+  schedule <- get_schedule()
+
+  weeks <- schedule |>
+    dplyr::distinct(week, monday, current_week, show_week, show_exam)
+
+  classes <- schedule |>
+    dplyr::filter(unit == "class", !is.na(resource)) |>
+    # Ensure the column order after pivoting follows day order
+    dplyr::arrange(day) |>
+    dplyr::select(week, day, unit, type, resource) |>
+    tidyr::pivot_wider(
+      names_from = c(day, unit, type),
+      names_sep = "_",
+      values_from = resource
+    )
+
+  studios <- schedule |>
+    dplyr::filter(unit == "studio", !is.na(resource)) |>
+    # Ensure the column order after pivoting follows day order
+    dplyr::arrange(day) |>
+    dplyr::select(week, day, unit, resource) |>
+    tidyr::pivot_wider(
+      names_from = c(day, unit),
+      names_sep = "_",
+      values_from = resource
+    )
+
+  # Units with only a single resource
+  parts_and_other_units <- schedule |>
+    dplyr::filter(unit %in% single_resource_units, !is.na(resource)) |>
+    dplyr::select(week, unit, resource) |>
+    tidyr::pivot_wider(names_from = unit, values_from = resource) |>
+    tidyr::fill(part)
+
+  exams <- schedule |>
+    dplyr::filter(unit == "exam", !is.na(resource)) |>
+    dplyr::mutate(
+      exam = id |>
+        stringr::str_replace("-0{0,1}", " ") |>
+        stringr::str_to_title()
+    ) |>
+    dplyr::select(week, exam, exam_due = date, exam_practice = resource)
+
+  weekly_schedule <- weeks |>
+    dplyr::left_join(
+      classes,
+      by = dplyr::join_by(week),
+      relationship = "one-to-one"
+    ) |>
+    dplyr::left_join(
+      studios,
+      by = dplyr::join_by(week),
+      relationship = "one-to-one"
+    ) |>
+    dplyr::left_join(
+      parts_and_other_units,
+      by = dplyr::join_by(week),
+      relationship = "one-to-one"
+    ) |>
+    dplyr::left_join(
+      exams,
+      by = dplyr::join_by(week),
+      relationship = "one-to-one"
+    ) |>
+    dplyr::relocate(part)
+
+  weekly_schedule |>
     dplyr::mutate(
       part = convert_to_title_link(part),
       week = dplyr::if_else(

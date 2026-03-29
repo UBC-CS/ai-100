@@ -22,8 +22,6 @@ get_schedule <- function() {
   sorted_units <- c("part", "summary", "class", "studio", "potw", "exam")
   days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
 
-  single_resource_units <- c("part", "summary", "potw")
-
   # Generate ids for each link to join into schedule
   resources_paths <-
     c(
@@ -60,7 +58,7 @@ get_schedule <- function() {
     ) |>
     dplyr::arrange(type)
 
-  detailed_schedule <- schedule |>
+  schedule |>
     dplyr::mutate(
       date = convert_to_date(monday_of_first_term_week, week, day),
       monday = lubridate::floor_date(date, unit = "week", week_start = "Mon"),
@@ -98,72 +96,6 @@ get_schedule <- function() {
       by = dplyr::join_by(id),
       relationship = "one-to-many"
     )
-
-  weeks <- detailed_schedule |>
-    dplyr::distinct(week, monday, current_week, show_week, show_exam)
-
-  classes <- detailed_schedule |>
-    dplyr::filter(unit == "class", !is.na(resource)) |>
-    # Ensure the column order after pivoting follows day order
-    dplyr::arrange(day) |>
-    dplyr::select(week, day, unit, type, resource) |>
-    tidyr::pivot_wider(
-      names_from = c(day, unit, type),
-      names_sep = "_",
-      values_from = resource
-    )
-
-  studios <- detailed_schedule |>
-    dplyr::filter(unit == "studio", !is.na(resource)) |>
-    # Ensure the column order after pivoting follows day order
-    dplyr::arrange(day) |>
-    dplyr::select(week, day, unit, resource) |>
-    tidyr::pivot_wider(
-      names_from = c(day, unit),
-      names_sep = "_",
-      values_from = resource
-    )
-
-  # Units with only a single resource
-  parts_and_other_units <- detailed_schedule |>
-    dplyr::filter(unit %in% single_resource_units, !is.na(resource)) |>
-    dplyr::select(week, unit, resource) |>
-    tidyr::pivot_wider(names_from = unit, values_from = resource) |>
-    tidyr::fill(part)
-
-  exams <- detailed_schedule |>
-    dplyr::filter(unit == "exam", !is.na(resource)) |>
-    dplyr::mutate(
-      exam = id |>
-        stringr::str_replace("-0{0,1}", " ") |>
-        stringr::str_to_title()
-    ) |>
-    dplyr::select(week, exam, exam_due = date, exam_practice = resource)
-
-  weekly_schedule <- weeks |>
-    dplyr::left_join(
-      classes,
-      by = dplyr::join_by(week),
-      relationship = "one-to-one"
-    ) |>
-    dplyr::left_join(
-      studios,
-      by = dplyr::join_by(week),
-      relationship = "one-to-one"
-    ) |>
-    dplyr::left_join(
-      parts_and_other_units,
-      by = dplyr::join_by(week),
-      relationship = "one-to-one"
-    ) |>
-    dplyr::left_join(
-      exams,
-      by = dplyr::join_by(week),
-      relationship = "one-to-one"
-    ) |>
-    dplyr::relocate(part)
-
-  weekly_schedule
 }
 
 is_current_week <- function(date, current_date) {
