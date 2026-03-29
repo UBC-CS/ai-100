@@ -41,13 +41,13 @@ Use the installed Quarto extension [Editable](https://emilhvitfeldt.github.io/qu
 
 Different versions of the website are rendered to different subdirectories by defining Quarto project profiles. To render a profile, it has to be added to the GitHub actions step.
 
-| Target audience                        | Quarto project profile(s) | Website subdirectory   |
-| -------------------------------------- | ------------------------- | ---------------------- |
-| Student                                | `student`                 | `/`                    |
-| Student with accessibility needs       | `student,access`          | `/access`              |
-| Instructor                             | `instructor`              | `/instructor`          |
-| Teaching assistant (TA)                | `ta`                      | `/ta`                  |
-| Coordinator                            | `coordinator`             | `/coordinator`         |
+| Target audience                        | Quarto project profile(s) | Website subdirectory   | Content                  |
+| -------------------------------------- | ------------------------- | ---------------------- | ------------------------ |
+| Student                                | `student`                 | `/`                    | Do not show future weeks |
+| Student with accessibility needs       | `student,access`          | `/access`              | Do not show future weeks |
+| Instructor                             | `instructor`              | `/instructor`          | All                      |
+| Teaching assistant (TA)                | `ta`                      | `/ta`                  | All                      |
+| Coordinator                            | `coordinator`             | `/coordinator`         | All                      |
 
 ## Attribution
 

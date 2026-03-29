@@ -1,6 +1,8 @@
 source(here::here("R", "convert-to-date.R"))
+source(here::here("R", "check-if-student-profile.R"))
 
 get_schedule <- function() {
+  rendering_student_profile <- check_if_student_profile()
   current_date <- lubridate::today()
 
   monday_of_first_term_week <- yaml::read_yaml(
@@ -62,10 +64,13 @@ get_schedule <- function() {
     dplyr::mutate(
       date = convert_to_date(monday_of_first_term_week, week, day),
       monday = lubridate::floor_date(date, unit = "week", week_start = "Mon"),
-      current_week = lubridate::isoweek(date) ==
-        lubridate::isoweek(current_date),
-      show_week = TRUE,
-      # show_week = lubridate::isoweek(current_date) >= lubridate::isoweek(date),
+      current_week = is_current_week(date, current_date),
+      show_week = dplyr::case_when(
+        !rendering_student_profile ~ TRUE,
+        week == 1 ~ TRUE,
+        !is_future_week(date, current_date) ~ TRUE,
+        .default = FALSE
+      ),
       day = day |>
         stringr::str_to_lower() |>
         forcats::fct(
@@ -159,4 +164,13 @@ get_schedule <- function() {
     dplyr::relocate(part)
 
   weekly_schedule
+}
+
+is_current_week <- function(date, current_date) {
+  lubridate::floor_date(date, unit = "week", week_start = "Mon") ==
+    lubridate::floor_date(current_date, unit = "week", week_start = "Mon")
+}
+
+is_future_week <- function(date, current_date) {
+  lubridate::isoweek(date) > lubridate::isoweek(current_date)
 }
