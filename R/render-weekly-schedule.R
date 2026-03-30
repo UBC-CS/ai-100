@@ -1,5 +1,6 @@
 source(here::here("R", "get-schedule.R"))
 source(here::here("R", "convert-to-title-link.R"))
+source(here::here("R", "fmt-url-as-icon.R"))
 
 render_weekly_schedule <- function() {
   single_resource_units <- c("part", "summary", "potw")
@@ -84,7 +85,7 @@ render_weekly_schedule <- function() {
         exam
       ),
       exam_practice = dplyr::if_else(
-        show_exam | (show_week),
+        show_exam | show_week,
         exam_practice,
         NA
       ),
@@ -114,66 +115,7 @@ render_weekly_schedule <- function() {
     gt::sub_missing(
       missing_text = ""
     ) |>
-    gt::fmt_url(
-      columns = dplyr::ends_with("slides"),
-      label = fontawesome::fa("window-maximize")
-    ) |>
-    gt::sub_missing(
-      columns = dplyr::ends_with("slides"),
-      missing_text = fontawesome::fa("window-maximize", fill_opacity = 0.1)
-    ) |>
-    gt::fmt_url(
-      columns = dplyr::ends_with("activities"),
-      label = fontawesome::fa("file-alt")
-    ) |>
-    gt::sub_missing(
-      columns = dplyr::ends_with("activities"),
-      missing_text = fontawesome::fa("file-alt", fill_opacity = 0.1)
-    ) |>
-    gt::fmt_url(
-      columns = dplyr::ends_with("pre_activities"),
-      label = fontawesome::fa("book")
-    ) |>
-    gt::sub_missing(
-      columns = dplyr::ends_with("pre_activities"),
-      missing_text = fontawesome::fa("book", fill_opacity = 0.1)
-    ) |>
-    gt::fmt_url(
-      columns = dplyr::ends_with("recording"),
-      label = fontawesome::fa("circle-play")
-    ) |>
-    gt::sub_missing(
-      columns = dplyr::ends_with("recording"),
-      missing_text = fontawesome::fa("circle-play", fill_opacity = 0.1)
-    ) |>
-    gt::fmt_url(
-      columns = dplyr::ends_with("studio"),
-      label = fontawesome::fa("laptop-code")
-    ) |>
-    gt::sub_missing(
-      columns = dplyr::ends_with("studio"),
-      missing_text = fontawesome::fa("laptop-code", fill_opacity = 0.1)
-    ) |>
-    gt::fmt_url(
-      columns = potw,
-      label = fontawesome::fa("calendar-week")
-    ) |>
-    gt::sub_missing(
-      columns = potw,
-      missing_text = fontawesome::fa("calendar-week", fill_opacity = 0.1)
-    ) |>
-    # fmt_url(
-    #   columns = project,
-    #   label = fa("list-check")
-    # ) |>
-    # sub_missing(
-    #   columns = project,
-    #   missing_text = fa("clipboard-list", fill_opacity = 0.1)
-    # ) |>
-    # fmt_date(
-    #   project_due,
-    #   date_style = "MMMd"
-    # ) |>
+    fmt_url_as_icon() |>
     gt::fmt_url(
       columns = exam,
       rows = show_exam,
@@ -225,13 +167,13 @@ render_weekly_schedule <- function() {
       label = "Studios",
       columns = dplyr::ends_with("studio")
     ) |>
-    # tab_spanner(
-    #   label = "Project",
-    #   columns = starts_with("project")
-    # ) |>
+    gt::tab_spanner(
+      label = "Project",
+      columns = starts_with("project")
+    ) |>
     gt::tab_spanner(
       label = "Examlet",
-      columns = c(exam, exam_due, exam_practice)
+      columns = starts_with("exam")
     ) |>
     gt::cols_align(
       align = "center",
