@@ -66,7 +66,6 @@ website:
         text: About
       - href: faq.qmd
         text: FAQ
-      - auto: lesson-plans
 
   # comments:
   #   giscus:

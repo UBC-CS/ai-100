@@ -12,6 +12,7 @@ get_schedule <- function() {
   # Used to sort column names when using `pivot_wider()`
   sorted_types <- c(
     "summaries",
+    "lesson_plans",
     "pre_activities",
     "slides",
     "activities",
@@ -25,6 +26,7 @@ get_schedule <- function() {
   # Generate ids for each link to join into schedule
   resources_paths <-
     c(
+      fs::path("lesson-plans"),
       fs::path("pre-activities"),
       fs::path("activities"),
       fs::path("slides"),
@@ -95,6 +97,9 @@ get_schedule <- function() {
       all_resources,
       by = dplyr::join_by(id),
       relationship = "one-to-many"
+    ) |>
+    dplyr::filter_out(
+      dplyr::when_all(rendering_student_profile & type == "lesson_plans")
     )
 }
 

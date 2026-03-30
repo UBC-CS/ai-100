@@ -10,24 +10,13 @@ render_weekly_schedule <- function() {
   weeks <- schedule |>
     dplyr::distinct(week, monday, current_week, show_week, show_exam)
 
-  classes <- schedule |>
-    dplyr::filter(unit == "class", !is.na(resource)) |>
+  classes_and_studios <- schedule |>
+    dplyr::filter(unit %in% c("class", "studio"), !is.na(resource)) |>
     # Ensure the column order after pivoting follows day order
     dplyr::arrange(day) |>
     dplyr::select(week, day, unit, type, resource) |>
     tidyr::pivot_wider(
       names_from = c(day, unit, type),
-      names_sep = "_",
-      values_from = resource
-    )
-
-  studios <- schedule |>
-    dplyr::filter(unit == "studio", !is.na(resource)) |>
-    # Ensure the column order after pivoting follows day order
-    dplyr::arrange(day) |>
-    dplyr::select(week, day, unit, resource) |>
-    tidyr::pivot_wider(
-      names_from = c(day, unit),
       names_sep = "_",
       values_from = resource
     )
@@ -50,12 +39,7 @@ render_weekly_schedule <- function() {
 
   weekly_schedule <- weeks |>
     dplyr::left_join(
-      classes,
-      by = dplyr::join_by(week),
-      relationship = "one-to-one"
-    ) |>
-    dplyr::left_join(
-      studios,
+      classes_and_studios,
       by = dplyr::join_by(week),
       relationship = "one-to-one"
     ) |>
@@ -92,8 +76,7 @@ render_weekly_schedule <- function() {
       # Remove any resources from future weeks
       dplyr::across(
         c(
-          dplyr::starts_with(c("tue", "thu")),
-          dplyr::ends_with("studio"),
+          tidyselect::matches(c("classes", "studio")),
           potw
         ),
         \(column) dplyr::if_else(show_week, column, NA)
@@ -132,16 +115,11 @@ render_weekly_schedule <- function() {
     gt::cols_label(
       week = "Week",
       monday = "Mon",
-      tue_class_pre_activities = "P",
-      tue_class_slides = "S",
-      tue_class_activities = "A",
-      tue_class_recording = "V",
-      thu_class_pre_activities = "P",
-      thu_class_slides = "S",
-      thu_class_activities = "A",
-      thu_class_recording = "V",
-      thu_studio = gt::md("1^st^"),
-      fri_studio = gt::md("2^nd^"),
+      dplyr::ends_with("lesson_plans") ~ "L",
+      dplyr::ends_with("activities") ~ "A",
+      dplyr::ends_with("pre_activities") ~ "P",
+      dplyr::ends_with("slides") ~ "S",
+      dplyr::ends_with("recording") ~ "V",
       potw = "POTW",
       # project = "Guide",
       # project_due = "Due",
@@ -164,8 +142,18 @@ render_weekly_schedule <- function() {
       spanners = c("tue_class", "thu_class")
     ) |>
     gt::tab_spanner(
+      label = gt::md("1^st^"),
+      columns = dplyr::starts_with("thu_studio"),
+      id = "first_studio"
+    ) |>
+    gt::tab_spanner(
+      label = gt::md("2^nd^"),
+      columns = dplyr::starts_with("fri_studio"),
+      id = "second_studio"
+    ) |>
+    gt::tab_spanner(
       label = "Studios",
-      columns = dplyr::ends_with("studio")
+      spanners = c("first_studio", "second_studio")
     ) |>
     gt::tab_spanner(
       label = "Project",
