@@ -115,11 +115,11 @@ render_weekly_schedule <- function() {
     gt::cols_label(
       week = "Week",
       monday = "Mon",
-      dplyr::ends_with("lesson_plans") ~ "L",
-      dplyr::ends_with("activities") ~ "A",
-      dplyr::ends_with("pre_activities") ~ "P",
-      dplyr::ends_with("slides") ~ "S",
-      dplyr::ends_with("recording") ~ "V",
+      tidyselect::ends_with("lesson_plans") ~ "L",
+      tidyselect::ends_with("activities") ~ "A",
+      tidyselect::ends_with("pre_activities") ~ "P",
+      tidyselect::ends_with("slides") ~ "S",
+      tidyselect::ends_with("recording") ~ "V",
       potw = "POTW",
       # project = "Guide",
       # project_due = "Due",
@@ -129,12 +129,12 @@ render_weekly_schedule <- function() {
     ) |>
     gt::tab_spanner(
       label = "Tue",
-      columns = dplyr::starts_with("tue_class"),
+      columns = tidyselect::starts_with("tue_class"),
       id = "tue_class"
     ) |>
     gt::tab_spanner(
       label = "Thu",
-      columns = dplyr::starts_with("thu_class"),
+      columns = tidyselect::starts_with("thu_class"),
       id = "thu_class"
     ) |>
     gt::tab_spanner(
@@ -143,12 +143,12 @@ render_weekly_schedule <- function() {
     ) |>
     gt::tab_spanner(
       label = gt::md("1^st^"),
-      columns = dplyr::starts_with("thu_studio"),
+      columns = tidyselect::starts_with("thu_studio"),
       id = "first_studio"
     ) |>
     gt::tab_spanner(
       label = gt::md("2^nd^"),
-      columns = dplyr::starts_with("fri_studio"),
+      columns = tidyselect::starts_with("fri_studio"),
       id = "second_studio"
     ) |>
     gt::tab_spanner(
