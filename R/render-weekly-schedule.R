@@ -72,14 +72,6 @@ render_weekly_schedule <- function() {
         show_exam | show_week,
         exam_practice,
         NA
-      ),
-      # Remove any resources from future weeks
-      dplyr::across(
-        c(
-          tidyselect::matches(c("classes", "studio")),
-          potw
-        ),
-        \(column) dplyr::if_else(show_week, column, NA)
       )
     ) |>
     gt::gt(
