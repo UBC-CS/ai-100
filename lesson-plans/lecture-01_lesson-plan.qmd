@@ -1,10 +1,10 @@
 ---
-title: "Lesson plan: Class 1"
+title: "Lesson plan: Lecture 1"
 ---
 
 ## Learning outcomes
 
-{{< include /_includes/learning-outcomes/_class-01_learning-outcomes.qmd >}}
+{{< include /_includes/learning-outcomes/_lecture-01_learning-outcomes.qmd >}}
 
 ## Example content
 

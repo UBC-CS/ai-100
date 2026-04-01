@@ -20,7 +20,7 @@ get_schedule <- function() {
     "link",
     "practice"
   )
-  sorted_units <- c("part", "week", "class", "discussion", "potw", "exam")
+  sorted_units <- c("part", "week", "lecture", "discussion", "potw", "exam")
   days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
 
   # Generate ids for each link to join into schedule

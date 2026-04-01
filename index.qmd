@@ -22,7 +22,7 @@ execute:
 :::
 
 ::: {.column width="50%"}
-**Class**\
+**Lecture**\
 {{< var course.time >}}\
 {{< var building.name >}} ({{< var building.code >}}, {{< var building.ubc-wayfinding >}}, {{< var building.google-maps >}})\
 Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
