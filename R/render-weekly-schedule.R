@@ -8,8 +8,8 @@ render_weekly_schedule <- function() {
   weeks <- schedule |>
     dplyr::distinct(week, monday, current_week, show_week, show_exam)
 
-  classes_and_studios <- schedule |>
-    dplyr::filter(unit %in% c("class", "studio"), !is.na(resource)) |>
+  classes_and_discussions <- schedule |>
+    dplyr::filter(unit %in% c("class", "discussion"), !is.na(resource)) |>
     # Ensure the column order after pivoting follows day order
     dplyr::arrange(day) |>
     dplyr::select(week, day, unit, type, resource) |>
@@ -44,7 +44,7 @@ render_weekly_schedule <- function() {
 
   weekly_schedule <- weeks |>
     dplyr::left_join(
-      classes_and_studios,
+      classes_and_discussions,
       by = dplyr::join_by(week),
       relationship = "one-to-one"
     ) |>
@@ -147,17 +147,17 @@ render_weekly_schedule <- function() {
     ) |>
     gt::tab_spanner(
       label = gt::md("1^st^"),
-      columns = tidyselect::starts_with("thu_studio"),
-      id = "first_studio"
+      columns = tidyselect::starts_with("thu_discussion"),
+      id = "first_discussion"
     ) |>
     gt::tab_spanner(
       label = gt::md("2^nd^"),
-      columns = tidyselect::starts_with("fri_studio"),
-      id = "second_studio"
+      columns = tidyselect::starts_with("fri_discussion"),
+      id = "second_discussion"
     ) |>
     gt::tab_spanner(
-      label = "Studios",
-      spanners = c("first_studio", "second_studio")
+      label = "Discussions",
+      spanners = c("first_discussion", "second_discussion")
     ) |>
     gt::tab_spanner(
       label = "Project",
