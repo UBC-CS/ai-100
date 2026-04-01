@@ -3,8 +3,6 @@ source(here::here("R", "convert-to-title-link.R"))
 source(here::here("R", "fmt-url-as-icon.R"))
 
 render_weekly_schedule <- function() {
-  single_resource_units <- c("part", "summary", "potw")
-
   schedule <- get_schedule()
 
   weeks <- schedule |>
@@ -22,11 +20,18 @@ render_weekly_schedule <- function() {
     )
 
   # Units with only a single resource
-  parts_and_other_units <- schedule |>
-    dplyr::filter(unit %in% single_resource_units, !is.na(resource)) |>
-    dplyr::select(week, unit, resource) |>
-    tidyr::pivot_wider(names_from = unit, values_from = resource) |>
-    tidyr::fill(part)
+  parts_and_weeks <- schedule |>
+    dplyr::filter(unit %in% c("part", "week"), !is.na(resource)) |>
+    dplyr::select(week, unit, type, resource) |>
+    tidyr::pivot_wider(
+      names_from = c(unit, type),
+      values_from = resource
+    ) |>
+    tidyr::fill(part_summaries)
+
+  potw <- schedule |>
+    dplyr::filter(unit == "potw", !is.na(resource)) |>
+    dplyr::select(week, potw = resource)
 
   exams <- schedule |>
     dplyr::filter(unit == "exam", !is.na(resource)) |>
@@ -44,7 +49,12 @@ render_weekly_schedule <- function() {
       relationship = "one-to-one"
     ) |>
     dplyr::left_join(
-      parts_and_other_units,
+      parts_and_weeks,
+      by = dplyr::join_by(week),
+      relationship = "one-to-one"
+    ) |>
+    dplyr::left_join(
+      potw,
       by = dplyr::join_by(week),
       relationship = "one-to-one"
     ) |>
@@ -53,14 +63,16 @@ render_weekly_schedule <- function() {
       by = dplyr::join_by(week),
       relationship = "one-to-one"
     ) |>
-    dplyr::relocate(part)
+    dplyr::relocate(part_summaries)
 
   weekly_schedule |>
     dplyr::mutate(
-      part = convert_to_title_link(part),
+      part_summaries = convert_to_title_link(part_summaries),
       week = dplyr::if_else(
-        !is.na(summary),
-        glue::glue("[{week} {fontawesome::fa('circle-info')}]({summary})"),
+        !is.na(week_summaries),
+        glue::glue(
+          "[{week} {fontawesome::fa('circle-info')}]({week_summaries})"
+        ),
         as.character(week)
       ),
       exam = dplyr::if_else(
@@ -75,12 +87,12 @@ render_weekly_schedule <- function() {
       )
     ) |>
     gt::gt(
-      groupname_col = "part",
+      groupname_col = "part_summaries",
       process_md = TRUE
     ) |>
     gt::fmt_url(
       columns = week,
-      rows = !is.na(summary),
+      rows = !is.na(week_summaries),
       show_underline = FALSE
     ) |>
     gt::fmt_date(
@@ -174,7 +186,7 @@ render_weekly_schedule <- function() {
     ) |>
     gt::cols_hide(
       c(
-        summary,
+        week_summaries,
         current_week,
         show_week,
         show_exam
