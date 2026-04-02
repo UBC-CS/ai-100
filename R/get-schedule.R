@@ -21,7 +21,6 @@ get_schedule <- function() {
     "practice"
   )
   sorted_units <- c("part", "week", "lecture", "discussion", "potw", "exam")
-  days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
 
   # Generate ids for each link to join into schedule
   resources_paths <-
@@ -71,14 +70,6 @@ get_schedule <- function() {
         !is_future_week(date, current_date) ~ TRUE,
         .default = FALSE
       ),
-      day = day |>
-        stringr::str_to_lower() |>
-        forcats::fct(
-          levels = intersect(
-            stringr::str_to_lower(days),
-            stringr::str_to_lower(day)
-          )
-        ),
       unit = id |> stringr::str_extract("^[^-]+"),
       # Only use levels present in data
       unit = unit |> forcats::fct(levels = intersect(sorted_units, unit)),

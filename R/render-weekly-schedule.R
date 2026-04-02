@@ -3,7 +3,19 @@ source(here::here("R", "convert-to-title-link.R"))
 source(here::here("R", "fmt-url-as-icon.R"))
 
 render_weekly_schedule <- function() {
-  schedule <- get_schedule()
+  days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+
+  schedule <- get_schedule() |>
+    dplyr::mutate(
+      day = day |>
+        stringr::str_to_lower() |>
+        forcats::fct(
+          levels = intersect(
+            stringr::str_to_lower(days),
+            stringr::str_to_lower(day)
+          )
+        )
+    )
 
   weeks <- schedule |>
     dplyr::distinct(week, monday, current_week, show_week, show_exam)
