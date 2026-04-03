@@ -211,7 +211,7 @@ render_weekly_schedule <- function() {
     gt::opt_css(
       css = "
         /* Styling for hyperlinks in row group headings */
-        .gt_group_heading a {
+        tr a {
           color: #008B8B;
           font-weight: bold;
           text-decoration: none;
