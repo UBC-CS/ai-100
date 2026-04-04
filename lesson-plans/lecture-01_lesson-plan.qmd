@@ -1,5 +1,7 @@
 ---
-title: "Lesson plan: Lecture 1"
+title: "Topic"
+subtitle: >
+  Lecture 1 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---
 
 ## Learning outcomes

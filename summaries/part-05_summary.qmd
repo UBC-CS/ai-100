@@ -1,5 +1,6 @@
 ---
-title: "Part V: Social impacts of AI systems"
+title: "Social impacts of AI systems"
+subtitle: "Part V, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
 ## Learning outcomes

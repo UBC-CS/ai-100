@@ -216,6 +216,16 @@ render_weekly_schedule <- function() {
           font-weight: bold;
           text-decoration: none;
         }
+
+        .gt_group_heading {
+          white-space: pre-wrap;
+        }
+
+        .unit-title {
+          font-size: smaller;
+          font-style: italic;
+          opacity: 0.6;
+        }
       "
     )
 }

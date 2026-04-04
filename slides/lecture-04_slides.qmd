@@ -1,5 +1,7 @@
 ---
-date: 2025-09-04
+title: Topic
+subtitle: "Lecture 4, {{< var course.code >}}, {{< var course.term >}}"
+date: 2025-09-09
 ---
 
 ## Announcements

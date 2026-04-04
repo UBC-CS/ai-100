@@ -1,5 +1,6 @@
 ---
-title: "Part I: Introduction---What is AI?"
+title: "Introduction---What is AI?"
+subtitle: "Part I, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
 ## Learning outcomes

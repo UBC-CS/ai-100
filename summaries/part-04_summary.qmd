@@ -1,5 +1,6 @@
 ---
-title: "Part IV: Limitations of current AI systems"
+title: "Limitations of current AI systems"
+subtitle: "Part IV, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
 ## Learning outcomes

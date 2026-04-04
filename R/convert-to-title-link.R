@@ -1,9 +1,17 @@
+source(here::here("R", "convert-to-title.R"))
+
 convert_to_title_link <- function(path) {
   purrr::map_chr(path, \(path) {
-    title <- path |>
-      rmarkdown::yaml_front_matter() |>
-      purrr::pluck("title")
+    if (is.na(path)) {
+      return(NA)
+    }
 
-    glue::glue("[{title}]({path})")
+    title <- convert_to_title(path)
+
+    if (is.na(title)) {
+      return(NA)
+    }
+
+    paste0("[", title, "](", path, ")")
   })
 }

@@ -1,5 +1,7 @@
 ---
-title: "Lesson plan: Lecture 5"
+title: "Topic"
+subtitle: >
+  Lecture 5 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---
 
 1. How different from previous topic

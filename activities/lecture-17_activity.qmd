@@ -1,3 +1,4 @@
 ---
 title: Example activity
+subtitle: "Lecture 17, {{< var course.code >}}, {{< var course.term >}}"
 ---

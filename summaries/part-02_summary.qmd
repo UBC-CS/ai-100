@@ -1,5 +1,6 @@
 ---
-title: "Part II: AI paradigms and their role in AI history"
+title: "AI paradigms and their role in AI history"
+subtitle: "Part II, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
 ## Learning outcomes

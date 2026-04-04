@@ -1,5 +1,6 @@
 ---
-title: "Part III: Understanding recent AI systems"
+title: "Understanding recent AI systems"
+subtitle: "Part III, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
 ## Learning outcomes

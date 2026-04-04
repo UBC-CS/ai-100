@@ -1,4 +1,4 @@
 ---
 title: "{{< var icon.video-activity >}} Pre-activity: Example"
-subtitle: "Due: Jan 7, 2026"
+subtitle: "Lecture 15, {{< var course.code >}}, {{< var course.term >}}"
 ---

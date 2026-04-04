@@ -1,5 +1,3 @@
-title: "{{< var course.title >}}"
-subtitle: "{{< var course.code >}}, {{< var course.term >}}"
 date-format: long
 
 format:

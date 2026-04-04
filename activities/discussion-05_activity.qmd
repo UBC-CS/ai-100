@@ -1,5 +1,6 @@
 ---
-title: "{{< var icon.computer-activity >}} Discussion: Activity"
+title: "{{< var icon.computer-activity >}} Activity"
+subtitle: "Discussion 5, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
 ## {{< var icon.task >}} Steps
