@@ -38,6 +38,6 @@ convert_to_title <- function(path) {
       return(subtitle)
     }
 
-    paste0(subtitle, "\n", title)
+    paste0('<span class="unit-full-title">', subtitle, "\n", title, '</span>')
   })
 }

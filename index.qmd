@@ -34,18 +34,44 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
 ::: {#most-recent-announcement}
 :::
 
+## Schedule
 ```{r}
-#| label: schedule
+#| label: setup
+#| echo: false
+#| message: false
+
+light_theme <- quarto::theme_brand_gt("light-brand.yml")
+dark_theme <- quarto::theme_brand_gt("dark-brand.yml")
+```
+
+::: {.panel-tabset}
+### By unit
+
+```{r}
+#| label: unit-schedule
 #| echo: false
 #| message: false
 #| renderings: [light, dark]
 
-light_theme <- quarto::theme_brand_gt("light-brand.yml")
-dark_theme <- quarto::theme_brand_gt("dark-brand.yml")
+source(here::here("R", "render-unit-schedule.R"))
+unit_schedule <- render_unit_schedule()
+
+unit_schedule |> light_theme()
+unit_schedule |> dark_theme()
+```
+
+### By week
+
+```{r}
+#| label: weekly-schedule
+#| echo: false
+#| message: false
+#| renderings: [light, dark]
 
 source(here::here("R", "render-weekly-schedule.R"))
-schedule <- render_weekly_schedule()
+weekly_schedule <- render_weekly_schedule()
 
-schedule |> light_theme()
-schedule |> dark_theme()
+weekly_schedule |> light_theme()
+weekly_schedule |> dark_theme()
 ```
+:::

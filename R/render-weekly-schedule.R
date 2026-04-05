@@ -217,7 +217,7 @@ render_weekly_schedule <- function() {
           text-decoration: none;
         }
 
-        .gt_group_heading {
+        .unit-full-title {
           white-space: pre-wrap;
         }
 
