@@ -50,9 +50,16 @@ render_weekly_schedule <- function() {
     dplyr::mutate(
       exam = id |>
         stringr::str_replace("-0{0,1}", " ") |>
-        stringr::str_to_title()
+        stringr::str_to_title(),
+      day = day |> stringr::str_to_title()
     ) |>
-    dplyr::select(week, exam, exam_due = date, exam_practice = resource)
+    dplyr::select(
+      week,
+      exam,
+      exam_practice = resource,
+      exam_day = day,
+      exam_due = date
+    )
 
   weekly_schedule <- weeks |>
     dplyr::left_join(
@@ -118,10 +125,9 @@ render_weekly_schedule <- function() {
       missing_text = ""
     ) |>
     fmt_url_as_icon() |>
-    gt::fmt_url(
+    gt::fmt_markdown(
       columns = exam,
       rows = show_exam,
-      show_underline = FALSE
     ) |>
     gt::fmt_date(
       exam_due,
@@ -142,9 +148,9 @@ render_weekly_schedule <- function() {
       potw = "POTW",
       # project = "Guide",
       # project_due = "Due",
-      exam = "Book",
-      exam_due = "Due",
-      exam_practice = "Practice"
+      exam_practice = "Practice",
+      exam_day = "Book",
+      exam_due = ""
     ) |>
     gt::tab_spanner(
       label = "Tue",
@@ -184,7 +190,11 @@ render_weekly_schedule <- function() {
     ) |>
     gt::cols_align(
       align = "center",
-      columns = c(potw, exam_practice)
+      columns = c(potw)
+    ) |>
+    gt::cols_align(
+      align = "right",
+      columns = c(exam_practice)
     ) |>
     gt::tab_style(
       style = list(
@@ -205,6 +215,22 @@ render_weekly_schedule <- function() {
         '{2}',
         '</span>'
       )
+    ) |>
+    gt::cols_merge(
+      columns = c(exam_day, exam_due, exam),
+      rows = !is.na(exam),
+      pattern = paste0(
+        '<span class="due-date-and-booking-link">',
+        '<span class="day-and-date">',
+        'Due: {1} {2}',
+        '</span>\n',
+        '{3}',
+        '</span>'
+      )
+    ) |>
+    gt::fmt_markdown(
+      columns = exam_day,
+      rows = show_exam
     ) |>
     gtExtras::gt_highlight_rows(
       row = current_week,
@@ -235,11 +261,11 @@ render_weekly_schedule <- function() {
           white-space: pre-wrap;
         }
 
-        .monday-and-week {
+        .monday-and-week, .due-date-and-booking-link {
           white-space: pre;
         }
 
-        .unit-title, .monday-of-week {
+        .unit-title, .monday-of-week, .day-and-date {
           font-size: smaller;
           font-style: italic;
           opacity: 0.6;
