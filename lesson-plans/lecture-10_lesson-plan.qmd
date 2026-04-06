@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Hallucinations"
 subtitle: >
   Lecture 10 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

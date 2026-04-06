@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Content creators and education"
 subtitle: >
   Lecture 13 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "What is AI?"
 subtitle: >
   Lecture 1 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

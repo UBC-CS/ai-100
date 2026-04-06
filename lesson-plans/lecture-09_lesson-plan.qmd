@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Reasoning models and alignment"
 subtitle: >
   Lecture 9 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Intentionally harmful use and climate"
 subtitle: >
   Lecture 16 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

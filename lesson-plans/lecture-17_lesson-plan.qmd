@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Likely social impacts, superhuman intelligence and sentience"
 subtitle: >
   Lecture 17 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

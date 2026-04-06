@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Human relationships"
 subtitle: >
   Lecture 14 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

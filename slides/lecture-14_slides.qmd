@@ -1,5 +1,5 @@
 ---
-title: Topic
+title: "Human relationships"
 subtitle: "Lecture 14, {{< var course.code >}}, {{< var course.term >}}"
 date: 2025-09-09
 ---

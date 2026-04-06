@@ -1,5 +1,5 @@
 ---
-title: Topic
+title: "Hallucinations"
 subtitle: "Lecture 10, {{< var course.code >}}, {{< var course.term >}}"
 date: 2025-09-09
 ---

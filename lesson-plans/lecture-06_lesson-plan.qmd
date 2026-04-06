@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Reinforcement learning"
 subtitle: >
   Lecture 6 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

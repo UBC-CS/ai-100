@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Self-supervision and generative AI"
 subtitle: >
   Lecture 7 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

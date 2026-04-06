@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Search"
 subtitle: >
   Lecture 3 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

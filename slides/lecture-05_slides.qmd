@@ -1,5 +1,5 @@
 ---
-title: Topic
+title: "Deep learning"
 subtitle: "Lecture 5, {{< var course.code >}}, {{< var course.term >}}"
 date: 2025-09-09
 ---

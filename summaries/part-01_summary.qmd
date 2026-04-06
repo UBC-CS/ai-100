@@ -1,5 +1,5 @@
 ---
-title: "Introduction---What is AI?"
+title: "Introduction"
 subtitle: "Part I, {{< var course.code >}}, {{< var course.term >}}"
 ---
 

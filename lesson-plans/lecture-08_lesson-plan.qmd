@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Chat models and image generation systems"
 subtitle: >
   Lecture 8 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Topic"
+title: "Deep learning"
 subtitle: >
   Lecture 5 lesson plan, {{< var course.code >}}, {{< var course.term >}}
 ---
