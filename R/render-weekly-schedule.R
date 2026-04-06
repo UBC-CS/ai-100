@@ -80,13 +80,16 @@ render_weekly_schedule <- function() {
   weekly_schedule |>
     dplyr::mutate(
       part_summaries = convert_to_title_link(part_summaries),
-      week = dplyr::if_else(
-        !is.na(week_summaries),
-        glue::glue(
-          "[{week} {fontawesome::fa('circle-info')}]({week_summaries})"
-        ),
-        as.character(week)
-      ),
+      week = glue::glue("Week {week}") |>
+        (\(week_title) {
+          dplyr::if_else(
+            !is.na(week_summaries),
+            glue::glue(
+              "[{week_title}]({week_summaries})"
+            ),
+            week_title
+          )
+        })(),
       exam = dplyr::if_else(
         show_exam,
         glue::glue("[{exam}](https://us.prairietest.com)", .na = NULL),
@@ -129,8 +132,8 @@ render_weekly_schedule <- function() {
       label = fontawesome::fa("pen-to-square")
     ) |>
     gt::cols_label(
-      week = "Week",
-      monday = "Mon",
+      week = "",
+      monday = "",
       tidyselect::ends_with("lesson_plans") ~ "L",
       tidyselect::ends_with("activities") ~ "A",
       tidyselect::ends_with("pre_activities") ~ "P",
@@ -192,6 +195,17 @@ render_weekly_schedule <- function() {
         gt::cells_column_spanners()
       )
     ) |>
+    gt::cols_merge(
+      columns = c(monday, week),
+      pattern = paste0(
+        '<span class="monday-and-week">',
+        '<span class="monday-of-week">',
+        'Mon {1}',
+        '</span>\n',
+        '{2}',
+        '</span>'
+      )
+    ) |>
     gtExtras::gt_highlight_rows(
       row = current_week,
       fill = "#ccefff"
@@ -221,7 +235,11 @@ render_weekly_schedule <- function() {
           white-space: pre-wrap;
         }
 
-        .unit-title {
+        .monday-and-week {
+          white-space: pre;
+        }
+
+        .unit-title, .monday-of-week {
           font-size: smaller;
           font-style: italic;
           opacity: 0.6;
