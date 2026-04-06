@@ -182,23 +182,24 @@ render_unit_schedule <- function() {
         gt::cells_column_labels()
       )
     ) |>
-    # Colour must be changed before columns merge
-    gt::tab_style(
-      style = gt::cell_text(color = "#FF0000"),
-      locations = gt::cells_body(
-        columns = c(date, day),
-        rows = (unit == "potw" | unit == "exam")
-      )
-    ) |>
     gt::cols_merge(
       columns = c(day, date),
       pattern = paste0(
-        '<span class="day-and-date">',
+        '<span class="day-and-date-combined">',
         '<span class="day-of-week">',
         '{1}',
         '</span>\n',
         '{2}',
         '</span>'
+      )
+    ) |>
+    gt::text_transform(
+      fn = function(x) {
+        paste0('<span class="day-and-date-due">', x, '</span>')
+      },
+      locations = gt::cells_body(
+        columns = day,
+        rows = (unit == "potw" | unit == "exam")
       )
     ) |>
     gt::tab_style(
@@ -247,8 +248,12 @@ render_unit_schedule <- function() {
           opacity: 0.6;
         }
 
-        .day-and-date {
+        .day-and-date-combined {
           white-space: pre;
+        }
+
+        .day-and-date-due {
+          color: var(--bs-danger);
         }
       "
     )
