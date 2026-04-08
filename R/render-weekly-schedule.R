@@ -131,6 +131,7 @@ render_weekly_schedule <- function() {
       potw = "POTW",
       # project = "Guide",
       # project_due = "Due",
+      exam = "",
       exam_practice = "",
       exam_day = "",
       exam_due = ""
@@ -173,7 +174,7 @@ render_weekly_schedule <- function() {
     ) |>
     gt::cols_align(
       align = "right",
-      columns = c(exam_practice)
+      columns = c(week)
     ) |>
     gt::tab_style(
       style = list(
@@ -185,30 +186,30 @@ render_weekly_schedule <- function() {
       )
     ) |>
     gt::cols_merge(
-      columns = c(monday, week),
+      columns = c(week, monday),
       pattern = paste0(
         '<span class="monday-and-week">',
+        '{1}\n',
         '<span class="monday-of-week">',
-        'Mon {1}',
-        '</span>\n',
-        '{2}',
+        'starts {2}',
+        '</span>',
         '</span>'
       )
     ) |>
     gt::cols_merge(
-      columns = c(exam_day, exam_due, exam),
+      columns = c(exam, exam_day, exam_due),
       rows = !is.na(exam),
       pattern = paste0(
         '<span class="due-date-and-exam">',
+        '{1}\n',
         '<span class="day-and-date">',
-        'Due: {1} {2}',
-        '</span>\n',
-        '{3}',
+        'Due: {2} {3}',
+        '</span>',
         '</span>'
       )
     ) |>
     gt::cols_merge(
-      columns = c(exam_day, exam_practice),
+      columns = c(exam, exam_practice),
       rows = (!is.na(exam_day) & (show_exam | show_week)),
       pattern = paste0(
         '<span class="exam-booking">',
