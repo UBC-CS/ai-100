@@ -73,12 +73,15 @@ render_unit_schedule <- function() {
       title = dplyr::case_when(
         unit == "discussion" ~ convert_to_title(activities),
         unit == "lecture" ~ convert_to_title(slides),
-        unit == "potw" ~ glue::glue("[Problems of the week]({link})"),
-        unit == "exam" ~ glue::glue(
-          "{id |> stringr::str_replace('-0{0,1}', ' ') |> ",
-          "stringr::str_to_title()} ([Book](https://us.prairietest.com), ",
-          "[Practice]({practice}))"
-        )
+        unit == "potw" ~ glue::glue(
+          '<span class="unit-full-title">',
+          '<span class="placeholder">Placeholder</span>\n',
+          '[Problems of the week]({link})',
+          '</span>'
+        ),
+        unit == "exam" ~ id |>
+          stringr::str_replace("-0{0,1}", " ") |>
+          stringr::str_to_title()
       )
     )
 
@@ -137,7 +140,8 @@ render_unit_schedule <- function() {
       pre_activities,
       slides,
       activities,
-      recording
+      recording,
+      practice
     )
 
   unit_schedule_by_row_group |>
@@ -203,15 +207,22 @@ render_unit_schedule <- function() {
       )
     ) |>
     gt::tab_style(
-      style = "vertical-align:top",
+      style = "vertical-align: top",
       locations = gt::cells_body(
-        columns = day
+        columns = c(day, title)
       )
     ) |>
-    gt::tab_style(
-      style = "vertical-align:bottom",
-      locations = gt::cells_body(
-        columns = title
+    gt::cols_merge(
+      columns = c(title, practice),
+      rows = unit == "exam",
+      pattern = paste0(
+        '<span class="exam-booking">',
+        '<span class="placeholder">Placeholder</span>\n',
+        '{1}\n',
+        '<a href="https://us.prairietest.com" class="exam-button">Book</a>',
+        ' ',
+        '<a href="{2}"class="exam-button">Practice</a>',
+        '</span>'
       )
     ) |>
     gtExtras::gt_highlight_rows(
@@ -242,18 +253,35 @@ render_unit_schedule <- function() {
           white-space: pre-wrap;
         }
 
-        .unit-title, .day-of-week {
+        .unit-title, .day-of-week, .placeholder {
           font-size: smaller;
           font-style: italic;
+        }
+
+        .unit-title, .day-of-week {
           opacity: 0.6;
         }
 
-        .day-and-date-combined {
+        .placeholder {
+          color: transparent;
+          opacity: 0;
+        }
+
+        .day-and-date-combined, .exam-booking {
           white-space: pre;
         }
 
         .day-and-date-due {
           color: var(--bs-danger);
+        }
+
+        .exam-button {
+          background-color: var(--bs-warning);
+          font-size: smaller;
+          color: var(--bs-body-bg);
+          padding: 2px 4px;
+          display: inline-block;
+          border-radius: 5px;
         }
       "
     )

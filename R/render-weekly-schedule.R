@@ -56,9 +56,9 @@ render_weekly_schedule <- function() {
     dplyr::select(
       week,
       exam,
-      exam_practice = resource,
       exam_day = day,
-      exam_due = date
+      exam_due = date,
+      exam_practice = resource
     )
 
   weekly_schedule <- weeks |>
@@ -96,17 +96,7 @@ render_weekly_schedule <- function() {
             ),
             week_title
           )
-        })(),
-      exam = dplyr::if_else(
-        show_exam,
-        glue::glue("[{exam}](https://us.prairietest.com)", .na = NULL),
-        exam
-      ),
-      exam_practice = dplyr::if_else(
-        show_exam | show_week,
-        exam_practice,
-        NA
-      )
+        })()
     ) |>
     gt::gt(
       groupname_col = "part_summaries",
@@ -125,17 +115,9 @@ render_weekly_schedule <- function() {
       missing_text = ""
     ) |>
     fmt_url_as_icon() |>
-    gt::fmt_markdown(
-      columns = exam,
-      rows = show_exam,
-    ) |>
     gt::fmt_date(
       exam_due,
       date_style = "MMMd"
-    ) |>
-    gt::fmt_url(
-      columns = exam_practice,
-      label = fontawesome::fa("pen-to-square")
     ) |>
     gt::cols_label(
       week = "",
@@ -148,8 +130,8 @@ render_weekly_schedule <- function() {
       potw = "POTW",
       # project = "Guide",
       # project_due = "Due",
-      exam_practice = "Practice",
-      exam_day = "Book",
+      exam_practice = "",
+      exam_day = "",
       exam_due = ""
     ) |>
     gt::tab_spanner(
@@ -184,10 +166,6 @@ render_weekly_schedule <- function() {
       label = "Project",
       columns = starts_with("project")
     ) |>
-    gt::tab_spanner(
-      label = "Examlet",
-      columns = starts_with("exam")
-    ) |>
     gt::cols_align(
       align = "center",
       columns = c(potw)
@@ -220,11 +198,23 @@ render_weekly_schedule <- function() {
       columns = c(exam_day, exam_due, exam),
       rows = !is.na(exam),
       pattern = paste0(
-        '<span class="due-date-and-booking-link">',
+        '<span class="due-date-and-exam">',
         '<span class="day-and-date">',
         'Due: {1} {2}',
         '</span>\n',
         '{3}',
+        '</span>'
+      )
+    ) |>
+    gt::cols_merge(
+      columns = c(exam_day, exam_practice),
+      rows = (!is.na(exam_day) & (show_exam | show_week)),
+      pattern = paste0(
+        '<span class="exam-booking">',
+        '{1}\n',
+        '<a href="https://us.prairietest.com" class="exam-button">Book</a>',
+        ' ',
+        '<a href="{2}"class="exam-button">Practice</a>',
         '</span>'
       )
     ) |>
@@ -261,7 +251,7 @@ render_weekly_schedule <- function() {
           white-space: pre-wrap;
         }
 
-        .monday-and-week, .due-date-and-booking-link {
+        .monday-and-week, .due-date-and-exam, .exam-booking {
           white-space: pre;
         }
 
@@ -269,6 +259,15 @@ render_weekly_schedule <- function() {
           font-size: smaller;
           font-style: italic;
           opacity: 0.6;
+        }
+
+        .exam-button {
+          background-color: var(--bs-warning);
+          font-size: smaller;
+          color: var(--bs-body-bg);
+          padding: 2px 4px;
+          display: inline-block;
+          border-radius: 5px;
         }
       "
     )
