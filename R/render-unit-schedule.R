@@ -2,6 +2,7 @@ source(here::here("R", "convert-to-title.R"))
 source(here::here("R", "convert-to-title-link.R"))
 source(here::here("R", "fmt-url-as-icon.R"))
 source(here::here("R", "get-schedule.R"))
+source(here::here("R", "highlight-current-week.R"))
 
 render_unit_schedule <- function() {
   schedule <- get_schedule() |>
@@ -218,17 +219,14 @@ render_unit_schedule <- function() {
       pattern = paste0(
         '<span class="exam-booking">',
         '<span class="placeholder">Placeholder</span>\n',
-        '{1}\n',
+        '{1} ',
         '<a href="https://us.prairietest.com" class="exam-button">Book</a>',
         ' ',
         '<a href="{2}"class="exam-button">Practice</a>',
         '</span>'
       )
     ) |>
-    gtExtras::gt_highlight_rows(
-      row = current_week,
-      fill = "#ccefff"
-    ) |>
+    highlight_current_week() |>
     gt::cols_hide(
       c(
         current_week,

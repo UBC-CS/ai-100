@@ -1,6 +1,7 @@
 source(here::here("R", "get-schedule.R"))
 source(here::here("R", "convert-to-title-link.R"))
 source(here::here("R", "fmt-url-as-icon.R"))
+source(here::here("R", "highlight-current-week.R"))
 
 render_weekly_schedule <- function() {
   days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
@@ -222,10 +223,7 @@ render_weekly_schedule <- function() {
       columns = exam_day,
       rows = show_exam
     ) |>
-    gtExtras::gt_highlight_rows(
-      row = current_week,
-      fill = "#ccefff"
-    ) |>
+    highlight_current_week() |>
     gt::cols_hide(
       c(
         week_summaries,
