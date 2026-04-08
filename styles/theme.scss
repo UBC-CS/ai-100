@@ -7,3 +7,47 @@
 /*-- scss:mixins --*/
 
 /*-- scss:rules --*/
+tr a {
+    color: #008B8B;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.unit-full-title,
+.part-and-week {
+    white-space: pre-wrap;
+}
+
+.monday-and-week,
+.day-and-date-combined,
+.due-date-and-exam,
+.exam-booking {
+    white-space: pre;
+}
+
+.unit-title,
+.monday-of-week,
+.day-and-date,
+.day-of-week {
+    font-size: smaller;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.placeholder {
+    color: transparent;
+    opacity: 0;
+}
+
+.day-and-date-due {
+    color: $danger;
+}
+
+.exam-button {
+    background-color: $warning;
+    font-size: smaller;
+    color: $body-bg;
+    padding: 2px 4px;
+    display: inline-block;
+    border-radius: 5px;
+}

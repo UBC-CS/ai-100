@@ -237,50 +237,5 @@ render_unit_schedule <- function() {
     gt::tab_options(
       quarto.disable_processing = TRUE,
       table.width = "100%"
-    ) |>
-    gt::opt_css(
-      css = "
-        /* Styling for hyperlinks in row group headings */
-        tr a {
-          color: #008B8B;
-          font-weight: bold;
-          text-decoration: none;
-        }
-
-        .unit-full-title, .part-and-week {
-          white-space: pre-wrap;
-        }
-
-        .unit-title, .day-of-week, .placeholder {
-          font-size: smaller;
-          font-style: italic;
-        }
-
-        .unit-title, .day-of-week {
-          opacity: 0.6;
-        }
-
-        .placeholder {
-          color: transparent;
-          opacity: 0;
-        }
-
-        .day-and-date-combined, .exam-booking {
-          white-space: pre;
-        }
-
-        .day-and-date-due {
-          color: var(--bs-danger);
-        }
-
-        .exam-button {
-          background-color: var(--bs-warning);
-          font-size: smaller;
-          color: var(--bs-body-bg);
-          padding: 2px 4px;
-          display: inline-block;
-          border-radius: 5px;
-        }
-      "
     )
 }

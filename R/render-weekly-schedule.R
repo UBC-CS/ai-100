@@ -235,38 +235,5 @@ render_weekly_schedule <- function() {
     gt::tab_options(
       quarto.disable_processing = TRUE,
       table.width = "100%"
-    ) |>
-    gt::opt_css(
-      css = "
-        /* Styling for hyperlinks in row group headings */
-        tr a {
-          color: #008B8B;
-          font-weight: bold;
-          text-decoration: none;
-        }
-
-        .unit-full-title {
-          white-space: pre-wrap;
-        }
-
-        .monday-and-week, .due-date-and-exam, .exam-booking {
-          white-space: pre;
-        }
-
-        .unit-title, .monday-of-week, .day-and-date {
-          font-size: smaller;
-          font-style: italic;
-          opacity: 0.6;
-        }
-
-        .exam-button {
-          background-color: var(--bs-warning);
-          font-size: smaller;
-          color: var(--bs-body-bg);
-          padding: 2px 4px;
-          display: inline-block;
-          border-radius: 5px;
-        }
-      "
     )
 }
