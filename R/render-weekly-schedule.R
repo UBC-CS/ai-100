@@ -120,22 +120,32 @@ render_weekly_schedule <- function() {
       exam_due,
       date_style = "MMMd"
     ) |>
-    gt::cols_label(
-      week = "",
-      monday = "",
-      tidyselect::ends_with("lesson_plans") ~ "L",
-      tidyselect::ends_with("activities") ~ "A",
-      tidyselect::ends_with("pre_activities") ~ "P",
-      tidyselect::ends_with("slides") ~ "S",
-      tidyselect::ends_with("recording") ~ "V",
-      potw = "POTW",
-      # project = "Guide",
-      # project_due = "Due",
-      exam = "",
-      exam_practice = "",
-      exam_day = "",
-      exam_due = ""
+    gt::cols_add(
+      after_week_spacer = '<span class="spacer"></span>',
+      .after = "week"
     ) |>
+    gt::cols_add(
+      lecture_half_spacer = '<span class="half-spacer"></span>',
+      .after = "tue_lecture_recording"
+    ) |>
+    gt::cols_add(
+      between_spanners_spacer = '<span class="half-spacer"></span>',
+      .after = "thu_lecture_recording"
+    ) |>
+    gt::cols_add(
+      discussion_half_spacer = '<span class="half-spacer"></span>',
+      .after = "thu_discussion_activities"
+    ) |>
+    gt::cols_add(
+      before_potw_spacer = '<span class="half-spacer"></span>',
+      .before = "potw"
+    ) |>
+    gt::cols_add(
+      after_potw_spacer = '<span class="half-spacer"></span>',
+      .after = "potw"
+    ) |>
+    gt::fmt_markdown(columns = tidyselect::contains("spacer")) |>
+    gt::cols_label(tidyselect::everything() ~ "") |>
     gt::tab_spanner(
       label = "Tue",
       columns = tidyselect::starts_with("tue_lecture"),
@@ -148,6 +158,7 @@ render_weekly_schedule <- function() {
     ) |>
     gt::tab_spanner(
       label = "Lectures",
+      columns = tidyselect::contains("lecture"),
       spanners = c("tue_lecture", "thu_lecture")
     ) |>
     gt::tab_spanner(
@@ -162,11 +173,16 @@ render_weekly_schedule <- function() {
     ) |>
     gt::tab_spanner(
       label = "Discussions",
+      columns = tidyselect::contains("discussion"),
       spanners = c("first_discussion", "second_discussion")
     ) |>
     gt::tab_spanner(
       label = "Project",
       columns = starts_with("project")
+    ) |>
+    gt::tab_style(
+      style = gt::cell_text(size = "small"),
+      locations = gt::cells_column_spanners()
     ) |>
     gt::cols_align(
       align = "center",

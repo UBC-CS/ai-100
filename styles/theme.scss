@@ -7,10 +7,14 @@
 /*-- scss:mixins --*/
 
 /*-- scss:rules --*/
-tr a {
+table a {
     color: #008B8B;
     font-weight: bolder;
     text-decoration: none;
+}
+
+table abbr {
+    text-decoration: none !important;
 }
 
 .unit-full-title,
@@ -39,6 +43,10 @@ tr a {
     opacity: 0;
 }
 
+.day-and-date-combined {
+    margin-left: 1.5em;
+}
+
 .day-and-date-due {
     color: $danger;
 }
@@ -50,4 +58,12 @@ tr a {
     padding: 2px 4px;
     display: inline-block;
     border-radius: 5px;
+}
+
+.spacer {
+    padding-left: 0.5em;
+}
+
+.half-spacer {
+    padding-left: 0.25em;
 }
