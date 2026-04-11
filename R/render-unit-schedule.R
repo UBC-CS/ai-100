@@ -16,7 +16,7 @@ render_unit_schedule <- function() {
     )
 
   parts_and_weeks <- schedule |>
-    dplyr::filter(type == "summaries", !is.na(resource)) |>
+    dplyr::filter(type == "summary", !is.na(resource)) |>
     dplyr::select(week, date, unit, type, resource) |>
     tidyr::pivot_wider(
       names_from = c(unit, type),
@@ -40,6 +40,7 @@ render_unit_schedule <- function() {
       type,
       resource
     ) |>
+    dplyr::mutate(type = type |> as.character() |> stringr::str_to_snake()) |>
     tidyr::pivot_wider(
       names_from = type,
       values_from = resource
@@ -52,7 +53,7 @@ render_unit_schedule <- function() {
       relationship = "one-to-many"
     ) |>
     dplyr::arrange(date, unit) |>
-    tidyr::fill(part_summaries, week_summaries) |>
+    tidyr::fill(part_summary, week_summary) |>
     # maybe move to render_unit_schedule_by_week()
     dplyr::group_by(week) |>
     dplyr::arrange(unit, date, .by_group = TRUE) |>
@@ -62,22 +63,22 @@ render_unit_schedule <- function() {
       !is.na(unit)
     ) |>
     dplyr::mutate(
-      week_summaries = dplyr::if_else(
-        !is.na(week_summaries),
+      week_summary = dplyr::if_else(
+        !is.na(week_summary),
         glue::glue(
-          "[Week {week}]({week_summaries})"
+          "[Week {week}]({week_summary})"
         ),
         glue::glue("Week {week}")
       ),
-      part_summaries = convert_to_title_link(part_summaries),
+      part_summary = convert_to_title_link(part_summary),
       date = dplyr::if_else(unit == "discussion", NA, date),
       title = dplyr::case_when(
-        unit == "discussion" ~ convert_to_title(activities),
+        unit == "discussion" ~ convert_to_title(activity),
         unit == "lecture" ~ convert_to_title(slides),
         unit == "potw" ~ glue::glue(
           '<span class="unit-full-title">',
           '<span class="placeholder">Placeholder</span>\n',
-          '[Problems of the week]({link})',
+          '[Problems of the week]({prairielearn})',
           '</span>'
         ),
         unit == "exam" ~ id |>
@@ -88,17 +89,17 @@ render_unit_schedule <- function() {
 
   unit_schedule_by_row_group <- unit_schedule |>
     dplyr::mutate(
-      consecutive_part = dplyr::consecutive_id(part_summaries),
-      consecutive_week = dplyr::consecutive_id(week_summaries),
+      consecutive_part = dplyr::consecutive_id(part_summary),
+      consecutive_week = dplyr::consecutive_id(week_summary),
       consecutive_combined = dplyr::consecutive_id(
-        part_summaries,
-        week_summaries
+        part_summary,
+        week_summary
       )
     ) |>
     dplyr::mutate(
       row_group_part = dplyr::if_else(
         dplyr::row_number() == 1,
-        part_summaries,
+        part_summary,
         NA
       ),
       .by = consecutive_part
@@ -106,7 +107,7 @@ render_unit_schedule <- function() {
     dplyr::mutate(
       row_group_week = dplyr::if_else(
         dplyr::row_number() == 1,
-        week_summaries,
+        week_summary,
         NA
       ),
       .by = consecutive_week
@@ -138,11 +139,11 @@ render_unit_schedule <- function() {
       unit,
       title,
       tidyselect::ends_with("lesson_plans"),
-      pre_activities,
+      pre_activity,
       slides,
-      activities,
+      activity,
       recording,
-      practice
+      prairielearn
     )
 
   unit_schedule_by_row_group |>
@@ -165,9 +166,9 @@ render_unit_schedule <- function() {
       date = "",
       day = "",
       title = "",
-      tidyselect::ends_with("lesson_plans") ~ "Lesson plan",
-      tidyselect::ends_with("activities") ~ "Activity",
-      tidyselect::ends_with("pre_activities") ~ "Pre-activity",
+      tidyselect::ends_with("lesson_plan") ~ "Lesson plan",
+      tidyselect::ends_with("activitiy") ~ "Activity",
+      tidyselect::ends_with("pre_activity") ~ "Pre-activity",
       tidyselect::ends_with("slides") ~ "Slides",
       tidyselect::ends_with("recording") ~ "Video"
     ) |>
@@ -214,7 +215,7 @@ render_unit_schedule <- function() {
       )
     ) |>
     gt::cols_merge(
-      columns = c(title, practice),
+      columns = c(title, prairielearn),
       rows = unit == "exam",
       pattern = paste0(
         '<span class="exam-booking">',

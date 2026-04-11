@@ -1,7 +1,12 @@
 id,type,resource
 lecture-01,recording,https://ubc.zoom.us/rec/<link>
 lecture-02,recording,https://ubc.zoom.us/rec/<link>
-potw-01,link,https://us.prairielearn.com/pl/course_instance/<link>
-exam-00,practice,https://us.prairielearn.com/pl/course_instance/<link>
-exam-01,practice,https://us.prairielearn.com/pl/course_instance/<link>
-exam-02,practice,https://us.prairielearn.com/pl/course_instance/<link>
+potw-01,prairielearn,https://us.prairielearn.com/pl/course_instance/<link>
+potw-02,prairielearn,https://us.prairielearn.com/pl/course_instance/<link>
+potw-03,prairielearn,https://us.prairielearn.com/pl/course_instance/<link>
+potw-04,prairielearn,https://us.prairielearn.com/pl/course_instance/<link>
+potw-05,prairielearn,https://us.prairielearn.com/pl/course_instance/<link>
+potw-06,prairielearn,https://us.prairielearn.com/pl/course_instance/<link>
+exam-00,prairielearn,https://us.prairielearn.com/pl/course_instance/<link>
+exam-01,prairielearn,https://us.prairielearn.com/pl/course_instance/<link>
+exam-02,prairielearn,https://us.prairielearn.com/pl/course_instance/<link>

@@ -1,36 +1,23 @@
 source(here::here("R", "convert-to-date.R"))
 source(here::here("R", "check-if-student-profile.R"))
+source(here::here("R", "get-id-from-resource.R"))
 
 get_schedule <- function() {
   rendering_student_profile <- check_if_student_profile()
   current_date <- lubridate::today()
 
+  lookup <- readr::read_csv(here::here("data", "lookup.csv"), col_types = "cc")
+
   monday_of_first_term_week <- yaml::read_yaml(
     "_variables.yml"
   )$course$`monday-of-first-term-week`
 
-  # Used to sort column names when using `pivot_wider()`
-  sorted_types <- c(
-    "summaries",
-    "lesson_plans",
-    "pre_activities",
-    "slides",
-    "activities",
-    "recording",
-    "link",
-    "practice"
-  )
-  sorted_units <- c("part", "week", "lecture", "discussion", "potw", "exam")
+  # Sequence of `type`s in `lookup` table determines column sequence
+  # when using `pivot_wider()`
+  sorted_types <- lookup$type
 
   # Generate ids for each link to join into schedule
-  resources_paths <-
-    c(
-      fs::path("lesson-plans"),
-      fs::path("pre-activities"),
-      fs::path("activities"),
-      fs::path("slides"),
-      fs::path("summaries")
-    )
+  resources_paths <- lookup$directory |> na.omit()
 
   schedule <- readr::read_csv(
     here::here("data", "schedule.csv"),
@@ -44,22 +31,29 @@ get_schedule <- function() {
   resources <-
     tibble::tibble(
       resource = fs::dir_ls(resources_paths, glob = "*.qmd"),
-      id = fs::path_file(resource) |> stringr::str_extract("^[^_]+"),
-      type = resource |>
-        fs::path_dir() |>
-        stringr::str_replace("-", "_")
+      id = get_id_from_resource(resource),
+      type = resource |> fs::path_dir()
     ) |>
-    # Remove unassigned resources indicated by "tbd"
-    dplyr::filter(!stringr::str_detect(resource, "tbd")) |>
     dplyr::relocate(resource, .after = type)
 
   all_resources <- dplyr::bind_rows(resources, additional_resources) |>
     dplyr::mutate(
-      type = forcats::fct(type, levels = intersect(sorted_types, type))
+      # Sequence of `id`s in `schedule.csv` determines column sequence
+      # when using `pivot_wider()`
+      unit = id |> stringr::str_extract("^[^-]+") |> forcats::fct(),
+      type = type |>
+        dplyr::replace_values(from = lookup$directory, to = lookup$type),
+      type = type |>
+        forcats::fct(levels = intersect(sorted_types, type))
     ) |>
     dplyr::arrange(type)
 
   schedule |>
+    dplyr::left_join(
+      all_resources,
+      by = dplyr::join_by(id),
+      relationship = "one-to-many"
+    ) |>
     dplyr::mutate(
       date = convert_to_date(monday_of_first_term_week, week, day),
       monday = lubridate::floor_date(date, unit = "week", week_start = "Mon"),
@@ -70,25 +64,17 @@ get_schedule <- function() {
         !is_future_week(date, current_date) ~ TRUE,
         .default = FALSE
       ),
-      unit = id |> stringr::str_extract("^[^-]+"),
-      # Only use levels present in data
-      unit = unit |> forcats::fct(levels = intersect(sorted_units, unit)),
       next_exam = dplyr::if_else(unit == "exam", date, NA),
       show_exam = dplyr::between(
         next_exam,
         current_date,
         current_date + lubridate::days(13)
       ),
-      .after = date
+      .after = day
     ) |>
     # `arrange()` ensures that fill()` propagates `next_exam` to prior dates
     dplyr::arrange(date, unit) |>
     tidyr::fill(next_exam, show_exam, .direction = "up") |>
-    dplyr::left_join(
-      all_resources,
-      by = dplyr::join_by(id),
-      relationship = "one-to-many"
-    ) |>
     dplyr::filter_out(
       dplyr::when_all(rendering_student_profile & type == "lesson_plans")
     )
