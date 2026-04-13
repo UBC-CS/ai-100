@@ -7,14 +7,15 @@ get_schedule <- function() {
   current_date <- lubridate::today()
 
   lookup <- readr::read_csv(here::here("data", "lookup.csv"), col_types = "cc")
+  # Sequence of `type`s in `lookup` table determines column sequence
+  # when using `pivot_wider()`
+  sorted_types <- lookup$type
+
+  days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
 
   monday_of_first_term_week <- yaml::read_yaml(
     "_variables.yml"
   )$course$`monday-of-first-term-week`
-
-  # Sequence of `type`s in `lookup` table determines column sequence
-  # when using `pivot_wider()`
-  sorted_types <- lookup$type
 
   # Generate ids for each link to join into schedule
   resources_paths <- lookup$directory |> na.omit()
@@ -22,7 +23,14 @@ get_schedule <- function() {
   schedule <- readr::read_csv(
     here::here("data", "schedule.csv"),
     col_types = "icc"
-  )
+  ) |>
+    dplyr::mutate(
+      day = forcats::fct(day, levels = days),
+      # Sequence of `id`s in `schedule.csv` determines column sequence
+      # when using `pivot_wider()`
+      unit = id |> stringr::str_extract("^[^-]+") |> forcats::fct(),
+    )
+
   additional_resources <- readr::read_csv(
     here::here("data", "additional-resources.csv"),
     col_types = "ccc"
@@ -38,9 +46,6 @@ get_schedule <- function() {
 
   all_resources <- dplyr::bind_rows(resources, additional_resources) |>
     dplyr::mutate(
-      # Sequence of `id`s in `schedule.csv` determines column sequence
-      # when using `pivot_wider()`
-      unit = id |> stringr::str_extract("^[^-]+") |> forcats::fct(),
       type = type |>
         dplyr::replace_values(from = lookup$directory, to = lookup$type),
       type = type |>
@@ -55,7 +60,11 @@ get_schedule <- function() {
       relationship = "one-to-many"
     ) |>
     dplyr::mutate(
-      date = convert_to_date(monday_of_first_term_week, week, day),
+      date = convert_to_date(
+        monday_of_first_term_week,
+        week,
+        as.character(day)
+      ),
       monday = lubridate::floor_date(date, unit = "week", week_start = "Mon"),
       current_week = is_current_week(date, current_date),
       show_week = dplyr::case_when(
@@ -76,7 +85,7 @@ get_schedule <- function() {
     dplyr::arrange(date, unit) |>
     tidyr::fill(next_exam, show_exam, .direction = "up") |>
     dplyr::filter_out(
-      dplyr::when_all(rendering_student_profile & type == "lesson_plans")
+      rendering_student_profile & type == "lesson-plan"
     )
 }
 

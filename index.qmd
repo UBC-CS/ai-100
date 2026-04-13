@@ -39,7 +39,6 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
 #| label: setup
 #| echo: false
 #| message: false
-
 light_theme <- quarto::theme_brand_gt("light-brand.yml")
 dark_theme <- quarto::theme_brand_gt("dark-brand.yml")
 ```
@@ -52,7 +51,6 @@ dark_theme <- quarto::theme_brand_gt("dark-brand.yml")
 #| echo: false
 #| message: false
 #| renderings: [light, dark]
-
 source(here::here("R", "render-unit-schedule.R"))
 unit_schedule <- render_unit_schedule()
 
@@ -67,7 +65,6 @@ unit_schedule |> dark_theme()
 #| echo: false
 #| message: false
 #| renderings: [light, dark]
-
 source(here::here("R", "render-weekly-schedule.R"))
 weekly_schedule <- render_weekly_schedule()
 

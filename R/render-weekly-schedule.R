@@ -1,150 +1,120 @@
+source(here::here("R", "fct-to-lower.R"))
+source(here::here("R", "fct-to-snake.R"))
+source(here::here("R", "format-exam-with-due-date.R"))
+source(here::here("R", "format-resource-as-label.R"))
+source(here::here("R", "format-week-with-start-day.R"))
 source(here::here("R", "get-schedule.R"))
-source(here::here("R", "convert-to-title-link.R"))
-source(here::here("R", "fmt-url-as-icon.R"))
 source(here::here("R", "highlight-current-week.R"))
 
 render_weekly_schedule <- function() {
-  days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
-
   schedule <- get_schedule() |>
+    dplyr::filter_out(is.na(type)) |>
     dplyr::mutate(
-      day = day |>
-        stringr::str_to_lower() |>
-        forcats::fct(
-          levels = intersect(
-            stringr::str_to_lower(days),
-            stringr::str_to_lower(day)
-          )
+      date = gt::vec_fmt_date(date, date_style = "MMMd"),
+      label = purrr::pmap_chr(
+        list(show_week, id, type, resource),
+        format_resource_as_label
+      ),
+      label = dplyr::replace_when(
+        label,
+        unit == "week" ~ format_week_with_start_day(date, id, resource),
+        unit == "exam" ~ format_exam_with_due_date(
+          day,
+          date,
+          show_week,
+          show_exam,
+          id,
+          resource
         )
+      )
     )
 
   weeks <- schedule |>
-    dplyr::distinct(week, monday, current_week, show_week, show_exam)
+    dplyr::distinct(week, current_week, show_week, show_exam)
 
   lectures_and_discussions <- schedule |>
-    dplyr::filter(unit %in% c("lecture", "discussion"), !is.na(resource)) |>
+    dplyr::filter(unit %in% c("lecture", "discussion")) |>
     # Ensure the column order after pivoting follows day order
     dplyr::arrange(day) |>
-    dplyr::select(week, day, unit, type, resource) |>
+    dplyr::select(
+      week_number = week,
+      current_week,
+      show_week,
+      show_exam,
+      day,
+      unit,
+      type,
+      label
+    ) |>
+    dplyr::mutate(
+      day = fct_to_lower(day),
+      type = fct_to_snake(type)
+    ) |>
     tidyr::pivot_wider(
       names_from = c(day, unit, type),
       names_sep = "_",
-      values_from = resource
-    )
+      values_from = label
+    ) |>
+    dplyr::arrange(week_number)
 
   # Units with only a single resource
-  parts_and_weeks <- schedule |>
-    dplyr::filter(unit %in% c("part", "week"), !is.na(resource)) |>
-    dplyr::select(week, unit, type, resource) |>
+  other_units <- schedule |>
+    dplyr::filter(unit %in% c("part", "week", "potw", "exam")) |>
+    dplyr::select(week_number = week, unit, label) |>
     tidyr::pivot_wider(
-      names_from = c(unit, type),
-      values_from = resource
+      names_from = unit,
+      values_from = label
     ) |>
-    tidyr::fill(part_summaries)
+    tidyr::fill(part)
 
-  potw <- schedule |>
-    dplyr::filter(unit == "potw", !is.na(resource)) |>
-    dplyr::select(week, potw = resource)
-
-  exams <- schedule |>
-    dplyr::filter(unit == "exam", !is.na(resource)) |>
+  weekly_schedule <- lectures_and_discussions |>
+    dplyr::left_join(
+      other_units,
+      by = dplyr::join_by(week_number),
+      relationship = "one-to-one"
+    ) |>
     dplyr::mutate(
-      exam = id |>
-        stringr::str_replace("-0{0,1}", " ") |>
-        stringr::str_to_title(),
-      day = day |> stringr::str_to_title()
+      dplyr::across(
+        tidyselect::where(is.character),
+        ~ highlight_current_week(current_week, .x)
+      )
     ) |>
-    dplyr::select(
-      week,
-      exam,
-      exam_day = day,
-      exam_due = date,
-      exam_practice = resource
-    )
+    dplyr::select(!c(week_number, current_week, show_week, show_exam)) |>
+    dplyr::relocate(week)
 
-  weekly_schedule <- weeks |>
-    dplyr::left_join(
-      lectures_and_discussions,
-      by = dplyr::join_by(week),
-      relationship = "one-to-one"
-    ) |>
-    dplyr::left_join(
-      parts_and_weeks,
-      by = dplyr::join_by(week),
-      relationship = "one-to-one"
-    ) |>
-    dplyr::left_join(
-      potw,
-      by = dplyr::join_by(week),
-      relationship = "one-to-one"
-    ) |>
-    dplyr::left_join(
-      exams,
-      by = dplyr::join_by(week),
-      relationship = "one-to-one"
-    ) |>
-    dplyr::relocate(part_summaries)
+  spacer <- '<span class="spacer"></span>'
+  half_spacer <- '<span class="half-spacer"></span>'
 
   weekly_schedule |>
-    dplyr::mutate(
-      part_summaries = convert_to_title_link(part_summaries),
-      week = glue::glue("Week {week}") |>
-        (\(week_title) {
-          dplyr::if_else(
-            !is.na(week_summaries),
-            glue::glue(
-              "[{week_title}]({week_summaries})"
-            ),
-            week_title
-          )
-        })()
-    ) |>
     gt::gt(
-      groupname_col = "part_summaries",
+      groupname_col = "part",
       process_md = TRUE
     ) |>
-    gt::fmt_url(
-      columns = week,
-      rows = !is.na(week_summaries),
-      show_underline = FALSE
-    ) |>
-    gt::fmt_date(
-      monday,
-      date_style = "MMMd"
-    ) |>
-    gt::sub_missing(
-      missing_text = ""
-    ) |>
-    fmt_url_as_icon() |>
-    gt::fmt_date(
-      exam_due,
-      date_style = "MMMd"
-    ) |>
+    gt::sub_missing(missing_text = "") |>
     gt::cols_add(
-      after_week_spacer = '<span class="spacer"></span>',
+      after_week_spacer = spacer,
       .after = "week"
     ) |>
     gt::cols_add(
-      lecture_half_spacer = '<span class="half-spacer"></span>',
+      lecture_half_spacer = half_spacer,
       .after = "tue_lecture_recording"
     ) |>
     gt::cols_add(
-      between_spanners_spacer = '<span class="half-spacer"></span>',
+      between_spanners_spacer = half_spacer,
       .after = "thu_lecture_recording"
     ) |>
     gt::cols_add(
-      discussion_half_spacer = '<span class="half-spacer"></span>',
-      .after = "thu_discussion_activities"
+      discussion_half_spacer = half_spacer,
+      .after = "thu_discussion_activity"
     ) |>
     gt::cols_add(
-      before_potw_spacer = '<span class="half-spacer"></span>',
+      before_potw_spacer = half_spacer,
       .before = "potw"
     ) |>
     gt::cols_add(
-      after_potw_spacer = '<span class="half-spacer"></span>',
+      after_potw_spacer = half_spacer,
       .after = "potw"
     ) |>
-    gt::fmt_markdown(columns = tidyselect::contains("spacer")) |>
     gt::cols_label(tidyselect::everything() ~ "") |>
     gt::tab_spanner(
       label = "Tue",
@@ -185,8 +155,8 @@ render_weekly_schedule <- function() {
       locations = gt::cells_column_spanners()
     ) |>
     gt::cols_align(
-      align = "center",
-      columns = c(potw)
+      align = "left",
+      columns = c(exam)
     ) |>
     gt::cols_align(
       align = "right",
@@ -201,54 +171,7 @@ render_weekly_schedule <- function() {
         gt::cells_column_spanners()
       )
     ) |>
-    gt::cols_merge(
-      columns = c(week, monday),
-      pattern = paste0(
-        '<span class="monday-and-week">',
-        '{1}\n',
-        '<span class="monday-of-week">',
-        'starts {2}',
-        '</span>',
-        '</span>'
-      )
-    ) |>
-    gt::cols_merge(
-      columns = c(exam, exam_day, exam_due),
-      rows = !is.na(exam),
-      pattern = paste0(
-        '<span class="due-date-and-exam">',
-        '{1}\n',
-        '<span class="day-and-date">',
-        'Due: {2} {3}',
-        '</span>',
-        '</span>'
-      )
-    ) |>
-    gt::cols_merge(
-      columns = c(exam, exam_practice),
-      rows = (!is.na(exam_day) & (show_exam | show_week)),
-      pattern = paste0(
-        '<span class="exam-booking">',
-        '{1}\n',
-        '<a href="https://us.prairietest.com" class="exam-button">Book</a>',
-        ' ',
-        '<a href="{2}"class="exam-button">Practice</a>',
-        '</span>'
-      )
-    ) |>
-    gt::fmt_markdown(
-      columns = exam_day,
-      rows = show_exam
-    ) |>
-    highlight_current_week() |>
-    gt::cols_hide(
-      c(
-        week_summaries,
-        current_week,
-        show_week,
-        show_exam
-      )
-    ) |>
+    gt::fmt_markdown() |>
     gt::tab_options(
       quarto.disable_processing = TRUE,
       table.width = "100%"
