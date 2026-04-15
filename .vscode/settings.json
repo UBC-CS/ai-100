@@ -1,4 +1,8 @@
 {
+    "liveServer.settings.root": "/_site",
+    "quarto.zotero.groupLibraries": [
+        "https://www.zotero.org/groups/6483856/ubc_ai-100"
+    ],
     "[r]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "Posit.air-vscode"
