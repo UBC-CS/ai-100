@@ -1,0 +1,49 @@
+---
+title: "Topic"
+subtitle: "Lecture template, {{< var course.code >}}, {{< var course.term >}}"
+date: 2025-09-09
+---
+
+# Introductions
+
+## Teaching team
+
+## Where to start? {.center}
+
+Canvas: [{{< var course.lms >}}]({{< var course.lms >}})
+
+Course Website: [{{< var course.website >}}]({{< var course.website >}})
+
+PrairieLearn:  [{{< var course.prairielearn >}}]({{< var course.prairielearn >}})
+
+## About This Course
+
+## Term Schedule
+
+## Evaluation
+
+## Communications
+
+## Course overview
+
+# Section
+
+## Learning outcomes
+
+<!-- Because the learning outcomes are often repeated across multiple documents, they are included as a separated document -->
+
+{{< include /_includes/learning-outcomes/_lecture-template_learning-outcomes.qmd >}}
+
+## {{< iconify fa6-solid laptop-code >}} Example activity  {.activity}
+
+Activity instructions
+
+1. First step.
+
+2. Second step.
+
+{{< countdown minutes=10 >}}
+
+::: notes
+Presentation notes
+:::
