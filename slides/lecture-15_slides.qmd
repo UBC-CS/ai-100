@@ -11,3 +11,5 @@ Presentation notes
 :::
 
 ## Learning outcomes
+
+{{< include /_includes/learning-outcomes/_lecture-15_learning-outcomes.qmd >}}
