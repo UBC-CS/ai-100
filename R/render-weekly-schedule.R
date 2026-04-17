@@ -74,10 +74,7 @@ render_weekly_schedule <- function() {
       relationship = "one-to-one"
     ) |>
     dplyr::mutate(
-      dplyr::across(
-        tidyselect::where(is.character),
-        ~ highlight_current_week(current_week, .x)
-      )
+      week = highlight_current_week(current_week, week)
     ) |>
     dplyr::select(!c(week_number, current_week, show_week, show_exam)) |>
     dplyr::relocate(week)

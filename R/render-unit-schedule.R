@@ -117,12 +117,7 @@ render_unit_schedule <- function() {
         format_day_and_date_due(day, date),
         format_day_and_date(day, date)
       ),
-      dplyr::mutate(
-        dplyr::across(
-          tidyselect::where(is.character),
-          ~ highlight_current_week(current_week, .x)
-        )
-      )
+      date = highlight_current_week(current_week, date)
     ) |>
     dplyr::filter(show_week) |>
     dplyr::select(
