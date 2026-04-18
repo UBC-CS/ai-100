@@ -19,7 +19,7 @@ render_weekly_schedule <- function() {
         label,
         unit == "week" ~ format_week_with_start_day(date, id, resource),
         unit == "exam" ~ format_exam_with_due_date(
-          day,
+          slot,
           date,
           show_week,
           show_exam,
@@ -35,23 +35,23 @@ render_weekly_schedule <- function() {
   lectures_and_discussions <- schedule |>
     dplyr::filter(unit %in% c("lecture", "discussion")) |>
     # Ensure the column order after pivoting follows day order
-    dplyr::arrange(day) |>
+    dplyr::arrange(slot) |>
     dplyr::select(
       week_number = week,
       current_week,
       show_week,
       show_exam,
-      day,
+      slot,
       unit,
       type,
       label
     ) |>
     dplyr::mutate(
-      day = fct_to_lower(day),
+      slot = fct_to_lower(slot),
       type = fct_to_snake(type)
     ) |>
     tidyr::pivot_wider(
-      names_from = c(day, unit, type),
+      names_from = c(slot, unit, type),
       names_sep = "_",
       values_from = label
     ) |>
@@ -102,7 +102,7 @@ render_weekly_schedule <- function() {
     ) |>
     gt::cols_add(
       discussion_half_spacer = half_spacer,
-      .after = "thu_discussion_activity"
+      .after = "first_discussion_activity"
     ) |>
     gt::cols_add(
       before_potw_spacer = half_spacer,
@@ -130,22 +130,18 @@ render_weekly_schedule <- function() {
     ) |>
     gt::tab_spanner(
       label = gt::md("1^st^"),
-      columns = tidyselect::starts_with("thu_discussion"),
+      columns = tidyselect::starts_with("first_discussion"),
       id = "first_discussion"
     ) |>
     gt::tab_spanner(
       label = gt::md("2^nd^"),
-      columns = tidyselect::starts_with("fri_discussion"),
+      columns = tidyselect::starts_with("second_discussion"),
       id = "second_discussion"
     ) |>
     gt::tab_spanner(
       label = "Discussions",
       columns = tidyselect::contains("discussion"),
       spanners = c("first_discussion", "second_discussion")
-    ) |>
-    gt::tab_spanner(
-      label = "Project",
-      columns = starts_with("project")
     ) |>
     gt::tab_style(
       style = gt::cell_text(size = "small"),

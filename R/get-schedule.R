@@ -11,7 +11,19 @@ get_schedule <- function() {
   # when using `pivot_wider()`
   sorted_types <- lookup$type
 
-  days <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+  slots <- c(
+    "Week",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+    "Sun",
+    "First",
+    "Second",
+    "Third"
+  )
 
   monday_of_first_term_week <- yaml::read_yaml(
     "_variables.yml"
@@ -25,7 +37,7 @@ get_schedule <- function() {
     col_types = "icc"
   ) |>
     dplyr::mutate(
-      day = forcats::fct(day, levels = days),
+      slot = forcats::fct(slot, levels = slots),
       # Sequence of `id`s in `schedule.csv` determines column sequence
       # when using `pivot_wider()`
       unit = id |> stringr::str_extract("^[^-]+") |> forcats::fct(),
@@ -63,7 +75,7 @@ get_schedule <- function() {
       date = convert_to_date(
         monday_of_first_term_week,
         week,
-        as.character(day)
+        as.character(slot)
       ),
       monday = lubridate::floor_date(date, unit = "week", week_start = "Mon"),
       current_week = is_current_week(date, current_date),
@@ -79,10 +91,10 @@ get_schedule <- function() {
         current_date,
         current_date + lubridate::days(13)
       ),
-      .after = day
+      .after = slot
     ) |>
     # `arrange()` ensures that fill()` propagates `next_exam` to prior dates
-    dplyr::arrange(date, unit) |>
+    dplyr::arrange(week, unit, slot, type) |>
     tidyr::fill(next_exam, show_exam, .direction = "up") |>
     dplyr::filter_out(
       rendering_student_profile & type == "lesson-plan"
