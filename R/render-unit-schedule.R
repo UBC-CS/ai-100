@@ -62,7 +62,7 @@ render_unit_schedule <- function() {
     dplyr::select(
       week,
       date,
-      day,
+      slot,
       show_week,
       current_week,
       id,
@@ -101,11 +101,11 @@ render_unit_schedule <- function() {
       relationship = "many-to-one"
     ) |>
     dplyr::mutate(
-      day = day |>
+      slot = slot |>
         as.character() |>
         dplyr::replace_when(
-          unit == "discussion" & day == "Thu" ~ "1^st^ slot",
-          unit == "discussion" & day == "Fri" ~ "2^nd^ slot"
+          unit == "discussion" & slot == "First" ~ "1^st^ slot",
+          unit == "discussion" & slot == "Second" ~ "2^nd^ slot"
         ),
       date = dplyr::if_else(
         unit == "discussion",
@@ -114,8 +114,8 @@ render_unit_schedule <- function() {
       ),
       date = dplyr::if_else(
         unit %in% c("potw", "exam"),
-        format_day_and_date_due(day, date),
-        format_day_and_date(day, date)
+        format_day_and_date_due(slot, date),
+        format_day_and_date(slot, date)
       ),
       date = highlight_current_week(current_week, date)
     ) |>
