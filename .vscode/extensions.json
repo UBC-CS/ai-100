@@ -1,5 +1,6 @@
 {
     "recommendations": [
+        "mkhl.direnv",
         "Posit.air-vscode",
         "ritwickdey.liveserver"
     ]

@@ -31,10 +31,9 @@ Having documents organized this way allows them to be formatted with `_metadata.
 
 ## Setup
 
-We recommend developing content locally on your computer in a container accessed by [Positron](https://positron.posit.co/).
-Follow the setup instructions outlined in [Developing inside a Container using Visual Studio Code Remote Development](https://code.visualstudio.com/docs/devcontainers/containers) including the installation of Docker and the Open VSX extension [Container tools](https://open-vsx.org/vscode/item?itemName=ms-azuretools.vscode-containers).
-As of Positron version 2026.01.0-147, you need to enable the experimental [Dev Containers](https://containers.dev/) support with the [`dev.containers.enable`](positron://settings/dev.containers.enable) setting.
-After cloning this repo locally to your computer, open the directory using the command **Dev Containers: Open Folder in Container...** from the Command Palette in Positron.
+We recommend developing content locally on your computer using [Positron](https://positron.posit.co/). Project dependencies are managed with the [Nix package manager](https://nixos.org/) and defined in `flake.nix` and `flake.lock`.
+You will have to install Nix (we recommend the [Determinate Nix Installer](https://zero-to-nix.com/start/install/)), and [direnv](https://direnv.net/docs/installation.html) on your system including the Open VSX [direnv extension](https://p3m.dev/client/#/repos/openvsx/packages/mkhl.direnv/overview).
+When opening the project repository, select **direnv: Open .envrc file** and while open **direnv: Allow this .envrc file** from the Command Palette.
 
 When working on Quarto reveal.js slides, precise layout can be very challenging.
 Use the installed Quarto extension [Editable](https://emilhvitfeldt.github.io/quarto-revealjs-editable/) to help. [Slidecrafting](https://slidecrafting-book.com/) is an excellent resource for general tips on how to get the most out of your slides.
