@@ -31,7 +31,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5ae3d5caae53fa4640155f23cbb41086.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -171,6 +191,26 @@
 <li>Learning outcome 1</li>
 <li>Learning outcome 2</li>
 </ul>
+</section>
+<section id="machine-learning" class="slide level2">
+<h2>Machine learning</h2>
+<ul>
+<li>Give a computer <strong>examples of a pattern</strong> and ask it to find a <strong>rule</strong>
+<ul>
+<li>Make predicting the pattern into a mathematical puzzle where proposed rules can be scored numerically</li>
+<li>Use an optimization algorithm to find the rule that best solves the puzzle</li>
+</ul></li>
+<li><span class="math inline">\(x\)</span>: <strong>features</strong>; <span class="math inline">\(y\)</span>: <strong>labels</strong></li>
+<li>Example:
+<ul>
+<li><span class="math inline">\(x\)</span> = blood pressure, diet, exercise, age, gender</li>
+<li><span class="math inline">\(y\)</span> = risk of heart disease</li>
+</ul></li>
+</ul>
+<p><span class="citation" data-cites="ferrucci2010">(<a href="#/references" role="doc-biblioref" onclick="">Ferrucci et al. 2010</a>)</span></p>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 
 
 <script type="ojs-module-contents">
@@ -187,6 +227,11 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ferrucci2010" class="csl-entry" role="listitem">
+Ferrucci, David, Eric Brown, Jennifer Chu-Carroll, James Fan, David Gondek, Aditya A. Kalyanpur, Adam Lally, et al. 2010. <span>“Building Watson: An Overview of the DeepQA Project.”</span> <em>AI Magazine</em> 31 (3): 59–79. <a href="https://doi.org/10.1609/aimag.v31i3.2303">https://doi.org/10.1609/aimag.v31i3.2303</a>.
+</div>
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

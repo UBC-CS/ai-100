@@ -31,7 +31,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5ae3d5caae53fa4640155f23cbb41086.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -171,6 +191,27 @@
 <li>Learning outcome 1</li>
 <li>Learning outcome 2</li>
 </ul>
+</section>
+<section id="good-old-fashioned-ai" class="slide level2 smaller scrollable">
+<h2>“Good old-fashioned AI”</h2>
+<ul>
+<li>Early AI systems were <strong>explicitly programmed</strong>
+<ul>
+<li>Reasoning systems were based on logic</li>
+<li>Rule-based “expert systems”</li>
+<li>Language systems explicitly modeled grammar</li>
+<li>Vision systems reasoned about optics, geometry</li>
+</ul></li>
+<li>Many important <strong>conceptual foundations</strong></li>
+<li>Few <strong>practical successes</strong>
+<ul>
+<li>Systems were brittle in practice</li>
+<li>Dealt poorly with noise, imperfect world models</li>
+</ul></li>
+</ul>
+<p><span class="citation" data-cites="mccarthy2006">(<a href="#/good-old-fashioned-ai" role="doc-biblioref" onclick="">McCarthy et al. 2006</a>)</span></p>
+<!-- TODO: Maybe add image from the research project but is there maybe something we can showing the diversity of people working in the field? -->
+<!-- TODO: Identify the CSS selector classes for (nested) bullet lists and modify in slide theme -->
 
 
 <script type="ojs-module-contents">
@@ -187,6 +228,11 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-mccarthy2006" class="csl-entry" role="listitem">
+McCarthy, John, Marvin L. Minsky, Nathaniel Rochester, and Claude E. Shannon. 2006. <span>“A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence, August 31, 1955.”</span> <em>AI Magazine</em> 27 (4): 12–12. <a href="https://doi.org/10.1609/aimag.v27i4.1904">https://doi.org/10.1609/aimag.v27i4.1904</a>.
+</div>
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
