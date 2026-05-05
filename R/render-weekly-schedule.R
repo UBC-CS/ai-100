@@ -61,6 +61,10 @@ render_weekly_schedule <- function() {
   other_units <- schedule |>
     dplyr::filter(unit %in% c("part", "week", "potw", "exam")) |>
     dplyr::select(week_number = week, unit, label) |>
+    dplyr::summarize(
+      label = stringr::str_flatten(label, "<div>&nbsp;</div>"),
+      .by = c(week_number, unit)
+    ) |>
     tidyr::pivot_wider(
       names_from = unit,
       values_from = label
@@ -94,11 +98,11 @@ render_weekly_schedule <- function() {
     ) |>
     gt::cols_add(
       lecture_half_spacer = half_spacer,
-      .after = "tue_lecture_recording"
+      .after = "wed_lecture_recording"
     ) |>
     gt::cols_add(
       between_spanners_spacer = half_spacer,
-      .after = "thu_lecture_recording"
+      .after = "fri_lecture_recording"
     ) |>
     gt::cols_add(
       discussion_half_spacer = half_spacer,
@@ -114,19 +118,19 @@ render_weekly_schedule <- function() {
     ) |>
     gt::cols_label(tidyselect::everything() ~ "") |>
     gt::tab_spanner(
-      label = "Tue",
-      columns = tidyselect::starts_with("tue_lecture"),
-      id = "tue_lecture"
+      label = "Wed",
+      columns = tidyselect::starts_with("wed_lecture"),
+      id = "wed_lecture"
     ) |>
     gt::tab_spanner(
-      label = "Thu",
-      columns = tidyselect::starts_with("thu_lecture"),
-      id = "thu_lecture"
+      label = "Fri",
+      columns = tidyselect::starts_with("fri_lecture"),
+      id = "fri_lecture"
     ) |>
     gt::tab_spanner(
       label = "Lectures",
       columns = tidyselect::contains("lecture"),
-      spanners = c("tue_lecture", "thu_lecture")
+      spanners = c("wed_lecture", "fri_lecture")
     ) |>
     gt::tab_spanner(
       label = gt::md("1^st^"),

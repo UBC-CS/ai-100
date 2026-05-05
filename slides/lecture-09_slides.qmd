@@ -1,5 +1,5 @@
 ---
-title: "Reasoning models and alignment"
+title: "Chat models and image generation systems"
 subtitle: "Lecture 9, {{< var course.code >}}, {{< var course.term >}}"
 date: 2025-09-09
 ---

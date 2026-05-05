@@ -1,5 +1,5 @@
 ---
-title: "Flaws in reasoning and alignment tax"
+title: "Reliability and autonomy risks"
 subtitle: "Lecture 11, {{< var course.code >}}, {{< var course.term >}}"
 date: 2025-09-09
 ---

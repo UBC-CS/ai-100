@@ -1,5 +1,5 @@
 ---
-title: "Content creators and education"
+title: "Potential for malicious use by individuals"
 subtitle: "Lecture 13, {{< var course.code >}}, {{< var course.term >}}"
 date: 2025-09-09
 ---

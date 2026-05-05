@@ -6,3 +6,9 @@
 6.  Evaluate the effectiveness and limitations of alignment strategies for AI systems.
 
 **Theme**: Learn how state-of-the-art AI models work, including language, vision, and robotics systems, and how they are aligned to human needs.
+
+1.  Identify and explain common sources of hallucinations and reasoning flaws.
+2.  Define the “alignment tax” and illustrate examples of safety-performance trade-offs.
+3.  Assess the reliability of AI outputs in specific application scenarios.
+
+**Theme**: Identify and analyze the technical and practical limitations that challenge the reliability and safety of modern AI.
