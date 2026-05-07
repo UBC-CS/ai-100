@@ -149,12 +149,22 @@ render_unit_schedule <- function() {
       tidyselect::ends_with("recording") ~ "Video"
     ) |>
     gt::cols_align(
-      align = "left",
-      columns = c(title)
+      align = "right",
+      columns = date
     ) |>
     gt::cols_align(
-      align = "right",
-      columns = c(date)
+      align = "left",
+      columns = title
+    ) |>
+    gt::cols_align(
+      align = "center",
+      columns = tidyselect::starts_with(c(
+        "lesson_plan",
+        "activity",
+        "pre_activity",
+        "slides",
+        "recording"
+      ))
     ) |>
     gt::tab_style(
       style = list(
