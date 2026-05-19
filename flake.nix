@@ -66,10 +66,7 @@
         in
         {
           devShells.default = pkgs.mkShell {
-            nativeBuildInputs = [
-              systemPackages
-              rLibrary
-            ];
+            nativeBuildInputs = systemPackages ++ rLibrary;
           };
         };
     };
