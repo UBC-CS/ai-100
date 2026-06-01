@@ -9,3 +9,52 @@ subtitle: "Discussion 1, {{< var course.code >}}, {{< var course.term >}}"
 -   [ ] Second step.
 
 ## {{< var icon.resource >}} Resources
+
+
+## Learning Goal
+
+Students will practice applying the AI 100 Code of Conduct to realistic AI activities and project ideas.
+
+By the end of the activity, students should be able to classify AI project ideas as Green, Yellow, or Red, and explain how a risky idea could be revised into a safer one.
+
+## Time Estimate
+
+30–40 minutes
+
+## Group Size
+
+Small groups of 3–5 students
+
+## Materials Needed
+
+* AI 100 Code of Conduct
+* Scenario cards
+* Shared worksheet, discussion board, or group document
+* Three labels:
+  * Green: likely okay
+  * Yellow: ask first or revise
+  * Red: not allowed
+
+## Step-by-Step Instructions
+
+### 1. Read the Code Individually, 5 minutes
+
+Read the AI 100 Code of Conduct.
+
+As you read, underline or note:
+
+* One rule that seems clear
+* One rule that seems important
+* One rule or situation you have questions about
+
+### 2. Discuss the Main Idea as a Group, 5 minutes
+
+In your group, summarize the code in one sentence.
+
+Use this sentence starter:
+
+> In AI 100, responsible AI use means...
+
+### 3. Classify Scenario Cards, 10 minutes
+
+...
