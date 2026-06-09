@@ -1,16 +1,129 @@
 ---
-title: "Machine learning"
+title: "Lecture 4: Machine Learning"
 subtitle: >
-  Lecture 4 lesson plan, {{< var course.code >}}, {{< var course.term >}}
+  {{< var course.code >}}, {{< var course.term >}}
+number-sections: false
 ---
 
-1. How different from previous topic
-2. Algorithmic idea
-    - Foundations
-    - Representation
-    - Algorithm
-3. Historical impact and applications
-4. Worked example
-    - NLP
-    - Graphs
-5. Breakout
+## Lecture overview
+### Learning outcomes
+- TODO
+
+### Pre-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+### Lecture timeline
+::: {.list-table}
+- - Topic
+  - Time
+  - Materials
+
+- - [Differences from previous lectures](#sec-topic-1)
+  - 10 min
+
+- - [Credit card fraud detection](#sec-topic-2)
+    - Features and labels
+    - Parameters
+  - 20 min
+
+- - [Activity: Optimization](#sec-topic-3)
+  - 20 min
+  - Tool TODO
+
+- - [Google Teachable Machine](#sec-topic-4)
+  - 10 min
+  - [Google Teachable Machine](https://teachablemachine.withgoogle.com/train/image)
+:::
+
+### Post-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+## Differences from previous lectures{#sec-topic-1}
+- We do not want to use pre-defined, set rules like we did in explicit rule-based programming.
+- In machine learning, we build a model that will learn the rules from the data.
+
+### Activity: Discussion
+- What real-life applications of machine learning do you know?
+
+## Credit card fraud detection{#sec-topic-2}
+- Have you ever had your credit card declined on vacation? You were probably interacting with a credit card fraud detection model!
+- Being able to identify fraudulent transactions is useful: it protects businesses and credit card holders from financial loss after fraud attempts happen.
+- Billions of transactions are processed every day, so being able to identify these transactions programmatically is even better.
+
+### Activity: Discussion
+- What information could be used to identify whether a transaction is fraudulent or not?
+
+### Features and Labels
+- Data used to train a credit card fraud detection model could include:
+
+| User ID | Amount | Location | Time | Fraud? |
+| ---- | ---- | ---- | ---- | ---- |
+| 1 | $100 | Vancouver | 10:00 AM | No |
+| 2 | $20 | Burnaby | 2:00 PM | No |
+| 3 | $1500 | New York | 11:00 PM | Yes |
+
+- Each row in the table above is an **example**. Each example has **features** and **labels**. 
+  - Features are things we already know about an example, like User ID, Amount, Location, and Time.
+  - Labels are things we would like to predict, like Fraud.
+  - We represent the features with X and represent the labels with Y. [TODO: is it important that they know this?]
+- We **train** the model on lots of examples with labels we already know so that it can learn to **predict** labels for new examples.
+- If you have lots of features, manually coming up with a rule for every possible example the model might see is not reasonable! With machine learning, the model learns the rules for you.
+  - What kind of rules does the model learn? How do the rules relate to the examples?
+
+### Activity: Discussion
+- How would you use each feature in the table above to predict fraud?
+
+### Parameters
+- The model needs to decide **how important each feature is** to the prediction.
+  - The location of a transaction will probably be more useful for predicting fraud than the user's credit card number.
+- The model also needs to decide **how far each feature "pushes" the prediction towards each label**. 
+  - A large transaction will probably push the prediction towards fraud, while a small transaction will probably push the prediction towards not fraud. [TODO: might be easier to think about with binary features?]
+- No single feature decides whether a transaction is fraudulent or not: each feature contributes to the overall prediction.
+- [TODO: discuss feature interactions being more informative than individual features?]
+- This relationship between features and labels is stored in the model as **parameters**.
+
+## Activity: Optimization{#sec-topic-3}
+- How do we find these parameters? What do we mean by **optimization**?
+- TODO activity - needs a tool
+
+## Google Teachable Machine{#sec-topic-4}
+- TODO formalize instructions
+- [TODO: any issues with using the webcam/images of prof or students? alternatively have a set of images ready to upload]
+- have prof or volunteer student come up to front and use webcam to record images of them doing 2 distinct things (smiling/frowning, left/right of screen, wearing hat/not wearing hat, etc). train model, then test whether it can differentiate the 2 distinct things
+- with ~100 images per class and 2 classes, takes ~2 min to train. do not switch tabs during training as it will stop
+- after demonstration at front, could let students try on their own:
+  - add more classes
+  - train with object added to/removed from background between two different unrelated classes (e.g. smiling with water bottle, frowning without) and see how adding/removing the object during testing changes the accuracy
+  - train with one person smiling/frowning and use another person smiling/frowning to test
+    - see if model improves if both people are used to train
+  - do something that wasn't in either class and see which class it is more like (e.g. shocked face). why do you think that is/what features probably make that the case? (e.g. if shocked is most like smiling, eyebrow movements might be similar, etc...)
+
+[TODO: check length of this lecture]
