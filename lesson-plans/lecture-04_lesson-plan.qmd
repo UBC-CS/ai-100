@@ -32,21 +32,30 @@ number-sections: false
   - Time
   - Materials
 
-- - [Differences from previous lectures](#sec-topic-1)
-  - 10 min
+- - Admin
+  - 5 min
 
-- - [Credit card fraud detection](#sec-topic-2)
+- - [Differences from previous lectures](#sec-prev-lectures)
+  - 5 min
+
+- - [Credit card fraud detection](#sec-fraud-detection)
     - Features and labels
-    - Parameters
+    - Linear models
   - 20 min
 
-- - [Activity: Optimization](#sec-topic-3)
+- - [Music classification](#sec-music)
+    - Decision trees
+  - 10 min
+
+- - [Activity: Optimization](#sec-optimization)
   - 20 min
   - Tool TODO
 
-- - [Google Teachable Machine](#sec-topic-4)
+- - [Wrap-up](#sec-wrap-up)
   - 10 min
-  - [Google Teachable Machine](https://teachablemachine.withgoogle.com/train/image)
+
+- - Admin
+  - 5 min
 :::
 
 ### Post-class work
@@ -66,64 +75,170 @@ number-sections: false
 #### Learners
 1. TODO
 
-## Differences from previous lectures{#sec-topic-1}
-- We do not want to use pre-defined, set rules like we did in explicit rule-based programming.
+## Differences from previous lectures{#sec-prev-lectures}
+:::{.callout-tip}
+### Activity: Discussion
+- What kinds of problems would be hard to solve with explicit programming or search?
+:::
+- We do not always want to use pre-defined, set rules like we did in explicit rule-based programming.
 - In machine learning, we build a model that will learn the rules from the data.
 
-### Activity: Discussion
-- What real-life applications of machine learning do you know?
-
-## Credit card fraud detection{#sec-topic-2}
+## Credit card fraud detection{#sec-fraud-detection}
 - Have you ever had your credit card declined on vacation? You were probably interacting with a credit card fraud detection model!
 - Being able to identify fraudulent transactions is useful: it protects businesses and credit card holders from financial loss after fraud attempts happen.
 - Billions of transactions are processed every day, so being able to identify these transactions programmatically is even better.
 
+:::{.callout-tip}
 ### Activity: Discussion
-- What information could be used to identify whether a transaction is fraudulent or not?
+What information could be used to identify whether a single transaction is fraudulent or not? [TODO: any way to make it clearer that they need to think IID?]
+:::
 
-### Features and Labels
-- Data used to train a credit card fraud detection model could include:
+### Features and labels
+- Data used to identify whether a transaction is fraudulent could include:
 
-| User ID | Amount | Location | Time | Fraud? |
-| ---- | ---- | ---- | ---- | ---- |
-| 1 | $100 | Vancouver | 10:00 AM | No |
-| 2 | $20 | Burnaby | 2:00 PM | No |
-| 3 | $1500 | New York | 11:00 PM | Yes |
+::: {.list-table}
+- - User ID
+  - Amount ($)
+  - Distance from Home (km)
+  - Account Age (days)
+  - Fraud?
+
+- - 1
+  - 120
+  - 25
+  - 1190
+  - Legit
+- - 2
+  - 100
+  - 90
+  - 606
+  - Fraud
+- - 3
+  - 105
+  - 55
+  - 582
+  - Fraud
+- - 4
+  - 145
+  - 0
+  - 524
+  - Legit
+:::
 
 - Each row in the table above is an **example**. Each example has **features** and **labels**. 
-  - Features are things we already know about an example, like User ID, Amount, Location, and Time.
+  - Features are things we already know about an example, like User ID, Amount, Distance from Home, and Account Age.
   - Labels are things we would like to predict, like Fraud.
-  - We represent the features with X and represent the labels with Y. [TODO: is it important that they know this?]
-- We **train** the model on lots of examples with labels we already know so that it can learn to **predict** labels for new examples.
-- If you have lots of features, manually coming up with a rule for every possible example the model might see is not reasonable! With machine learning, the model learns the rules for you.
-  - What kind of rules does the model learn? How do the rules relate to the examples?
+  - We represent the features with X and represent the labels with Y.
+- We **train** a **model** on lots of examples with labels we already know so that the model can learn to **predict** labels for new examples.
 
+:::{.callout-tip}
 ### Activity: Discussion
-- How would you use each feature in the table above to predict fraud?
+How could you use each feature in the table to predict fraud? Are all of the features useful?
+:::
+- If you have lots of features, manually coming up with a rule for every possible example the model might see is not reasonable! With machine learning, the model learns the rules for you.
+- Open questions: What kind of rules does the model learn? How do the rules relate to the features and labels?
 
-### Parameters
-- The model needs to decide **how important each feature is** to the prediction.
-  - The location of a transaction will probably be more useful for predicting fraud than the user's credit card number.
-- The model also needs to decide **how far each feature "pushes" the prediction towards each label**. 
-  - A large transaction will probably push the prediction towards fraud, while a small transaction will probably push the prediction towards not fraud. [TODO: might be easier to think about with binary features?]
-- No single feature decides whether a transaction is fraudulent or not: each feature contributes to the overall prediction.
-- [TODO: discuss feature interactions being more informative than individual features?]
-- This relationship between features and labels is stored in the model as **parameters**.
+### Linear models
+- We want to know whether a transaction is fraudulent or not based only on features. 
+- An easy way to do this is to use a **linear model**: we draw a 2D line (or 3D plane) between the two types of transactions, say that everything on one side is fraudulent, and say that everything on the other side is legitimate. [TODO: phrase this better, they might be intimidated by 2D vs 3D/planes]
 
-## Activity: Optimization{#sec-topic-3}
-- How do we find these parameters? What do we mean by **optimization**?
+:::{.callout-tip}
+### Activity: Discussion
+Let's consider two different options: a line that only uses Amount and Distance from Home, and a plane that also uses Account Age. Which option do you prefer? Why?
+:::
+
+```{python}
+#| echo: false
+%run lesson-plan-code/lecture-04_boundaries.py
+import pandas as pd
+
+# colours chosen from https://davidmathlogic.com/colorblind/
+# datasets fabricated using Claude Fable 5
+card_data = pd.read_csv('lesson-plan-data/card_transactions.csv')
+color_map_card = {'Legit': '#5D3A9B', 'Fraud': '#E66100'}
+boundary_plot_2d_to_3d(card_data, 'amount', 'distance_from_home', 'account_age', 'label', title='Fraud or Legit?', color_map=color_map_card, 
+                        line=((0, 100), (300, 0)), plane=(1/60, 1/25, -1/350, -1.8))
+```
+
+- The more information we have about the transactions, the easier it is to draw a line that separates them. 
+
+:::{.callout-tip}
+### Activity: Discussion
+Let's consider two more planes. Which one do you prefer? Why?
+:::
+
+```{python}
+#| echo: false
+
+boundary_plot_compare(card_data, 'amount', 'distance_from_home', 'account_age', 'label', title='Fraud or Legit?', color_map=color_map_card, 
+                        separator_a=(1/60, 1/25, -1/1050, -3.8), separator_b=(1/60, 1/25, -1/350, -1.8))
+```
+
+- Some planes represent the relationship between features and labels better than others. We want to find the best one possible so that we can make good predictions.
+- Lines and planes are represented by **parameters**. During the training process, the linear model tries to learn the parameters that give us the best one.
+
+## Music classification{#sec-music}
+- Let's consider another scenario: we have a list of songs, and we want know whether each song is more appropriate for studying or working out at the gym.
+
+:::{.callout-tip}
+### Activity: Discussion
+What might be some features we could use to make this prediction? What would the label be?
+:::
+
+- The features we'll use are bpm (beats per minute), loudness, and duration.
+- The label will be the playlist the song should belong to: Study or Gym.
+- Let's try to draw a line or plane to separate the two playlists based on these features.
+
+```{python}
+#| echo: false
+%run lesson-plan-code/lecture-04_boundaries.py
+import pandas as pd
+
+playlist_data = pd.read_csv('lesson-plan-data/playlist_tracks.csv')
+color_map_playlist = {'Study': '#0C7BDC', 'Gym': '#FFC20A'}
+boundary_plot_2d_to_3d(playlist_data, 'bpm', 'loudness', 'duration', 'playlist', title='Study or Gym?', color_map=color_map_playlist, 
+                        line=((120, 0), (120, -16)), plane=(1, 0, 0, -120))
+```
+
+:::{.callout-tip}
+### Activity: Discussion
+Neither the line nor the plane we drew does a great job of separating the two playlists. What kind of shape might do a better job?
+:::
+
+### Decision trees
+- Instead of using a linear model, we could use a **decision tree** to separate the two playlists.
+- A decision tree is like a 20 questions game: we ask a series of yes/no questions about the features to determine which playlist a song belongs to.
+- [TODO: image of decision tree/20 questions game? Instructor plays 20 questions with students?]
+
+:::{.callout-tip}
+### Activity: Discussion
+What kinds of questions are more useful to ask at the start of a 20 questions game? What about later in the game?
+:::
+
+- Different questions will give us different decision trees, and some will do a better job of separating labels than others. 
+- Instead of finding the line or plane that best separates the labels, a decision tree finds the questions that best separate the labels at each step of the game. These questions are the parameters of the decision tree.
+
+```{python}
+#| echo: false
+from sklearn.tree import DecisionTreeClassifier
+model = DecisionTreeClassifier(max_depth=3).fit(playlist_data[['bpm', 'loudness', 'duration']], playlist_data['playlist'])
+boundary_plot_compare(playlist_data, 'bpm', 'loudness', 'duration', 'playlist', title='Study or Gym?', color_map=color_map_playlist, 
+                        separator_a=(1, 0, 0, -120), separator_b=model)
+```
+
+## Activity: Optimization{#sec-optimization}
 - TODO activity - needs a tool
+  - They pick a line, then new data is added and they see that another line might be better 
+  - Should show them that they can't necessarily rely on the training data/limits of training data - generalizability
+  - [TODO: any slides needed about train/test data?]
 
-## Google Teachable Machine{#sec-topic-4}
-- TODO formalize instructions
-- [TODO: any issues with using the webcam/images of prof or students? alternatively have a set of images ready to upload]
-- have prof or volunteer student come up to front and use webcam to record images of them doing 2 distinct things (smiling/frowning, left/right of screen, wearing hat/not wearing hat, etc). train model, then test whether it can differentiate the 2 distinct things
-- with ~100 images per class and 2 classes, takes ~2 min to train. do not switch tabs during training as it will stop
-- after demonstration at front, could let students try on their own:
-  - add more classes
-  - train with object added to/removed from background between two different unrelated classes (e.g. smiling with water bottle, frowning without) and see how adding/removing the object during testing changes the accuracy
-  - train with one person smiling/frowning and use another person smiling/frowning to test
-    - see if model improves if both people are used to train
-  - do something that wasn't in either class and see which class it is more like (e.g. shocked face). why do you think that is/what features probably make that the case? (e.g. if shocked is most like smiling, eyebrow movements might be similar, etc...)
+## Wrap-up{#sec-wrap-up}
 
-[TODO: check length of this lecture]
+:::{.callout-tip}
+### Activity: Discussion
+- What real-life applications of machine learning do you know? What features and labels might those models use?
+- Beyond lines/planes and decision trees, what other boundary shapes might be useful to have?
+- What makes one model better than another model?
+- [TODO: another question about generalizability?]
+:::
+
