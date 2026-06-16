@@ -80,8 +80,8 @@ number-sections: false
 ### Activity: Discussion
 - What kinds of problems would be hard to solve with explicit programming or search?
 :::
-- We do not always want to use pre-defined, set rules like we did in explicit rule-based programming.
-- In machine learning, we build a model that will learn the rules from the data.
+- We do not always want to use pre-defined, set rules or states and actions like we did in explicit rule-based programming and search.
+- In **machine learning**, we build a model that will learn the rules from the data.
 
 ## Credit card fraud detection{#sec-fraud-detection}
 - Have you ever had your credit card declined on vacation? You were probably interacting with a credit card fraud detection model!
@@ -130,6 +130,7 @@ What information could be used to identify whether a single transaction is fraud
   - Labels are things we would like to predict, like Fraud.
   - We represent the features with X and represent the labels with Y.
 - We **train** a **model** on lots of examples with labels we already know so that the model can learn to **predict** labels for new examples.
+- Thus, our **inputs** to a machine learning problem are features and our **outputs** are labels.
 
 :::{.callout-tip}
 ### Activity: Discussion
