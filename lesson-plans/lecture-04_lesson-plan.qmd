@@ -150,12 +150,12 @@ Let's consider two different options: a line that only uses Amount and Distance 
 
 ```{python}
 #| echo: false
-%run lesson-plan-code/lecture-04_boundaries.py
+%run ../python/lecture-04_boundaries.py
 import pandas as pd
 
 # colours chosen from https://davidmathlogic.com/colorblind/
 # datasets fabricated using Claude Fable 5
-card_data = pd.read_csv('lesson-plan-data/card_transactions.csv')
+card_data = pd.read_csv('../data/lecture-04_card-transactions.csv')
 color_map_card = {'Legit': '#5D3A9B', 'Fraud': '#E66100'}
 boundary_plot_2d_to_3d(card_data, 'amount', 'distance_from_home', 'account_age', 'label', title='Fraud or Legit?', color_map=color_map_card, 
                         line=((0, 100), (300, 0)), plane=(1/60, 1/25, -1/350, -1.8))
@@ -192,7 +192,7 @@ What might be some features we could use to make this prediction? What would the
 
 ```{python}
 #| echo: false
-balance_data = pd.read_csv('lesson-plan-data/balance_data.csv')
+balance_data = pd.read_csv('../data/lecture-04_balance-data.csv')
 color_map_balance = {'balanced': '#0C7BDC', 'imbalanced': '#FFC20A'}
 boundary_plot_compare_2d(balance_data, 'coursework_hours', 'social_hours', 'group', separator_a={"coef": (1, 0), "intercept": -15, "name": "line 1"},
     separator_b={"coef": (0, 1), "intercept": -15, "name": "line 2"}, title='Student Work-Life Balance', color_map=color_map_balance)
