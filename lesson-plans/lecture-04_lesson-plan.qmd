@@ -43,7 +43,7 @@ number-sections: false
     - Linear models
   - 20 min
 
-- - [Music classification](#sec-music)
+- - [Student work-life balance](#sec-work-life)
     - Decision trees
   - 10 min
 
@@ -170,44 +170,41 @@ Let's consider two more planes. Which one do you prefer? Why?
 ```{python}
 #| echo: false
 
-boundary_plot_compare(card_data, 'amount', 'distance_from_home', 'account_age', 'label', title='Fraud or Legit?', color_map=color_map_card, 
+boundary_plot_compare_3d(card_data, 'amount', 'distance_from_home', 'account_age', 'label', title='Fraud or Legit?', color_map=color_map_card, 
                         separator_a=(1/60, 1/25, -1/1050, -3.8), separator_b=(1/60, 1/25, -1/350, -1.8))
 ```
 
 - Some planes represent the relationship between features and labels better than others. We want to find the best one possible so that we can make good predictions.
 - Lines and planes are represented by **parameters**. During the training process, the linear model tries to learn the parameters that give us the best one.
 
-## Music classification{#sec-music}
-- Let's consider another scenario: we have a list of songs, and we want know whether each song is more appropriate for studying or working out at the gym.
+## Student work-life balance{#sec-work-life}
+- Let's consider another scenario: we have a list of students, and we want know whether they have a good or bad work-life balance.
 
 :::{.callout-tip}
 ### Activity: Discussion
 What might be some features we could use to make this prediction? What would the label be?
 :::
 
-- The features we'll use are bpm (beats per minute), loudness, and duration.
-- The label will be the playlist the song should belong to: Study or Gym.
-- Let's try to draw a line or plane to separate the two playlists based on these features.
+- The features we'll use are hours spent doing coursework and hours spent doing social activities.
+- The label will be the group the student should belong to: balanced or imbalanced.
+- Let's try to draw some lines to separate the two groups based on these features.
 
 ```{python}
 #| echo: false
-%run lesson-plan-code/lecture-04_boundaries.py
-import pandas as pd
-
-playlist_data = pd.read_csv('lesson-plan-data/playlist_tracks.csv')
-color_map_playlist = {'Study': '#0C7BDC', 'Gym': '#FFC20A'}
-boundary_plot_2d_to_3d(playlist_data, 'bpm', 'loudness', 'duration', 'playlist', title='Study or Gym?', color_map=color_map_playlist, 
-                        line=((120, 0), (120, -16)), plane=(1, 0, 0, -120))
+balance_data = pd.read_csv('lesson-plan-data/balance_data.csv')
+color_map_balance = {'balanced': '#0C7BDC', 'imbalanced': '#FFC20A'}
+boundary_plot_compare_2d(balance_data, 'coursework_hours', 'social_hours', 'group', separator_a={"coef": (1, 0), "intercept": -15, "name": "line 1"},
+    separator_b={"coef": (0, 1), "intercept": -15, "name": "line 2"}, title='Student Work-Life Balance', color_map=color_map_balance)
 ```
 
 :::{.callout-tip}
 ### Activity: Discussion
-Neither the line nor the plane we drew does a great job of separating the two playlists. What kind of shape might do a better job?
+Neither line we drew does a great job of separating the two groups. What kind of shape might do a better job?
 :::
 
 ### Decision trees
-- Instead of using a linear model, we could use a **decision tree** to separate the two playlists.
-- A decision tree is like a 20 questions game: we ask a series of yes/no questions about the features to determine which playlist a song belongs to.
+- Instead of using a linear model, we could use a **decision tree** to separate the two groups.
+- A decision tree is like a 20 questions game: we ask a series of yes/no questions about the features to determine which group a student belongs to.
 - [TODO: image of decision tree/20 questions game? Instructor plays 20 questions with students?]
 
 :::{.callout-tip}
@@ -221,9 +218,9 @@ What kinds of questions are more useful to ask at the start of a 20 questions ga
 ```{python}
 #| echo: false
 from sklearn.tree import DecisionTreeClassifier
-model = DecisionTreeClassifier(max_depth=3).fit(playlist_data[['bpm', 'loudness', 'duration']], playlist_data['playlist'])
-boundary_plot_compare(playlist_data, 'bpm', 'loudness', 'duration', 'playlist', title='Study or Gym?', color_map=color_map_playlist, 
-                        separator_a=(1, 0, 0, -120), separator_b=model)
+model = DecisionTreeClassifier(max_depth=4).fit(balance_data[['coursework_hours', 'social_hours']], balance_data['group'])
+boundary_plot_compare_2d(balance_data, 'coursework_hours', 'social_hours', 'group', separator_a={"coef": (1, 0), "intercept": -15, "name": "linear model"},
+    separator_b={"model": model, "name": "decision tree"}, title='Student Work-Life Balance', color_map=color_map_balance)
 ```
 
 ## Activity: Optimization{#sec-optimization}
