@@ -1,16 +1,131 @@
 ---
-title: "Search"
+title: "Lecture 3: Search"
 subtitle: >
-  Lecture 3 lesson plan, {{< var course.code >}}, {{< var course.term >}}
+  {{< var course.code >}}, {{< var course.term >}}
+number-sections: false
 ---
 
-1. How different from previous topic
-2. Algorithmic idea
-    - Foundations
-    - Representation
-    - Algorithm
-3. Historical impact and applications
-4. Worked example
-    - NLP
-    - Graphs
-5. Breakout
+## Lecture overview
+### Learning outcomes
+- TODO
+
+### Pre-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+### Lecture timeline
+::: {.list-table}
+- - Topic
+  - Time
+  - Materials
+
+- - Admin
+  - 5 min
+
+- - [Differences from previous lectures](#sec-prev-lectures)
+  - 5 min
+
+- - [Search inputs and outputs](#sec-inputs-outputs)
+    - Tic-tac-toe
+  - 10 min
+
+- - [Trees](#sec-trees)
+  - 10 min
+
+- - [Search algorithms](#sec-algos)
+    - Breadth- and depth-first search
+    - Minimax 
+  - 30 min
+
+- - [Wrap-up](#sec-wrap-up)
+  - 10 min
+
+- - Admin
+  - 5 min
+:::
+
+### Post-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+## Differences from previous lectures{#sec-prev-lectures}
+- We can explicitly write a set of instructions to perform a task or reach a goal.
+- However, we might not always know what those instructions should be, or what instructions are best. We want to start moving away from the idea of programming everything manually.
+- **Search** gives us a structured way to come up with these instructions.
+
+:::{.callout-tip}
+### Activity: Discussion
+Imagine planning a trip from Vancouver to Antarctica without using a travel guide or map software. What information would you need to plan the route? What might make one route better than another?
+:::
+
+## Search inputs and outputs{#sec-inputs-outputs}
+- We have a few important **inputs**:
+    - Each situation we could be in is called a **state.** We know what situation we are in now: this is the **initial state**. We also know what kind of situation we want to end up in: this is the **goal state**.
+    - In each state, we know what actions we could take to reach other states: these are **state transitions**.
+- We ultimately want to know the series of actions we need to take to reach our goal: this is our **output**.
+- In the trip planning example:
+    - We know we are starting in Vancouver and that we will be happy if we reach Antarctica.
+    - We know that from Vancouver we could fly (to Dublin, Seoul, Denver, Buenos Aires...), drive (to Chilliwack, Calgary, Squamish), take the train (to Seattle, Portland, Toronto), and so on. We also know about the other cities and towns around the world, and the transportation options between them.
+    - We would like to know the list of steps we should take to reach Antarctica.
+
+### Tic-tac-toe
+
+:::{.callout-tip}
+### Activity: Discussion
+What would the inputs be if we wanted to represent tic-tac-toe with search? What would the output be?
+:::
+- States are a particular layout of the board and an indicator of whose turn it is. The initial state is an empty board with X as the current player, and the goal state is any board with three Xs or Os in a row. (TODO: full board/tie??)
+- In any given state, the current player can place one of their symbols in any free space. This action causes the game to transition from the current state to another state on the other player's turn with one more symbol on the board. (TODO: rework this phrasing...)
+
+## Trees{#sec-trees}
+- TODO: what is a tree
+- TODO: visualization of tic-tac-toe as a tree
+- TODO: why is a tree important? -> easier to write code for - how do we make this more relatable to them?
+
+## Search algorithms{#sec-algos}
+- TODO: now we have the structure, we want to look through it in a smart way to find a solution. -> what does smart mean? well, here are some bad options...
+
+### Breadth- and depth-first search
+- TODO: visualization of BFS - pros/cons (optimal, show how long it takes)
+- TODO: visualization of DFS - pros/cons (faster, show it finding something non optimal)
+- TODO: any hands-on activity with this?
+- TODO: don't want it to take too long and want the solution to be good enough (if not perfect)
+
+### Minimax search
+- TODO: visualization of minimax steps
+- TODO: bring it back to tic-tac-toe
+- TODO: any hands-on activity with tic-tac-toe?
+
+## Wrap-up{#sec-wrap-up}
+
+:::{.callout-tip}
+### Activity: Discussion
+- TODO: when is search not ideal? -> large search space, have to figure out all actions and states...
+- TODO: more questions
+:::
