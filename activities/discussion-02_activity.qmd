@@ -1,11 +1,193 @@
 ---
-title: "{{< var icon.computer-activity >}} Activity"
+title: "{{< var icon.computer-activity >}} Vibecoding: Tic-Tac-Toe"
 subtitle: "Discussion 2, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
+Build a small app with a coding agent, then investigate what the agent built.
+
+**Total time:** 20--30 minutes
+
 ## {{< var icon.task >}} Steps
 
--   [ ] First step.
--   [ ] Second step.
+### Task 1: Build Tic-Tac-Toe
+
+**Time:** 3--5 minutes
+
+Use your AI tool to build a two-player tic-tac-toe game.
+Describe what you want and let the tool do the work.
+
+Your game should:
+
+-   [ ] Show a 3-by-3 board.
+-   [ ] Let two players take turns as X and O.
+-   [ ] Detect when someone wins or the game is a draw.
+
+::: {.callout-tip collapse="true"}
+## TA note
+
+Circulate and make sure everyone has their AI tool open and is getting output.
+This task should be very fast.
+If someone has been stuck for more than a minute or two, check their setup first.
+:::
+
+### Task 2: Add a Computer Opponent
+
+**Time:** 3--5 minutes
+
+Add a single-player mode where you play against the computer.
+
+::: {.callout-tip collapse="true"}
+## TA note
+
+Do not steer students toward any particular approach.
+Let the AI decide how to implement the computer player.
+Some students may get minimax, while others may get something simpler.
+That variation is useful for Task 3.
+:::
+
+### Task 3: Investigate the Computer
+
+**Time:** 10 minutes
+
+Now that you have a computer opponent, think about whether it is doing its job correctly.
+
+**Step 1: Test it.**
+A correct agent should never lose — it either wins or draws.
+Play several games and try to beat it.
+
+-   [ ] Can you beat it?
+-   [ ] Does it always block you when you are about to win?
+-   [ ] Does it always take a winning move when it has one?
+-   [ ] Does it play the same move in the same board position every time?
+
+**Step 2: Find out what it's doing.**
+Ask the AI what algorithm the computer player uses and how it works.
+
+-   [ ] What does the AI say it built?
+-   [ ] Does that match what you observed in Step 1?
+
+**Step 3: Verify it.**
+Now that you have a claim about what the agent is doing, how do you check whether it is actually doing that?
+Come up with at least two ways to test the claim, then try them.
+
+Some directions to consider: adding displays or logging to make the computer's process visible, asking the AI questions, constructing specific board positions for testing.
+
+**Key question:** How confident are you that your approaches tell you what the agent is actually doing?
+
+::: {.callout-tip collapse="true"}
+## TA note
+
+The AI usually produces minimax but may produce a rules-based agent.
+Either way, the point of this task is not to identify the algorithm — it is to get students to interrogate whether it is correct and how they could know.
+
+**On behavioral testing:** Outcome alone is a weak signal.
+A buggy agent might still beat most students most of the time.
+Push them toward making the process visible rather than just playing more games.
+
+**On visualizations:** There is uncertainty over whether the visualization accurately reflects the computer's process. A label that says "I chose this move because it leads to a win in 3 moves" could reflect the actual minimax computation — or it could be a post-hoc string generated independently of the code that actually chose the move.
+Seeing scores next to moves is stronger evidence, but even that could be fabricated.
+The only way to be certain is to read the code.
+
+Push back on confident answers:
+
+-   How do you know the visualization is showing you what is really happening?
+-   How do you know the AI's explanation is accurate?
+-   Could the label be generated after the fact, independent of what the code actually does?
+:::
+
+### Optional Task 4: Keep Building
+
+Done early?
+Pick one of two directions.
+
+**Option A: Start fresh.**
+Start a brand new conversation with your AI tool and build tic-tac-toe again from scratch.
+Does the AI make the same design choices?
+Does the computer player use the same algorithm?
+What is different, and what is the same?
+
+**Option B: Keep building.**
+Add something to your existing game:
+
+-   [ ] Difficulty levels, such as easy, medium, and hard.
+-   [ ] Nicer visuals, such as styling, colours, or animations.
+-   [ ] A score tracker across multiple games.
+-   [ ] An undo button.
+
+Whatever you do, keep asking yourself: **How do you know it is doing what you think it is doing?**
+
+::: {.callout-tip collapse="true"}
+## TA note
+
+For Option A, prompt students to compare their two versions.
+Did they get the same algorithm both times?
+If not, why might that be?
+This is a good entry point into questions about AI consistency and determinism.
+
+For Option B, the reflective question is the point.
+Encourage students to notice when they feel confident versus uncertain about whether the AI did what they asked.
+:::
+
+## Class Discussion
+
+::: {.callout-tip collapse="true"}
+## TA note
+
+Aim for 5--10 minutes.
+The questions below are roughly in order.
+The first two are warm-up questions, the third is where the discussion gets more interesting, and the fourth is the closer.
+:::
+
+### What algorithm did the AI build for you?
+
+::: {.callout-tip collapse="true"}
+## TA note
+
+Take a quick poll: who got minimax, who got a rules-based agent, who got something else?
+Then ask one or two students to describe how they figured it out.
+This surfaces the different investigation strategies from Task 3.
+:::
+
+### How did you try to verify it?
+
+::: {.callout-tip collapse="true"}
+## TA note
+
+Students may have tried playing games, asking the AI, adding a visualization, or reading the code.
+Draw out the limitations of each approach with these questions:
+
+-   If you asked the AI to explain itself, how do you know the explanation is accurate?
+-   If you added a visualization, how do you know the visualization is showing what the code actually does?
+
+Important point here: **the only way to know for sure is to read the code.**
+:::
+
+### Can you be confident in what the AI built, even if you cannot read the code?
+
+::: {.callout-tip collapse="true"}
+## TA note
+
+Students can observe behavior and run tests, but they can never be certain without reading the code.
+Most of the time, they will not be able to read the code --- not because it is hidden, but because they do not yet know how.
+This applies to software built by humans too, not just AI.
+:::
+
+### How far are you willing to trust software you cannot verify?
+
+Consider these scenarios in order:
+
+-   A game
+-   A messaging app
+-   A grades system
+-   Medical software
+-   Government or military systems
+
+::: {.callout-tip collapse="true"}
+## TA note
+
+There is no single right answer.
+The goal is for students to recognize that this tradeoff exists and that they will encounter it throughout their lives.
+Somewhere on that spectrum, they would want more than behavioral evidence.
+:::
 
 ## {{< var icon.resource >}} Resources
