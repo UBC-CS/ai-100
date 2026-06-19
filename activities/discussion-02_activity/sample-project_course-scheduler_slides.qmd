@@ -3,108 +3,111 @@ title: "Sample Project: AI Course Scheduler"
 subtitle: >
   {{< var course.code >}}, {{< var course.term >}}
 number-sections: false
+format: revealjs
 ---
 
 # Project A: AI Course Scheduler (Strong)
 
-## Project Pitch
+## Project A: Project Pitch
 
-### Task
+**Task**: Suggest which courses a student should take during their university degree based on their interests/degree requirements
 
-Suggest which courses a student should take during their university degree based on their interests and their degree requirements.
-
-### Inputs and Outputs
-
-**Inputs**
+**Inputs**:
 
 - Descriptions of UBC courses and degree requirements (publicly available on the UBC Calendar)
 - A natural-language description of the student's preferences (interests, financial situation, etc)
 - The student's transcript, if applicable
 
-**Output**
+**Output**: A course plan for the rest of the student's degree
 
-- A course plan for the rest of the student's degree
+## Project A: Project Pitch (cont'd)
 
-### Initial AI Approach
+**Initial AI Approach**:
 
 - Large language model, to interpret the student's preferences, as they are written in natural language
 - Search, to make sure degree requirements are satisfied
 
-### App
+**App**: 
 
 - Supports a few different majors and specializations, especially ones the team is already familiar with, so that errors can be quickly spotted
 
-## Ethical Topics
+## Project A: Ethical Topics
 
-### Reliability & Autonomy Risks
+**Reliability & Autonomy Risks**
 
 - What should happen when the model isn't sure, or can't resolve a conflict between courses?
 - How are competing course schedules prioritized (student preference, fewest courses taken, etc)?
 
-### Direct Effects on Individuals
+**Direct Effects on Individuals**
 
-- Students may feel less invested in (or responsible for) their own education
+- Students may feel less invested in their own education
 - Students get advice faster than they could from a human academic advisor
 
-### Malicious Use
+## Project A: Ethical Topics (cont'd)
 
-- Deliberate modification of the tool by a malicious party (tool creators or a third party) to push people toward wasting time, money, or effort on unnecessary courses
+**Malicious Use**
 
-### Economic Impacts
+- Deliberate development of the tool to push people toward wasting time, money, or effort on unnecessary courses
+
+**Economic Impacts**
 
 - If "efficient" degrees are prioritized, students spend less money on electives, which might affect the university's earnings and which courses are offered
 - Advisors can spend less time answering basic questions and more time helping particular students with difficult cases
 
-### Effects on Corporations
+## Project A: Ethical Topics (cont'd)
+
+**Effects on Corporations**
 
 - Deviating from the AI-recommended schedule could become desirable (student is an independent self-starter) or undesirable (student doesn't know the things everyone else knows) during hiring
 - Student preferences could be used to advertise to them
 - Corporate pressure or funding might influence which courses get prioritized (i.e. tool developers are incentivized to prioritize certain courses/schedules)
 
-### Effects on Governments
+## Project A: Ethical Topics (cont'd)
+
+**Effects on Governments**
 
 - Student preferences could be used for surveillance or to identify political leaning
-- Governmental pressure or funding might influence which courses get prioritized (i.e. tool developers are incentivized to prioritize certain courses/schedules)
+- Governmental pressure or funding might influence which courses get prioritized
 
-### Possible AI Futures
+**Possible AI Futures**
 
 - Academic advisors fully replaced by AI
-- Students can no longer choose their own courses/sections and superhuman AI schedules huge numbers of students into slots
+- Students can no longer choose their own schedule and are scheduled into slots by superhuman AI
 
 # Project B: AI Course Scheduler (Weak)
 
-## Project Pitch
+## Project B: Project Pitch
 
-### Task
+**Task**: Suggest university courses - *not specific enough*
 
-Suggest university courses - *not specific enough*
-
-### Inputs and Outputs
-
-**Inputs**
+**Inputs**:
 
 - UBC course syllabi from past terms or some other proprietary material - *do not use proprietary material (e.g. syllabi) in your project*
 
-### Initial AI Approach
+**Initial AI Approach**:
 
 - Large language model and nothing else, i.e. no guarantee the output will follow degree requirements
 
-### App
+## Project B: Project Pitch (cont'd)
+
+**App**: 
 
 - Poorly scoped, e.g. trying to support every major and specialization at UBC, or supporting only a single specialization
 - Time and effort spent mostly on what the app looks like instead of on how the app works and how it can be useful to people
 
-## Ethical Topics
+## Project B: Ethical Topics
 
 - The project isn't ethically interesting enough, so not all ethical topics actually apply
 - *Later on in the term* - the project could have both positive and negative impacts, but only the pros are mentioned (or, alternatively, only the cons!)
 - *Later on in the term* - too focused on the tool's impact on the individual, with not enough focus on its impact on society, or vice versa
 
 # Project A vs. Project B
+
+## 
 ::: {.list-table}
 - -  
-  - Project A (Strong)
-  - Project B (Weak)
+  - Project A
+  - Project B
 
 - - Task
   - [Clear and concise]{style="color:#2e7d32"}
@@ -117,12 +120,19 @@ Suggest university courses - *not specific enough*
 - - Initial AI Approach
   - [Thoughtful choice of approach]{style="color:#2e7d32"} based firmly in project requirements (i.e. degree requirements MUST be met)
   - [Overreliance on LLM]{style="color:#c62828"} when other approaches would have been better
+:::
+
+## 
+::: {.list-table}
+- -  
+  - Project A
+  - Project B
 
 - - App
   - [Well-scoped]{style="color:#2e7d32"}, supports a few familiar majors and specializations
-  - [Poorly scoped]{style="color:#c62828"}, making it hard to prototype. [Effort placed on visuals instead of utility]{style="color:#c62828"}
+  - [Poorly scoped]{style="color:#c62828"}, hard to prototype. [Effort placed on visuals instead of utility]{style="color:#c62828"}
 
 - - Ethics
-  - [Ethically interesting]{style="color:#2e7d32"} due to appropriate scoping and choice of topic - we could imagine this being used on a wider scale by the general population and this use would lead to somewhat controversial or polarizing events
+  - [Ethically interesting]{style="color:#2e7d32"} - we could imagine this being used on a wider scale by the general population and this use would lead to somewhat controversial or polarizing events
   - [Too generic, too specific, or not disruptive enough]{style="color:#c62828"} - does not allow for interesting discussion across all ethical topics
 :::
