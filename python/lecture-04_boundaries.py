@@ -1,6 +1,7 @@
 import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
+import uuid
 
 
 """
@@ -612,12 +613,13 @@ def boundary_plot_compare_3d(
     feature_y,
     feature_z,
     target,
-    separator_a,
-    separator_b,
+    separator_a=None,
+    separator_b=None,
     title=None,
-    color_map=None
+    color_map=None,
 ):
-    """Points stay in 3D; a button toggles between two separators.
+    """Points stay in 3D; if two separators are given, a button toggles
+    between them. Either separator may be None (omitted entirely).
 
     Each separator can independently be a plane or a fitted decision tree:
       * plane coefficients (a, b, c, d)  for  a*x + b*y + c*z + d = 0
@@ -629,7 +631,10 @@ def boundary_plot_compare_3d(
         [feature_x, feature_y, feature_z] IN THAT ORDER
       * dict {"model": fitted_tree, "color": ..., "opacity": ..., "name": ...}
 
-    separator_a is shown first; the button swaps to separator_b and back.
+    Behaviour by how many separators are supplied:
+      * two  -> separator_a shown first; a button swaps to separator_b and back
+      * one  -> that separator is shown, no toggle button
+      * none -> just the points
     """
     categories = list(df[target].unique())
     color_map = color_map or _default_color_map(categories)
@@ -642,58 +647,240 @@ def boundary_plot_compare_3d(
                            color_map, z_values=lambda g: g[feature_z])
     )
 
-    traces_a = _separator_surfaces(separator_a, bounds, "Separator A", visible=True)
-    traces_b = _separator_surfaces(separator_b, bounds, "Separator B", visible=False)
-    idx_a = list(range(len(fig.data), len(fig.data) + len(traces_a)))
-    for tr in traces_a:
-        fig.add_trace(tr)
-    idx_b = list(range(len(fig.data), len(fig.data) + len(traces_b)))
-    for tr in traces_b:
-        fig.add_trace(tr)
+    # Build only the separators that were actually supplied. The first one
+    # given is visible; a second (if any) starts hidden behind the toggle.
+    specs = []
+    if separator_a is not None:
+        specs.append((separator_a, "Separator A"))
+    if separator_b is not None:
+        specs.append((separator_b, "Separator B"))
 
-    # Two frames flipping which separator's traces are visible. The class
-    # scatter traces are not in `traces`, so the points never move.
-    trace_ids = idx_a + idx_b
-
-    def frame_data(show_a):
-        return (
-            [go.Surface(visible=show_a) for _ in idx_a]
-            + [go.Surface(visible=not show_a) for _ in idx_b]
+    sep_groups = []  # list of (trace_indices, name) per separator
+    for k, (spec, default_name) in enumerate(specs):
+        traces = _separator_surfaces(
+            spec, bounds, default_name, visible=(k == 0)
         )
-
-    fig.frames = [
-        go.Frame(name="a", traces=trace_ids, data=frame_data(show_a=True)),
-        go.Frame(name="b", traces=trace_ids, data=frame_data(show_a=False)),
-    ]
-
-    name_a = traces_a[0].name
-    name_b = traces_b[0].name
+        idx = list(range(len(fig.data), len(fig.data) + len(traces)))
+        for tr in traces:
+            fig.add_trace(tr)
+        sep_groups.append((idx, traces[0].name))
 
     x_range = _padded_range(*bounds[0])
     y_range = _padded_range(*bounds[1])
     z_range = _padded_range(*bounds[2])
 
+    # Only build frames + toggle buttons when there are two separators to
+    # switch between. With one or zero, there's nothing to toggle.
+    buttons = []
+    if len(sep_groups) == 2:
+        (idx_a, name_a), (idx_b, name_b) = sep_groups
+        trace_ids = idx_a + idx_b
+
+        def frame_data(show_a):
+            return (
+                [go.Surface(visible=show_a) for _ in idx_a]
+                + [go.Surface(visible=not show_a) for _ in idx_b]
+            )
+
+        fig.frames = [
+            go.Frame(name="a", traces=trace_ids, data=frame_data(show_a=True)),
+            go.Frame(name="b", traces=trace_ids, data=frame_data(show_a=False)),
+        ]
+        buttons = [
+            dict(label=f"Show {name_a}", method="animate", args=_jump_args("a")),
+            dict(label=f"Show {name_b}", method="animate", args=_jump_args("b")),
+        ]
+        default_title = f"{name_a} vs {name_b}"
+    elif len(sep_groups) == 1:
+        default_title = sep_groups[0][1]
+    else:
+        default_title = f"{feature_x}, {feature_y}, {feature_z}"
+
     _scene_layout(
         fig,
-        title or f"{name_a} vs {name_b}",
+        title or default_title,
         feature_x,
         feature_y,
         feature_z,
         x_range,
         y_range,
         z_range,
-        buttons=[
-            dict(
-                label=f"Show {name_a}",
-                method="animate",
-                args=_jump_args("a"),
-            ),
-            dict(
-                label=f"Show {name_b}",
-                method="animate",
-                args=_jump_args("b"),
-            ),
-        ],
+        buttons=buttons,
     )
 
     fig.show()
+
+"""
+boundary_plot_toggle_features -- the data lives in one fixed 3D scene. Three
+checkboxes (one per feature) let the user switch each axis on or off. An
+"off" feature is collapsed to a constant value, so the cloud projects down a
+dimension: 3 boxes checked -> full 3D, 2 -> a flat 2D slab, 1 -> a 1D line,
+0 -> a single corner point. The 3D camera/box never changes, so the collapse
+reads as "removing that feature."
+
+Mechanism (same spirit as the other functions): all 2**3 = 8 states are
+precomputed as named Plotly animation frames ("bx by bz", e.g. "101"). The
+checkboxes just read their combined state, build the frame name, and call
+Plotly.animate to jump there. State is held by the checkboxes themselves,
+which is what lets the three toggles act independently -- something static
+Plotly buttons can't do on their own.
+"""
+
+def boundary_plot_toggle_features(
+    df,
+    feature_x,
+    feature_y,
+    feature_z,
+    target,
+    title=None,
+    color_map=None,
+    collapse_to="min",
+    save_path=None,
+):
+    """One fixed 3D scene; checkboxes toggle each feature on/off (1D/2D/3D).
+
+    Parameters
+    ----------
+    df : DataFrame with the three feature columns and the target column.
+    feature_x, feature_y, feature_z, target : column names.
+    title : optional plot title (a "(kD)" suffix is appended live).
+    color_map : optional {class_value: color}; defaults to the Plotly palette.
+    collapse_to : where an unchecked axis is pinned --
+        "min"    -> the data minimum (points cast a shadow on the box faces),
+        "center" -> the box midpoint (points sit on a slab through the middle).
+    save_path : if given, the standalone HTML is written there. Otherwise the
+        figure is displayed inline (Jupyter) or its HTML is returned.
+    """
+    categories = list(df[target].unique())
+    color_map = color_map or _default_color_map(categories)
+    groups = {c: df[df[target] == c] for c in categories}
+    bounds = _bounds(df, feature_x, feature_y, feature_z)
+
+    x_range = _padded_range(*bounds[0])
+    y_range = _padded_range(*bounds[1])
+    z_range = _padded_range(*bounds[2])
+
+    if collapse_to == "center":
+        const = {f: (lo + hi) / 2 for f, (lo, hi) in
+                 zip("xyz", bounds)}
+    elif collapse_to == "min":
+        const = {f: lo for f, (lo, hi) in zip("xyz", bounds)}
+    else:
+        raise ValueError("collapse_to must be 'min' or 'center'")
+
+    features = (feature_x, feature_y, feature_z)
+
+    def projected_z(group, bz):
+        return group[feature_z] if bz else np.full(len(group), const["z"])
+
+    def class_traces_for(bx, by, bz):
+        """Class scatter traces with each axis either real or collapsed."""
+        return [
+            go.Scatter3d(
+                x=g[feature_x] if bx else np.full(len(g), const["x"]),
+                y=g[feature_y] if by else np.full(len(g), const["y"]),
+                z=g[feature_z] if bz else np.full(len(g), const["z"]),
+                mode="markers",
+                marker=dict(
+                    size=6,
+                    color=color_map[c],
+                    opacity=0.9,
+                    line=dict(color="black", width=1),
+                ),
+                name=str(c),
+            )
+            for c, g in groups.items()
+        ]
+
+    n_classes = len(categories)
+
+    # Initial view: all three features on (full 3D).
+    fig = go.Figure(data=class_traces_for(1, 1, 1))
+
+    # One frame per on/off combination, named "bx by bz" e.g. "110".
+    trace_ids = list(range(n_classes))
+    fig.frames = [
+        go.Frame(
+            name=f"{bx}{by}{bz}",
+            traces=trace_ids,
+            data=class_traces_for(bx, by, bz),
+        )
+        for bx in (1, 0)
+        for by in (1, 0)
+        for bz in (1, 0)
+    ]
+
+    base_title = title or f"Toggle features: {feature_x}, {feature_y}, {feature_z}"
+
+    # Reuse the shared 3D layout, then drop its (empty) button menu -- the
+    # checkboxes live in plain HTML next to the plot instead.
+    _scene_layout(
+        fig,
+        f"{base_title} (3D)",
+        feature_x,
+        feature_y,
+        feature_z,
+        x_range,
+        y_range,
+        z_range,
+        buttons=[],
+    )
+    fig.update_layout(updatemenus=[])
+
+    # --- Wire up real HTML checkboxes via Plotly.animate -------------------
+    div_id = "toggle-" + uuid.uuid4().hex[:8]
+    fn = "toggle_" + uuid.uuid4().hex[:8]
+
+    plot_html = fig.to_html(
+        include_plotlyjs="cdn", full_html=False, div_id=div_id
+    )
+
+    def checkbox(axis, label):
+        return (
+            f'<label style="margin-right:16px; cursor:pointer;">'
+            f'<input type="checkbox" id="{fn}_{axis}" checked '
+            f'onclick="{fn}()"> {label}</label>'
+        )
+
+    controls = (
+        '<div style="font-family:sans-serif; font-size:14px; '
+        'margin:4px 0 8px 8px;"><strong>Features:</strong> '
+        + checkbox("x", feature_x.replace("_", " "))
+        + checkbox("y", feature_y.replace("_", " "))
+        + checkbox("z", feature_z.replace("_", " "))
+        + "</div>"
+    )
+
+    script = (
+        "<script>(function(){"
+        'var GD=document.getElementById("%%DIV%%");'
+        "function run(){"
+        'var bx=document.getElementById("%%FN%%_x").checked?1:0;'
+        'var by=document.getElementById("%%FN%%_y").checked?1:0;'
+        'var bz=document.getElementById("%%FN%%_z").checked?1:0;'
+        'var name=""+bx+by+bz;'
+        "Plotly.animate(GD,[name],{mode:'immediate',"
+        "frame:{duration:350,redraw:true},transition:{duration:350}});"
+        'Plotly.relayout(GD,{"title.text":"%%TITLE%% ("+(bx+by+bz)+"D)"});'
+        "}"
+        "window['%%FN%%']=run;"
+        "})();</script>"
+    )
+    script = (
+        script.replace("%%DIV%%", div_id)
+        .replace("%%FN%%", fn)
+        .replace("%%TITLE%%", base_title.replace('"', "'"))
+    )
+
+    html = controls + plot_html + script
+
+    if save_path is not None:
+        with open(save_path, "w", encoding="utf-8") as f:
+            f.write("<!doctype html><html><body>" + html + "</body></html>")
+        return save_path
+
+    try:  # inline display in a notebook
+        from IPython.display import HTML, display
+        display(HTML(html))
+    except ImportError:
+        return html
