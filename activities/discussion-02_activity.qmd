@@ -22,12 +22,14 @@ Your game should:
 -   [ ] Let two players take turns as X and O.
 -   [ ] Detect when someone wins or the game is a draw.
 
+::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
 ## TA note
 
 Circulate and make sure everyone has their AI tool open and is getting output.
 This task should be very fast.
 If someone has been stuck for more than a minute or two, check their setup first.
+:::
 :::
 
 ### Task 2: Add a Computer Opponent
@@ -36,6 +38,7 @@ If someone has been stuck for more than a minute or two, check their setup first
 
 Add a single-player mode where you play against the computer.
 
+::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
 ## TA note
 
@@ -43,6 +46,7 @@ Do not steer students toward any particular approach.
 Let the AI decide how to implement the computer player.
 Some students may get minimax, while others may get something simpler.
 That variation is useful for Task 3.
+:::
 :::
 
 ### Task 3: Investigate the Computer
@@ -74,6 +78,7 @@ Some directions to consider: adding displays or logging to make the computer's p
 
 **Key question:** How confident are you that your approaches tell you what the agent is actually doing?
 
+::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
 ## TA note
 
@@ -93,6 +98,7 @@ Push back on confident answers:
 -   How do you know the visualization is showing you what is really happening?
 -   How do you know the AI's explanation is accurate?
 -   Could the label be generated after the fact, independent of what the code actually does?
+:::
 :::
 
 ### Optional Task 4: Keep Building
@@ -116,6 +122,7 @@ Add something to your existing game:
 
 Whatever you do, keep asking yourself: **How do you know it is doing what you think it is doing?**
 
+::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
 ## TA note
 
@@ -127,9 +134,11 @@ This is a good entry point into questions about AI consistency and determinism.
 For Option B, the reflective question is the point.
 Encourage students to notice when they feel confident versus uncertain about whether the AI did what they asked.
 :::
+:::
 
 ## Class Discussion
 
+::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
 ## TA note
 
@@ -137,9 +146,11 @@ Aim for 5--10 minutes.
 The questions below are roughly in order.
 The first two are warm-up questions, the third is where the discussion gets more interesting, and the fourth is the closer.
 :::
+:::
 
 ### What algorithm did the AI build for you?
 
+::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
 ## TA note
 
@@ -147,9 +158,11 @@ Take a quick poll: who got minimax, who got a rules-based agent, who got somethi
 Then ask one or two students to describe how they figured it out.
 This surfaces the different investigation strategies from Task 3.
 :::
+:::
 
 ### How did you try to verify it?
 
+::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
 ## TA note
 
@@ -161,15 +174,18 @@ Draw out the limitations of each approach with these questions:
 
 Important point here: **the only way to know for sure is to read the code.**
 :::
+:::
 
 ### Can you be confident in what the AI built, even if you cannot read the code?
 
+::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
 ## TA note
 
 Students can observe behavior and run tests, but they can never be certain without reading the code.
 Most of the time, they will not be able to read the code --- not because it is hidden, but because they do not yet know how.
 This applies to software built by humans too, not just AI.
+:::
 :::
 
 ### How far are you willing to trust software you cannot verify?
@@ -182,12 +198,14 @@ Consider these scenarios in order:
 -   Medical software
 -   Government or military systems
 
+::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
 ## TA note
 
 There is no single right answer.
 The goal is for students to recognize that this tradeoff exists and that they will encounter it throughout their lives.
 Somewhere on that spectrum, they would want more than behavioral evidence.
+:::
 :::
 
 ## {{< var icon.resource >}} Resources
