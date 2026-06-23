@@ -2,6 +2,10 @@
 title: "Syllabus"
 ---
 
+::: {.callout-warning}
+This version of the syllabus is tentative and a work in progress. Changes and more details will be added closer to the start of the course.
+:::
+
 ## Introduction
 
 At the completion of this course, students will have a deeper understanding of the impacts of applications of AI across multiple disciplines and a glimpse into the technical aspects of its function. They will be able to critically evaluate the appropriateness of an AI solution and to reason about the issues with adoption. Broad themes in the course include 1) technical foundations and history, 2) modern AI and how it works, and 3) social and ethical impacts across disciplines. 
@@ -46,6 +50,8 @@ Students will examine the broad economic, ethical, cultural, and environmental i
 | **Economic Impacts** | AI may change jobs, wages, and the future of work. Students will examine AI automation claims and think carefully about which types of tasks it could replace. They will compare possible responses such as retraining, protections for workers, and income supports and reflect on how AI may affect their own careers. |
 | **Effects on Corporations** | AI is changing how companies make money and compete. Students will explore how AI monopolizes corporate power through data, infrastructure, and platform control. They will compare how AI affects startups, big tech, open-source groups, and public institutions, as well as possible power imbalances between corporations and individuals. |
 | **Effects on Governments** | Students will discuss how public domains like healthcare, policing, education, climate, and security will be affected if AI becomes part of government services, decision-making, and public policy. Students will also consider the risks of disinformation, the challenges of regulating AI fairly, and what kind of AI governance they would trust. |
+
+<br>
 
 5. **Possible AI Futures** 
 
