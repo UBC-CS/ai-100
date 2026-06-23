@@ -4,15 +4,69 @@ title: "Syllabus"
 
 ## Introduction
 
+At the completion of this course, students will have a deeper understanding of the impacts of applications of AI across multiple disciplines and a glimpse into the technical aspects of its function. They will be able to critically evaluate the appropriateness of an AI solution and to reason about the issues with adoption. Broad themes in the course include 1) technical foundations and history, 2) modern AI and how it works, and 3) social and ethical impacts across disciplines. 
+
 ## Teaching team
+
+TBA
+
+## Schedule
+
+Lectures: Wednesdays (all term) and Fridays (Sep 11 – Oct 9) 
+
+Discussions: Tuesdays (Oct 20 – Dec 1) and Thursday (all term)
 
 ## Course description and learning objectives
 
+TBA 
+
 ## Lecture Material and Course Content
 
-## Course structure
+1. **Introduction & What is AI? (Week 1)**
 
-## Grading and exam policies
+Students will explore what AI is, why it matters today, and the foundational context behind its rapid growth. 
+
+2. **AI Paradigms & History (Weeks 1–4)**
+
+Students will compare and contrast AI techniques (explicit programming, rule-based systems, search, machine learning, deep learning, reinforcement learning, and self-supervised learning) and trace the historical development of AI paradigms and explain their significance in AI history. 
+
+3. **Understanding Recent AI Systems (Week 5–6)**
+
+Learn how state-of-the-art AI models work, including language, vision, and robotics systems, and how they are aligned to human needs. Identify and analyze the technical and practical limitations that challenge the reliability and safety of modern AI. 
+
+4. **Social Impacts (Weeks 7–11)**
+
+Students will examine the broad economic, ethical, cultural, and environmental implications of AI’s growing role in society through different lenses. 
+
+| Topic | Description |
+|---------|-------------|
+| **Reliability and Autonomy Risks** | AI systems show common problems like wrong answers, overconfidence, and poor performance in new situations. It can also be hard to make AI do exactly what people want, or to agree on what the desirable AI behaviour should be. |
+| **Direct Effects on Individuals** | AI can affect people’s daily lives in personal ways, including learning, creativity, relationships, and identity. Students will think about both the benefits and the risks, such as bias and becoming too dependent on AI, and explore questions about authorship, fair use, and who AI is designed to serve. |
+| **Potential for Malicious Use by Individuals** | Harmful actions have become easier to execute with AI, including fraud, hacking, harassment, and deepfakes. |
+| **Economic Impacts** | AI may change jobs, wages, and the future of work. Students will examine AI automation claims and think carefully about which types of tasks it could replace. They will compare possible responses such as retraining, protections for workers, and income supports and reflect on how AI may affect their own careers. |
+| **Effects on Corporations** | AI is changing how companies make money and compete. Students will explore how AI monopolizes corporate power through data, infrastructure, and platform control. They will compare how AI affects startups, big tech, open-source groups, and public institutions, as well as possible power imbalances between corporations and individuals. |
+| **Effects on Governments** | Students will discuss how public domains like healthcare, policing, education, climate, and security will be affected if AI becomes part of government services, decision-making, and public policy. Students will also consider the risks of disinformation, the challenges of regulating AI fairly, and what kind of AI governance they would trust. |
+
+5. **Possible AI Futures** 
+
+Students will consider potential future developments in AI including their risks and benefits, and the philosophical questions raised by superhuman intelligence or AGI. 
+
+## Deliverables and Grading Scheme
+
+| Course Activity | Grade (%) |
+|----------------|-----------|
+| **In-class Participation**<br><br>Students are expected to attend lectures regularly and actively participate in class discussions and activities. | 10% |
+| **Quizzes**<br><br>Two quizzes (plus an additional preparatory quiz) will be administered to assess students’ understanding of AI fundamentals, major AI paradigms and their historical development, how modern AI systems work, and their limitations. | 30% |
+| **Project**<br><br>To further engage with and demonstrate understanding of the course content, students will design and prototype an AI application of their choosing and explore its potential social impacts. The project will be developed in the following stages:<br><br>- Individual ideation of an AI application and design of a mockup interface through agentic coding<br>- Project pitching and voting; group formation (*)<br>- AI application revision and further development as a group<br>- Thorough exploration of the AI application’s potential social impacts and discussion of mitigation strategies<br>- Poster presentation and peer evaluation of other posters | 40% |
+| **In-Lab Deliverables**<br><br>During lab sessions, students will complete various activities to further their understanding of the material, work on their project, and report on their progress. These activities include (but are not limited to) information retrieval, discussions, engaging with AI agents, presentations, peer review, and reflections. | 20% |
+
+(*) In the 5th week of the course, projects will switch from individual to group work. Students will present their topic to the other students in their lab section. After all students have presented, each student will vote on which project, other than their own, they would like to work on. Once all votes have been cast, groups of 3-4 will be formed, based on the students’ preferences, to carry on the most popular projects.  
+
+## Note on Course Environment
+
+Some topics discussed in this course may touch on issues that students find personal, sensitive, or challenging. As we explore different perspectives and critically examine ideas, we all share responsibility for maintaining a respectful, inclusive, and supportive learning environment.
+
+Disrespectful, discriminatory, or harmful comments or behaviors related to race, ethnicity, religion, gender identity, sexual orientation, disability, or other personal characteristics will not be tolerated. Our goal is not to win debates or demonstrate superiority, but to learn from one another, engage thoughtfully with complex issues, and develop our understanding through constructive dialogue and collaboration.
 
 ## Accessibility
 
