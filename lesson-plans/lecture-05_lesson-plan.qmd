@@ -1,16 +1,144 @@
 ---
-title: "Deep learning"
+title: "Lecture 5: Deep learning"
 subtitle: >
-  Lecture 5 lesson plan, {{< var course.code >}}, {{< var course.term >}}
+  {{< var course.code >}}, {{< var course.term >}}
+number-sections: false
 ---
 
-1. How different from previous topic
-2. Algorithmic idea
-    - Foundations
-    - Representation
-    - Algorithm
-3. Historical impact and applications
-4. Worked example
-    - NLP
-    - Graphs
-5. Breakout
+## Lecture overview
+### Learning outcomes
+- TODO
+
+### Pre-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+### Lecture timeline
+::: {.list-table}
+- - Topic
+  - Time
+  - Materials
+
+- - Admin
+  - 5 min
+
+- - [Differences from previous lectures](#sec-prev-lectures)
+  - 5 min
+
+- - [Activity: Google Teachable Machine](#sec-teachable-machine)
+  - 10 min
+  - [Website: Google Teachable Machine](https://teachablemachine.withgoogle.com/train/image)
+
+- - [Biological and artificial neural networks](#sec-neural)
+  - 10 min
+
+- - [Activity: Neural networks](#sec-neural-activity)
+  - 10 min
+
+- - [Scale of neural networks](#sec-scale)
+  - 5 min
+
+- - [Activity: TODO](#sec-todo)
+  - 20 min
+  
+- - [Wrap-up](#sec-wrap-up)
+  - 10 min
+
+- - Admin
+  - 5 min
+:::
+
+### Post-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+## Differences from previous lectures{#sec-prev-lectures}
+- In machine learning, we start by choosing which features we want to use to train our model.
+- However, identifying and engineering features manually can be very time consuming, and may require expert knowledge.
+
+:::{.callout-tip}
+### Activity: Choose the features
+What kinds of features would you use to differentiate between images of cats and dogs?
+
+::: {#fig-animals layout-ncol=2}
+![Cat](../images/lecture-05_cat.png)
+
+![Dog](../images/lecture-05_dog.jpg)
+
+Cat and Dog
+:::
+:::
+
+- It can be very difficult to extract useful features from our data!
+- Instead of trying to come up with the features ourselves, it might be better to give the raw image to the model, e.g. by making each individual pixel a feature, and let it figure out the features as part of the training process.
+
+## Activity: Google Teachable Machine{#sec-teachable-machine}
+- TODO what are we trying to get across here? is this just another example of deep learning?
+- TODO formalize instructions
+- [TODO: any issues with using the webcam/images of prof or students? alternatively have a set of images ready to upload]
+- have prof or volunteer student come up to front and use webcam to record images of them doing 2 distinct things (smiling/frowning, left/right of screen, wearing hat/not wearing hat, etc). train model, then test whether it can differentiate the 2 distinct things
+- with ~100 images per class and 2 classes, takes ~2 min to train. do not switch tabs during training as it will stop
+- after demonstration at front, could let students try on their own:
+  - add more classes
+  - train with object added to/removed from background between two different unrelated classes (e.g. smiling with water bottle, frowning without) and see how adding/removing the object during testing changes the accuracy
+  - train with one person smiling/frowning and use another person smiling/frowning to test
+    - see if model improves if both people are used to train
+  - do something that wasn't in either class and see which class it is more like (e.g. shocked face). why do you think that is/what features probably make that the case? (e.g. if shocked is most like smiling, eyebrow movements might be similar, etc...)
+
+## Biological and artificial neural networks{#sec-neural}
+- TODO biological inspiration for neural networks
+- TODO image of neuron and NN
+- TODO circles and lines image, walking through each aspect of the image 
+  - input layer, output layer, hidden layers (input/output)
+  - what are the parameters?
+  - how are parameters learned? feed-forward/backprop
+  - SGD?
+
+## Activity: Neural networks{#sec-neural-activity}
+- TODO: some interactive example of a neural network where students are trying to produce a specific result
+- TODO effect of adding/removing neurons
+- TODO effect of adding/removing layers
+
+## Scale of neural networks{#sec-scale}
+- TODO if all pixels are features, this is a lot of features
+- TODO fitting models this large is challenging, requires a lot of data (to get the huge number of parameters right) and compute (to finish training in a reasonable amount of time)
+- TODO introduce idea of compute and history of compute
+- TODO advancements in neural networks
+
+## Activity: TODO{#sec-todo}
+- TODO need some 20 min activity to finish up here
+  - CNN demo suggested but wouldn't take long enough
+  - SGD suggested
+
+## Wrap-up{#sec-wrap-up}
+
+:::{.callout-tip}
+### Activity: Discussion
+- TODO
+:::
