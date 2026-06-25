@@ -27,7 +27,7 @@ Small groups of 3–5 students
 
 ## Materials Needed
 
-* AI 100 Code of Conduct
+* [AI 100 Code of Conduct](discussion-01_activity/code-of-conduct.md)
 * Scenario cards
 * Shared worksheet, discussion board, or group document
 * Three labels:
@@ -57,4 +57,4 @@ Use this sentence starter:
 
 ### 3. Classify Scenario Cards, 10 minutes
 
-...
+<!-- TODO: complete the scenario classification steps and the remaining activity sections -->
