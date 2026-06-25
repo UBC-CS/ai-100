@@ -20,7 +20,7 @@ By the end of this lab, students should be able to:
 ## Materials
 
 - Shared document, whiteboard, or chart paper
-- Sticky notes or index cards
+- Sticky notes or index cards (physical), or a shared Miro board (digital)
 - Timer
 - [Possible Code of Conduct](code-of-conduct.md) for TA reference
 
@@ -35,6 +35,12 @@ When students discuss discomfort or conflict, do not imply that they are require
 3. Reach out to the TA or instructor for support, especially when the issue involves harm, repeated behaviour, power dynamics, personal disclosure, or uncertainty about what to do.
 
 Emphasize that dialogue skills improve through practice and reflection, and that this course is a valuable opportunity to grow in these communication skills.
+
+### Collecting Student Input
+
+- Have students post ideas on physical sticky notes or a shared Miro board, then cluster similar ideas into themes. This doubles as a low-pressure icebreaker.
+- Choose the collection method with privacy in mind: physical notes can stay anonymous, while a digital board may attach names. Collect no more identifying information than the activity needs.
+- To speed up synthesis, a TA can use an AI tool to compile and group the posted notes into a draft document instead of transcribing by hand. Review the output before sharing it.
 
 ## Agenda
 
@@ -100,7 +106,7 @@ Invite a few quick responses. Then frame the activity:
 
 Students write silently for 3-4 minutes:
 
-> Think of a time when a group discussion went well, or when it went badly. What made the difference?
+> Think of a time when a group discussion went well, or when it went badly — for example, in a high school class, a club, a team, or an online community. What made the difference?
 
 Ask students to write down:
 
@@ -113,6 +119,8 @@ Students do not need to share personal details.
 ### 7. Small-Group Drafting, 14 minutes
 
 In groups of 3-4, students draft 5-7 principles for the AI 100 code of conduct.
+
+Have each student write individual ideas on sticky notes (physical or Miro) first, then cluster similar notes into themes as a group and turn each cluster into a principle. Grouping first surfaces common ground quickly and avoids a list of near-duplicate suggestions.
 
 Their principles should address:
 
@@ -181,13 +189,17 @@ Then each group selects:
 
 ### 10. Class Share-Out and Synthesis, 10 minutes
 
-Each group shares for about 1-2 minutes:
+Use a rotating share-out: one representative per group shares at a time, going around the room. Each group adds only principles that are not already on the board, so the class builds a single combined list without repetition.
 
-- One essential principle
+When it is their turn, each group offers:
+
+- One essential principle (new, if possible)
 - One scenario that tested or changed their thinking
 - One question they still have
 
-One TA records common principles on the board. The other TA tracks recurring questions, tensions, and unclear areas.
+One TA documents contributions in real time (on the board or in a shared document). The other TA tracks recurring questions, tensions, and unclear areas.
+
+After the lab, the teaching team consolidates every group's contributions — plus any important ideas that were missed — into a single unified AI 100 code of conduct, which is then published for the class.
 
 Possible synthesis categories:
 
