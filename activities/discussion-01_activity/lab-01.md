@@ -6,7 +6,6 @@
 
 AI 100 asks students to discuss topics that can be controversial, personal, or uncomfortable: surveillance, discrimination, mental health, misinformation, sexuality, politics, religion, war, labour, creativity, and harm. The goal of this lab is to create shared expectations for how we will talk, disagree, give feedback, and support each other while studying those topics.
 
-This lab focuses on interpersonal communication and group dynamics. Project topic boundaries are related, but separate. Sensitive project ideas may require teaching team approval, and projects that conflict with course, university, legal, safety, or community values may not be approved. Those boundaries should be handled in the project guidelines.
 
 ## Learning Objectives
 
@@ -35,6 +34,8 @@ When students discuss discomfort or conflict, do not imply that they are require
 2. If comfortable and safe, talk with the person or group about the concern.
 3. Reach out to the TA or instructor for support, especially when the issue involves harm, repeated behaviour, power dynamics, personal disclosure, or uncertainty about what to do.
 
+Emphasize that dialogue skills improve through practice and reflection, and that this course is a valuable opportunity to grow in these communication skills.
+
 ## Agenda
 
 ### 1. Welcome and TA Introductions, 5 minutes
@@ -56,7 +57,9 @@ Explain that labs are collaborative spaces for:
 - Learning how to disagree productively
 - Developing course projects with feedback
 
-Note that this is the first time AI 100 is being taught in this format, so the class is also helping shape how the course community works.
+Note that this is the first time AI 100 is being taught in this format, so the class is also helping shape how the course community works. Expect that some things will need to be tweaked along the way, and that honest, constructive suggestions from students are genuinely valuable to the TAs and instructor.
+
+<!-- TODO: confirm a concrete suggestions mechanism from students (e.g., a suggestions email or an anonymous form). -->
 
 ### 3. Evaluation and Participation Expectations, 7 minutes
 
@@ -124,7 +127,7 @@ Guidance for students:
 
 - Use clear language.
 - Make the principle actionable.
-- Avoid vague statements like "be respectful" unless you explain what respectful behaviour looks like.
+- Prefer specifics over vague statements like "be respectful" — but aim for a balance: specific enough to guide action, general enough to cover situations no one anticipated. Even real-world codes of conduct rely on some general language and, ultimately, on common sense.
 - Write principles that would help someone know what to do in a difficult moment.
 
 ### 8. Scenario Testing, 15 minutes
@@ -135,6 +138,8 @@ Each group tests its draft code against the scenarios below. For each scenario, 
 - Is our principle clear enough to guide action?
 - What should the student, group, TA, or instructor do next?
 - Does our code need revision?
+
+These scenarios are in the spirit of workplace-conduct training. For real-world examples, see the [UBC Bullying & Harassment resources](https://bullyingandharassment.ubc.ca/resources/) (originally developed by WorkSafe BC).
 
 #### Scenario A: Dismissive Comment
 
@@ -159,6 +164,10 @@ One student says another group's project idea is "obviously unethical." The othe
 #### Scenario F: When to Ask for Help
 
 A student feels uncomfortable with the direction of their group's conversation but is not sure whether the concern is serious enough to bring to a TA.
+
+#### Scenario G: Fear of Saying the Wrong Thing
+
+During a discussion about whether AI companies should be allowed to train models on copyrighted works, several students have different opinions but stay silent. One student wants to argue that there may be ethical tradeoffs worth discussing, but worries others will see the view as harmful. The conversation becomes cautious and superficial, with few students willing to disagree openly.
 
 ### 9. Revise and Select Priority Principles, 7 minutes
 
