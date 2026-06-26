@@ -11,7 +11,7 @@ This file specifies the Lab 01 exit ticket. The actual question is authored in t
 - **Type:** short free-response (a few sentences).
 - **Grading:** completion / participation — not correctness. Any thoughtful, on-topic answer earns full credit.
 - **Timing:** completed individually and asynchronously, after Lab 01.
-- **Length:** 1–3 sentences.
+- **Length:** 1–3 sentences. Any reasonable wording or format is fine; the goal is a genuine reflection, not a single correct answer.
 
 ## Purpose
 

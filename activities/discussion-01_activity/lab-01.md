@@ -36,11 +36,14 @@ When students discuss discomfort or conflict, do not imply that they are require
 
 Emphasize that dialogue skills improve through practice and reflection, and that this course is a valuable opportunity to grow in these communication skills.
 
+Throughout, help students notice that the same AI topic can affect classmates very differently depending on their backgrounds and experiences — naming this is part of why the class needs shared norms. Treat the step timings and on-screen timers as flexible guides, and adjust them to your section.
+
 ### Collecting Student Input
 
 - Students post ideas on physical sticky notes or a shared Miro board, then cluster similar ideas into themes. This doubles as a low-pressure icebreaker.
 - Choose the collection method with privacy in mind: physical notes can stay anonymous, while a digital board may attach names. Collect no more identifying information than the activity needs.
 - During the merge step, a TA can use an AI tool to compile and de-duplicate the posted principles into a single draft code of conduct instead of transcribing by hand. Review the output before sharing it.
+- Offer an accessible alternative to writing on sticky notes or a visual board: students may type into a shared document, or dictate their ideas to a partner or TA who writes them down. No one should be excluded by the input method.
 
 ## Opening (delivered via slides)
 
@@ -103,11 +106,13 @@ Bring the groups together and build a single class code of conduct using a rotat
 - Continue rotating until all distinct principles have been captured, skipping duplicates.
 - A TA records the combined list in real time, and may use an AI tool to compile and de-duplicate (review the output before sharing).
 
+Groups can nominate a speaker, take turns, or simply add a principle to the shared board or document in writing — no student is required to speak in front of the whole class.
+
 The result is one draft class code of conduct that the whole room has contributed to.
 
 ### 4. Scenario Testing (whole class), 8 minutes
 
-As a class, test the merged code against the scenarios below. For each scenario, ask:
+As a class, test the merged code against two or three of the scenarios below — choose the ones most relevant to your section, and cover more only if time allows. For each scenario, ask:
 
 - Which principle applies?
 - Is our principle clear enough to guide action?

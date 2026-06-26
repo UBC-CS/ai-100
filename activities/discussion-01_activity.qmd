@@ -26,7 +26,7 @@ Small groups of 3–4 students, with several whole-class steps.
 
 ## {{< var icon.task >}} Steps
 
-1. **Individual reflection (5 min).** On sticky notes, jot behaviours or rules that helped or harmed past group discussions, and one principle you would want in this course.
+1. **Individual reflection (5 min).** On sticky notes, jot behaviours or rules that helped or harmed past group discussions, and one principle you would want in this course. (Prefer to type or dictate? That works too.)
 2. **Small-group drafting (10 min).** In your group, cluster your sticky notes into themes and turn each cluster into a clear, actionable principle.
 3. **Merge into one class code (8 min).** Going around the room, each group adds a principle not already listed until the class has a single draft code of conduct.
 4. **Scenario testing (8 min).** As a class, test the draft against a few realistic scenarios and revise where needed.

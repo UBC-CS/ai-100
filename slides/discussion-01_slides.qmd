@@ -61,6 +61,7 @@ Invite a few quick responses, then frame the activity:
 - The goal is not to avoid difficult topics.
 - The goal is to discuss difficult topics with care, clarity, and accountability.
 - A code of conduct should guide how we speak, listen, challenge ideas, receive feedback, and seek support.
+- The same topic can affect classmates very differently depending on their experiences — shared norms help everyone take part.
 :::
 
 # The activity
@@ -76,6 +77,8 @@ On sticky notes, write:
 - One principle you would want in this course
 
 Keep your notes for the next step.
+
+Prefer to type or dictate instead of writing by hand? That works too.
 
 {{< countdown minutes=5 >}}
 
@@ -94,6 +97,8 @@ Make each principle clear and actionable.
 
 Going around the room, each group offers **one** principle that is not already on the board — until all of them are captured.
 
+Your group can speak, take turns, or add a principle in writing — no one has to present alone.
+
 {{< countdown minutes=8 >}}
 
 ::: notes
@@ -102,7 +107,7 @@ A TA records the combined list live and may use an AI tool to compile and de-dup
 
 ## 4. Scenario testing (whole class) {.activity}
 
-For each scenario, ask:
+We will test the code against a few scenarios (as many as time allows). For each, ask:
 
 - Which principle applies?
 - Is it clear enough to guide action?
