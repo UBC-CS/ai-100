@@ -75,6 +75,8 @@ Some topics discussed in this course may touch on issues that students find pers
 
 Disrespectful, discriminatory, or harmful comments or behaviors related to race, ethnicity, religion, gender identity, sexual orientation, disability, or other personal characteristics will not be tolerated. Our goal is not to win debates or demonstrate superiority, but to learn from one another, engage thoughtfully with complex issues, and develop our understanding through constructive dialogue and collaboration.
 
+## Code of Conduct
+
 ## Accessibility
 
 If you have a disability or ongoing medical condition that may
