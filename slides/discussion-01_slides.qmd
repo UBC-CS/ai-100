@@ -1,0 +1,146 @@
+---
+title: "Building Our AI 100 Code of Conduct"
+subtitle: "Discussion 1, {{< var course.code >}}, {{< var course.term >}}"
+---
+
+# Welcome
+
+## Teaching team
+
+::: notes
+TAs introduce themselves and briefly explain their role in lab:
+
+- Facilitate discussion
+- Help groups work through disagreement
+- Support students who feel unsure or uncomfortable
+- Escalate concerns to the instructor when needed
+:::
+
+## What labs are for
+
+- Practising ethical reasoning
+- Discussing difficult cases
+- Working through ambiguity
+- Learning how to disagree productively
+- Developing course projects with feedback
+
+::: notes
+This is the first time AI 100 is being taught in this format, so the class is also helping shape how the course community works. Expect that some things will need tweaking, and that honest, constructive suggestions from students are genuinely valuable to the TAs and instructor.
+
+<!-- TODO: confirm a concrete suggestions mechanism (e.g., a suggestions email or an anonymous form). -->
+:::
+
+## Participation expectations
+
+- Be present and prepared
+- Participate in group work
+- Listen respectfully
+- Make a good-faith effort to engage with difficult questions
+- Contribute to shared artifacts when asked
+
+## Getting help
+
+- Ask the TA during group work
+- Talk to a TA after lab
+- Contact the instructor or teaching team
+- Use university support resources when course topics connect to personal distress or wellbeing
+
+::: notes
+Emphasize that asking for help early is appropriate, especially when a conversation, project idea, or group dynamic feels uncomfortable.
+:::
+
+# Why a code of conduct?
+
+## A quick prompt {.center}
+
+> AI ethics courses often involve disagreement. What makes disagreement productive rather than harmful?
+
+::: notes
+Invite a few quick responses, then frame the activity:
+
+- The goal is not to avoid difficult topics.
+- The goal is to discuss difficult topics with care, clarity, and accountability.
+- A code of conduct should guide how we speak, listen, challenge ideas, receive feedback, and seek support.
+:::
+
+# The activity
+
+## 1. Individual reflection {.activity}
+
+Think of a time a group discussion went well — or badly (a high school class, club, team, or online community). What made the difference?
+
+On sticky notes, write:
+
+- One behaviour or rule that helped
+- One behaviour or rule that harmed trust
+- One principle you would want in this course
+
+Keep your notes for the next step.
+
+{{< countdown minutes=5 >}}
+
+## 2. Small-group drafting {.activity}
+
+In groups of 3–4, use the sticky notes you just wrote:
+
+- Cluster similar behaviours and rules into themes
+- Turn each cluster into a principle (aim for 3–5 per group)
+
+Make each principle clear and actionable.
+
+{{< countdown minutes=10 >}}
+
+## 3. Merge into one class code {.activity}
+
+Going around the room, each group offers **one** principle that is not already on the board — until all of them are captured.
+
+{{< countdown minutes=8 >}}
+
+::: notes
+A TA records the combined list live and may use an AI tool to compile and de-duplicate the principles (review the output before sharing).
+:::
+
+## 4. Scenario testing (whole class) {.activity}
+
+For each scenario, ask:
+
+- Which principle applies?
+- Is it clear enough to guide action?
+- What should happen next?
+- Does the code need revising?
+
+{{< countdown minutes=8 >}}
+
+## Scenario A: Dismissive comment
+
+During a discussion about algorithmic bias, a student says, "People are too sensitive about this stuff. It's just technology."
+
+## Scenario B: Joking about sensitive topics
+
+A group is discussing AI-generated images and someone makes a joke about sexualized deepfakes. A classmate gets quiet and stops participating.
+
+## Scenario C: Disagreement over harmful AI uses
+
+A student argues a surveillance tool could be useful if it improves safety. Another says the idea is harmful and should not be discussed at all.
+
+## Scenario G: Fear of saying the wrong thing
+
+During a discussion about training AI on copyrighted works, several students hold different views but stay silent, worried others will see their view as harmful. The conversation becomes cautious and superficial.
+
+## 5. Wrap-up {.activity}
+
+As a class, fold in any revisions the scenarios surfaced. The teaching team will consolidate and publish the final AI 100 code of conduct.
+
+{{< countdown minutes=4 >}}
+
+# After lab
+
+## Exit ticket (PrairieLearn)
+
+> What is one responsibility you have when discussing sensitive AI ethics topics in this course?
+
+Complete this short reflection in PrairieLearn.
+
+::: notes
+See `activities/discussion-01_activity/exit-ticket-spec.md` for the question specification.
+:::
