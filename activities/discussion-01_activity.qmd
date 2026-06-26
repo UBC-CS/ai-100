@@ -3,58 +3,37 @@ title: "{{< var icon.computer-activity >}} Activity"
 subtitle: "Discussion 1, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
+## Learning goal
+
+Work together to build a shared AI 100 code of conduct: the norms we will use to discuss sensitive, controversial, or personal AI topics with care, clarity, and accountability.
+
+By the end of this activity, you should be able to identify behaviours that support respectful discussion, draft and refine code-of-conduct principles, and apply them to realistic scenarios.
+
+## Time estimate
+
+~40 minutes
+
+## Group size
+
+Small groups of 3–4 students, with several whole-class steps.
+
+## {{< var icon.resource >}} Materials
+
+* Sticky notes or index cards (physical), or a shared Miro board
+* A shared document, whiteboard, or chart paper
+* [AI 100 Code of Conduct](discussion-01_activity/code-of-conduct.md) (reference)
+* [Lab 01 slides](../slides/discussion-01_slides.qmd)
+
 ## {{< var icon.task >}} Steps
 
--   [ ] First step.
--   [ ] Second step.
+1. **Individual reflection (5 min).** On sticky notes, jot behaviours or rules that helped or harmed past group discussions, and one principle you would want in this course.
+2. **Small-group drafting (10 min).** In your group, cluster your sticky notes into themes and turn each cluster into a clear, actionable principle.
+3. **Merge into one class code (8 min).** Going around the room, each group adds a principle not already listed until the class has a single draft code of conduct.
+4. **Scenario testing (8 min).** As a class, test the draft against a few realistic scenarios and revise where needed.
+5. **Wrap-up (4 min).** The teaching team consolidates and publishes the final class code of conduct after the activity.
 
-## {{< var icon.resource >}} Resources
+## Exit ticket
 
+Complete a short reflection in PrairieLearn after the activity:
 
-## Learning Goal
-
-Students will practice applying the AI 100 Code of Conduct to realistic AI activities and project ideas.
-
-By the end of the activity, students should be able to classify AI project ideas as Green, Yellow, or Red, and explain how a risky idea could be revised into a safer one.
-
-## Time Estimate
-
-30–40 minutes
-
-## Group Size
-
-Small groups of 3–5 students
-
-## Materials Needed
-
-* [AI 100 Code of Conduct](discussion-01_activity/code-of-conduct.md)
-* Scenario cards
-* Shared worksheet, discussion board, or group document
-* Three labels:
-  * Green: likely okay
-  * Yellow: ask first or revise
-  * Red: not allowed
-
-## Step-by-Step Instructions
-
-### 1. Read the Code Individually, 5 minutes
-
-Read the AI 100 Code of Conduct.
-
-As you read, underline or note:
-
-* One rule that seems clear
-* One rule that seems important
-* One rule or situation you have questions about
-
-### 2. Discuss the Main Idea as a Group, 5 minutes
-
-In your group, summarize the code in one sentence.
-
-Use this sentence starter:
-
-> In AI 100, responsible AI use means...
-
-### 3. Classify Scenario Cards, 10 minutes
-
-<!-- TODO: complete the scenario classification steps and the remaining activity sections -->
+> What is one responsibility you have when discussing sensitive AI ethics topics in this course?
