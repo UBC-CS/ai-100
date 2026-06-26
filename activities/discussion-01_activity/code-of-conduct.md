@@ -29,7 +29,7 @@ Make a good-faith effort to understand what someone is saying before disagreeing
 
 ### 2. Critique Ideas, Not People
 
-It is appropriate to challenge claims, assumptions, evidence, and possible harms. It is not appropriate to insult classmates, assign motives, or treat disagreement as a personal failure.
+It is appropriate to challenge claims, assumptions, evidence, and possible harms. It is not appropriate to insult classmates, assume bad intent, or treat someone's disagreement with you as a personal attack.
 
 ### 3. Take Sensitive Topics Seriously
 
@@ -58,7 +58,7 @@ If a conversation feels harmful, confusing, or too personal, it is acceptable to
 
 ### 8. Seek Support Early
 
-If comfortable and safe, students may first talk with the person or group involved. Students are also encouraged to reach out to the TA or instructor for support, especially when the issue involves repeated behaviour, personal harm, power dynamics, sensitive disclosure, or uncertainty about what to do.
+If comfortable and safe, students may first raise the concern directly with the person or group involved. Students are also encouraged to reach out to the TA or instructor for support, especially when the issue involves repeated behaviour, personal harm, power dynamics, sensitive disclosure, or uncertainty about what to do.
 
 ### 9. Respect Privacy
 
@@ -70,7 +70,7 @@ Good shared norms improve through practice. If a principle is unclear, incomplet
 
 ## Growth Mindset
 
-When dialoguing with others who think, act, and feel differently, you may be faced with strong emotional reactions. If you see learning activities as an opportunity for growth, and focus on improving your skills of healthy professional dialogue (empathy, commitment to truth, attentive listening, finding common ground, making insightful distinctions, acknowledging differences and moving forward), we think this course is ideal training for similar situations you will face in the future.
+Your dialogue skills do not need to be perfect. Talking with people who think, act, or feel differently can stir strong emotions, and that is normal. Treat each activity as a chance to practise the skills of healthy professional dialogue — empathy, a commitment to truth, attentive listening, finding common ground, drawing careful distinctions, and acknowledging differences before moving forward. Approached this way, the course becomes valuable preparation for similar conversations you will face beyond it.
 
 ## Further Reading
 
