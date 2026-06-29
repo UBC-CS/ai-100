@@ -1,11 +1,156 @@
 ---
-title: "{{< var icon.computer-activity >}} Activity"
+title: "{{< var icon.computer-activity >}} Human vs Coding Agent: Pokemon Classifier"
 subtitle: "Discussion 3, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
+Make your own classifier that identifies which Pokemon starter someone is likely to choose. Then, solve the same problem with a coding agent, and compare.
+
+**Total time:** TODO
+
 ## {{< var icon.task >}} Steps
 
--   [ ] First step.
--   [ ] Second step.
+### Task 1: Hands-On Decision Tree
+
+**Time:** 10-15 minutes
+
+Using pen and paper, create a decision tree that predicts which of the three Pokemon starter types someone is most likely to favour. You may ask whether the feature is greater than, less than, or equal to a particular value. You may also ask yes/no questions. [TODO do they need these guidelines?] 
+
+Use the following training set to create your model:
+
+::: {.list-table}
+- - battle style
+  - favourite generation
+  - hours per week
+  - trades often?
+  - type
+
+- - offensive
+  - 1
+  - 12
+  - no
+  - fire
+
+- - offensive
+  - 1
+  - 9
+  - yes
+  - fire
+
+- - offensive
+  - 3 
+  - 11
+  - no
+  - fire
+
+- - offensive
+  - 2
+  - 4
+  - yes
+  - water
+
+- - defensive
+  - 2
+  - 3
+  - no
+  - water
+
+- - defensive
+  - 1
+  - 6 
+  - yes
+  - water
+
+- - defensive
+  - 3
+  - 5
+  - no
+  - grass
+
+- - defensive
+  - 2
+  - 8
+  - no
+  - grass
+
+- - balanced
+  - 3
+  - 7
+  - yes
+  - grass
+
+- - balanced
+  - 1
+  - 6
+  - no
+  - grass
+
+- - balanced
+  - 1
+  - 13
+  - no
+  - fire
+
+- - offensive
+  - 3
+  - 5
+  - no
+  - grass
+:::
+
+Once you've created your decision tree, use this testing set to see how well it would perform on unseen data. **Do NOT reference the testing set until you've finished making your tree!** How many does your model get right?
+
+::: {.list-table}
+- - battle style
+  - favourite generation
+  - hours per week
+  - trades often?
+  - type
+
+- - offensive
+  - 1
+  - 10
+  - no
+  - fire
+
+- - defensive
+  - 2
+  - 4
+  - yes
+  - water
+
+- - balanced
+  - 3
+  - 6
+  - yes
+  - grass
+
+- - offensive
+  - 2
+  - 3
+  - yes
+  - water
+:::
+
+Finally, predict what type this person is most likely to prefer:
+
+::: {.list-table}
+- - battle style
+  - favourite generation
+  - hours per week
+  - trades often?
+  - type
+
+- - balanced
+  - 1
+  - 8
+  - no
+  - ?
+:::
+
+TODO compare with others
+
+TODO make it with ai
+
+TODO critique ai performance, how do you know if using train/test set, which model is being used, transparency...
 
 ## {{< var icon.resource >}} Resources
