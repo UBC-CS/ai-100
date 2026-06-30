@@ -43,7 +43,10 @@ number-sections: false
   - [Website: Google Teachable Machine](https://teachablemachine.withgoogle.com/train/image)
 
 - - [Biological and artificial neural networks](#sec-neural)
-  - 10 min
+  - 5 min
+
+- - [Weights](#sec-weights)
+  - 5 min
 
 - - [Activity: Neural networks](#sec-neural-activity)
   - 10 min
@@ -86,12 +89,12 @@ number-sections: false
 ### Activity: Choose the features
 What kinds of features would you use to differentiate between images of cats and dogs?
 
-::: {#fig-animals layout-ncol=2}
-![Cat](../images/lecture-05_cat.png)
+::: {#fig-cat-dog layout-ncol=2}
+![](../images/lecture-05_cat.png)
 
-![Dog](../images/lecture-05_dog.jpg)
+![](../images/lecture-05_dog.jpg)
 
-Cat and Dog
+Images of a cat (Ripley) and a dog (Midnight).
 :::
 :::
 
@@ -112,13 +115,49 @@ Cat and Dog
   - do something that wasn't in either class and see which class it is more like (e.g. shocked face). why do you think that is/what features probably make that the case? (e.g. if shocked is most like smiling, eyebrow movements might be similar, etc...)
 
 ## Biological and artificial neural networks{#sec-neural}
-- TODO biological inspiration for neural networks
-- TODO image of neuron and NN
-- TODO circles and lines image, walking through each aspect of the image 
-  - input layer, output layer, hidden layers (input/output)
-  - what are the parameters?
-  - how are parameters learned? feed-forward/backprop
-  - SGD?
+- [In the image above](#fig-cat-dog), you were probably able to identify which picture was a cat and which picture was a dog pretty quickly. Humans are able to do these kinds of classification tasks very efficiently.
+- To simulate the same level of performance with a machine, we took inspiration from biological neural networks (our brains!) when designing a new type of model: **artificial neural networks**.
+
+::: {#fig-neurons layout-ncol=2}
+![](../images/lecture-05_bio-neuron.png)
+
+![](../images/lecture-05_art-neuron.png)
+
+Biological and artificial neurons. Base image of biological neuron from OpenClipart-Vectors on Pixabay.
+:::
+
+- Neural networks are made up of neurons. Just like the neurons that make up our brains, each neuron takes some number of **inputs** and produces an **output**. Inputs can be features or outputs from other neurons. In the image above, the artificial neuron has three inputs ($x_1, x_2, x_3$), and its output is $y$.
+
+::: {#fig-network}
+![](../images/lecture-05_network.png)
+
+A neural network.
+:::
+
+- We can stack layers of neurons.
+  - We input all of the features into the network in the first layer (the **input layer**).
+  - The last layer is called the **output layer**. Each neuron in this layer outputs something we want to know, like a prediction of whether an image is a cat or a dog.
+  - We can add layers of neurons between the input and output layers: these are called **hidden layers**. The more hidden layers we add, the better the neural network gets at modelling complex relationships between features and labels.
+  - We call a neural network with lots of layers a **deep** neural network - this is why we call the overall approach **deep learning**.
+
+## Weights{#sec-weights}
+- Inside each neuron, inputs are **added together** to produce an output.
+
+:::{.callout-tip}
+### Activity: Think, pair, share
+TODO Consider the last neuron Are all inputs equally important?
+:::
+
+- Not every input is equally as important to a neuron. For example, it might be more valuable to **weigh** inputs differently TODO $w_1, w_2, w_3$
+
+- Weights are a neural network's **parameters**: during the training process, the network learns how important each input is and thus what weight it should have.
+
+- TODO any discussion on bias term? imo it's just some added complexity that doesn't really add to the understanding - weights are the big thing here.
+
+
+- TODO how are parameters learned? feedforward/backprop
+  - animated visualization?
+- TODO SGD??
 
 ## Activity: Neural networks{#sec-neural-activity}
 - TODO: some interactive example of a neural network where students are trying to produce a specific result
@@ -130,6 +169,7 @@ Cat and Dog
 - TODO fitting models this large is challenging, requires a lot of data (to get the huge number of parameters right) and compute (to finish training in a reasonable amount of time)
 - TODO introduce idea of compute and history of compute
 - TODO advancements in neural networks
+- TODO some sense that we don't actually understand what's in all the neurons
 
 ## Bias{#sec-bias}
 - TODO what is bias? intro to bias
