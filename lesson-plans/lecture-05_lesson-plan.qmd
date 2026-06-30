@@ -51,7 +51,7 @@ number-sections: false
 - - [Scale of neural networks](#sec-scale)
   - 5 min
 
-- - [Activity: TODO](#sec-todo)
+- - [Bias](#sec-bias)
   - 20 min
   
 - - [Wrap-up](#sec-wrap-up)
@@ -131,8 +131,12 @@ Cat and Dog
 - TODO introduce idea of compute and history of compute
 - TODO advancements in neural networks
 
-## Activity: TODO{#sec-todo}
-- TODO need some 20 min activity to finish up here
+## Bias{#sec-bias}
+- TODO what is bias? intro to bias
+- TODO bias in training data causing biased model, eg face detection
+- TODO some interactive thing where students can see the effect of biased training data
+
+- TODO anything else?
   - CNN demo suggested but wouldn't take long enough
   - SGD suggested
 
