@@ -1,16 +1,110 @@
 ---
-title: "Self-supervision and generative AI"
+title: "Lecture 7: Self-supervision and generative AI"
 subtitle: >
-  Lecture 7 lesson plan, {{< var course.code >}}, {{< var course.term >}}
+  {{< var course.code >}}, {{< var course.term >}}
+number-sections: false
 ---
 
-1. How different from previous topic
-2. Algorithmic idea
-    - Foundations
-    - Representation
-    - Algorithm
-3. Historical impact and applications
-4. Worked example
-    - NLP
-    - Graphs
-5. Breakout
+## Lecture overview
+### Learning outcomes
+- TODO
+
+### Pre-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+### Lecture timeline
+::: {.list-table}
+- - Topic
+  - Time
+  - Materials
+
+- - Admin
+  - 5 min
+
+- - [Differences from previous lectures](#sec-prev-lectures)
+  - 5 min
+
+- - [Next token prediction](#sec-next-token)
+  - 20 min
+
+- - [Diffusion models](#sec-diffusion)
+  - 20 min
+
+- - [Activity: Images and text](#sec-image-text)
+  - 20 min
+
+- - [Wrap-up](#sec-wrap-up)
+  - 10 min
+
+- - Admin
+  - 5 min
+:::
+
+### Post-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+## Differences from previous lectures{#sec-prev-lectures}
+- TODO we've been "helping" the model up until now - this is called supervision
+- TODO deep learning still need some sort of supervision re: labels
+- TODO rl: still somewhat helping the model 
+- TODO labelling the data becomes too difficult/costly as the dataset becomes large. no option other than self-supervision
+- TODO what is self-supervision? data is puzzle, model learns how to predict next word. define it here
+- TODO define generative AI
+
+## Next-token prediction{#sec-next-token}
+- TODO define token?
+- TODO ngrams? masking?
+
+:::{.callout-tip}
+### Activity: Hands-on next-token prediction
+TODO show a small corpus, figure out the next token bigram probabilities, then have them predict the next token for a few words
+- this or maybe having them just pick the next word based on common sense? how technical/probability focused do we want to get?
+:::
+
+## Diffusion models{#sec-diffusion}
+- TODO add increasingly more noise to image, ask model to remove it, this is the training process
+- TODO figure of adding noise to an image, then removing it, maybe interactive?
+
+:::{.callout-tip}
+### Activity: Diffusion
+TODO decide on which activity to do
+:::
+
+## Activity: Images and text{#sec-image-text}
+TODO: decide on activity
+- embeddings with semantic similarity. text-to-image association?
+
+## Wrap-up{#sec-wrap-up}
+
+:::{.callout-tip}
+### Activity: Discussion
+- TODO
+:::
