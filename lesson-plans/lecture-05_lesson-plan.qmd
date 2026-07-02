@@ -154,15 +154,14 @@ TODO Consider the last neuron Are all inputs equally important?
 
 - TODO any discussion on bias term? imo it's just some added complexity that doesn't really add to the understanding - weights are the big thing here.
 
+## Activity: Neural networks{#sec-neural-activity}
+- TODO: some interactive example of a neural network where students are trying to produce a specific result
+- TODO effect of adding/removing neurons?
+- TODO effect of adding/removing layers?
 
 - TODO how are parameters learned? feedforward/backprop
   - animated visualization?
 - TODO SGD??
-
-## Activity: Neural networks{#sec-neural-activity}
-- TODO: some interactive example of a neural network where students are trying to produce a specific result
-- TODO effect of adding/removing neurons
-- TODO effect of adding/removing layers
 
 ## Scale of neural networks{#sec-scale}
 - TODO if all pixels are features, this is a lot of features
