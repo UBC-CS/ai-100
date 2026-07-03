@@ -1,11 +1,11 @@
 ---
-title: "{{< var icon.computer-activity >}} Human vs Coding Agent: Pokemon Classifier"
+title: "{{< var icon.computer-activity >}} Human vs Coding Agent: Wearable Health Detector"
 subtitle: "Discussion 3, {{< var course.code >}}, {{< var course.term >}}"
 ---
 
-Make your own classifier that identifies which Pokemon starter someone is likely to choose. Then, solve the same problem with a coding agent, and compare.
+Make your own classifier that identifies which of a user's health conditions are likely to be affected by the current environmental conditions. Then, solve the same problem with a coding agent and compare.
 
-**Total time:** TODO
+**Total time:** 48-60 minutes
 
 ## {{< var icon.task >}} Steps
 
@@ -13,144 +13,192 @@ Make your own classifier that identifies which Pokemon starter someone is likely
 
 **Time:** 10-15 minutes
 
-Using pen and paper, create a decision tree that predicts which of the three Pokemon starter types someone is most likely to favour. You may ask whether the feature is greater than, less than, or equal to a particular value. You may also ask yes/no questions. [TODO do they need these guidelines?] 
+Using pen and paper, create a decision tree that predicts which of the user's health conditions, if any, will be affected by the current environmental conditions. [TODO do they need any guidelines on how to build the tree?]
 
 Use the following training set to create your model:
 
-::: {.list-table}
-- - battle style
-  - favourite generation
-  - hours per week
-  - trades often?
-  - type
+```{python}
+#| echo: false
+from IPython.display import display, Markdown
+import pandas as pd
 
-- - offensive
-  - 1
-  - 12
-  - no
-  - fire
-
-- - offensive
-  - 1
-  - 9
-  - yes
-  - fire
-
-- - offensive
-  - 3 
-  - 11
-  - no
-  - fire
-
-- - offensive
-  - 2
-  - 4
-  - yes
-  - water
-
-- - defensive
-  - 2
-  - 3
-  - no
-  - water
-
-- - defensive
-  - 1
-  - 6 
-  - yes
-  - water
-
-- - defensive
-  - 3
-  - 5
-  - no
-  - grass
-
-- - defensive
-  - 2
-  - 8
-  - no
-  - grass
-
-- - balanced
-  - 3
-  - 7
-  - yes
-  - grass
-
-- - balanced
-  - 1
-  - 6
-  - no
-  - grass
-
-- - balanced
-  - 1
-  - 13
-  - no
-  - fire
-
-- - offensive
-  - 3
-  - 5
-  - no
-  - grass
-:::
+small_train_df = pd.read_csv("../data/discussion-03_train-small.csv", keep_default_na=False)
+display(Markdown(small_train_df.to_markdown()))
+```
 
 Once you've created your decision tree, use this testing set to see how well it would perform on unseen data. **Do NOT reference the testing set until you've finished making your tree!** How many does your model get right?
 
-::: {.list-table}
-- - battle style
-  - favourite generation
-  - hours per week
-  - trades often?
-  - type
+```{python}
+#| echo: false
+small_test_df = pd.read_csv("../data/discussion-03_test-small.csv", keep_default_na=False)
+display(Markdown(small_test_df.to_markdown()))
+```
 
-- - offensive
-  - 1
-  - 10
-  - no
-  - fire
+Finally, predict which condition, if any, would be affected by the following environmental conditions:
 
-- - defensive
-  - 2
-  - 4
-  - yes
-  - water
+```{python}
+#| echo: false
+predict_ex = pd.read_csv("../data/discussion-03_predict.csv")
+display(Markdown(predict_ex.to_markdown()))
+```
 
-- - balanced
-  - 3
-  - 6
-  - yes
-  - grass
+::: {.content-hidden when-profile="student"}
+::: {.callout-tip collapse="true"}
+## TA note
 
-- - offensive
-  - 2
-  - 3
-  - yes
-  - water
+Circulate and make sure everyone is making progress on their tree. If students are stuck, suggest the following:
+
+- Write things down - use scrap paper liberally! 
+- Try to identify which environmental conditions differentiate the health conditions the most. For example, what feature values are mostly associated with asthma? Now, only considering the subset of examples that have those feature values, what questions could you ask to further separate the asthma examples from the rest?
+- It's okay to have a question that doesn't split the data perfectly - you can set yourself up for a second question that will split it better.
+- Common sense about the health conditions can be useful to find a starting point for feature values to consider (e.g. asthma may be aggravated by poor air quality or pollen), but you should try to be as informed by the data as possible and avoid making assumptions. 
+:::
 :::
 
-Finally, predict what type this person is most likely to prefer:
+### Task 2: Compare with Others
 
-::: {.list-table}
-- - battle style
-  - favourite generation
-  - hours per week
-  - trades often?
-  - type
+**Time:** 5 minutes
 
-- - balanced
-  - 1
-  - 8
-  - no
-  - ?
+By now you should have:
+
+- [ ] A decision tree trained on the training set
+- [ ] A score out of 5 describing how well your model performed on the testing set
+- [ ] A prediction
+
+Compare your prediction with 2-3 classmates around you. Whose prediction do you trust more? Why?
+
+::: {.content-hidden when-profile="student"}
+::: {.callout-tip collapse="true"}
+## TA note
+
+Students should realize that predictions from trees with a higher score should be trusted more, since the testing set is meant to be a proxy for how well the model will perform on unseen data (just like the example we're trying to predict a label for)!
+:::
 :::
 
-TODO compare with others
+### Task 3: Compare with the Solution
 
-TODO make it with ai
+**Time:** 10 minutes
 
-TODO critique ai performance, how do you know if using train/test set, which model is being used, transparency...
+[TODO restrict student access to this image during task 1 somehow]
 
-## {{< var icon.resource >}} Resources
+The decision tree below assigns the correct label to all of the training samples. [TODO any more explanation needed?] 
+
+[TODO explain sunny <= 0.5?? how much detail do we want here?]
+
+- [ ] Are there any visual differences between your tree and the solution tree? Does your tree have more or fewer levels than the solution tree? Which one is better for making predictions?
+- [ ] What decisions are being made? Do you agree with them?
+- [ ] The solution tree gets 3/5 of the testing set examples right. Identify which testing examples are labelled incorrectly, and what part of the tree is at fault. Was the solution tree close to the right solution?
+
+::: {.content-hidden when-profile="student"}
+::: {.callout-tip collapse="true"}
+## TA note
+
+- Shallower trees can make predictions faster. Some students might pick up on the fact that deeper trees may be overly representative of specific examples in the training set (overfitted). [TODO do we want to have this discussion?]
+- The students' trees may rely more on common sense, whereas the splits in the solution tree are very data-informed.
+- The second and fourth testing set examples are labelled incorrectly, and the tree was quite close to the right solution. In all cases where an example was labelled incorrectly, the final split that resulted in the incorrect label was based on only one training example. 
+  - Ask students whether they think this behaviour is desirable, and what could be done to fix it, e.g. gathering more data. 
+  - Some students may identify that stopping the tree from growing as deep as it needs to (in order to correctly label all examples) could also help. [TODO again, overfitting discussion?]
+:::
+:::
+
+```{python}
+# | echo: false
+%run ../python/discussion-03_plot-tree.py
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import (
+    OneHotEncoder,
+    OrdinalEncoder
+)
+from sklearn.compose import make_column_transformer
+
+small_train_X = small_train_df.drop(columns=["health_condition"])
+small_train_y = small_train_df["health_condition"]
+
+onehot_feats = ["weather_condition"]
+ordinal_feats = ["pollen_level"]
+passthrough_feats = ["air_quality_index", "uv_index", "temperature_c", "humidity_pct"]
+ct = make_column_transformer(
+    ("passthrough", passthrough_feats),
+    (OrdinalEncoder(), ordinal_feats),
+    (OneHotEncoder(), onehot_feats), 
+    verbose_feature_names_out=False
+)
+
+pipe = make_pipeline(ct, DecisionTreeClassifier())
+pipe.fit(small_train_X, small_train_y)
+
+width = 11 
+height = 8
+plt.figure(figsize=(width, height))
+custom_plot_tree(pipe[-1], 
+                 feature_names=ct.get_feature_names_out(), 
+                 class_names=pipe[-1].classes_,
+                 impurity=False,
+                 fontsize=10,)
+```
+
+### Task 4: An Agentic Solution
+
+**Time:** 3-5 minutes
+
+Use your AI tool to solve the same problem. Ask the tool to report how well its model performs on the testing set, and what its prediction is for the unlabelled example.
+
+[TODO where should we direct students to download csvs?]
+
+[TODO any guidance on how to prompt? I think it's better if they just ask it to solve the problem]
+
+::: {.content-hidden when-profile="student"}
+::: {.callout-tip collapse="true"}
+## TA note
+
+Circulate and make sure everyone has their AI tool open and is getting output. This task should be very fast. If someone has been stuck for more than a minute or two, check their setup first.
+
+Students may see lots of variation in this task. This is normal and desired! The AI may discuss some out-of-scope concepts, particularly cross-validation, other models, and other metrics like precision and recall - students should not worry too much about terms they don't recognize. 
+:::
+:::
+
+### Task 5: Investigate the Solution
+
+**Time:** 10 minutes
+
+**Step 1: Find out what it's doing.**
+
+- [ ] If the AI hasn't already told you what model(s) it is using, ask it.
+- [ ] Do you recognize any of the models being used? You may see it using **logistic regression** - this is a linear model like the ones discussed in class!
+- [ ] How does the AI's model perform on the testing set? You may see it reporting **accuracy**, i.e. how many examples out of 5 the model got right - this is what you're looking for! Does this score seem to make sense?
+
+**Step 2: Compare the AI's tree to the others.**
+
+- [ ] If the AI did not use a decision tree, ask it to repeat the task using a decision tree.
+- [ ] Ask the AI to generate a visual representation of its decision tree. How does the AI's tree compare visually to your own? How does it compare to the solution tree?
+- [ ] Did the AI's tree score differently on the testing set? What prediction did it make at the end?
+- [ ] Between your tree, the solution tree, and the AI's tree, which tree do you think is better? Why?
+
+[TODO high-level overview of rationale for this point: trying to empower students to realize that the solution tree is CORRECT, and so any other tree or score reported by the AI tool is INCORRECT - i.e. it's not perfect]
+
+::: {.content-hidden when-profile="student"}
+::: {.callout-tip collapse="true"}
+## TA note
+
+- Encourage students to be skeptical of the AI tool's response. Particularly challenge the score reported by the model - if it isn't 0%, 20%, 40%, 60%, 80%, or 100%, something is off, since there were only 5 testing examples!
+-  *Treat the solution tree as the correct answer.* The AI tool may produce trees that it claims work better than the solution tree, or may claim that no such tree can be produced. If the AI tool can't find the solution tree, *the AI is wrong*.
+:::
+:::
+
+[TODO any investigation of a larger dataset?]
+
+## Class Discussion
+
+**Time:** 10-15 minutes
+
+### How did you investigate the models that the AI made?
+
+### How did the tree that the AI made compare to your own tree and to the solution tree?
+
+### What is the correct use of the training and testing sets? How can you be sure that the training and testing sets are being used correctly by the AI?
+
+[TODO TA notes]
+
+[TODO any other questions?]

@@ -1,0 +1,6 @@
+air_quality_index,uv_index,temperature_c,humidity_pct,pollen_level,weather_condition,health_condition
+116.8,7.0,14.4,23.6,Low,Sunny,Migraine
+97.5,9.2,43.0,23.1,Medium,Windy,Asthma
+52.8,4.9,18.5,76.3,Medium,Cloudy,None
+31.0,6.5,13.3,84.0,Low,Sunny,Asthma
+50.2,4.2,20.4,78.2,Medium,Cloudy,Migraine
