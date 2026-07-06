@@ -1,0 +1,18 @@
+## Presentation Rubric
+
+| Criterion | 5 — Excellent | 4 — Good | 3 — Satisfactory | 2 — Developing | 1 — Beginning | 0 — Not Assessed |
+|:---|:---|:---|:---|:---|:---|:---|
+| **Organization & Story** | Presentation has a clear purpose and compelling narrative. Ideas flow naturally from motivation, to system, to findings, to conclusions. Transitions are smooth and every section contributes to the overall message. | Presentation has a clear structure with only minor issues in flow or organization. Most content supports the main message. | Presentation follows a recognizable structure, but some sections feel disconnected, repetitive, or out of order. | Organization makes it difficult to follow the presentation. Important ideas appear without sufficient context or logical progression. | Presentation lacks a coherent structure or central message. | No presentation or substantially incomplete presentation. |
+| **Reasoning & Evidence** | Claims are persuasive and consistently supported with research, examples, demonstrations, or observations. The presentation acknowledges limitations, tradeoffs, or alternative perspectives where appropriate. | Claims are generally supported by appropriate evidence. Some discussion of tradeoffs or limitations is included. | Main claims are identifiable, but evidence is limited, uneven, or lacks sufficient detail. Little consideration of alternative viewpoints. | Claims rely primarily on opinion or unsupported assertions. Evidence is minimal or largely irrelevant. | Presentation makes little attempt to support its claims. | No presentation or substantially incomplete presentation. |
+| **Understanding of AI Systems & Social Impact** | Demonstrates a sophisticated understanding of the AI system, including technical implementation, parties, dependencies, assumptions, and broader societal impacts. Thoughtfully analyzes tradeoffs and unresolved tensions. | Demonstrates a solid understanding of the AI system and discusses relevant parties and broader impacts with only minor omissions. | Demonstrates a basic understanding of the AI system and identifies some broader impacts, but discussion remains superficial or incomplete. | Understanding of the AI system or its broader context is limited or contains important inaccuracies. | Demonstrates little understanding of the AI system or its societal context. | No presentation or substantially incomplete presentation. |
+| **Presentation & Communication** | Presentation is clear, engaging, and professional. Visuals effectively support the presentation. All group members contribute meaningfully and respond thoughtfully to questions. | Presentation is clear and understandable with generally effective visuals. Most group members participate. | Presentation communicates the main ideas but has issues with clarity, pacing, visuals, or uneven participation. | Presentation is difficult to follow due to organization, delivery, or communication issues. Participation is limited. | Presentation is largely incomprehensible or incomplete. | No presentation or substantially incomplete presentation. |
+
+### Grade Summary
+
+| Criterion | Marks |
+|:---|---:|
+| Organization & Story | /5 |
+| Reasoning & Evidence | /5 |
+| Understanding of AI Systems & Social Impact | /5 |
+| Presentation & Communication | /5 |
+| **Total** | **/20** |
