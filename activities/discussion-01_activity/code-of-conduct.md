@@ -70,7 +70,7 @@ Good shared norms improve through practice. If a principle is unclear, incomplet
 
 ## Growth Mindset
 
-Your dialogue skills do not need to be perfect. Talking with people who think, act, or feel differently can stir strong emotions, and that is normal. Treat each activity as a chance to practise the skills of healthy professional dialogue — empathy, a commitment to truth, attentive listening, finding common ground, drawing careful distinctions, and acknowledging differences before moving forward. Approached this way, the course becomes valuable preparation for similar conversations you will face beyond it.
+Your discussion skills do not need to be perfect. Talking with people who think, act, or feel differently can stir strong emotions, and that is normal. Treat each activity as a chance to practise the skills of healthy professional discussion — empathy, a commitment to truth, attentive listening, finding common ground, drawing careful distinctions, and acknowledging differences before moving forward. Approached this way, the course becomes valuable preparation for similar conversations you will face in your career and life.
 
 ## Further Reading
 
