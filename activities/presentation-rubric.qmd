@@ -1,0 +1,36 @@
+## Presentation Rubric
+
+| Criterion | Excellent (4) | Good (3) | Developing (2) | Rudimentary (1) |
+|:---|:---|:---|:---|:---|
+| **Understanding the AI System** | Clearly explains the app's purpose, users, AI components (models, data, APIs), and implementation. Demonstrates a strong understanding of how the system works. | Explains the app and most major components with only minor omissions or inaccuracies. | Gives a basic explanation, but important parts of the AI system are unclear or incomplete. | Explanation is confusing or incomplete; it is difficult to understand what the system does or how it works. |
+| **Systems Thinking** | Considers the AI system within broader technical, social, economic, environmental, and organizational systems. Clearly identifies parties, dependencies, and interactions. | Identifies several parties and broader impacts beyond immediate users. | Identifies some broader impacts, but discussion remains narrow or superficial. | Focuses almost entirely on the app itself with little discussion of the wider system. |
+| **Tradeoffs & Reflection** | Identifies meaningful tradeoffs, and articulates their dynamic. Explains why they persist and reflects on the responsibilities they create. Avoids simplistic conclusions. | Discusses meaningful tradeoffs and their implications. | Mentions tradeoffs but treats them as easily solvable or discusses them only briefly. | Little evidence of reflection or recognition of competing considerations. |
+| **Research & Evidence** | Uses credible research or real-world examples to support claims. Explains how research influenced the group's understanding. | Uses relevant evidence to support most claims. | Uses limited evidence or relies mainly on unsupported opinions. | Provides little or no supporting evidence. |
+| **Revision & Group Feedback** | Clearly explains how TA and shadow group feedback changed the audit or design. Identifies specific revisions and remaining open questions. | Shows that feedback informed some revisions. | Acknowledges feedback but revisions are limited or vague. | Little evidence that feedback influenced the project. |
+| **Presentation & Teamwork** | Presentation is clear, well organized, and engaging. All group members contribute meaningfully and respond thoughtfully to questions. | Presentation is organized and most members contribute. | Presentation is somewhat disorganized or participation is uneven. | Presentation is difficult to follow or dominated by one speaker. |
+
+### Grade Summary
+
+| Criterion | Marks |
+|:---|---:|
+| Understanding the AI System | /4 |
+| Systems Thinking | /4 |
+| Tradeoffs & Reflection | /4 |
+| Research & Evidence | /4 |
+| Revision & Shadow Group Feedback | /4 |
+| Presentation & Teamwork | /4 |
+| **Total** | **/24** |
+
+::: {.callout-note}
+### What are we looking for?
+
+This presentation is **not** about proving your app is ethical or unethical.
+
+Instead, we are looking for evidence that your group:
+
+- developed a deeper understanding of your AI system,
+- identified important parties, assumptions, and tradeoffs,
+- used research to inform your thinking,
+- learned from feedback, and
+- can communicate both what you know **and what remains uncertain**.
+:::
