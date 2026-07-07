@@ -130,7 +130,7 @@ What information could be used to identify whether a single transaction is fraud
   - Features are things we already know about an example, like User ID, Amount, Distance from Home, and Account Age.
   - Labels are things we would like to predict, like Fraud.
   - We represent the features with X and represent the labels with Y.
-- We **train** a **model** on lots of examples with labels we already know so that the model can learn to **predict** labels for new examples.
+- We **train** a **model** on lots of examples with labels we already know so that the model can learn to **predict** labels for new examples. Predicting a label is also called **classification**.
 - Thus, our **inputs** to a machine learning problem are features and our **outputs** are labels.
 
 :::{.callout-tip}
@@ -233,6 +233,7 @@ decision_tree_builder_3d(outcome_data, 'coursework_hours', 'social_hours', 'did_
 ### Training and testing data
 - Once the model is deployed in the real world, we might see that the model doesn't really match up with relationships and trends in the real world.
 - To give us an idea of how a model will perform in the real world before deploying it, we set aside part of the data (the **testing set**) before training the model with the rest of the data (the **training set**). We then see how well the model performs on the testing set.
+- **Accuracy** is the percentage of predictions the model gets right. For example, if there are 10 examples in the testing set, and the model correctly predicts the target for 8 of them, the model has an accuracy of 8/10 = 80%.
 
 :::{.callout-tip}
 ### Activity: Think, pair, share
