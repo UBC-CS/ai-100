@@ -42,20 +42,17 @@ number-sections: false
   - 10 min
   - [Website: Google Teachable Machine](https://teachablemachine.withgoogle.com/train/image)
 
-- - [Biological and artificial neural networks](#sec-neural)
-  - 5 min
-
-- - [Weights](#sec-weights)
-  - 5 min
+- - [Neurons, weights, and networks](#sec-neuron-weight)
+  - 10 min
 
 - - [Activity: Neural networks](#sec-neural-activity)
-  - 10 min
+  - 15 min
+
+- - [Bias](#sec-bias)
+  - 15 min
 
 - - [Scale of neural networks](#sec-scale)
   - 5 min
-
-- - [Bias](#sec-bias)
-  - 20 min
   
 - - [Wrap-up](#sec-wrap-up)
   - 10 min
@@ -114,10 +111,11 @@ Images of a cat (Ripley) and a dog (Midnight).
     - see if model improves if both people are used to train
   - do something that wasn't in either class and see which class it is more like (e.g. shocked face). why do you think that is/what features probably make that the case? (e.g. if shocked is most like smiling, eyebrow movements might be similar, etc...)
 
-## Biological and artificial neural networks{#sec-neural}
+## Neurons, weights, and networks{#sec-neuron-weight}
 - [In the image above](#fig-cat-dog), you were probably able to identify which picture was a cat and which picture was a dog pretty quickly. Humans are able to do these kinds of classification tasks very efficiently.
 - To simulate the same level of performance with a machine, we took inspiration from biological neural networks (our brains!) when designing a new type of model: **artificial neural networks**.
 
+### Neurons
 ::: {#fig-neurons layout-ncol=2}
 ![](../images/lecture-05_bio-neuron.png)
 
@@ -126,58 +124,90 @@ Images of a cat (Ripley) and a dog (Midnight).
 Biological and artificial neurons. Base image of biological neuron from OpenClipart-Vectors on Pixabay.
 :::
 
-- Neural networks are made up of neurons. Just like the neurons that make up our brains, each neuron takes some number of **inputs** and produces an **output**. Inputs can be features or outputs from other neurons. In the image above, the artificial neuron has three inputs ($x_1, x_2, x_3$), and its output is $y$.
+- Neural networks are made up of neurons. Just like the neurons that make up our brains, each neuron takes some number of **inputs** and produces an **output**. Inputs can be features or outputs from other neurons. 
+- In the image above, the artificial neuron has three inputs ($x_1, x_2, x_3$), and its output is $y$.
 
+### Weights
+- Inside each neuron, inputs are **added together** to produce an output. [TODO: ok to stop here without talking about activation fn?]
+
+:::{.callout-tip}
+### Activity: Think, pair, share
+Consider a neuron that takes three features as input: an animal's size, the shape of its ears, and its eye colour. We want the output of the neuron to represent whether the animal is a cat or a dog. Are all of the inputs equally important to consider?
+
+TODO are these features too simplistic? can't really go further into the network as we lose track of what each neuron actually means
+:::
+
+- Not every input is equally as important to a neuron - it might be more valuable to **weigh** inputs differently. 
+- When adding inputs together, we multiply each input by its respective weight. Important inputs are assigned larger weights: this way they make a larger impact on the output than the other inputs. Similarly, less important inputs are assigned smaller weights.
+- In the image above, input $x_1$'s weight is $w_1$, $x_2$'s weight is $w_2$, and $x_3$'s weight is $w_3$.
+- Weights are a neural network's **parameters**: during the training process, the network learns how important each input is and thus what weight it should have.
+- TODO any discussion on bias term? imo it's just some added complexity that doesn't really add to the understanding - weights are the big thing here.
+
+### Neural networks
 ::: {#fig-network}
 ![](../images/lecture-05_network.png)
 
 A neural network.
 :::
 
-- We can stack layers of neurons.
-  - We input all of the features into the network in the first layer (the **input layer**).
+- We can stack **layers** of neurons to make a **neural network**.
+  - Since we input all of the features into the network in the first layer, we call it the **input layer**.
   - The last layer is called the **output layer**. Each neuron in this layer outputs something we want to know, like a prediction of whether an image is a cat or a dog.
   - We can add layers of neurons between the input and output layers: these are called **hidden layers**. The more hidden layers we add, the better the neural network gets at modelling complex relationships between features and labels.
   - We call a neural network with lots of layers a **deep** neural network - this is why we call the overall approach **deep learning**.
-
-## Weights{#sec-weights}
-- Inside each neuron, inputs are **added together** to produce an output.
-
-:::{.callout-tip}
-### Activity: Think, pair, share
-TODO Consider the last neuron Are all inputs equally important?
-:::
-
-- Not every input is equally as important to a neuron. For example, it might be more valuable to **weigh** inputs differently TODO $w_1, w_2, w_3$
-
-- Weights are a neural network's **parameters**: during the training process, the network learns how important each input is and thus what weight it should have.
-
-- TODO any discussion on bias term? imo it's just some added complexity that doesn't really add to the understanding - weights are the big thing here.
 
 ## Activity: Neural networks{#sec-neural-activity}
 - TODO: some interactive example of a neural network where students are trying to produce a specific result
 - TODO effect of adding/removing neurons?
 - TODO effect of adding/removing layers?
+- TODO would like some second opinions here
 
-- TODO how are parameters learned? feedforward/backprop
+### Backpropagation
+- TODO feedback needed - how much detail is needed here?
+- TODO do we want to define the word feedforward?
+- TODO how are parameters learned? backprop
   - animated visualization?
-- TODO SGD??
-
-## Scale of neural networks{#sec-scale}
-- TODO if all pixels are features, this is a lot of features
-- TODO fitting models this large is challenging, requires a lot of data (to get the huge number of parameters right) and compute (to finish training in a reasonable amount of time)
-- TODO introduce idea of compute and history of compute
-- TODO advancements in neural networks
-- TODO some sense that we don't actually understand what's in all the neurons
+- TODO gradient descent??
 
 ## Bias{#sec-bias}
-- TODO what is bias? intro to bias
-- TODO bias in training data causing biased model, eg face detection
-- TODO some interactive thing where students can see the effect of biased training data
 
-- TODO anything else?
-  - CNN demo suggested but wouldn't take long enough
-  - SGD suggested
+:::{.callout-tip}
+### Activity: Distribution of training data
+Imagine an emotion recognition tool. We have a dataset of 240 faces, labelled as either sad or happy, and we want to predict whether new faces are sad or happy. This is a great application for deep learning!
+
+Some of the faces in our dataset have dark skin, and others have light skin. The sliders in the visualization below allows you to adjust how many faces from each group are in the dataset of 240 faces. In the visualization below, the plot on the left shows the number of happy and sad faces across the two groups. The plot on the right shows the overall accuracy (number of correctly predictions in the entire dataset), as well as the per-group accuracy (number of correct predictions for people with a particular skin colour).
+
+Use the sliders to change the distribution of skin colour and emotion in the dataset, and discuss the following with your neighbours:
+
+- What effect does the skin colour slider have on the accuracy scores? What effect do the label sliders have?
+- Do you trust any of the accuracy scores more or less than the others?
+- What arrangement of sliders would you say produces the best model? Why is it the best?
+- This activity is based on [Dr. Joy Buolamwini's research](https://www.media.mit.edu/projects/gender-shades/overview/) on facial recognition. As a Black woman, her experience with leading tech companies' facial recognition software differed significantly from her colleagues: not only did the tools struggle to identify her face, but they often incorrectly classified her as a man. 
+  - Considering Dr. Buolamwini's experience, what do you think the distribution of skin colour in the dataset might have looked like? What about the gender distribution?
+  - Why do you think the dataset ended up like this? Could any real-life biases be involved?
+:::
+
+```{=html}
+<iframe src="../python/lecture-05_bias-visualizer.html" width="100%" height="800px" style="border:none;"></iframe>
+```
+- As we've seen, differences in the distribution of the training set can lead to very different models.
+- If our labels aren't balanced, our model won't have the chance to learn enough from each label to make meaningful predictions, and will perform poorly overall. 
+  - For example, if most of the training set is made up of happy faces, the model won't be able to see enough sad faces to learn what the differences are. 
+- Even if our labels are perfectly balanced, imbalances in the groups included in the dataset can lead to **biased** models that perform differently for different groups. In AI, we call this an issue of **fairness**.
+  - For example, if most of the faces in the training set have light skin, the model should perform well on people with light skin. However, it won't be able to see enough happy and sad people with dark skin to learn what the differences are for them.
+- In this example, bias was easy to spot, but this isn't always the case. We are all biased, and that bias influences the data we collect in ways we might not initially notice.
+
+## Scale of neural networks{#sec-scale}
+- If each pixel in an image is a feature, we end up with a lot of features! Similarly, if each connection between neurons needs a weight, we end up with a lot of parameters!
+- Training models this large is very challenging for a few reasons.
+  - As seen above, bias is a concern. We need our model to be able to look at a lot of data with lots of variety to make sure it behaves well, both in general and across groups.
+  - Training a neural network involves a huge number of calculations. We'd like these calculations to happen as quickly as possible, so that we can finish training our model in a reasonable amount of time. 
+- Depending on your computer's hardware, it can perform a certain number of calculations per second. Computers with good GPUs are particularly fast at doing the kinds of calculations we need for model training. 
+- We call this resource **compute**, and the bigger our models get, the more compute they need for the training process.
+- TODO any further info on what is actually happening/matrix multiplication? many students will not know what matrices are.
+- TODO any info on history of compute?
+- TODO any info on advancements in NN?
+- **TODO any info on interpretability? this might be really good at this stage**
 
 ## Wrap-up{#sec-wrap-up}
 
