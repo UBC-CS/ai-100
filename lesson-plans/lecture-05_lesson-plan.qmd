@@ -45,7 +45,7 @@ number-sections: false
 - - [Neurons, weights, and networks](#sec-neuron-weight)
   - 10 min
 
-- - [Activity: Neural networks](#sec-neural-activity)
+- - [Backpropagation](#sec-backprop)
   - 15 min
 
 - - [Bias](#sec-bias)
@@ -80,23 +80,16 @@ number-sections: false
 
 ## Differences from previous lectures{#sec-prev-lectures}
 - In machine learning, we start by choosing which features we want to use to train our model.
-- However, identifying and engineering features manually can be very time consuming, and may require expert knowledge.
+- However, identifying and engineering features can be very time consuming, and may require expert knowledge.
 
 :::{.callout-tip}
-### Activity: Choose the features
-What kinds of features would you use to differentiate between images of cats and dogs?
-
-::: {#fig-cat-dog layout-ncol=2}
-![](../images/lecture-05_cat.png)
-
-![](../images/lecture-05_dog.jpg)
-
-Images of a cat (Ripley) and a dog (Midnight).
-:::
+### Activity: Guess who?
+In pairs, you will each be given a picture of a cat or a dog. Don't show the picture to your partner! Instead, describe what you see in the picture, and see if they can guess correctly. What properties of the picture helped your partner the most?
 :::
 
-- It can be very difficult to extract useful features from our data!
-- Instead of trying to come up with the features ourselves, it might be better to give the raw image to the model, e.g. by making each individual pixel a feature, and let it figure out the features as part of the training process.
+- It is relatively easy for humans to identify properties that differentiate dogs and cats - for example, you might have used ear shape to guess which animal your partner had. However, the machine learning problems we've seen so far require these properties to be formally identified and given to the model as features. Imagine looking at thousands of images of dogs and cats and manually filling in which ear shape each one has... very boring!
+- Instead of trying to come up with features ourselves, it might be better to just give the images to the model and let it figure out these useful properties as part of the training process.
+- Computers can't "see" like we can, so we represent an image using the colour of each of its pixels.
 
 ## Activity: Google Teachable Machine{#sec-teachable-machine}
 - TODO what are we trying to get across here? is this just another example of deep learning?
@@ -109,10 +102,17 @@ Images of a cat (Ripley) and a dog (Midnight).
   - train with object added to/removed from background between two different unrelated classes (e.g. smiling with water bottle, frowning without) and see how adding/removing the object during testing changes the accuracy
   - train with one person smiling/frowning and use another person smiling/frowning to test
     - see if model improves if both people are used to train
-  - do something that wasn't in either class and see which class it is more like (e.g. shocked face). why do you think that is/what features probably make that the case? (e.g. if shocked is most like smiling, eyebrow movements might be similar, etc...)
+  - do something that wasn't in either class and see which class it is more like (e.g. shocked face). why do you think that is/what properties probably make that the case? (e.g. if shocked is most like smiling, eyebrow movements might be similar, etc...)
 
 ## Neurons, weights, and networks{#sec-neuron-weight}
-- [In the image above](#fig-cat-dog), you were probably able to identify which picture was a cat and which picture was a dog pretty quickly. Humans are able to do these kinds of classification tasks very efficiently.
+::: {#fig-cat-dog layout-ncol=2}
+![](../images/lecture-05_cat.png)
+
+![](../images/lecture-05_dog.jpg)
+
+Images of a cat (Ripley) and a dog (Midnight).
+:::
+- In the figure above, you are probably able to identify which picture is a cat and which picture is a dog pretty quickly. Humans are able to do these kinds of classification tasks very efficiently.
 - To simulate the same level of performance with a machine, we took inspiration from biological neural networks (our brains!) when designing a new type of model: **artificial neural networks**.
 
 ### Neurons
@@ -124,24 +124,33 @@ Images of a cat (Ripley) and a dog (Midnight).
 Biological and artificial neurons. Base image of biological neuron from OpenClipart-Vectors on Pixabay.
 :::
 
-- Neural networks are made up of neurons. Just like the neurons that make up our brains, each neuron takes some number of **inputs** and produces an **output**. Inputs can be features or outputs from other neurons. 
+- Neural networks are made up of neurons. Just like the neurons that make up our brains, each neuron takes some number of **inputs** and produces an **output**. Inputs can be raw data, e.g. pixels from the original image, or outputs from other neurons. 
 - In the image above, the artificial neuron has three inputs ($x_1, x_2, x_3$), and its output is $y$.
 
 ### Weights
-- Inside each neuron, inputs are **added together** to produce an output. [TODO: ok to stop here without talking about activation fn?]
+- Inside each neuron, inputs are **combined** to produce an output.
 
 :::{.callout-tip}
 ### Activity: Think, pair, share
-Consider a neuron that takes three features as input: an animal's size, the shape of its ears, and its eye colour. We want the output of the neuron to represent whether the animal is a cat or a dog. Are all of the inputs equally important to consider?
+Consider a neuron that takes nine inputs: the colour of each pixel in a small 3x3 image. We want the output of the neuron to represent whether a particular image shows an X or an O. 
 
-TODO are these features too simplistic? can't really go further into the network as we lose track of what each neuron actually means
+::: {#fig-x-o layout-ncol=3}
+![](../images/lecture-05_xo-neuron.png)
+
+![](../images/lecture-05_x.png)
+
+![](../images/lecture-05_o.png)
+
+The pixels of small 3x3 images are given as input to a neuron (left). Each image may be an X (middle) or an O (right). Each input is labelled A through I.
+:::
+
+Are all of the inputs equally important to consider? If not, which ones might be more important, and why?
 :::
 
 - Not every input is equally as important to a neuron - it might be more valuable to **weigh** inputs differently. 
-- When adding inputs together, we multiply each input by its respective weight. Important inputs are assigned larger weights: this way they make a larger impact on the output than the other inputs. Similarly, less important inputs are assigned smaller weights.
+- When combining inputs, we multiply each input by its respective weight. Important inputs are assigned larger weights: this way they make a larger impact on the output than the other inputs. Similarly, less important inputs are assigned smaller weights.
 - In the image above, input $x_1$'s weight is $w_1$, $x_2$'s weight is $w_2$, and $x_3$'s weight is $w_3$.
 - Weights are a neural network's **parameters**: during the training process, the network learns how important each input is and thus what weight it should have.
-- TODO any discussion on bias term? imo it's just some added complexity that doesn't really add to the understanding - weights are the big thing here.
 
 ### Neural networks
 ::: {#fig-network}
@@ -151,23 +160,19 @@ A neural network.
 :::
 
 - We can stack **layers** of neurons to make a **neural network**.
-  - Since we input all of the features into the network in the first layer, we call it the **input layer**.
+  - Since we input each example (e.g. the pixels of a training image) into the network in the first layer, we call it the **input layer**.
   - The last layer is called the **output layer**. Each neuron in this layer outputs something we want to know, like a prediction of whether an image is a cat or a dog.
-  - We can add layers of neurons between the input and output layers: these are called **hidden layers**. The more hidden layers we add, the better the neural network gets at modelling complex relationships between features and labels.
+  - We can add layers of neurons between the input and output layers: these are called **hidden layers**. The more hidden layers we add, the better the neural network gets at modelling complex relationships between examples and their associated labels.
   - We call a neural network with lots of layers a **deep** neural network - this is why we call the overall approach **deep learning**.
+  - Note that the structure of the neural network is **not** learned - before the training process starts, we decide how many layers and neurons we want.
 
-## Activity: Neural networks{#sec-neural-activity}
-- TODO: some interactive example of a neural network where students are trying to produce a specific result
-- TODO effect of adding/removing neurons?
-- TODO effect of adding/removing layers?
-- TODO would like some second opinions here
-
-### Backpropagation
-- TODO feedback needed - how much detail is needed here?
-- TODO do we want to define the word feedforward?
-- TODO how are parameters learned? backprop
-  - animated visualization?
-- TODO gradient descent??
+## Backpropagation{#sec-backprop}
+- How do we train a neural network? In other words, for each neuron in the network, how do we figure out which weights its inputs should have?
+- We use an approach called **backpropagation**:
+  - To start, we set each weight to a random number. Then, we use the network to predict the label for each example in the training data. Since all of the weights were randomized, they don't necessarily reflect how important each neuron's inputs are - these initial predictions probably won't be very good!
+  - We compare each prediction to the actual label to know how accurate the predictions were. Then, we use this feedback to make small changes to the weights - we think these changes might make the model a little more accurate, but we don't really know.
+  - We repeat this process - predict labels for the training data, compare to the real labels, and adjust the weights - until we feel satisfied that the model is accurate enough, or until changing the weights doesn't make the model any more accurate.
+- TODO: animated visualization of training
 
 ## Bias{#sec-bias}
 
@@ -175,7 +180,7 @@ A neural network.
 ### Activity: Distribution of training data
 Imagine an emotion recognition tool. We have a dataset of 240 faces, labelled as either sad or happy, and we want to predict whether new faces are sad or happy. This is a great application for deep learning!
 
-Some of the faces in our dataset have dark skin, and others have light skin. The sliders in the visualization below allows you to adjust how many faces from each group are in the dataset of 240 faces. In the visualization below, the plot on the left shows the number of happy and sad faces across the two groups. The plot on the right shows the overall accuracy (number of correctly predictions in the entire dataset), as well as the per-group accuracy (number of correct predictions for people with a particular skin colour).
+Some of the faces in our dataset have dark skin, and others have light skin. The sliders in the visualization below allows you to adjust how many faces from each group are in the dataset of 240 faces. In the visualization below, the plot on the left shows the number of happy and sad faces across the two groups. The plot on the right shows the overall accuracy (number of correct predictions in the entire dataset), as well as the per-group accuracy (number of correct predictions for people with a particular skin colour).
 
 Use the sliders to change the distribution of skin colour and emotion in the dataset, and discuss the following with your neighbours:
 
@@ -198,13 +203,12 @@ Use the sliders to change the distribution of skin colour and emotion in the dat
 - In this example, bias was easy to spot, but this isn't always the case. We are all biased, and that bias influences the data we collect in ways we might not initially notice.
 
 ## Scale of neural networks{#sec-scale}
-- If each pixel in an image is a feature, we end up with a lot of features! Similarly, if each connection between neurons needs a weight, we end up with a lot of parameters!
+- Since images can have lots of pixels, and we use each individual pixel as an input to a neural network, we can end up with a very large input layer. Similarly, if each connection between neurons needs a weight, we end up with a lot of parameters!
 - Training models this large is very challenging for a few reasons.
   - As seen above, bias is a concern. We need our model to be able to look at a lot of data with lots of variety to make sure it behaves well, both in general and across groups.
   - Training a neural network involves a huge number of calculations. We'd like these calculations to happen as quickly as possible, so that we can finish training our model in a reasonable amount of time. 
 - Depending on your computer's hardware, it can perform a certain number of calculations per second. Computers with good GPUs are particularly fast at doing the kinds of calculations we need for model training. 
 - We call this resource **compute**, and the bigger our models get, the more compute they need for the training process.
-- TODO any further info on what is actually happening/matrix multiplication? many students will not know what matrices are.
 - TODO any info on history of compute?
 - TODO any info on advancements in NN?
 - **TODO any info on interpretability? this might be really good at this stage**
