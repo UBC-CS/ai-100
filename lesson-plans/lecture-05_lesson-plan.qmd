@@ -48,10 +48,10 @@ number-sections: false
 - - [Backpropagation](#sec-backprop)
   - 15 min
 
-- - [Bias](#sec-bias)
+- - [Bias and fairness](#sec-bias)
   - 15 min
 
-- - [Scale of neural networks](#sec-scale)
+- - [Neural network challenges](#sec-challenges)
   - 5 min
   
 - - [Wrap-up](#sec-wrap-up)
@@ -172,9 +172,16 @@ A neural network.
   - To start, we set each weight to a random number. Then, we use the network to predict the label for each example in the training data. Since all of the weights were randomized, they don't necessarily reflect how important each neuron's inputs are - these initial predictions probably won't be very good!
   - We compare each prediction to the actual label to know how accurate the predictions were. Then, we use this feedback to make small changes to the weights - we think these changes might make the model a little more accurate, but we don't really know.
   - We repeat this process - predict labels for the training data, compare to the real labels, and adjust the weights - until we feel satisfied that the model is accurate enough, or until changing the weights doesn't make the model any more accurate.
-- TODO: animated visualization of training
 
-## Bias{#sec-bias}
+```{python}
+#| echo: false
+#| warning: false
+%run ../python/lecture-05_nn.py
+
+run()
+```
+
+## Bias and fairness{#sec-bias}
 
 :::{.callout-tip}
 ### Activity: Distribution of training data
@@ -198,24 +205,31 @@ Use the sliders to change the distribution of skin colour and emotion in the dat
 - As we've seen, differences in the distribution of the training set can lead to very different models.
 - If our labels aren't balanced, our model won't have the chance to learn enough from each label to make meaningful predictions, and will perform poorly overall. 
   - For example, if most of the training set is made up of happy faces, the model won't be able to see enough sad faces to learn what the differences are. 
-- Even if our labels are perfectly balanced, imbalances in the groups included in the dataset can lead to **biased** models that perform differently for different groups. In AI, we call this an issue of **fairness**.
+- Even if our labels are perfectly balanced, imbalances in the groups included in the dataset can lead to **biased** models that perform differently for different groups. In AI, we call this difference an issue of **fairness**.
   - For example, if most of the faces in the training set have light skin, the model should perform well on people with light skin. However, it won't be able to see enough happy and sad people with dark skin to learn what the differences are for them.
 - In this example, bias was easy to spot, but this isn't always the case. We are all biased, and that bias influences the data we collect in ways we might not initially notice.
 
-## Scale of neural networks{#sec-scale}
+## Neural network challenges{#sec-challenges}
+
+### Scale
 - Since images can have lots of pixels, and we use each individual pixel as an input to a neural network, we can end up with a very large input layer. Similarly, if each connection between neurons needs a weight, we end up with a lot of parameters!
-- Training models this large is very challenging for a few reasons.
+- Training models this large is very challenging for a few reasons:
   - As seen above, bias is a concern. We need our model to be able to look at a lot of data with lots of variety to make sure it behaves well, both in general and across groups.
   - Training a neural network involves a huge number of calculations. We'd like these calculations to happen as quickly as possible, so that we can finish training our model in a reasonable amount of time. 
 - Depending on your computer's hardware, it can perform a certain number of calculations per second. Computers with good GPUs are particularly fast at doing the kinds of calculations we need for model training. 
 - We call this resource **compute**, and the bigger our models get, the more compute they need for the training process.
-- TODO any info on history of compute?
-- TODO any info on advancements in NN?
-- **TODO any info on interpretability? this might be really good at this stage**
+
+### Transparency
+- Another problem arises when we try to understand why certain predictions are being made.
+  - We can get some sense of what is going on in the input layer. Pixels from the original image are used as input to the first hidden layer, and each pixel has an associated weight. From the weights, we can tell that different neurons find certain pixels more important than others, and we know how the neurons combine the pixels into outputs. However, we can't assign any natural-language meaning to what any given neuron does.
+  - As we move deeper into the network, it becomes even more difficult to understand what each neuron is actually doing. By the time we reach the output layer, it is impossible to explain exactly why we predicted the label we did.
+- Imagine your job application being rejected because the company used a neural network to predict how good of an employee you will be. You would likely have questions for the hiring manager about what aspects of your profile caused you to be rejected - and since they used a neural network, they can't really answer those questions in a satisfying way. 
+- In AI, we call this an issue of **transparency**.
 
 ## Wrap-up{#sec-wrap-up}
 
 :::{.callout-tip}
 ### Activity: Discussion
 - TODO
+- Does a decision tree have the same transparency problems as a neural network? Why or why not?
 :::
