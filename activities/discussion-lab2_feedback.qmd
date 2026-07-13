@@ -1,6 +1,7 @@
 ### Feedback Sheet: Peer Presentation
 
 **Presenter's app:** ____________________________________  
+
 **Your name:** __________________________________________
 
 You are graded on the **quality of your feedback**. You are not grading the presenter.
@@ -52,6 +53,16 @@ For each category, write **2–3 sentences**. Constructive criticism and genuine
 &nbsp;
 
 ---
+
+Questions for reflection:
+
+- What relationships are missing?
+- Who bears risks without meaningful consent?
+- What labour becomes invisible?
+- What assumptions about progress and the purpose of technology are being made?
+- What becomes easier to ignore because this app exists?
+- What tradeoffs are acknowledged? Which are missing?
+- What responsibilities are being assumed? Which are being ignored? Who is accountable for them?
 
 ::: {.content-hidden when-profile="student"}
 ::: {.callout-tip collapse="true"}
