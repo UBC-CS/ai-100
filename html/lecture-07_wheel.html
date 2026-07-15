@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lecture-07_shared.css">
+    <style>
+      .bigram-sentence { font-family: var(--bigram-mono); font-size: 17px; line-height: 1.6; color: var(--bigram-ink-soft); margin-bottom: 22px; min-height: 1.6em; }
+      .bigram-sentence .bigram-current-word { color: var(--bigram-accent-2); font-weight: 700; border-bottom: 2px solid var(--bigram-accent-2); }
+      .bigram-wheel-area { display: flex; justify-content: center; }
+      .bigram-wheel-stage { position: relative; width: min(300px, 74vw); aspect-ratio: 1 / 1; }
+      .bigram-pointer { position: absolute; top: -4px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 11px solid transparent; border-right: 11px solid transparent; border-top: 18px solid var(--bigram-accent-2); z-index: 3; filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25)); }
+      .bigram-wheel-rotor { width: 100%; height: 100%; transform: rotate(0deg); }
+      .bigram-wheel-rotor svg { display: block; width: 100%; height: 100%; }
+      .bigram-hub { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%; aspect-ratio: 1/1; border-radius: 50%; background: var(--bigram-panel); border: 2px solid var(--bigram-ink); color: var(--bigram-ink); font-family: var(--bigram-mono); font-weight: 700; font-size: 13px; letter-spacing: 0.04em; cursor: pointer; z-index: 4; box-shadow: 0 2px 0 var(--bigram-line-strong); }
+      .bigram-hub:hover:not(:disabled) { color: var(--bigram-accent); border-color: var(--bigram-accent); }
+      .bigram-hub:active:not(:disabled) { transform: translate(-50%, -50%) translateY(2px); box-shadow: none; }
+      .bigram-hub:disabled { opacity: 0.5; cursor: not-allowed; }
+      .bigram-hub:focus-visible { outline: 2px solid var(--bigram-accent); outline-offset: 3px; }
+      .bigram-complete { text-align: center; padding: 20px 10px; }
+      .bigram-complete-label { font-family: var(--bigram-mono); font-size: 13px; color: var(--bigram-muted); margin: 0 0 16px; text-transform: uppercase; letter-spacing: 0.08em; }
+      .bigram-btn { font-family: var(--bigram-mono); font-size: 13px; font-weight: 500; padding: 9px 16px; border-radius: var(--bigram-radius); border: 1px solid var(--bigram-accent); background: var(--bigram-accent); color: var(--bigram-accent-contrast); cursor: pointer; transition: background 0.15s ease, transform 0.1s ease; }
+      .bigram-btn:hover { background: #195b4b; }
+      .bigram-btn:active { transform: translateY(1px); }
+      .bigram-btn:focus-visible { outline: 2px solid var(--bigram-accent); outline-offset: 2px; }
+    </style>
+    <script type="application/javascript" src="./lecture-07_shared.js"></script>
+  </head>
+  <body>
+    <div class="bigram-page">
+      <div class="bigram-sentence" id="bigram-sentence"></div>
+      <div class="bigram-wheel-area" id="bigram-wheel-area"></div>
+    </div>
+
+    <script>
+    (function () {
+      let data = bigramLoad();
+      const escapeHtml = bigramEscapeHtml;
+
+      const sentenceEl = document.getElementById('bigram-sentence');
+      const wheelAreaEl = document.getElementById('bigram-wheel-area');
+
+      let sentence = ['the'];
+      let currentWord = 'the';
+      let status = 'active'; // 'active' | 'ended' | 'stuck'
+      let segments = [];
+      let currentRotation = 0;
+      let spinning = false;
+      let rotorEl = null;
+      let hubBtn = null;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function buildSegments(row) {
+        const cols = bigramColumns(data);
+        const raw = cols.map((col) => ({ word: col, count: bigramGetCount(data, row, col), colorIndex: cols.indexOf(col) })).filter((s) => s.count > 0);
+        const total = raw.reduce((s, x) => s + x.count, 0);
+        let cursor = 0;
+        return raw.map((s) => {
+          const angle = total ? (s.count / total) * 360 : 0;
+          const seg = { word: s.word, count: s.count, startAngle: cursor, endAngle: cursor + angle, midAngle: cursor + angle / 2, color: bigramColorFor(s.colorIndex) };
+          cursor += angle;
+          return seg;
+        });
+      }
+
+      function renderSentence() {
+        const words = sentence.map((w, i) => {
+          const isCurrent = status === 'active' && i === sentence.length - 1;
+          return `<span class="${isCurrent ? 'bigram-current-word' : ''}">${escapeHtml(w)}</span>`;
+        });
+        sentenceEl.innerHTML = words.join(' ') + (status === 'ended' ? '.' : '');
+      }
+
+      function renderState() {
+        renderSentence();
+        if (status === 'ended' || status === 'stuck') {
+          wheelAreaEl.innerHTML = `
+            <div class="bigram-complete">
+              <p class="bigram-complete-label">${status === 'ended' ? 'Sentence complete' : `No data yet for &ldquo;${escapeHtml(currentWord)}&rdquo;`}</p>
+              <button class="bigram-btn" id="bigram-restart-btn">Start over from &ldquo;the&rdquo; &rarr;</button>
+            </div>`;
+          document.getElementById('bigram-restart-btn').addEventListener('click', restart);
+          return;
+        }
+        showWheelFor(currentWord);
+      }
+
+      function showWheelFor(word) {
+        segments = buildSegments(word);
+        if (!segments.length) { status = 'stuck'; renderState(); return; }
+
+        wheelAreaEl.innerHTML = `
+          <div class="bigram-wheel-stage">
+            <div class="bigram-pointer"></div>
+            <div class="bigram-wheel-rotor" id="bigram-rotor"></div>
+            <button class="bigram-hub" id="bigram-hub-btn">SPIN</button>
+          </div>`;
+        rotorEl = document.getElementById('bigram-rotor');
+        hubBtn = document.getElementById('bigram-hub-btn');
+        currentRotation = 0;
+        rotorEl.style.transition = 'none';
+        rotorEl.style.transform = 'rotate(0deg)';
+
+        let svg = '<svg viewBox="0 0 300 300">';
+        if (segments.length === 1) {
+          svg += `<circle cx="150" cy="150" r="130" fill="${segments[0].color}" stroke="#f8faf7" stroke-width="2"/>`;
+        } else {
+          segments.forEach((seg) => {
+            const p1 = bigramPolarPoint(150, 150, 130, seg.startAngle);
+            const p2 = bigramPolarPoint(150, 150, 130, seg.endAngle);
+            const large = seg.endAngle - seg.startAngle > 180 ? 1 : 0;
+            svg += `<path d="M150,150 L${p1.x.toFixed(2)},${p1.y.toFixed(2)} A130,130 0 ${large} 1 ${p2.x.toFixed(2)},${p2.y.toFixed(2)} Z" fill="${seg.color}" stroke="#f8faf7" stroke-width="2"/>`;
+          });
+        }
+        segments.forEach((seg) => {
+          if (seg.endAngle - seg.startAngle < 16) return;
+          const lp = bigramPolarPoint(150, 150, 86, seg.midAngle);
+          svg += `<text x="${lp.x.toFixed(2)}" y="${lp.y.toFixed(2)}" text-anchor="middle" dy="0.35em" style="font-family:var(--bigram-mono); font-size:13px; font-weight:600; fill:#fff;">${escapeHtml(seg.word)}</text>`;
+        });
+        svg += '</svg>';
+        rotorEl.innerHTML = svg;
+        hubBtn.addEventListener('click', spin);
+      }
+
+      function spin() {
+        if (spinning || !segments.length) return;
+        spinning = true; hubBtn.disabled = true;
+
+        const total = segments.reduce((s, seg) => s + seg.count, 0);
+        let r = Math.random() * total;
+        let chosen = segments[segments.length - 1];
+        for (const seg of segments) { if (r < seg.count) { chosen = seg; break; } r -= seg.count; }
+
+        const mod = (a, n) => ((a % n) + n) % n;
+        const targetMod = mod(-chosen.midAngle, 360);
+        const curMod = mod(currentRotation, 360);
+        const delta = mod(targetMod - curMod, 360);
+        const fullSpins = reduceMotion ? 1 : 5;
+        const newRotation = currentRotation + fullSpins * 360 + delta;
+        const durationMs = reduceMotion ? 350 : 3600;
+
+        rotorEl.style.transition = `transform ${durationMs}ms cubic-bezier(0.14, 0.67, 0.1, 1)`;
+        rotorEl.style.transform = `rotate(${newRotation}deg)`;
+        currentRotation = newRotation;
+
+        setTimeout(() => {
+          spinning = false;
+          if (chosen.word === BIGRAM_END_TOKEN) {
+            status = 'ended';
+          } else {
+            sentence.push(chosen.word);
+            currentWord = chosen.word;
+          }
+          renderState();
+        }, durationMs + 60);
+      }
+
+      function restart() {
+        data = bigramLoad();
+        sentence = ['the'];
+        currentWord = 'the';
+        status = 'active';
+        renderState();
+      }
+
+      // live-update the current wheel (or retry a stuck one) as soon as the table above changes
+      window.addEventListener('bigram-updated', () => {
+        if (spinning) return;
+        data = bigramLoad();
+        if (status !== 'ended') { status = 'active'; renderState(); }
+      });
+      window.addEventListener('storage', (e) => {
+        if (e.key === BIGRAM_STORAGE_KEY && !spinning) {
+          data = bigramLoad();
+          if (status !== 'ended') { status = 'active'; renderState(); }
+        }
+      });
+
+      renderState();
+    })();
+    </script>
+  </body>
+</html>

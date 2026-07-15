@@ -3,6 +3,9 @@ title: "Lecture 7: Self-supervision and generative AI"
 subtitle: >
   {{< var course.code >}}, {{< var course.term >}}
 number-sections: false
+resources:
+  - ../html/lecture-07_shared.js
+  - ../html/lecture-07_shared.css
 ---
 
 ## Lecture overview
@@ -45,7 +48,7 @@ number-sections: false
   - 20 min
 
 - - [Activity: Images and text](#sec-image-text)
-  - 20 min
+  - 25 min
 
 - - [Wrap-up](#sec-wrap-up)
   - 10 min
@@ -72,22 +75,59 @@ number-sections: false
 1. TODO
 
 ## Differences from previous lectures{#sec-prev-lectures}
-- TODO we've been "helping" the model up until now - this is called supervision
-- TODO deep learning still need some sort of supervision re: labels
-- TODO rl: still somewhat helping the model 
-- TODO labelling the data becomes too difficult/costly as the dataset becomes large. no option other than self-supervision
-- TODO what is self-supervision? data is puzzle, model learns how to predict next word. define it here
-- TODO define generative AI
+- Up until now, we've been **supervising** AI systems to some extent - i.e., giving models feedback from an explicit, human-generated source as they learn.
+  - In machine learning and deep learning, we supervise the model by labelling our training examples and comparing our labels to the model's output.
+- We also have a desire to use bigger datasets to improve performance and reduce bias. However, labelling large datasets manually can be both difficult and costly. 
+  - In deep learning, we reduce the human workload somewhat by having the model interact with the raw data instead of explicit features. Could this be possible with labels?
+- With a **self-supervision** approach, models get feedback from the unlabelled data itself.
 
 ## Next-token prediction{#sec-next-token}
-- TODO define token?
-- TODO ngrams? masking?
 
 :::{.callout-tip}
-### Activity: Hands-on next-token prediction
-TODO show a small corpus, figure out the next token bigram probabilities, then have them predict the next token for a few words
-- this or maybe having them just pick the next word based on common sense? how technical/probability focused do we want to get?
+### Activity: Continue the sentence
+Pieces of paper with incomplete sentences on them will be passed around the room. When the paper comes around to you, add whichever word you think should continue the sentence and pass it to your neighbour.
 :::
+
+- Why did you choose to write the words you did? You probably looked at the rest of the sentence - especially the previous word - and used your experience with the English language to pick the word that made the most sense.
+- This is how self-supervision works! 
+  - As **input**, we give the model the beginning of a sample sentence, often taken from a book or a website. The model then predicts and **outputs** the next word. 
+  - Since we already know the rest of the sentence, we can check whether the model got it right, and the model adjusts its **parameters** to better represent the relationship between the start of the sentence and the next word. Eventually, the model should have a good sense of which word should come next.
+  - Notice that we didn't have to do any extra work - the sentence already existed when we approached the problem!
+- Instead of working with full words, we often have models interact with **tokens** instead. Tokens are word chunks of various sizes, e.g. the word "tokenization" is broken into two tokens: "token" and "ization".
+  - You can use the OpenAI tokenizer [here](https://platform.openai.com/tokenizer) to see how other words might be tokenized.
+  - TODO give motivation for token usage instead of word usage?
+
+:::{.callout-tip}
+### Activity: Hands-on next-word prediction
+Let's get a more intuitive sense of how the words that came before can help predict the word that comes next. Consider these sample sentences:
+
+> the dog is eating  
+> the dog loves the food  
+> the dog loves eating food  
+> is the dog eating  
+> the dog loves the dog food  
+> the food is dog food  
+
+Count how many times each word is immediately followed by each other word, and fill in the table below. The first row is already complete - "dog" follows "the" 6 times in the sentences above, and "food" follows "the" twice. Use the final <end> column to count how often each word ends a sentence.
+
+```{=html}
+<iframe data-external="1" src="../html/lecture-07_table.html" width="100%" height="400px" style="border:none;"></iframe>
+```
+
+The numbers in the table above represent how common it is for one word to follow another. For example, "the dog" shows up more often than "the food". 
+
+Let's try generating a new sentence! Starting from "the", imagine we always pick the most common next word:
+
+> the dog loves the dog loves the dog loves the...
+
+What's the problem here? Always picking the most likely word means we end up getting the same few words over and over. Let's add some randomness instead: we'll pick the next word at random, but weigh the odds so that more common words are more likely to come up. Use the wheel below to generate some random sentences - are they more realistic?
+
+```{=html}
+<iframe data-external="1" src="../html/lecture-07_wheel.html" width="100%" height="500px" style="border:none;"></iframe>
+```
+:::
+
+- Notice that, instead of just labelling data, we created brand new sentences word-by-word. AI that creates new content like this is called **Generative AI**.
 
 ## Diffusion models{#sec-diffusion}
 - TODO add increasingly more noise to image, ask model to remove it, this is the training process
@@ -95,12 +135,17 @@ TODO show a small corpus, figure out the next token bigram probabilities, then h
 
 :::{.callout-tip}
 ### Activity: Diffusion
-TODO decide on which activity to do
+TODO decide on which activity to do. ideas:
+
+- guessing game... different levels of noise, students have to guess the animal/object and identify at which stage of denoising they were able to get it
+- each group gets a simple line drawing of an animal/object. they get to see it briefly. now they get a bunch of random scribbles, then each student in group has to make one small change (simple shape or line) on the scribbles to try to go back to the original line drawing
 :::
 
 ## Activity: Images and text{#sec-image-text}
-TODO: decide on activity
-- embeddings with semantic similarity. text-to-image association?
+TODO: decide on activity. ideas:
+
+- everyone draws a random shape on paper, then we give them a prompt, e.g. draw a potted plant, they pass it around and can only make one small change per round 
+- "Text puzzle activity in groups. Start with some text and images and ask them to predict."
 
 ## Wrap-up{#sec-wrap-up}
 

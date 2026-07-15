@@ -200,7 +200,7 @@ Use the sliders to change the distribution of skin colour and emotion in the dat
 :::
 
 ```{=html}
-<iframe src="../python/lecture-05_bias-visualizer.html" width="100%" height="800px" style="border:none;"></iframe>
+<iframe src="../html/lecture-05_bias-visualizer.html" width="100%" height="800px" style="border:none;"></iframe>
 ```
 - As we've seen, differences in the distribution of the training set can lead to very different models.
 - If our labels aren't balanced, our model won't have the chance to learn enough from each label to make meaningful predictions, and will perform poorly overall. 
