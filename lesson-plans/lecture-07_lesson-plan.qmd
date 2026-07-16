@@ -42,12 +42,12 @@ resources:
   - 5 min
 
 - - [Next token prediction](#sec-next-token)
-  - 20 min
+  - 30 min
 
 - - [Diffusion models](#sec-diffusion)
-  - 20 min
+  - 10 min
 
-- - [Activity: Images and text](#sec-image-text)
+- - [Images and text](#sec-image-text)
   - 25 min
 
 - - [Wrap-up](#sec-wrap-up)
@@ -85,17 +85,15 @@ resources:
 
 :::{.callout-tip}
 ### Activity: Continue the sentence
-Pieces of paper with incomplete sentences on them will be passed around the room. When the paper comes around to you, add whichever word you think should continue the sentence and pass it to your neighbour.
+Form groups of 4-5. A piece of paper with an incomplete sentence on it will be passed around your group. When the paper comes around to you, add whichever word you think should continue the sentence and pass it to your neighbour.
 :::
 
 - Why did you choose to write the words you did? You probably looked at the rest of the sentence - especially the previous word - and used your experience with the English language to pick the word that made the most sense.
-- This is how self-supervision works! 
+- This is one example of self-supervision!
   - As **input**, we give the model the beginning of a sample sentence, often taken from a book or a website. The model then predicts and **outputs** the next word. 
   - Since we already know the rest of the sentence, we can check whether the model got it right, and the model adjusts its **parameters** to better represent the relationship between the start of the sentence and the next word. Eventually, the model should have a good sense of which word should come next.
   - Notice that we didn't have to do any extra work - the sentence already existed when we approached the problem!
-- Instead of working with full words, we often have models interact with **tokens** instead. Tokens are word chunks of various sizes, e.g. the word "tokenization" is broken into two tokens: "token" and "ization".
-  - You can use the OpenAI tokenizer [here](https://platform.openai.com/tokenizer) to see how other words might be tokenized.
-  - TODO give motivation for token usage instead of word usage?
+- Instead of working with full words, models can use **tokens** instead. Tokens are word chunks of various sizes, e.g. the word "friendly" could be broken into two tokens: "friend" and "ly".
 
 :::{.callout-tip}
 ### Activity: Hands-on next-word prediction
@@ -120,36 +118,57 @@ Let's try generating a new sentence! Starting from "the", imagine we always pick
 
 > the dog loves the dog loves the dog loves the...
 
-What's the problem here? Always picking the most likely word means we end up getting the same few words over and over. Let's add some randomness instead: we'll pick the next word at random, but weigh the odds so that more common words are more likely to come up. Use the wheel below to generate some random sentences - are they more realistic?
+What's the problem here? Always picking the most likely word means we end up getting the same few words over and over. Let's add some randomness instead: we'll pick the next word at random, but weigh the odds so that more common words are more likely to come up. Use the wheel below to generate some random sentences. 
 
 ```{=html}
-<iframe data-external="1" src="../html/lecture-07_wheel.html" width="100%" height="500px" style="border:none;"></iframe>
+<iframe data-external="1" src="../html/lecture-07_wheel.html" width="100%" height="450px" style="border:none;"></iframe>
 ```
+Now reflect on the sentences you generated:
+
+- Did randomization improve the output?
+- What could you change to make the wheel more likely to create coherent and varied sentences?
+- Can you generate any sentences that are exactly the same as the sample sentences? How do you feel about this?
 :::
 
 - Notice that, instead of just labelling data, we created brand new sentences word-by-word. AI that creates new content like this is called **Generative AI**.
 
 ## Diffusion models{#sec-diffusion}
-- TODO add increasingly more noise to image, ask model to remove it, this is the training process
-- TODO figure of adding noise to an image, then removing it, maybe interactive?
+- **Diffusion models** also rely on self-supervision.
+  - During training, they use images as both **input** and **output**. A small amount of **noise** is added to an input image, and the model learns how to remove that noise to restore the original image.
+
+![](../images/lecture-07_diffusion-step.png)
+
+  - This process is then repeated at increasing levels of noise: more noise is added to the already-noisy image, and the model learns to reverse that step too. The model's **parameters** define how to remove a small amount of noise at any given noise level.
+
+![](../images/lecture-07_diffusion-train.png)
+
+  - Eventually, the model is able to gradually turn random noise into a coherent image, step by step. If we train the model on lots of different images, it learns to **output** a completely new picture from random noise.
+
+![](../images/lecture-07_diffusion-deploy.png)
+
+
+## Images and text{#sec-image-text}
+- As described above, diffusion models cannot be asked to generate any particular image via text input - they just remove noise step by step.
+- However, the diffusion approach can be combined with a bit of **supervision** to get an image-to-text model, like Stable Diffusion or DALL-E.
+  - Like diffusion models, images are used as both **input** and **output** during training. Each input image is also paired with a caption, like "a dog on a leash". 
+  - The model is trained to do two tasks at the same time. It learns to remove noise from image step-by-step, but also learns to associate images and their captions. [TODO: what are the parameters]
+  - Once the model is trained, it can use an **input** prompt to guide the way the noise is removed, leading to an **output** image that matches the text prompt.
 
 :::{.callout-tip}
-### Activity: Diffusion
-TODO decide on which activity to do. ideas:
+### Activity: Text to image
+Form groups of 4-5. Choose someone in the group to draw a random shape on a piece of paper.
 
-- guessing game... different levels of noise, students have to guess the animal/object and identify at which stage of denoising they were able to get it
-- each group gets a simple line drawing of an animal/object. they get to see it briefly. now they get a bunch of random scribbles, then each student in group has to make one small change (simple shape or line) on the scribbles to try to go back to the original line drawing
+Now, consider the prompt "Draw a potted plant". Pass the paper around within your group. Each person may make one small change to the drawing when the paper comes around to them, e.g. adding a simple shape or erasing a small part of the drawing. Every change you make should make your drawing more similar to the prompt.
+
+The instructor will compare a few different drawings. How do the drawings differ? How are they similar?
 :::
 
-## Activity: Images and text{#sec-image-text}
-TODO: decide on activity. ideas:
-
-- everyone draws a random shape on paper, then we give them a prompt, e.g. draw a potted plant, they pass it around and can only make one small change per round 
-- "Text puzzle activity in groups. Start with some text and images and ask them to predict."
+- TODO more content needed?
 
 ## Wrap-up{#sec-wrap-up}
 
 :::{.callout-tip}
 ### Activity: Discussion
 - TODO
+- what other uses of self-supervision can you imagine existing? eg masking
 :::
