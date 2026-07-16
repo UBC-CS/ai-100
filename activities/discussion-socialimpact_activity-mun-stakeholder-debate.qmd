@@ -1,0 +1,168 @@
+---
+title: "Lab 2 — Stakeholder Debate (MUN-Style)"
+subtitle: "Multi-partisan roleplay for a scaled-up app"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    embed-resources: true
+---
+
+<!--
+RENDERING NOTES (for instructors/TAs, not shown to students):
+- Student handout (default):   quarto render lab2-mun-stakeholder-debate.qmd
+- TA version (adds hidden notes below each section):
+      quarto render lab2-mun-stakeholder-debate.qmd --profile ta
+-->
+
+## Overview
+
+::: {.callout-note title="At a glance"}
+- **Duration:** 80 minutes
+- **Group size:** 5 active delegates + 5 "shadow" delegates
+- **Format:** Model United Nations (MUN)-style committee debate, adapted to your app's stakeholders instead of countries
+- **Deliverable:** a short group resolution/agreement + individual reflection
+:::
+
+**Premise:** Real decisions about a scaled-up app aren't made by one team in a vacuum — they're contested by people with different, often conflicting interests. This lab borrows the structure of Model United Nations (MUN) to force genuine multi-partisan debate: each person argues *their assigned role's* interest, not their personal opinion.
+
+### What is Model UN, briefly
+
+MUN is a simulation where participants represent a stakeholder (traditionally a country) and debate a resolution using structured rules of procedure (formal speeches, "moderated caucus" for focused discussion, "unmoderated caucus" for informal negotiation, then drafting and voting on a resolution). If you've never done MUN before, skim one of these before the lab:
+
+- [MUN Made Easy: 5 Simple Steps (Best Delegate)](https://bestdelegate.com/mun-made-easy-how-to-get-started-with-model-united-nations/)
+- [Model UN Ultimate Guide (MUN Prep)](https://www.munprep.org/model-un-ultimate-guide-everything-you-need-to-know/)
+
+You do **not** need to memorize formal parliamentary procedure — the simplified version below is enough for this lab.
+
+### Learning objectives
+
+- Argue persuasively from a perspective that may not be your own
+- Identify genuine tradeoffs between stakeholders in tech policy/product decisions
+- Practice structured negotiation and consensus-building under time pressure
+- Recognize how framing and incentives shape a stakeholder's position
+
+---
+
+## Choose your topic track
+
+Pick **one** track for your committee (or have different tables run different tracks).
+
+::: {.panel-tabset}
+### Track A: Corporations
+Roles: **Executive** (runs the company behind the app) · **Customer/user representative** · **Employee / gig-worker representative** · **Investor** · **Competitor**
+
+### Track B: Government
+Roles: **Regulator** · **Company executive** · **NGO / advocacy group** · **User group representative** · **International body observer** (e.g., a global standards organization)
+:::
+
+---
+
+## Group structure: active + shadow
+
+- **Active group (5):** one person per role, seated at the "table," actively debates
+- **Shadow group (5):** one shadow per active role, sits behind their counterpart, cannot speak in main debate but:
+  - takes notes on arguments their counterpart *should* be making
+  - can pass their counterpart a written note once per round
+  - fully takes over during the "shadow swap" (see Step 5)
+- This structure means every student prepares a role and every student eventually speaks — nobody is a passive observer
+
+---
+
+## Timing
+
+| Phase | Activity | Time |
+|---|---|---|
+| 1 | Role assignment + individual prep | 15 min |
+| 2 | Opening statements (all 5 active roles) | 10 min |
+| 3 | Moderated caucus (focused debate, one issue at a time) | 20 min |
+| 4 | Unmoderated caucus (free negotiation) | 10 min |
+| 5 | Shadow swap + closing round | 15 min |
+| 6 | Resolution vote + reflection | 10–15 min |
+
+::: {.content-hidden unless-profile="ta"}
+::: {.callout-important title="TA timing notes"}
+- Phase 1 prep is where the quality of the whole lab is won or lost — walk the room and check every student has written at least 2 concrete talking points before moving on.
+- Phase 3 (moderated caucus) works best if YOU pick the sub-issue for each round (e.g., "2 minutes total, 30 seconds per speaker: should the app share user data with regulators?"). Don't let it stay open-ended.
+- Phase 5 (shadow swap) is the most novel part of this format — budget real time for it and don't let it get cut. It's also usually the most energetic part of the room.
+:::
+:::
+
+---
+
+## Step-by-step
+
+### 1. Role assignment + prep (15 min)
+
+- Instructor/TA assigns or students draw roles (see role prompts below)
+- Each active delegate writes 2–3 talking points and one concrete "ask"
+- Each shadow delegate does the same prep independently, *without* coordinating with their active counterpart — this creates useful divergence for the swap later
+
+::: {.callout-tip title="Sample role prompts — Track A (Corporations)"}
+- **Executive:** Your job is company survival, growth, company reputation, and culture. You are responsible for the financial viability of the company and care about margins, avoiding burdensome regulation that slows shipping, and minimizing shareholder returns that can harm the company's long-term viability.
+- **Customer/user representative:** You want reliability, privacy, and low cost. You're skeptical of new fees or degraded free tiers. You want the service the app is providing, and do not want to be harmed.
+- **Employee/gig-worker representative:** You care about meaningful work, fair pay, working conditions, ongoing training, work-life balance and job security as the company automates more.
+- **Investor:** You want growth and eventual returns, and are open to short-term pain (layoffs, price hikes) for long-term value. Because you do not have a direct stake in the app's day-to-day operations, you think more transactionally and are willing to accept some risk and uncertainty in exchange for outsized returns.
+- **Competitor:** You want the leading company constrained — by regulation, by reputational harm, by marketing, or by losing users to you through honestly outcometing them and providing a better experience (features, price)
+:::
+
+::: {.callout-tip title="Sample role prompts — Track B (Government)"}
+- **Regulator:** You want enforceable, auditable rules; you're wary of self-regulation claims. You like clarify, checklists, and measurable outcomes. You want to avoid being "gamed" by the company or other stakeholders.
+- **Company executive:** You want minimal new compliance burden and to preserve competitive advantage. You have incentive to be regulated to gain trust and avoid risk.
+- **NGO/advocacy group:** You represent people potentially harmed (privacy, labor, misinformation, environment) and push for binding protections.
+- **User group representative:** You want the app to keep working well and stay affordable/accessible. You want to avoid being harmed by the app's growth or by new rules that make it worse for you.
+- **International body observer:** You care about cross-border consistency and avoiding a patchwork of conflicting national rules.
+:::
+
+### 2. Opening statements (10 min)
+
+- Each active delegate gets **90 seconds**, uninterrupted, to state their role's position
+- No rebuttals yet — just get every position on the table
+
+### 3. Moderated caucus (20 min)
+
+- TA/facilitator announces a specific sub-issue (e.g., data sharing, pricing, layoffs, environmental disclosure)
+- Delegates speak in turn, ~45–60 seconds each, responding to the specific issue
+- Once everyone has had a turn, repeat for 2–3 sub-issues
+
+### 4. Unmoderated caucus (10 min)
+
+- Formal turn-taking pauses — delegates can talk directly to each other, form alliances, negotiate specific language for an agreement
+- Shadows may pass ONE written note to their counterpart during this phase
+
+### 5. Shadow swap + closing round (15 min)
+
+- Shadows now take the active seats; active delegates become shadows
+- New "active" delegates get 60 seconds each to either reinforce or *shift* their role's position based on what they heard
+- This tests whether the position was really understood, not just memorized
+
+### 6. Resolution + reflection (10–15 min)
+
+- As a group of 10, draft 3–5 bullet points you could all actually agree to (a real resolution rarely satisfies everyone fully — that's expected)
+- Individually, write 3–4 sentences: what surprised you about arguing your role, and which other role's argument was most persuasive to you personally
+
+::: {.content-hidden unless-profile="ta"}
+---
+
+## TA facilitation guide
+
+::: {.callout-important title="Common pitfalls to watch for"}
+- **Collapsing into agreement too fast**: if the group reaches consensus in under 5 minutes, they're probably not engaging the real tradeoffs. Push with a pointed question from an underrepresented angle (e.g., "what does the competitor think of this deal?").
+- **One dominant personality**: use the shadow-swap structure deliberately — it guarantees a "reset" where a quieter student gets the active seat.
+- **Arguing personal opinion instead of role**: redirect immediately — "that's a great point, but is that what a [role] would say?"
+- **Vague positions**: a good active delegate should be able to state a concrete "ask" in one sentence. If they can't, send them back to prep for 60 seconds.
+:::
+
+::: {.callout-note title="Rubric (10 pts)"}
+- Prep notes show 2+ concrete, role-consistent talking points (individual: 0, 0.5, or 1 pts)
+- Active participation in at least one caucus round (individual: 0, 0.5, or 1 pts)
+- Shadow notes show independent thinking, not copied from counterpart (individual: 0, 0.5, or 1 pts)
+- Group resolution reflects real negotiation/tradeoffs, not a bland non-answer (group: 0, 0.5, or 1 pts)
+- Individual reflection genuinely engages with a perspective shift (individual: 0, 0.5, or 1 pts)
+:::
+
+::: {.callout-tip title="Running with a full class"}
+For a class of 40, run 4 parallel committees of 10 (5 active + 5 shadow) simultaneously, ideally in separate corners/rooms with a TA circulating between them. Keep timing synced with a shared visible countdown so all committees hit shadow-swap at the same time.
+:::
+:::

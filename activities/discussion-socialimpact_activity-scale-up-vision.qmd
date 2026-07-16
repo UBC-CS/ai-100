@@ -1,0 +1,180 @@
+---
+title: "Lab 1 — The Scale-Up Vision"
+subtitle: "Mock report + model card update for a wildly successful app"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    embed-resources: true
+---
+
+<!--
+RENDERING NOTES (for instructors/TAs, not shown to students):
+- Student handout (default):   quarto render lab1-scale-up-vision.qmd
+- TA version (adds hidden notes below each section):
+      quarto render lab1-scale-up-vision.qmd --profile ta
+  This works because TA-only content is wrapped in:
+      ::: {.content-hidden unless-profile="ta"}
+  ...which Quarto hides unless QUARTO_PROFILE=ta is set via --profile ta.
+-->
+
+## Overview
+
+::: {.callout-note title="At a glance"}
+- **Duration:** 80 minutes
+- **Group size:** groups of 5, with shadow group of same size
+- **Deliverable:** a short mock report (financial, environmental, regulatory sections) + an updated model card + a revised system design sketch, for your app imagined at massive, ubiquitous scale
+:::
+
+**Premise:** Imagine your app didn't just succeed — it became the default. Billions of daily active users. Embedded in phones, cars, classrooms, hospitals. You are now writing the internal documents a real company at that scale would have to produce: a financial/accounting summary, an environmental impact accounting, and a regulatory policy proposal — plus the updated model card and system design that scale demands.
+
+### Learning objectives
+
+By the end of this lab you should be able to:
+
+- Reason quantitatively about what "success" costs at scale (compute, energy, water, capital)
+- Translate abstract growth into concrete accounting and environmental figures
+- Identify regulatory issues that only appear once a system is systemically important
+- Write or revise a model card using a standard, recognized category structure
+- Connect business/financial decisions to system design and model documentation
+
+---
+
+## Materials
+
+- Your app/system concept from earlier in the course (or an instructor-provided one)
+- Existing model card / system design draft, if you have one, to revise
+- Calculator or spreadsheet for back-of-envelope math
+- This handout
+
+---
+
+## Timing
+
+| Phase | Activity | Time |
+|---|---|---|
+| 1 | Framing + scale assumptions | 10 min |
+| 2 | Draft: Financial / accounting section | 15 min |
+| 3 | Draft: Environmental impact section | 15 min |
+| 4 | Draft: Regulatory policy proposals | 15 min |
+| 5 | Update model card + system design | 15 min |
+| 6 | Share-out / peer feedback | 10 min |
+
+::: {.content-hidden unless-profile="ta"}
+::: {.callout-important title="TA timing notes"}
+- Phase 1 is the highest-leverage 10 minutes in the lab — if students don't commit to concrete scale numbers (daily active users, requests/day, etc.) up front, phases 2–4 stay vague. Don't let groups skip this.
+- Phases 2–4 are intentionally the same length so no single "report section" dominates. If a group finishes financials early, redirect them to start environmental math rather than polishing prose.
+- If running short on time, cut Phase 6 to a 2-minute "pass your report to your left neighbor" instead of full share-out.
+:::
+:::
+
+---
+
+## Step-by-step
+
+Phases 2-4 are done as a group by diivding up the work. Afterwards, each student receives individual feedback from someone in their shadow group, and then revises the work from phases 2-4. Note that during phases 1-5 everyone is working in their primary groups, and in phase 6 everyone goes to their shadow groups and reviews the materials composed in phases 2-5.
+
+### 1. Set your scale assumptions (10 min)
+
+- Pick a concrete user scale: e.g., "500 million daily active users" or "used by 1 in 4 smartphone owners worldwide"
+- Decide on a rough interaction volume: queries/requests per user per day
+- Note which parts of your app are AI-model-driven vs. plain software — you'll only need infrastructure estimates for the AI-driven parts
+- Write these assumptions at the top of your report; every number after this should trace back to them
+
+### 2. Financial / accounting section (15 min)
+
+Write a short mock financial report as if for a shareholder update or 10-K excerpt. Include:
+
+- **Revenue model** — subscriptions, ads, transaction fees, licensing, or a mix
+- **Cost structure at scale** — compute/inference costs, staffing, customer support, legal/compliance, marketing
+- **A simple stock/market angle** — is this a public company? What would analysts likely say about margins, growth, or risk?
+- At least 3 **specific numbers** (even if estimated): e.g., "$X billion annual infra spend," "Y% gross margin," "Z active enterprise contracts"
+
+### 3. Environmental impact section (15 min)
+
+Estimate and justify:
+
+- **Number of data centers** required, and roughly where (which regions/countries, and why those — power availability, latency, regulation, cooling climate)
+- **Energy consumption** — rough GWh/year or comparison to something familiar (e.g., "equivalent to X households")
+- **Water consumption** — cooling water use, and whether your design uses water-based or air-based cooling
+- **Land use** — footprint of data centers, plus any other land-intensive infrastructure (e.g., solar/wind farms, battery storage, sound, visual, ecosystem impacts)
+- **Mitigations** — renewable energy contracts, efficiency improvements, waste-heat reuse, siting choices
+
+::: {.content-hidden unless-profile="ta"}
+::: {.callout-tip title="TA reference numbers (seed these if groups are stuck, don't just hand them over)"}
+Use these only as sanity-check anchors, not answers to give away:
+
+- Data centers currently account for roughly ???% of global electricity use; that share is rising quickly as AI workloads grow
+- Cooling can account for up to ~??% of a data center's total energy use
+- Typical Power Usage Effectiveness (PUE) today is often cited around ???
+- Training a large frontier-scale model puts energy use in ??? kWh (comparable to a typical homes' annual usage) — useful for contrasting *training* cost vs. *inference-at-scale* cost, which is the bigger number once you have hundreds of millions of daily users
+- Good discussion prompt if groups only think about training: "Your model was trained once. It's *served* billions of times a day. Which cost dominates at scale?"
+:::
+:::
+
+### 4. Regulatory policy proposals (15 min)
+
+Draft 2–3 concrete policy proposals a regulator (or your own company's policy team) might put forward once your app is systemically important. Consider:
+
+- Data privacy / cross-border data flows
+- Antitrust / market concentration concerns
+- Content moderation or safety obligations
+- Energy/environmental disclosure requirements
+- Algorithmic transparency or audit requirements
+
+For each proposal, note: who benefits, who bears the cost, and one plausible objection.
+
+### 5. Update your model card and system design (15 min)
+
+A model card is a short, standardized document that explains an AI model's purpose, intended uses, limitations, and performance metrics. Often compared to a "nutrition label" for algorithms, it is designed to help designers, developers, and end-users make informed, wise decisions about how to deploy the AI. Revise your model card using the categories below, and sketch how your system design changes at this scale (e.g., regional inference clusters, caching layers, fallback/degraded modes, human review pipelines).
+
+::: {.callout-tip title="Model card categories (adapted from Mitchell et al., 2019, 'Model Cards for Model Reporting')"}
+1. **Model details** — basic information: architecture, version, training approach, owners, date, license
+2. **Intended use** — primary use cases, intended users, out-of-scope uses
+3. **Factors** — relevant demographic, environmental, or technical factors that could affect performance
+4. **Metrics** — performance measures used, and why they were chosen
+5. **Evaluation data** — datasets used to evaluate the model
+6. **Training data** — datasets used to train the model (or a summary, if disclosure is limited)
+7. **Quantitative analyses** — results broken down by the factors identified above
+8. **Social impact** — risks, harms, mitigations, and use cases the team considered (thematic to the AI-100 lab topic)
+9. **Caveats and recommendations** — anything not captured above; recommendations for users
+
+Reference: Mitchell et al., *Model Cards for Model Reporting*, FAT\* 2019 — [arxiv.org/abs/1810.03993](https://arxiv.org/abs/1810.03993). For a lighter-weight template, see the [Hugging Face model card guide](https://huggingface.co/docs/hub/model-cards).
+:::
+
+At minimum, revise **Intended use**, **Factors**, **Social impact**, and **Caveats and recommendations** — these are the categories most likely to change once your app reaches billions of users in diverse contexts.
+
+### 6. Share-out (10 min)
+
+People break into their shadow groups, review the material form phases 2-4 and give written feedback on the points below. 
+
+- Is a financial, environmental, or regulatory claim internally inconsistent with their stated scale assumptions?
+- Did their model card update actually reflect the new scale?
+
+::: {.content-hidden unless-profile="ta"}
+---
+
+## TA facilitation guide
+
+::: {.callout-important title="Common pitfalls to watch for"}
+- **Scale amnesia**: students write the environmental/regulatory sections as if still at small scale (e.g., "we'll just add a content moderator" for a billion-user platform). Push back with "at this scale, what breaks first?"
+- **Numbers with no derivation**: a number like "$50B revenue" with no link to the daily active users / pricing assumptions from Step 1. Ask them to show the arithmetic, even roughly.
+- **Model card copy-paste**: students often don't actually revise the model card, just restate the original. Check that Intended Use / Factors / Social Impact visibly changed.
+- **Ignoring inference cost**: many groups fixate on training cost (a one-time number) and miss that inference-at-scale, run continuously for billions of users, is usually the dominant cost and environmental driver.
+:::
+
+::: {.callout-note title="Suggested rubric (10 pts)"}
+- Scale assumptions stated and used consistently (0, 0.5, or 1 pts)
+- Financial section has specific, derived numbers (0, 0.5, or 1 pts)
+- Environmental section addresses data center location, energy, water, and land based realities (0, 0.5, or 1 pts)
+- Regulatory proposals are concrete and acknowledge a tradeoff/objection (0, 0.5, or 1 pts)
+- Model card meaningfully updated across at least 3 categories (0, 0.5, or 1 pts)
+:::
+
+::: {.callout-tip title="Discussion prompts for share-out / wrap-up"}
+- "What's a decision that looks fine at 10,000 users but becomes a scandal at 500 million?"
+- "If you had to cut cost by 50%, would you cut the environmental mitigations or the safety/moderation budget first? What does that choice reveal?"
+- "Which regulatory proposal would your own company lobby *against*?"
+:::
+:::
