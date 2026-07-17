@@ -36,7 +36,7 @@ number-sections: false
   - 5 min
 
 - - [Differences from previous lectures](#sec-prev-lectures)
-  - 5 min
+  - 10 min
 
 - - [Search inputs and outputs](#sec-inputs-outputs)
     - Tic-tac-toe
@@ -100,10 +100,11 @@ Imagine planning a trip from Vancouver to Antarctica without using a travel guid
 ### Activity: Discussion
 What would the inputs be if we wanted to represent tic-tac-toe with search? What would the output be?
 :::
-- States are a particular layout of the board and an indicator of whose turn it is. The initial state is an empty board with X as the current player, and the goal state is any board with three Xs or Os in a row. (TODO: full board/tie??)
-- In any given state, the current player can place one of their symbols in any free space. This action causes the game to transition from the current state to another state on the other player's turn with one more symbol on the board. (TODO: rework this phrasing...)
+- States are a particular layout of the board and an indicator of whose turn it is. The initial state is an empty board with X as the current player, and the goal state is any board with three Xs or Os in a row. [TODO: full board/tie??]
+- In each state, the current player can place one of their symbols in a free space. This action causes the game to transition from the current state to a different state: in this new state, it will be the other player's turn, and there will be another symbol on the board.
 
 ## Trees{#sec-trees}
+
 - TODO: what is a tree
 - TODO: visualization of tic-tac-toe as a tree
 - TODO: why is a tree important? -> easier to write code for - how do we make this more relatable to them?
