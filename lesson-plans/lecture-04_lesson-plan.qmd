@@ -7,7 +7,16 @@ number-sections: false
 
 ## Lecture overview
 ### Learning outcomes
-- TODO
+By the end of this lecture, you will be able to:
+
+- Explain how machine learning differs from explicit programming and search, and give an example of a problem better suited to learning rules from data. <!-- Understand -->
+- Identify the features and labels in a supervised-learning dataset. <!-- Analyze -->
+- Describe how a model is trained on labelled examples to classify new, unseen examples. <!-- Understand -->
+- Recognize that a linear model separates two classes with a straight-line boundary. <!-- Remember -->
+- Assess, from data plotted by feature, whether two classes are linearly separable and how the number of features affects this. <!-- Analyze -->
+- Construct a decision tree that correctly separates a small labelled dataset into its classes. <!-- Apply -->
+- Explain why data is split into training and testing sets, and compute a model's accuracy on the testing set. <!-- Apply -->
+- Explain why a model with high training accuracy may still fail to generalize to new data. <!-- Understand -->
 
 ### Pre-class work
 ::: {.content-hidden when-profile="student" when-profile="ta"}
