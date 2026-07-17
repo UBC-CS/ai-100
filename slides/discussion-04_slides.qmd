@@ -12,7 +12,7 @@ include-in-header:
 
 ## Overview
 
-- In today's activity, you will learn elements of the **design process** that will help you design a good project with a real-world basis.
+- In today's activity, you will learn elements of the **design process** that will help you identify real-world problems and think about how to best address them in your project.
 - You will also learn to **use AI to simulate** steps of the design process when access to other resources is limited.
 
 ## Task 1: Your Interests
@@ -37,7 +37,7 @@ include-in-header:
     - It is ok if the app provides some help but does not solve the entire problem!​
     - If you believe an app cannot help with one of the problems you identified, move onto the next problem!​
 - If it helps, you can add to the sentence you made before. 
-    - For example: "When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites, and I would like an app to collect and synthesize all that information for me."​
+    - For example: "When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites, and I would like an app to collect and synthesize information about campsites near me and their availability."​
 
 ## Task 4: Breaking Ties
 
