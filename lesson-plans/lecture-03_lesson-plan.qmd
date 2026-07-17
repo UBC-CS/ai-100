@@ -43,10 +43,11 @@ number-sections: false
   - 10 min
 
 - - [Trees](#sec-trees)
+    - Tic-tac-toe as a tree
   - 10 min
 
 - - [Search algorithms](#sec-algos)
-    - Breadth- and depth-first search
+    - Depth- and breadth-first search
     - Minimax 
   - 30 min
 
@@ -105,23 +106,74 @@ What would the inputs be if we wanted to represent tic-tac-toe with search? What
 
 ## Trees{#sec-trees}
 
-- TODO: what is a tree
-- TODO: visualization of tic-tac-toe as a tree
-- TODO: why is a tree important? -> easier to write code for - how do we make this more relatable to them?
+- We can represent states and transitions visually using a **tree** diagram. States are shown as circles, and transitions are arrows linking different states.
+- For example, we could build a smaller version of the Vancouver-to-Antarctica problem as a tree.
+  - In the tree below, the only possible states are Vancouver, Buenos Aires, Antarctica, New York, Toronto, Ottawa, Atlanta, and Boston, and the only possible transitions are the ones shown alongside the arrows (e.g. fly from Vancouver to Buenos Aires, drive from Toronto to Ottawa, etc).
+  - The tree allows us to see clearly that, to go from the initial state (Vancouver) to the goal state (Antarctica), we could take the train to Toronto, fly to Atlanta, and then fly to Antarctica. Alternatively, we could fly to Buenos Aires and then take a boat to Antarctica.
+  - The real problem would be a lot bigger! Imagine how many states and transitions you would need to represent the entire breadth of places you could go from Vancouver, and how big the tree would be. 
+
+![](../images/lecture-03_tree.png)
+
+### Tic-tac-toe as a tree
+
+:::{.callout-tip}
+### Activity: Tic-tac-tree
+Play a few games of tic-tac-toe with the widget below and follow along with the tree. TODO: what reflection questions should go here
+:::
+
+```{=html}
+<iframe src="../html/lecture-03_tic-tac-toe.html" width="100%" height="350px" style="border:none;"></iframe>
+```
 
 ## Search algorithms{#sec-algos}
-- TODO: now we have the structure, we want to look through it in a smart way to find a solution. -> what does smart mean? well, here are some bad options...
+- We can use trees to search for goal states in a more structured way!
+- There are lots of ways we can search through trees, including **depth-first search (DFS)** and **breadth-first search (DFS)**.
 
-### Breadth- and depth-first search
-- TODO: visualization of BFS - pros/cons (optimal, show how long it takes)
-- TODO: visualization of DFS - pros/cons (faster, show it finding something non optimal)
-- TODO: any hands-on activity with this?
-- TODO: don't want it to take too long and want the solution to be good enough (if not perfect)
+### Depth- and breadth-first search
+- In DFS, we follow transitions from a state as far as possible before moving left-to-right along a layer of states. TODO: phrase this better lol
+
+```{=html}
+<iframe src="../html/lecture-03_dfs.html" width="100%" height="650px" style="border:none;"></iframe>
+```
+
+- In BFS, we fully explore each layer of states left-to-right before moving on to the next layer.
+
+```{=html}
+<iframe src="../html/lecture-03_bfs.html" width="100%" height="650px" style="border:none;"></iframe>
+```
+
+:::{.callout-tip}
+### Activity: Think, pair, share
+In the widgets above, DFS and BFS end up finding different goal states.
+
+- What kinds of problems do you think DFS is better suited for? What kinds of problems do you think BFS is better suited for?
+- Which goal state is better? Which approach is better overall for this problem?
+:::
+
+- In this example, you probably want to take the fewest number of steps to reach Antarctica.
+- DFS is not the best solution in this case - if some goal states are further away from the initial state than others, DFS might find the further states first. On the other hand, since BFS visits all of the states in order, it is guaranteed to find whichever goal state is closest to the initial state. 
+- However, consider a different example where all goal states should be around the same level, much further down in the tree. BFS would waste a lot of time checking all of the states higher up, while DFS would find a goal state much faster. 
+- DFS and BFS don't consider whether any of the transitions are better than others - if you get seasick, you might prefer to fly to Antarctica via Atlanta, but this preference is not represented in either approach.
+- It would also be difficult to use DFS or BFS for a problem like tic-tac-toe, since your next move depends on the other player's actions.
+- Lots of other search strategies exist! We will focus on **minimax search**, as it addresses this two-player problem.
 
 ### Minimax search
-- TODO: visualization of minimax steps
-- TODO: bring it back to tic-tac-toe
-- TODO: any hands-on activity with tic-tac-toe?
+- Instead of just checking whether we've reached a goal state, we give every goal state a **utility**: a number describing how good that outcome is for one of the players. For example, we could give a utility of 1 to any state where X has won, -1 to any state where O has won, and 0 to a draw.
+  - This means that X wants to end up in a state with the highest utility possible, and O wants to end up in a state with the lowest utility possible.
+- We already know the utility of every goal state. For any other state, we can only work out its utility once we know the utility of every state it could transition to.
+  - If it's X's turn, the state's utility is the highest utility among the states it could transition to, i.e. we assume that X does the thing that ultimately works out best for them.
+  - If it's O's turn, the state's utility is the lowest utility among the states it could transition to, i.e. we assume that O does the thing that ultimately works out best for them.
+- We repeat this, working upward from the goal states toward the initial state, until every state in the tree has a utility. 
+- Once the initial state has a utility, we know which move to make! We follow whichever transition leads to the state that gave the initial state its utility, and so on, until we reach a goal state.
+
+:::{.callout-tip}
+### Activity: TODO
+TODO minimax activity would be good, but what? Ideas:
+
+- tic-tac-toe like the widget above with hints (two-player)
+- tic-tac-toe vs the computer who has minimax (single-player)
+- figuring out the minimax decision for a small subtree - better done as a visualization like above??
+:::
 
 ## Wrap-up{#sec-wrap-up}
 
