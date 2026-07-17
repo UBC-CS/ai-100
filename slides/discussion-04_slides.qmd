@@ -66,7 +66,75 @@ include-in-header:
 - Brainstorm and write down a list of different types of users that would use your app to solve or address the problem at hand. We call these types of users **personas**.
 - For example, there are lots of different types of campers: experienced campers, novice campers, elderly campers, families with small kids, campers who have accessibility needs (like a wheelchair), etc. Each of those are a persona.
 
-​[TODO do we want Parsa's graphic here?]
+## Personas {.smaller .scrollable}
+
+:::: {.columns}
+
+::: {.column width="19%"}
+*"Quiet sites, fewer tabs."*
+
+![](../images/discussion-04_persona-riley.png){height="200" fig-align="center"}
+
+**Riley**<br>*Experienced camper*
+
+**Trait:** Independent planner<br>
+**Wishes:** Find quieter sites<br>
+**Needs:** Live availability + map
+:::
+
+::: {.column width="19%"}
+*"Help me feel prepared."*
+
+![](../images/discussion-04/discussion-04_persona-alex.png){height="200" fig-align="center"}
+
+**Alex**<br>*Novice camper*
+
+**Trait:** Curious and cautious<br>
+**Wishes:** Feel prepared<br>
+**Needs:** Plain-language rules
+:::
+
+::: {.column width="19%"}
+*"How far is the walk?"*
+
+![](../images/discussion-04/discussion-04_persona-morgan.png){height="200" fig-align="center"}
+
+**Morgan**<br>*Older adult camper*
+
+**Trait:** Flexible schedule<br>
+**Wishes:** A calm, comfortable trip<br>
+**Needs:** Walking distance + terrain
+:::
+
+::: {.column width="19%"}
+*"Will this work for the kids?"*
+
+![](../images/discussion-04/discussion-04_persona-family.png){height="200" fig-align="center"}
+
+**Sam's family**<br>*Family with young children*
+
+**Trait:** Plans around the kids<br>
+**Wishes:** Less trip-day stress<br>
+**Needs:** Safe setup + nearby washroom
+:::
+
+::: {.column width="19%"}
+*"Show me verified access."*
+
+![](../images/discussion-04/discussion-04_persona-jordan.png){height="200" fig-align="center"}
+
+**Jordan**<br>*Wheelchair user*
+
+**Trait:** Experienced self-advocate<br>
+**Wishes:** Book with confidence<br>
+**Needs:** Verified routes + site surfaces
+:::
+
+::::
+
+::: {.aside}
+Image created with GPT 5.6 Sol
+:::
 
 ## Task 6: Can AI Help?
 
