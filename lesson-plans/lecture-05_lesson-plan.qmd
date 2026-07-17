@@ -7,7 +7,17 @@ number-sections: false
 
 ## Lecture overview
 ### Learning outcomes
-- TODO
+By the end of this lecture, you will be able to:
+
+- Recognize that deep learning can learn directly from raw data (such as image pixels), without features chosen by people. <!-- Remember -->
+- Recognize that an artificial neuron takes in several inputs and produces one output. <!-- Remember -->
+- Explain that the weights are the parameters a network learns during training and that they set how much each input influences the output. <!-- Understand -->
+- Describe how neurons are arranged into input, hidden, and output layers to form a deep neural network. <!-- Understand -->
+- Distinguish what is chosen before training (the number of layers and neurons) from what is learned during training (the weights). <!-- Analyze -->
+- Recognize that a network improves by comparing its predictions to the correct answers and adjusting its weights (a process called backpropagation). <!-- Remember -->
+- Explain how the distribution of the training data affects a model's overall accuracy and its accuracy for individual groups. <!-- Understand -->
+- Explain, using a real example such as facial-analysis systems, how unrepresentative training data can make a model biased and unfair. <!-- Understand -->
+- Explain why a deep neural network's predictions are hard to interpret (the transparency problem), and compare its interpretability with that of a decision tree. <!-- Analyze -->
 
 ### Pre-class work
 ::: {.content-hidden when-profile="student" when-profile="ta"}
