@@ -52,6 +52,8 @@ number-sections: false
   - 15 min
 
 - - [Neural network challenges](#sec-challenges)
+    - Scale
+    - Transparency
   - 5 min
   
 - - [Wrap-up](#sec-wrap-up)
