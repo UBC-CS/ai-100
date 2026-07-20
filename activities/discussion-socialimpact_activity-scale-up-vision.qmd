@@ -1,5 +1,5 @@
 ---
-title: "Lab 1 — The Scale-Up Vision"
+title: "Social Impact Lab Activity — The Scale-Up Vision"
 subtitle: "Mock report + model card update for a wildly successful app"
 format:
   html:

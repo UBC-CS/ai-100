@@ -1,5 +1,5 @@
 ---
-title: "Lab 2 — Stakeholder Debate (MUN-Style)"
+title: "Social Impact Lab Activity — Stakeholder Debate (MUN-Style)"
 subtitle: "Multi-partisan roleplay for a scaled-up app"
 format:
   html:
