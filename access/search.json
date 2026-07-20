@@ -133,74 +133,741 @@
     "text": "Learning outcomes\n\nLearning outcome 1\nLearning outcome 2"
   },
   {
-    "objectID": "slides/lecture-12_slides.html#announcements",
-    "href": "slides/lecture-12_slides.html#announcements",
-    "title": "Direct effects on individuals",
+    "objectID": "slides/discussion-04_slides.html#overview",
+    "href": "slides/discussion-04_slides.html#overview",
+    "title": " Design Thinking and AI",
+    "section": "Overview",
+    "text": "Overview\n\nIn today’s activity, you will learn elements of the design process that will help you identify real-world problems and think about how to best address them in your project.\nYou will also learn to use AI to simulate steps of the design process when access to other resources is limited."
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-1-your-interests",
+    "href": "slides/discussion-04_slides.html#task-1-your-interests",
+    "title": " Design Thinking and AI",
+    "section": "Task 1: Your Interests",
+    "text": "Task 1: Your Interests\n\nThe best topic for a project is one you care about.​\nStart by writing down 2-3 areas or topics that matter to you or that you care about. Some examples:​\n\nHiking​\nPlaying chess​\nDoing well in school​\nStaying in touch with friends​\n…really anything goes!​"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-2-identify-a-problem",
+    "href": "slides/discussion-04_slides.html#task-2-identify-a-problem",
+    "title": " Design Thinking and AI",
+    "section": "Task 2: Identify a Problem",
+    "text": "Task 2: Identify a Problem\n\nFor each of your areas of interest, identify a problem that you are affected by and would like to solve.\nIf it helps, you can try completing this sentence: “When I __________ [hike/play chess/study…], I sometimes have trouble with __________ .”\n\nFor example: “When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites.”"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-3-could-an-app-help",
+    "href": "slides/discussion-04_slides.html#task-3-could-an-app-help",
+    "title": " Design Thinking and AI",
+    "section": "Task 3: Could an App Help?",
+    "text": "Task 3: Could an App Help?\n\nCan you imagine an app helping you with the problem you described?​ Identify 2-3 tasks that you would like the app to do, which you think would provide a solution to your problem.\n\nIt is ok if the app provides some help but does not solve the entire problem!​\nIf you believe an app cannot help with one of the problems you identified, move onto the next problem!​\n\nIf it helps, you can add to the sentence you made before.\n\nFor example: “When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites, and I would like an app to collect and synthesize information about campsites near me and their availability.”​"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-4-breaking-ties",
+    "href": "slides/discussion-04_slides.html#task-4-breaking-ties",
+    "title": " Design Thinking and AI",
+    "section": "Task 4: Breaking Ties",
+    "text": "Task 4: Breaking Ties\n\nIf you have multiple good contenders, consider the following points that might help you break the tie:\n\nProblem importance: Is this a problem that genuinely affects me or people like me?​\nFrequency: How often does this problem occur?​\nImpact: If solved, how much would it improve someone’s life or experience?​\nFeasibility: Could I realistically develop this app concept within the next two months?\nPersonal motivation: Am I excited enough about this idea to focus my energy on it for the rest of the term?​\nAI usage: Does it make sense to apply AI to this problem?\n\nFinalize your choice of problem!"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-4-breaking-ties-contd",
+    "href": "slides/discussion-04_slides.html#task-4-breaking-ties-contd",
+    "title": " Design Thinking and AI",
+    "section": "Task 4: Breaking Ties (cont’d)",
+    "text": "Task 4: Breaking Ties (cont’d)"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#personas-and-pain-points",
+    "href": "slides/discussion-04_slides.html#personas-and-pain-points",
+    "title": " Design Thinking and AI",
+    "section": " Personas and Pain Points",
+    "text": "Personas and Pain Points\n\nAt this point, you should have identified a problem you would like to solve and have a basic intuition of how a potential app could help – great!​\n\nYou may want to jump right into implementation, but that would be unwise, as you just started thinking about this.​\n\nDesign thinking teaches us to solve problems not by guessing, but by talking to the people affected. Those users are the best way to understand real pain points that they experience, before we try to provide fixes for them.​\n\nSo, the first step is to think about who your users are and what their pain points are.​"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-5-identifying-users",
+    "href": "slides/discussion-04_slides.html#task-5-identifying-users",
+    "title": " Design Thinking and AI",
+    "section": "Task 5: Identifying Users",
+    "text": "Task 5: Identifying Users\n\nBrainstorm and write down a list of different types of users that would use your app to solve or address the problem at hand. We call these types of users personas.\nFor example, there are lots of different types of campers: experienced campers, novice campers, elderly campers, families with small kids, campers who have accessibility needs (like a wheelchair), etc. Each of those are a persona."
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#personas",
+    "href": "slides/discussion-04_slides.html#personas",
+    "title": " Design Thinking and AI",
+    "section": "Personas",
+    "text": "Personas\n\n\n“Quiet sites, fewer tabs.”\n\n\n\n\n\nRileyExperienced camper\nTrait: Independent planner Wishes: Find quieter sites Needs: Live availability + map\n\n“Help me feel prepared.”\n\n\n\n\n\nAlexNovice camper\nTrait: Curious and cautious Wishes: Feel prepared Needs: Plain-language rules\n\n“How far is the walk?”\n\n\n\n\n\nMorganOlder adult camper\nTrait: Flexible schedule Wishes: A calm, comfortable trip Needs: Walking distance + terrain\n\n“Will this work for the kids?”\n\n\n\n\n\nSam’s familyFamily with young children\nTrait: Plans around the kids Wishes: Less trip-day stress Needs: Safe setup + nearby washroom\n\n“Show me verified access.”\n\n\n\n\n\nJordanWheelchair user\nTrait: Experienced self-advocate Wishes: Book with confidence Needs: Verified routes + site surfaces\n\n\n\nImage created with GPT 5.6 Sol"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-6-can-ai-help",
+    "href": "slides/discussion-04_slides.html#task-6-can-ai-help",
+    "title": " Design Thinking and AI",
+    "section": "Task 6: Can AI Help?",
+    "text": "Task 6: Can AI Help?\n\nGenerative AI may help you think of users that you would not have thought about on your own.​\nWrite a prompt to ask an AI chatbot to generate a bigger list of users for your app, including interesting details about them.\n\nPrompts should be specific and give enough context for the model to understand what you want.\nWhat kinds of things should be included in this prompt?\n\nPrompt the AI and compare its response to your original list.\n\nDoes it include users or details you did not think about?​\nDoes it fail to include users you think are important?"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-7-user-interview-questions",
+    "href": "slides/discussion-04_slides.html#task-7-user-interview-questions",
+    "title": " Design Thinking and AI",
+    "section": "Task 7: User Interview Questions",
+    "text": "Task 7: User Interview Questions\n\nAt this point in design thinking, you would reach out to potential users of your app to interview them, learn about their experiences and preferences, and overall try to empathize with their perspective. ​\nPick two of your personas that you want to learn more about and come up with some interview questions for each one.\n\nAsk about the personas themselves, their personal experiences with the problem, what they already do (if anything) to help them with the problem…​"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-8-simulating-user-interviews",
+    "href": "slides/discussion-04_slides.html#task-8-simulating-user-interviews",
+    "title": " Design Thinking and AI",
+    "section": "Task 8: Simulating User Interviews",
+    "text": "Task 8: Simulating User Interviews\n\nReal users are the best source, but can be hard to come by - this is where GenAI can help through simulated interviews.​\nAsk AI to conduct two persona interviews, acting as each of your personas. The goal here is to figure out who they are, how they are engaging with the problem, and what their specific pain points are."
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-9-evaluating-ai",
+    "href": "slides/discussion-04_slides.html#task-9-evaluating-ai",
+    "title": " Design Thinking and AI",
+    "section": "Task 9: Evaluating AI",
+    "text": "Task 9: Evaluating AI\n\nBefore we summarize our findings from these interviews, let’s assess their quality. Discuss the following with your neighbours:\n\nDid you feel that the users answered questions in a way that matched their character?​\nDid you notice odd similarities between answers?​\nDo you think it matters that the Gen AI experiences are not real? Does your answer change if we consider using this approach in the long term instead of just this once?"
+  },
+  {
+    "objectID": "slides/discussion-04_slides.html#task-10-findings-and-insights",
+    "href": "slides/discussion-04_slides.html#task-10-findings-and-insights",
+    "title": " Design Thinking and AI",
+    "section": "Task 10: Findings and Insights",
+    "text": "Task 10: Findings and Insights\n\nUsing the interviews and your own notes, create a summary of the top 3-5 tasks that your app needs to complete.\n\nDraw a star next to the tasks that you hadn’t considered initially. Did any core functionalities of your app change once you learned more about the personas? How? ​\n\nSummarize your findings to someone you haven’t talked to yet! ​Don’t forget to include:\n\nWhat problem are you trying to solve?​\nWhich personas are particularly important?​\nHow did the interviews change the direction of your app?"
+  },
+  {
+    "objectID": "slides/lecture-03_slides.html#announcements",
+    "href": "slides/lecture-03_slides.html#announcements",
+    "title": "Search",
     "section": "Announcements",
     "text": "Announcements\n\nPresentation notes"
   },
   {
-    "objectID": "slides/lecture-12_slides.html#learning-outcomes",
-    "href": "slides/lecture-12_slides.html#learning-outcomes",
-    "title": "Direct effects on individuals",
+    "objectID": "slides/lecture-03_slides.html#learning-outcomes",
+    "href": "slides/lecture-03_slides.html#learning-outcomes",
+    "title": "Search",
     "section": "Learning outcomes",
     "text": "Learning outcomes\n\nLearning outcome 1\nLearning outcome 2"
   },
   {
-    "objectID": "slides/lecture-01_slides.html#teaching-team",
-    "href": "slides/lecture-01_slides.html#teaching-team",
-    "title": "What is AI?",
-    "section": "Teaching team",
-    "text": "Teaching team"
+    "objectID": "slides/lecture-14_slides.html#announcements",
+    "href": "slides/lecture-14_slides.html#announcements",
+    "title": "Economic impacts",
+    "section": "Announcements",
+    "text": "Announcements\n\nPresentation notes"
   },
   {
-    "objectID": "slides/lecture-01_slides.html#where-to-start",
-    "href": "slides/lecture-01_slides.html#where-to-start",
-    "title": "What is AI?",
-    "section": "Where to start?",
-    "text": "Where to start?\nCanvas: [https://canvas.ubc.ca/courses/](https://canvas.ubc.ca/courses/)\nCourse Website: [https://stephan-koenig.github.io/ai-100](https://stephan-koenig.github.io/ai-100)\nPrairieLearn: [https://us.prairielearn.com/pl/course_instance/](https://us.prairielearn.com/pl/course_instance/)"
+    "objectID": "slides/lecture-14_slides.html#learning-outcomes",
+    "href": "slides/lecture-14_slides.html#learning-outcomes",
+    "title": "Economic impacts",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\n\nLearning outcome 1\nLearning outcome 2"
   },
   {
-    "objectID": "slides/lecture-01_slides.html#about-this-course",
-    "href": "slides/lecture-01_slides.html#about-this-course",
-    "title": "What is AI?",
-    "section": "About This Course",
-    "text": "About This Course"
+    "objectID": "announcements.html",
+    "href": "announcements.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "No matching items",
+    "crumbs": [
+      "Course information",
+      "Announcements"
+    ]
   },
   {
-    "objectID": "slides/lecture-01_slides.html#term-schedule",
-    "href": "slides/lecture-01_slides.html#term-schedule",
-    "title": "What is AI?",
-    "section": "Term Schedule",
-    "text": "Term Schedule"
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "The website and slides templates were created in Quarto by Dr. Stephan Koenig.",
+    "crumbs": [
+      "About"
+    ]
   },
   {
-    "objectID": "slides/lecture-01_slides.html#evaluation",
-    "href": "slides/lecture-01_slides.html#evaluation",
-    "title": "What is AI?",
-    "section": "Evaluation",
-    "text": "Evaluation"
+    "objectID": "about.html#contributors",
+    "href": "about.html#contributors",
+    "title": "About",
+    "section": "",
+    "text": "The website and slides templates were created in Quarto by Dr. Stephan Koenig.",
+    "crumbs": [
+      "About"
+    ]
   },
   {
-    "objectID": "slides/lecture-01_slides.html#communications",
-    "href": "slides/lecture-01_slides.html#communications",
-    "title": "What is AI?",
-    "section": "Communications",
-    "text": "Communications"
+    "objectID": "summaries/part-04_summary.html",
+    "href": "summaries/part-04_summary.html",
+    "title": "Social impacts of AI systems",
+    "section": "",
+    "text": "Students will be able to:\n\n(Economic impacts) Analyze automation-related job displacement claims using the lump of labour fallacy.\n(Economic impacts) Predict which job categories are more/less automatable and justify reasoning.\n(Economic impacts) Describe scenarios for a post-scarcity economy.\n(Bias) Differentiate bias sources: training data, model alignment, and designer demographics.\n(Bias) Explain how transparency and standardization can mitigate bias.\n(Content creators) Evaluate the legal and cultural implications of generative AI on fair use and creative craft.\n(Education) Assess AI’s impact on student assessment and curriculum design.\n(Education) Propose strategies for adapting teaching in AI-rich environments.\n(Human relationships) Analyze the developmental and societal effects of AI companions.\n(Human relationships) Compare AI-based relationships to those that emerged from prior communication technologies.\n(Military use) Describe AI-enabled military technologies (e.g., drones, missile defense).\n(Military use) Debate the security and geopolitical implications of military AI.\n(Climate) Assess the environmental costs of AI training and inference.\n(Climate) Identify AI applications that could improve energy efficiency and reduce emissions.\n\nTheme: Examine the broad economic, ethical, cultural, and environmental implications of AI’s growing role in society."
   },
   {
-    "objectID": "slides/lecture-01_slides.html#course-overview",
-    "href": "slides/lecture-01_slides.html#course-overview",
-    "title": "What is AI?",
-    "section": "Course overview",
-    "text": "Course overview"
+    "objectID": "summaries/part-04_summary.html#learning-outcomes",
+    "href": "summaries/part-04_summary.html#learning-outcomes",
+    "title": "Social impacts of AI systems",
+    "section": "",
+    "text": "Students will be able to:\n\n(Economic impacts) Analyze automation-related job displacement claims using the lump of labour fallacy.\n(Economic impacts) Predict which job categories are more/less automatable and justify reasoning.\n(Economic impacts) Describe scenarios for a post-scarcity economy.\n(Bias) Differentiate bias sources: training data, model alignment, and designer demographics.\n(Bias) Explain how transparency and standardization can mitigate bias.\n(Content creators) Evaluate the legal and cultural implications of generative AI on fair use and creative craft.\n(Education) Assess AI’s impact on student assessment and curriculum design.\n(Education) Propose strategies for adapting teaching in AI-rich environments.\n(Human relationships) Analyze the developmental and societal effects of AI companions.\n(Human relationships) Compare AI-based relationships to those that emerged from prior communication technologies.\n(Military use) Describe AI-enabled military technologies (e.g., drones, missile defense).\n(Military use) Debate the security and geopolitical implications of military AI.\n(Climate) Assess the environmental costs of AI training and inference.\n(Climate) Identify AI applications that could improve energy efficiency and reduce emissions.\n\nTheme: Examine the broad economic, ethical, cultural, and environmental implications of AI’s growing role in society."
   },
   {
-    "objectID": "slides/lecture-01_slides.html#example-activity",
-    "href": "slides/lecture-01_slides.html#example-activity",
-    "title": "What is AI?",
-    "section": " Example activity",
-    "text": "Example activity\nActivity instructions\n\nFirst step.\nSecond step.\n\n\n \n\nPresentation notes"
+    "objectID": "summaries/part-04_summary.html#select-topics",
+    "href": "summaries/part-04_summary.html#select-topics",
+    "title": "Social impacts of AI systems",
+    "section": "Select topics",
+    "text": "Select topics\n\nOriginal category 1 proposal topics\n\nEconomic impacts\n\nLump of labour fallacy\nJobs that are likely to be automated\nJobs that are likely not to be automated\nJobs that are likely to be created\nWhat would a post-scarcity economy look like?\n\nBias\n\nBias introduced via training data\nBias introduced via alignment\nBias introduced via AI designers being poorly representative of broader society\nBias reduced via standardization and transparency (everyone gets the same AI system; the system can be audited)\n\nContent creators\n\nRelationship to fair use\nThe role of taste vs the role of craft\n\nEducation\n\nHow is assessment affected?\nIn what ways should we change what we teach?\nHow can the role of the teacher change?\nWhat skills do students need to develop to learn in this new environment?\n\nHuman Relationships\n\nSocial impacts of AI companions, AI therapists\nDevelopmental impacts of these tools being used by children\nDownstream social consequences; contrast with social networking\n\nMilitary use\n\nCurrent state of the art; lessons from recent military conflicts (drone warfare; missile defense; surveillance)\nWhat’s around the corner?\nWill these changes make the world safer or less safe?\nWhat political structures will they foster (insurgency vs large states; democracy vs authoritarianism)\n\nIntentionally harmful use\n\nDeep fakes\nDisinformation\nRisks to privacy, safety, security\n\nClimate\n\nEnergy intensity of generative AI\nProspect of reducing carbon emissions\n\nMaking other systems more energy efficient\nAdvancing electrification of transportation\nCompatibility of AI data centers with green energy\n\n\n\n\n\nSuggested revised topics\n\nEconomic impact\nPossible biases\nClimate impact\nImpact on human relationships\nImpact on relationships to governments\nImpact on relationships to companies (surveillance capitalism)\nInadvertent vs. intentional negative impacts\nHuman-machine relationships\n\n\n\nDongwook’s suggested topics\n\nWork: work, productivity and the economy\nCulture: culture, creativity and education\nFairness: bias, fairness, power, and inequality\nPower: governance, law, and poliitics\nSustainability: sustainability, infrastructure, and global impacts\nFutures: future trajectories, existential risk, and philosophical questions"
+  },
+  {
+    "objectID": "summaries/part-01_summary.html",
+    "href": "summaries/part-01_summary.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Students will be able to:\n\nDefine artificial intelligence and its major subfields.\nIdentify and describe at least three current real-world applications of AI.\nExplain the role of technological drivers such as how to learn from data, availability of massive amounts of data, the adaptation of GPU hardware to AI tasks, global connectivity, the existence of massive data centers, and the ability to compute in the cloud.\nDifferentiate between AI as a research discipline and AI as deployed technology.\n\nTheme: Explore what AI is, why it matters today, and the foundational context behind its rapid growth."
+  },
+  {
+    "objectID": "summaries/part-01_summary.html#learning-outcomes",
+    "href": "summaries/part-01_summary.html#learning-outcomes",
+    "title": "Introduction",
+    "section": "",
+    "text": "Students will be able to:\n\nDefine artificial intelligence and its major subfields.\nIdentify and describe at least three current real-world applications of AI.\nExplain the role of technological drivers such as how to learn from data, availability of massive amounts of data, the adaptation of GPU hardware to AI tasks, global connectivity, the existence of massive data centers, and the ability to compute in the cloud.\nDifferentiate between AI as a research discipline and AI as deployed technology.\n\nTheme: Explore what AI is, why it matters today, and the foundational context behind its rapid growth."
+  },
+  {
+    "objectID": "summaries/part-01_summary.html#select-topics",
+    "href": "summaries/part-01_summary.html#select-topics",
+    "title": "Introduction",
+    "section": "Select topics",
+    "text": "Select topics\n\nMotivating examples\nHow is it being used?\nWhy is it happening? (Technological breakthroughs in how to learn from data; availability of massive amounts of data; the adaptation of GPU hardware to AI tasks; global connectivity; the existence of massive data centers; and the ability to compute in the cloud.)"
+  },
+  {
+    "objectID": "activities/discussion-15_activity.html",
+    "href": "activities/discussion-15_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-15_activity.html#steps",
+    "href": "activities/discussion-15_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-15_activity.html#resources",
+    "href": "activities/discussion-15_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-19_activity.html",
+    "href": "activities/discussion-19_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-19_activity.html#steps",
+    "href": "activities/discussion-19_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-19_activity.html#resources",
+    "href": "activities/discussion-19_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-12_activity.html",
+    "href": "activities/discussion-12_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-12_activity.html#steps",
+    "href": "activities/discussion-12_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-12_activity.html#resources",
+    "href": "activities/discussion-12_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-13_activity.html",
+    "href": "activities/discussion-13_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-13_activity.html#steps",
+    "href": "activities/discussion-13_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-13_activity.html#resources",
+    "href": "activities/discussion-13_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-01_activity.html",
+    "href": "activities/discussion-01_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-01_activity.html#steps",
+    "href": "activities/discussion-01_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-01_activity.html#resources",
+    "href": "activities/discussion-01_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-03_activity.html",
+    "href": "activities/discussion-03_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-03_activity.html#steps",
+    "href": "activities/discussion-03_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-03_activity.html#resources",
+    "href": "activities/discussion-03_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-10_activity.html",
+    "href": "activities/discussion-10_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-10_activity.html#steps",
+    "href": "activities/discussion-10_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-10_activity.html#resources",
+    "href": "activities/discussion-10_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-16_activity.html",
+    "href": "activities/discussion-16_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-16_activity.html#steps",
+    "href": "activities/discussion-16_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-16_activity.html#resources",
+    "href": "activities/discussion-16_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-17_activity.html",
+    "href": "activities/discussion-17_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-17_activity.html#steps",
+    "href": "activities/discussion-17_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-17_activity.html#resources",
+    "href": "activities/discussion-17_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-09_activity.html",
+    "href": "activities/discussion-09_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-09_activity.html#steps",
+    "href": "activities/discussion-09_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-09_activity.html#resources",
+    "href": "activities/discussion-09_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-18_activity.html",
+    "href": "activities/discussion-18_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-18_activity.html#steps",
+    "href": "activities/discussion-18_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-18_activity.html#resources",
+    "href": "activities/discussion-18_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-02_activity.html",
+    "href": "activities/discussion-02_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-02_activity.html#steps",
+    "href": "activities/discussion-02_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-02_activity.html#resources",
+    "href": "activities/discussion-02_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "pre-activities/lecture-01_pre-activity.html#optional-videos",
+    "href": "pre-activities/lecture-01_pre-activity.html#optional-videos",
+    "title": " Pre-activity: Example",
+    "section": "Optional videos",
+    "text": "Optional videos\n\nShowing the differences between a traditional and a flipped classroom"
+  },
+  {
+    "objectID": "activities/discussion-05_activity.html",
+    "href": "activities/discussion-05_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-05_activity.html#steps",
+    "href": "activities/discussion-05_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-05_activity.html#resources",
+    "href": "activities/discussion-05_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-14_activity.html",
+    "href": "activities/discussion-14_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-14_activity.html#steps",
+    "href": "activities/discussion-14_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-14_activity.html#resources",
+    "href": "activities/discussion-14_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-11_activity.html",
+    "href": "activities/discussion-11_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-11_activity.html#steps",
+    "href": "activities/discussion-11_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-11_activity.html#resources",
+    "href": "activities/discussion-11_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-07_activity.html",
+    "href": "activities/discussion-07_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-07_activity.html#steps",
+    "href": "activities/discussion-07_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-07_activity.html#resources",
+    "href": "activities/discussion-07_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-04_activity.html",
+    "href": "activities/discussion-04_activity.html",
+    "title": " Design Thinking and AI",
+    "section": "",
+    "text": "Use design thinking to begin fleshing out your project. Identify personas and pain points. Conduct and critique user interviews with AI.\nTotal time: 80 minutes"
+  },
+  {
+    "objectID": "activities/discussion-04_activity.html#overview",
+    "href": "activities/discussion-04_activity.html#overview",
+    "title": " Design Thinking and AI",
+    "section": "Overview",
+    "text": "Overview\n\nIn today’s activity, you will learn elements of the design process that will help you design a good project with a real-world basis.\nYou will also learn to use AI to simulate steps of the design process when access to other resources is limited."
+  },
+  {
+    "objectID": "activities/discussion-04_activity.html#choosing-a-project",
+    "href": "activities/discussion-04_activity.html#choosing-a-project",
+    "title": " Design Thinking and AI",
+    "section": " Choosing a Project",
+    "text": "Choosing a Project\n\nTask 1: Your Interests\nTime: 2-3 minutes\n\nThe best topic for a project is one you care about.​\nStart by writing down 2-3 areas or topics that matter to you or that you care about. Some examples:​\n\nHiking​\nPlaying chess​\nDoing well in school​\nStaying in touch with friends​\n…really anything goes!​\n\n\n\n\nTask 2: Identify a Problem\nTime: 3 minutes\n\nFor each of your areas of interest, identify a problem that you are affected by and would like to solve.\nIf it helps, you can try completing this sentence: “When I __________ [hike/play chess/study…], I sometimes have trouble with __________ .”\n\nFor example: “When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites.”\n\n\n\n\nTask 3: Could an App Help?\nTime: 5 minutes\n\nCan you imagine an app helping you with the problem you described?​\nIdentify 2-3 tasks that you would like the app to do, which you think would provide a solution to your problem.\n\nIt is ok if the app provides some help but does not solve the entire problem!​\nIf you believe an app cannot help with one of the problems you identified, move onto the next problem!​\n\nIf it helps, you can add to the sentence you made before.\n\nFor example: “When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites, and I would like an app to collect and synthesize all that information for me.”​\n\n\n\n\nTask 4: Breaking Ties\nTime: 3 minutes\n\nIf you have multiple good contenders, consider the following points that might help you break the tie:\n\nProblem importance: Is this a problem that genuinely affects me or people like me?​\nFrequency: How often does this problem occur?​\nImpact: If solved, how much would it improve someone’s life or experience?​\nFeasibility: Could I realistically develop this app concept within the next two months?\nPersonal motivation: Am I excited enough about this idea to focus my energy on it for the rest of the term?​\nAI usage: Does it make sense to apply AI to this problem?\n\nFinalize your choice of problem!"
+  },
+  {
+    "objectID": "activities/discussion-04_activity.html#personas-and-pain-points",
+    "href": "activities/discussion-04_activity.html#personas-and-pain-points",
+    "title": " Design Thinking and AI",
+    "section": " Personas and Pain Points",
+    "text": "Personas and Pain Points\n\nAt this point, you should have identified a problem you would like to solve and have a basic intuition of how a potential app could help – great!​\nYou may want to jump right into implementation, but that would be unwise, as you just started thinking about this.​\nDesign thinking teaches us to solve problems not by guessing, but by talking to the people affected. Those users are the best way to understand real pain points that they experience, before we try to provide fixes for them.​\nSo, the first step is to think about who your users are and what their pain points are.​\n\n\nTask 5: Identifying Users\nTime: 3 minutes\n\nBrainstorm and write down a list of different types of users that would use your app to solve or address the problem at hand. We call these types of users personas.\nFor example, there are lots of different types of campers: experienced campers, novice campers, elderly campers, families with small kids, campers who have accessibility needs (like a wheelchair), etc. Each of those are a persona.\n\n​[TODO do we want Parsa’s graphic here?]\n\n\nTask 6: Can AI Help?\nTime: 6 minutes\n\nGenerative AI may help you think of users that you would not have thought about on your own.​\nWrite a prompt to ask an AI chatbot to generate a bigger list of users for your app, including interesting details about them.\n\nPrompts should be specific and give enough context for the model to understand what you want.\nWhat kinds of things should be included in this prompt?\n\nPrompt the AI and compare its response to your original list.\n\nDoes it include users or details you did not think about?​\nDoes it fail to include users you think are important?\n\n\n\n\nTask 7: User Interview Questions\nTime: 3 minutes\n\nAt this point in design thinking, you would reach out to potential users of your app to interview them, learn about their experiences and preferences, and overall try to empathize with their perspective. ​\nPick two of your personas that you want to learn more about and come up with some interview questions for each one.\n\nAsk about the personas themselves, their personal experiences with the problem, what they already do (if anything) to help them with the problem…​\n\n\n\n\nTask 8: Simulating User Interviews\nTime: 10 minutes\n\nReal users are the best source, but can be hard to come by - this is where GenAI can help through simulated interviews.​\nAsk AI to conduct two persona interviews, acting as each of your personas. The goal here is to figure out who they are, how they are engaging with the problem, and what their specific pain points are.\n\n\n\nTask 9: Evaluating AI\nTime: 3 minutes\n\nBefore we summarize our findings from these interviews, let’s assess their quality. Discuss the following with your neighbours:\n\nDid you feel that the users answered questions in a way that matched their character?​\nDid you notice odd similarities between answers?​\nDo you think it matters that the Gen AI experiences are not real? Does your answer change if we consider using this approach in the long term instead of just this once?\n\n\n\n\nTask 10: Findings and Insights\nTime: 6 minutes\n\nUsing the interviews and your own notes, create a summary of the top 3-5 tasks that your app needs to complete.\n\nDraw a star next to the tasks that you hadn’t considered initially. Did any core functionalities of your app change once you learned more about the personas? How? ​\n\nSummarize your findings to someone you haven’t talked to yet! ​Don’t forget to include:\n\nWhat problem are you trying to solve?​\nWhich personas are particularly important?​\nHow did the interviews change the direction of your app?\n\n\nTODOs:\n\ndo we want to include problem and user brief? I think there isn’t enough time\nfinalize TA notes\ndo we want any references to a PL assignment/do we want to use a PL assignment for deliverables?"
+  },
+  {
+    "objectID": "activities/discussion-08_activity.html",
+    "href": "activities/discussion-08_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-08_activity.html#steps",
+    "href": "activities/discussion-08_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-08_activity.html#resources",
+    "href": "activities/discussion-08_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "activities/discussion-06_activity.html",
+    "href": "activities/discussion-06_activity.html",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-06_activity.html#steps",
+    "href": "activities/discussion-06_activity.html#steps",
+    "title": " Activity",
+    "section": "",
+    "text": "First step.\nSecond step."
+  },
+  {
+    "objectID": "activities/discussion-06_activity.html#resources",
+    "href": "activities/discussion-06_activity.html#resources",
+    "title": " Activity",
+    "section": " Resources",
+    "text": "Resources"
+  },
+  {
+    "objectID": "summaries/part-05_summary.html",
+    "href": "summaries/part-05_summary.html",
+    "title": "Possible AI Futures",
+    "section": "",
+    "text": "Students will be able to:\n\nEnvision and describe plausible societal changes due to AI advancement.\nDebate the benefits and risks of AGI and superhuman intelligence.\nExplain why current AI systems are not sentient.\nArticulate philosophical perspectives on consciousness.\nApply metaphors (e.g., corporations) to reason about superhuman AI behavior.\n\nTheme: Consider potential future developments in AI, including transformative benefits, risks, and philosophical questions."
+  },
+  {
+    "objectID": "summaries/part-05_summary.html#learning-outcomes",
+    "href": "summaries/part-05_summary.html#learning-outcomes",
+    "title": "Possible AI Futures",
+    "section": "",
+    "text": "Students will be able to:\n\nEnvision and describe plausible societal changes due to AI advancement.\nDebate the benefits and risks of AGI and superhuman intelligence.\nExplain why current AI systems are not sentient.\nArticulate philosophical perspectives on consciousness.\nApply metaphors (e.g., corporations) to reason about superhuman AI behavior.\n\nTheme: Consider potential future developments in AI, including transformative benefits, risks, and philosophical questions."
+  },
+  {
+    "objectID": "summaries/part-05_summary.html#select-topics",
+    "href": "summaries/part-05_summary.html#select-topics",
+    "title": "Possible AI Futures",
+    "section": "Select topics",
+    "text": "Select topics\n\nHow will our society change?\n\nAI entertainment and new art forms\nChanges in the structure of the workforce\nAI-powered social connections with real people\nAI friends\n\nAGI and Superhuman intelligence\n\nUsing the metaphor of a corporation to understand superhuman AI\nBenefits: problems we may need superhuman intelligence to address\nRisks and potential mitigations; existential risk\n\nSentience\n\nReasons to believe current AI systems are not sentient\nPhilosophical view on “the hard problem of consciousness”"
+  },
+  {
+    "objectID": "summaries/part-03_summary.html",
+    "href": "summaries/part-03_summary.html",
+    "title": "Understanding recent AI systems",
+    "section": "",
+    "text": "Students will be able to:\n\nDescribe the training and inference processes of large language models.\nExplain how alignment modifies base models to create chatbots.\nSummarize how diffusion models generate images from noise.\nDifferentiate reasoning models from general text-generation models.\nExplain current AI applications in robotics and their limitations.\nEvaluate the effectiveness and limitations of alignment strategies for AI systems.\n\nTheme: Learn how state-of-the-art AI models work, including language, vision, and robotics systems, and how they are aligned to human needs.\n\nIdentify and explain common sources of hallucinations and reasoning flaws.\nDefine the “alignment tax” and illustrate examples of safety-performance trade-offs.\nAssess the reliability of AI outputs in specific application scenarios.\n\nTheme: Identify and analyze the technical and practical limitations that challenge the reliability and safety of modern AI."
+  },
+  {
+    "objectID": "summaries/part-03_summary.html#learning-outcomes",
+    "href": "summaries/part-03_summary.html#learning-outcomes",
+    "title": "Understanding recent AI systems",
+    "section": "",
+    "text": "Students will be able to:\n\nDescribe the training and inference processes of large language models.\nExplain how alignment modifies base models to create chatbots.\nSummarize how diffusion models generate images from noise.\nDifferentiate reasoning models from general text-generation models.\nExplain current AI applications in robotics and their limitations.\nEvaluate the effectiveness and limitations of alignment strategies for AI systems.\n\nTheme: Learn how state-of-the-art AI models work, including language, vision, and robotics systems, and how they are aligned to human needs.\n\nIdentify and explain common sources of hallucinations and reasoning flaws.\nDefine the “alignment tax” and illustrate examples of safety-performance trade-offs.\nAssess the reliability of AI outputs in specific application scenarios.\n\nTheme: Identify and analyze the technical and practical limitations that challenge the reliability and safety of modern AI."
+  },
+  {
+    "objectID": "summaries/part-03_summary.html#select-topics",
+    "href": "summaries/part-03_summary.html#select-topics",
+    "title": "Understanding recent AI systems",
+    "section": "Select topics",
+    "text": "Select topics\n\nHow do large-scale, pretrained generative models work?\nApplications of generative models:\nHow do chat models work?\nHow do image generation systems work?\nHow do reasoning models work?\nHow are AI systems aligned to human preferences?\nWhat is the current state of the art in robotics?"
+  },
+  {
+    "objectID": "summaries/part-02_summary.html",
+    "href": "summaries/part-02_summary.html",
+    "title": "AI paradigms and their role in AI history",
+    "section": "",
+    "text": "Students will be able to:\n\nCompare and contrast explicit programming, rule-based systems, search, machine learning, deep learning, reinforcement learning, and self-supervised learning.\nTrace the historical development of AI paradigms and explain their significance in AI history.\nImplement or simulate small-scale examples of each paradigm.\nExplain the concepts of loss functions, gradient descent, and backpropagation.\n\nTheme: Understand the key AI paradigms and their historical evolution to appreciate how AI techniques have developed over time."
+  },
+  {
+    "objectID": "summaries/part-02_summary.html#learning-outcomes",
+    "href": "summaries/part-02_summary.html#learning-outcomes",
+    "title": "AI paradigms and their role in AI history",
+    "section": "",
+    "text": "Students will be able to:\n\nCompare and contrast explicit programming, rule-based systems, search, machine learning, deep learning, reinforcement learning, and self-supervised learning.\nTrace the historical development of AI paradigms and explain their significance in AI history.\nImplement or simulate small-scale examples of each paradigm.\nExplain the concepts of loss functions, gradient descent, and backpropagation.\n\nTheme: Understand the key AI paradigms and their historical evolution to appreciate how AI techniques have developed over time."
+  },
+  {
+    "objectID": "summaries/part-02_summary.html#select-topics",
+    "href": "summaries/part-02_summary.html#select-topics",
+    "title": "AI paradigms and their role in AI history",
+    "section": "Select topics",
+    "text": "Select topics\n\nExplicit programming; rule-based systems.\nSearch: teach a computer to represent a problem and recognize a solution via algorithms and pattern matching.\nProblem decomposition: agents, human-in-the-loop, graphical models.\nMachine learning: infer patterns from examples, mapping features to labels\nDeep learning: featureless inference, escaping the curse of dimensionality.\nReinforcement learning: learn complex policies based on sparse rewards.\nSelf-supervision and generative AI: eliminate dependence on manual labels by turning input data into completion puzzles (examples: next token prediction; image diffusion)\nKey elements of neural network optimization: Loss functions, gradient descent, and back-propagation."
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup: Tech stack",
+    "section": "",
+    "text": "As with any computer science or data science course, several tools and software packages are needed for this course. These tools are not used by the typical consumer, so most Windows or macOS installations will not include them. Even on machines which do include them (such as many Linux distributions), they may still need some configuration. Below you will find guides to install the tech stack for AI 100, with different guides for different operating systems. A tech stack is the complete set of tools and technologies needed to accomplish a particular task; in this case, it is the various programming and data analytics that we will explore in AI 100.\nAs you go through the install guides, remember that perhaps the two most important things you will learn in this course is how to troubleshoot things and achieve familiarity and proficiency with your computer. Be patient, read things carefully, do not be afraid to try things, it’s unlikely you will do anything to irreversibly break your computer! Almost everything you do (you’re on your own if you decide to take a hammer to your laptop!) can be undone, don’t be afraid to ask your peers, TAs, and the instructor on Giscus below (you will need to set up an GitHub account first).\nThis is an exciting time for you as you begin your Software Development journey!",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#hardware",
+    "href": "setup.html#hardware",
+    "title": "Setup: Tech stack",
+    "section": "Hardware",
+    "text": "Hardware\nBefore starting, ensure that your laptop meets the minimum requirements:\n\nCan connect to networks via a wireless connection.\nHas at least 25 GB disk space available.\nHas at least 4 GB of RAM (more is recommended).\nUses a 64-bit CPU.\nIs at most 6 years old at the start of the course (4 years old or newer is recommended).\nStudent user has full administrative access to the computer.\n\n\n\n\n\n\n\nImportant\n\n\n\nIf your computer does not meet any of the requirements above, please don’t just drop the course!! Let me know first and we can discuss alternate possibilities so you can still take the course.",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#software",
+    "href": "setup.html#software",
+    "title": "Setup: Tech stack",
+    "section": "Software",
+    "text": "Software\n\n\n\n\n\n\nTip\n\n\n\nThese installation notes assume you are starting with a fresh install, without any custom setups. Following the instructions below will help you install and configure the tech stack correctly in the same way for our course, enabling us to support you effectively and minimize setup issues and software conflicts.\n\n\n\nWindowsmacOS\n\n\n In all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version.\n\n\nIn all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version. If you purchased a Mac anytime in the last few years, chances are you have an “M1/M2/M3/M4”… Mac, also known as “Apple Silicon”, and “arm64”. When given the option, you should choose to download the “arm64”/Apple Silicon or the “Universal versions—if that choice doesn’t exist, then you can choose the”x86” version which will run in “emulated mode”, which will result in a slight performance penalty.\n\n\n\n\n\nOperating system (OS)\nWe strongly suggest to run the latest version of the operating system (OS) available for your laptop.\n\n\n\n\n\n\nWarning\n\n\n\nIf you update or upgrade your OS you do so on your own risk!\n\n\nIn general, there are many good reasons to update your OS. Some of the software tools or their functionality used in our tutorials will only work on more recent OS versions. Updating your OS will also ensure that you have the latest security updates installed and help prevent unauthorized access to your computer.\nThere a two main reasons that would prevent you from updating your OS:\n\nYour hardware would not support the updated OS.\nSome of your software you depend on might not work on a newer OS.\n\n\nWindowsmacOS\n\n\nThe latest version of Windows 11 available is 25H2 (build 26200.7462). See here on how to update your Windows 11 machine to the latest version. If you do not own Windows 11, currently enrolled UBC students with a valid CWL account qualify for one license of Windows 11 Education.\n\n\nThe latest version of macOS is Tahoe 26.2. Check your current version of macOS. If you do not have the latest version, follow the upgrade instructions on the Apple support page.\nIf you cannot upgrade to the latest version, follow these instructions to find the system requirements and upgrade to latest versions available to you. If you need to maintain 32-bit compatibility for any of your software, then upgrade to no higher than macOS 10.14 Mojave.\n\n\n\n\n\nTerminal\nA terminal program allows you to interact with many different programs using a command line interface. Instead of using graphical elements like in a graphical user interface, you type in commands describing what program you want to use and how you want to use it.\n\nWindowsmacOS\n\n\nThe terminal app Terminal comes preinstalled with Windows. Activate the Windows Start menu, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\nThe terminal app Terminal comes preinstalled with macOS. Activate Spotlight with Command-SpaceCommand-Space, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\n\nYou will need to open the terminal several times in these instructions to install other programs.\n\n\nPackage manager\nA package manager is a program allowing you to install and update programs on your computer, similar to the Microsoft Store on Windows or the App Store on macOS. The main difference of a package manager to these programs is that you use them with a command line interface running in a terminal instead of a graphical user interface.\n\nWindowsmacOS\n\n\nIf you have at least Windows 10 version 1809 (build 17763) or later installed on your machine, you will already have the package manager WinGet available to you. When you use WinGet for the first time, you will be asked to register the Windows Package Manager with the Microsoft Store.\n\n\n\n\n\n\nImportant\n\n\n\nIf you cannot update your Windows to a version that supports WinGet, please reach out to the teaching team.\n\n\n\nResources\n\nUse WinGet to install and manage applications\n\n\n\n\nWe will use one of the most popular package managers on macOS called Homebrew. Open your Terminal, and then enter the following command:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nYou will be asked to enter the password for your computer:\n==&gt; Checking for `sudo` access (which may request your password)...\nEnter your password (it is normal that the cursor will not move as you enter characters for a password) and hit EnterEnter.\nNext, the installation will install the XCode Command Line Tools:\nThe XCode Command Line Tools will be installed.\nA new window will open with the following prompt:\n\nThe “xcode-select” command requires the command line developer tools. Would you like to install the tools now?\nChoose Install to download and install the command line developer tools now.” Confirm by clicking on “Install”.\n\nAfterwards, back in the terminal, you will be informed what steps will be executed:\n==&gt; This script will install:\n/opt/homebrew/bin/brew\n/opt/homebrew/share/doc/homebrew\n/opt/homebrew/share/man/man1/brew.1\n/opt/homebrew/share/zsh/site-functions/_brew\n/opt/homebrew/etc/bash_completion.d/brew\n/opt/homebrew\n/etc/paths.d/homebrew\n\nPress RETURN/ENTER to continue or any other key to abort:\nConfirm with EnterEnter. When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your PATH:\necho &gt;&gt; \"${HOME}/.zprofile\"\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' &gt;&gt; \"${HOME}/.zprofile\"\neval \"$(/opt/homebrew/bin/brew shellenv)\"\nNow test if Homebrew works:\nbrew --version\nYou should see the following:\nHomebrew 5.0.9\n\nResources\n\nHomebrew Documentation\n\n\n\n\n\n\n\nPython\n\nInstalling uv\nWe will be using Python for a large part of the course, and uv will be our Python package manager. Instead of installing Python separately on our machine, we will use uv to provision us with Python whenever we need to run it.\n\nWindowsmacOS\n\n\nIn the terminal, install uv with Winget:\nwinget install -e --id=astral-sh.uv\n\n\nIn the terminal install uv with Homebrew:\nbrew install uv\n\n\n\nTo check if uv installed successfully, type in the terminal:\nuv --version\nAnd you should see something like this\nuv 0.9.22 &lt;some-installer-specific-information&gt;\n\nResources\n\nInstallation | uv\n\n\n\n\nmarimo\nWe will be writing our code in a notebook app called marimo. marimo is itself a Python package, so we can use uv to install and run it. In particular, we will use the command uvx which will check if we have the latest version of marimo and everything else necessary to run it, even Python itself!\nuvx marimo --version\nAnd you should see:\n0.18.4\nEven better, try this:\nuvx marimo tutorial intro\nAnd your default browser should open a window showing marimo.\n\nFor now, let’s shut down marimo by clicking on the red x in the top right corner and then on the “Shutdown” button.\nNow you are ready to run Python code on your local machine!!!\n\nResources\n\nInstallation | marimo",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#optional-software",
+    "href": "setup.html#optional-software",
+    "title": "Setup: Tech stack",
+    "section": "Optional software",
+    "text": "Optional software\nIf you are interested in using a very common software development tool and platform for version control, check out Git and GitHub. We also have two examples with Zoom or your web browser on how to install and update everyday software with a package manager.\n\nGit and GitHub\nWe will be using the command line version of Git.\n\nWindowsmacOS\n\n\nGit is installed as part of Git Bash. Open your terminal, and install Git Bash with\nwinget install -e --id Git.Git\nRestart your terminal.\n\n\nOpen your terminal, and install Git with:\nbrew install git\n\n\n\nIn the terminal, type the following to check the Git version:\ngit --version\nYou should see something like this if everything is working correctly:\ngit version 2.52.0\n\nGitHub.com account\nSign up for a free account at GitHub.com if you don’t have one already. Your GitHub.com username is important, so here some advice on picking a username and below an image on how to find it again.\n\n\n\nConfiguring Git user info\nNext, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into the terminal:\ngit config --global user.name \"&lt;your-name&gt;\"\ngit config --global user.email \"&lt;your-github-email&gt;\"\n\n\n\n\n\n\nNote\n\n\n\nTo ensure that you haven’t made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g., via the command code ~/.gitconfig) or by typing git config --list --global. You can quit this view by just pressing the q key on your keyboard.\n\n\n\n\nCreate your GitHub “Personal Access Token”\nThis is a bit tricky, so please make sure you follow these directions carefully.\n\nStart creating a personal access token (PAT) on GitHub.com either by\n\nClicking this link: https://github.com/settings/tokens/new\nNavigating to your tokens by following these steps:\n\nLog in to GitHub.com\nClick your picture in the top right and select “Settings”\nClick on “Developer Settings”\nClick on “Personal access tokens” and then on “Tokens (classic)”\nClick “Generate new token”\n\n\nGive the token a name in the note field, for example, AI 100\nChoose for expiration “Custom” and set the date to the end of this term: 2026-12-07\nSet the scope of the token to the “repo” level (see image below):\n\n\n\nPersonal access token settings\n\n\nClick “Generate new token”\nCopy the token that is shown to you. It is essentially a password for apps on your computer (for example, Git) to enable them to take actions on GitHub.com for you (in this case, clone a private repository to your computer). Treat this password like any other of your other passwords, so don’t share your token with anyone.\nSave this token somewhere safe on your computer, such as a password manager. You will not be able to come back to this page to get your token. If you forget or lose a token, you can just delete that token on GitHub.com where you manage all existing tokens and create another one: https://github.com/settings/tokens\n\n\n\n\nClone your first repository on your computer\nOpen the terminal, and then run the following command:\ngit clone https://github.com/firasm/test.git\nHopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!\n\n\n\n\n\n\nTip\n\n\n\nIf after running the code above, you see the error message:\nfatal: destination path 'test' already exists and is not an empty directory. \nIt means that you already attempted a clone before, and there is already a directory called test where you are trying to clone this repository. You will first need to delete that directory to try again. Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the test directory and delete it. Alternatively, from the command line you can try:\nrm -rf test\nwhich will “remove” (using the rm command) the directory called test. The- is to specify additional options: r means “recursively” for all the files in the directory, and f means “force” which means don’t ask me for confirmation after deleting each file and folder.\n\n\n\n\n\nZoom\nSo far, we have been using the package manager to install software development tools. We can use the package manager to install other everyday software making it easier to find the correct version for your hardware or update to the latest release. For example, you might attend office hours or a livestream using Zoom Workplace and you should install the Zoom client locally on your machine.\n\nWindowsmacOS\n\n\nIn your terminal, use WinGet to install Zoom:\nwinget install -e --id Zoom.Zoom\n\n\nIn your terminal, use Homebrew to install Zoom:\nbrew install --cask zoom\n\n\n\nIt is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions. The latest version of Zoom is 6.7.2. For a lot of software, there is an option to check for updates.\n\nA package manager can directly update any software you have installed with it.\n\nWindowsmacOS\n\n\nwinget upgrade -e --id Zoom.Zoom\n\n\nbrew upgrade --cask zoom\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nPlease note that if you have been relying on the “web version” of Zoom that works only in a browser, this will not work for this course! Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.\n\n\n\n\nWeb browser\nYou are welcome to use most modern browsers that have a WebKit or Gecko backend. Safari (Mac only), Firefox, Vivaldi, Brave, Edge are all recommended. Google Chrome is not recommended because of the well-documented privacy and tracking issues with Google.\nOptional: try to install the browser also with the package manager! Use this website to find the install instruction for the browser of your choice:\n\nWindowsmacOS\n\n\nwinget.run | Finding winget packages made simple.\n\n\nHomebrew Formulae",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#attribution",
+    "href": "setup.html#attribution",
+    "title": "Setup: Tech stack",
+    "section": "Attribution",
+    "text": "Attribution\nThese instructions have been adapted and remixed from the original version provided by the UBC-Vancouver MDS Install stack under a CC-BY-SA 4.0 license. They were originally written by Anmol Jawandha but have since been updated by Stephan Koenig, Firas Moosvi, Joel Ostblom, Tomas Beuzen, Rodolfo Lourenzutti, Tiffany Timbers, and others.\n\nHarvard CS109\nUBC STAT 545 licensed under the CC BY-NC 3.0.\nSoftware Carpentry\nOracle - How do I set or change the PATH system variable?\nNumerical Methods - Getting started\nEDUCE setup instructions",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "formatting.html",
+    "href": "formatting.html",
+    "title": "Formatting",
+    "section": "",
+    "text": "In text paragraphs, code is always formatted with a monospace font and surrounded by a box like this. Longer examples of code will be in a separate box.\nFirst line of code\nSecond line of code\n...\nIn many cases, the output for code in these boxes will be below them.\nReplace any placeholder indicated by angular brackets &lt;placeholder&gt; with your own code.\nPressing a KeyKey on the keyboard is formatted like that."
   },
   {
     "objectID": "syllabus.html",
@@ -324,634 +991,72 @@
     ]
   },
   {
-    "objectID": "formatting.html",
-    "href": "formatting.html",
-    "title": "Formatting",
-    "section": "",
-    "text": "In text paragraphs, code is always formatted with a monospace font and surrounded by a box like this. Longer examples of code will be in a separate box.\nFirst line of code\nSecond line of code\n...\nIn many cases, the output for code in these boxes will be below them.\nReplace any placeholder indicated by angular brackets &lt;placeholder&gt; with your own code.\nPressing a KeyKey on the keyboard is formatted like that."
+    "objectID": "slides/lecture-01_slides.html#teaching-team",
+    "href": "slides/lecture-01_slides.html#teaching-team",
+    "title": "What is AI?",
+    "section": "Teaching team",
+    "text": "Teaching team"
   },
   {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup: Tech stack",
-    "section": "",
-    "text": "As with any computer science or data science course, several tools and software packages are needed for this course. These tools are not used by the typical consumer, so most Windows or macOS installations will not include them. Even on machines which do include them (such as many Linux distributions), they may still need some configuration. Below you will find guides to install the tech stack for AI 100, with different guides for different operating systems. A tech stack is the complete set of tools and technologies needed to accomplish a particular task; in this case, it is the various programming and data analytics that we will explore in AI 100.\nAs you go through the install guides, remember that perhaps the two most important things you will learn in this course is how to troubleshoot things and achieve familiarity and proficiency with your computer. Be patient, read things carefully, do not be afraid to try things, it’s unlikely you will do anything to irreversibly break your computer! Almost everything you do (you’re on your own if you decide to take a hammer to your laptop!) can be undone, don’t be afraid to ask your peers, TAs, and the instructor on Giscus below (you will need to set up an GitHub account first).\nThis is an exciting time for you as you begin your Software Development journey!",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
+    "objectID": "slides/lecture-01_slides.html#where-to-start",
+    "href": "slides/lecture-01_slides.html#where-to-start",
+    "title": "What is AI?",
+    "section": "Where to start?",
+    "text": "Where to start?\nCanvas: [https://canvas.ubc.ca/courses/](https://canvas.ubc.ca/courses/)\nCourse Website: [https://stephan-koenig.github.io/ai-100](https://stephan-koenig.github.io/ai-100)\nPrairieLearn: [https://us.prairielearn.com/pl/course_instance/](https://us.prairielearn.com/pl/course_instance/)"
   },
   {
-    "objectID": "setup.html#hardware",
-    "href": "setup.html#hardware",
-    "title": "Setup: Tech stack",
-    "section": "Hardware",
-    "text": "Hardware\nBefore starting, ensure that your laptop meets the minimum requirements:\n\nCan connect to networks via a wireless connection.\nHas at least 25 GB disk space available.\nHas at least 4 GB of RAM (more is recommended).\nUses a 64-bit CPU.\nIs at most 6 years old at the start of the course (4 years old or newer is recommended).\nStudent user has full administrative access to the computer.\n\n\n\n\n\n\n\nImportant\n\n\n\nIf your computer does not meet any of the requirements above, please don’t just drop the course!! Let me know first and we can discuss alternate possibilities so you can still take the course.",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
+    "objectID": "slides/lecture-01_slides.html#about-this-course",
+    "href": "slides/lecture-01_slides.html#about-this-course",
+    "title": "What is AI?",
+    "section": "About This Course",
+    "text": "About This Course"
   },
   {
-    "objectID": "setup.html#software",
-    "href": "setup.html#software",
-    "title": "Setup: Tech stack",
-    "section": "Software",
-    "text": "Software\n\n\n\n\n\n\nTip\n\n\n\nThese installation notes assume you are starting with a fresh install, without any custom setups. Following the instructions below will help you install and configure the tech stack correctly in the same way for our course, enabling us to support you effectively and minimize setup issues and software conflicts.\n\n\n\nWindowsmacOS\n\n\n In all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version.\n\n\nIn all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version. If you purchased a Mac anytime in the last few years, chances are you have an “M1/M2/M3/M4”… Mac, also known as “Apple Silicon”, and “arm64”. When given the option, you should choose to download the “arm64”/Apple Silicon or the “Universal versions—if that choice doesn’t exist, then you can choose the”x86” version which will run in “emulated mode”, which will result in a slight performance penalty.\n\n\n\n\n\nOperating system (OS)\nWe strongly suggest to run the latest version of the operating system (OS) available for your laptop.\n\n\n\n\n\n\nWarning\n\n\n\nIf you update or upgrade your OS you do so on your own risk!\n\n\nIn general, there are many good reasons to update your OS. Some of the software tools or their functionality used in our tutorials will only work on more recent OS versions. Updating your OS will also ensure that you have the latest security updates installed and help prevent unauthorized access to your computer.\nThere a two main reasons that would prevent you from updating your OS:\n\nYour hardware would not support the updated OS.\nSome of your software you depend on might not work on a newer OS.\n\n\nWindowsmacOS\n\n\nThe latest version of Windows 11 available is 25H2 (build 26200.7462). See here on how to update your Windows 11 machine to the latest version. If you do not own Windows 11, currently enrolled UBC students with a valid CWL account qualify for one license of Windows 11 Education.\n\n\nThe latest version of macOS is Tahoe 26.2. Check your current version of macOS. If you do not have the latest version, follow the upgrade instructions on the Apple support page.\nIf you cannot upgrade to the latest version, follow these instructions to find the system requirements and upgrade to latest versions available to you. If you need to maintain 32-bit compatibility for any of your software, then upgrade to no higher than macOS 10.14 Mojave.\n\n\n\n\n\nTerminal\nA terminal program allows you to interact with many different programs using a command line interface. Instead of using graphical elements like in a graphical user interface, you type in commands describing what program you want to use and how you want to use it.\n\nWindowsmacOS\n\n\nThe terminal app Terminal comes preinstalled with Windows. Activate the Windows Start menu, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\nThe terminal app Terminal comes preinstalled with macOS. Activate Spotlight with Command-SpaceCommand-Space, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\n\nYou will need to open the terminal several times in these instructions to install other programs.\n\n\nPackage manager\nA package manager is a program allowing you to install and update programs on your computer, similar to the Microsoft Store on Windows or the App Store on macOS. The main difference of a package manager to these programs is that you use them with a command line interface running in a terminal instead of a graphical user interface.\n\nWindowsmacOS\n\n\nIf you have at least Windows 10 version 1809 (build 17763) or later installed on your machine, you will already have the package manager WinGet available to you. When you use WinGet for the first time, you will be asked to register the Windows Package Manager with the Microsoft Store.\n\n\n\n\n\n\nImportant\n\n\n\nIf you cannot update your Windows to a version that supports WinGet, please reach out to the teaching team.\n\n\n\nResources\n\nUse WinGet to install and manage applications\n\n\n\n\nWe will use one of the most popular package managers on macOS called Homebrew. Open your Terminal, and then enter the following command:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nYou will be asked to enter the password for your computer:\n==&gt; Checking for `sudo` access (which may request your password)...\nEnter your password (it is normal that the cursor will not move as you enter characters for a password) and hit EnterEnter.\nNext, the installation will install the XCode Command Line Tools:\nThe XCode Command Line Tools will be installed.\nA new window will open with the following prompt:\n\nThe “xcode-select” command requires the command line developer tools. Would you like to install the tools now?\nChoose Install to download and install the command line developer tools now.” Confirm by clicking on “Install”.\n\nAfterwards, back in the terminal, you will be informed what steps will be executed:\n==&gt; This script will install:\n/opt/homebrew/bin/brew\n/opt/homebrew/share/doc/homebrew\n/opt/homebrew/share/man/man1/brew.1\n/opt/homebrew/share/zsh/site-functions/_brew\n/opt/homebrew/etc/bash_completion.d/brew\n/opt/homebrew\n/etc/paths.d/homebrew\n\nPress RETURN/ENTER to continue or any other key to abort:\nConfirm with EnterEnter. When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your PATH:\necho &gt;&gt; \"${HOME}/.zprofile\"\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' &gt;&gt; \"${HOME}/.zprofile\"\neval \"$(/opt/homebrew/bin/brew shellenv)\"\nNow test if Homebrew works:\nbrew --version\nYou should see the following:\nHomebrew 5.0.9\n\nResources\n\nHomebrew Documentation\n\n\n\n\n\n\n\nPython\n\nInstalling uv\nWe will be using Python for a large part of the course, and uv will be our Python package manager. Instead of installing Python separately on our machine, we will use uv to provision us with Python whenever we need to run it.\n\nWindowsmacOS\n\n\nIn the terminal, install uv with Winget:\nwinget install -e --id=astral-sh.uv\n\n\nIn the terminal install uv with Homebrew:\nbrew install uv\n\n\n\nTo check if uv installed successfully, type in the terminal:\nuv --version\nAnd you should see something like this\nuv 0.9.22 &lt;some-installer-specific-information&gt;\n\nResources\n\nInstallation | uv\n\n\n\n\nmarimo\nWe will be writing our code in a notebook app called marimo. marimo is itself a Python package, so we can use uv to install and run it. In particular, we will use the command uvx which will check if we have the latest version of marimo and everything else necessary to run it, even Python itself!\nuvx marimo --version\nAnd you should see:\n0.18.4\nEven better, try this:\nuvx marimo tutorial intro\nAnd your default browser should open a window showing marimo.\n\nFor now, let’s shut down marimo by clicking on the red x in the top right corner and then on the “Shutdown” button.\nNow you are ready to run Python code on your local machine!!!\n\nResources\n\nInstallation | marimo",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
+    "objectID": "slides/lecture-01_slides.html#term-schedule",
+    "href": "slides/lecture-01_slides.html#term-schedule",
+    "title": "What is AI?",
+    "section": "Term Schedule",
+    "text": "Term Schedule"
   },
   {
-    "objectID": "setup.html#optional-software",
-    "href": "setup.html#optional-software",
-    "title": "Setup: Tech stack",
-    "section": "Optional software",
-    "text": "Optional software\nIf you are interested in using a very common software development tool and platform for version control, check out Git and GitHub. We also have two examples with Zoom or your web browser on how to install and update everyday software with a package manager.\n\nGit and GitHub\nWe will be using the command line version of Git.\n\nWindowsmacOS\n\n\nGit is installed as part of Git Bash. Open your terminal, and install Git Bash with\nwinget install -e --id Git.Git\nRestart your terminal.\n\n\nOpen your terminal, and install Git with:\nbrew install git\n\n\n\nIn the terminal, type the following to check the Git version:\ngit --version\nYou should see something like this if everything is working correctly:\ngit version 2.52.0\n\nGitHub.com account\nSign up for a free account at GitHub.com if you don’t have one already. Your GitHub.com username is important, so here some advice on picking a username and below an image on how to find it again.\n\n\n\nConfiguring Git user info\nNext, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into the terminal:\ngit config --global user.name \"&lt;your-name&gt;\"\ngit config --global user.email \"&lt;your-github-email&gt;\"\n\n\n\n\n\n\nNote\n\n\n\nTo ensure that you haven’t made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g., via the command code ~/.gitconfig) or by typing git config --list --global. You can quit this view by just pressing the q key on your keyboard.\n\n\n\n\nCreate your GitHub “Personal Access Token”\nThis is a bit tricky, so please make sure you follow these directions carefully.\n\nStart creating a personal access token (PAT) on GitHub.com either by\n\nClicking this link: https://github.com/settings/tokens/new\nNavigating to your tokens by following these steps:\n\nLog in to GitHub.com\nClick your picture in the top right and select “Settings”\nClick on “Developer Settings”\nClick on “Personal access tokens” and then on “Tokens (classic)”\nClick “Generate new token”\n\n\nGive the token a name in the note field, for example, AI 100\nChoose for expiration “Custom” and set the date to the end of this term: 2026-12-07\nSet the scope of the token to the “repo” level (see image below):\n\n\n\nPersonal access token settings\n\n\nClick “Generate new token”\nCopy the token that is shown to you. It is essentially a password for apps on your computer (for example, Git) to enable them to take actions on GitHub.com for you (in this case, clone a private repository to your computer). Treat this password like any other of your other passwords, so don’t share your token with anyone.\nSave this token somewhere safe on your computer, such as a password manager. You will not be able to come back to this page to get your token. If you forget or lose a token, you can just delete that token on GitHub.com where you manage all existing tokens and create another one: https://github.com/settings/tokens\n\n\n\n\nClone your first repository on your computer\nOpen the terminal, and then run the following command:\ngit clone https://github.com/firasm/test.git\nHopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!\n\n\n\n\n\n\nTip\n\n\n\nIf after running the code above, you see the error message:\nfatal: destination path 'test' already exists and is not an empty directory. \nIt means that you already attempted a clone before, and there is already a directory called test where you are trying to clone this repository. You will first need to delete that directory to try again. Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the test directory and delete it. Alternatively, from the command line you can try:\nrm -rf test\nwhich will “remove” (using the rm command) the directory called test. The- is to specify additional options: r means “recursively” for all the files in the directory, and f means “force” which means don’t ask me for confirmation after deleting each file and folder.\n\n\n\n\n\nZoom\nSo far, we have been using the package manager to install software development tools. We can use the package manager to install other everyday software making it easier to find the correct version for your hardware or update to the latest release. For example, you might attend office hours or a livestream using Zoom Workplace and you should install the Zoom client locally on your machine.\n\nWindowsmacOS\n\n\nIn your terminal, use WinGet to install Zoom:\nwinget install -e --id Zoom.Zoom\n\n\nIn your terminal, use Homebrew to install Zoom:\nbrew install --cask zoom\n\n\n\nIt is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions. The latest version of Zoom is 6.7.2. For a lot of software, there is an option to check for updates.\n\nA package manager can directly update any software you have installed with it.\n\nWindowsmacOS\n\n\nwinget upgrade -e --id Zoom.Zoom\n\n\nbrew upgrade --cask zoom\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nPlease note that if you have been relying on the “web version” of Zoom that works only in a browser, this will not work for this course! Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.\n\n\n\n\nWeb browser\nYou are welcome to use most modern browsers that have a WebKit or Gecko backend. Safari (Mac only), Firefox, Vivaldi, Brave, Edge are all recommended. Google Chrome is not recommended because of the well-documented privacy and tracking issues with Google.\nOptional: try to install the browser also with the package manager! Use this website to find the install instruction for the browser of your choice:\n\nWindowsmacOS\n\n\nwinget.run | Finding winget packages made simple.\n\n\nHomebrew Formulae",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
+    "objectID": "slides/lecture-01_slides.html#evaluation",
+    "href": "slides/lecture-01_slides.html#evaluation",
+    "title": "What is AI?",
+    "section": "Evaluation",
+    "text": "Evaluation"
   },
   {
-    "objectID": "setup.html#attribution",
-    "href": "setup.html#attribution",
-    "title": "Setup: Tech stack",
-    "section": "Attribution",
-    "text": "Attribution\nThese instructions have been adapted and remixed from the original version provided by the UBC-Vancouver MDS Install stack under a CC-BY-SA 4.0 license. They were originally written by Anmol Jawandha but have since been updated by Stephan Koenig, Firas Moosvi, Joel Ostblom, Tomas Beuzen, Rodolfo Lourenzutti, Tiffany Timbers, and others.\n\nHarvard CS109\nUBC STAT 545 licensed under the CC BY-NC 3.0.\nSoftware Carpentry\nOracle - How do I set or change the PATH system variable?\nNumerical Methods - Getting started\nEDUCE setup instructions",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
+    "objectID": "slides/lecture-01_slides.html#communications",
+    "href": "slides/lecture-01_slides.html#communications",
+    "title": "What is AI?",
+    "section": "Communications",
+    "text": "Communications"
   },
   {
-    "objectID": "summaries/part-02_summary.html",
-    "href": "summaries/part-02_summary.html",
-    "title": "AI paradigms and their role in AI history",
-    "section": "",
-    "text": "Students will be able to:\n\nCompare and contrast explicit programming, rule-based systems, search, machine learning, deep learning, reinforcement learning, and self-supervised learning.\nTrace the historical development of AI paradigms and explain their significance in AI history.\nImplement or simulate small-scale examples of each paradigm.\nExplain the concepts of loss functions, gradient descent, and backpropagation.\n\nTheme: Understand the key AI paradigms and their historical evolution to appreciate how AI techniques have developed over time."
+    "objectID": "slides/lecture-01_slides.html#course-overview",
+    "href": "slides/lecture-01_slides.html#course-overview",
+    "title": "What is AI?",
+    "section": "Course overview",
+    "text": "Course overview"
   },
   {
-    "objectID": "summaries/part-02_summary.html#learning-outcomes",
-    "href": "summaries/part-02_summary.html#learning-outcomes",
-    "title": "AI paradigms and their role in AI history",
-    "section": "",
-    "text": "Students will be able to:\n\nCompare and contrast explicit programming, rule-based systems, search, machine learning, deep learning, reinforcement learning, and self-supervised learning.\nTrace the historical development of AI paradigms and explain their significance in AI history.\nImplement or simulate small-scale examples of each paradigm.\nExplain the concepts of loss functions, gradient descent, and backpropagation.\n\nTheme: Understand the key AI paradigms and their historical evolution to appreciate how AI techniques have developed over time."
+    "objectID": "slides/lecture-01_slides.html#example-activity",
+    "href": "slides/lecture-01_slides.html#example-activity",
+    "title": "What is AI?",
+    "section": " Example activity",
+    "text": "Example activity\nActivity instructions\n\nFirst step.\nSecond step.\n\n\n \n\nPresentation notes"
   },
   {
-    "objectID": "summaries/part-02_summary.html#select-topics",
-    "href": "summaries/part-02_summary.html#select-topics",
-    "title": "AI paradigms and their role in AI history",
-    "section": "Select topics",
-    "text": "Select topics\n\nExplicit programming; rule-based systems.\nSearch: teach a computer to represent a problem and recognize a solution via algorithms and pattern matching.\nProblem decomposition: agents, human-in-the-loop, graphical models.\nMachine learning: infer patterns from examples, mapping features to labels\nDeep learning: featureless inference, escaping the curse of dimensionality.\nReinforcement learning: learn complex policies based on sparse rewards.\nSelf-supervision and generative AI: eliminate dependence on manual labels by turning input data into completion puzzles (examples: next token prediction; image diffusion)\nKey elements of neural network optimization: Loss functions, gradient descent, and back-propagation."
-  },
-  {
-    "objectID": "summaries/part-03_summary.html",
-    "href": "summaries/part-03_summary.html",
-    "title": "Understanding recent AI systems",
-    "section": "",
-    "text": "Students will be able to:\n\nDescribe the training and inference processes of large language models.\nExplain how alignment modifies base models to create chatbots.\nSummarize how diffusion models generate images from noise.\nDifferentiate reasoning models from general text-generation models.\nExplain current AI applications in robotics and their limitations.\nEvaluate the effectiveness and limitations of alignment strategies for AI systems.\n\nTheme: Learn how state-of-the-art AI models work, including language, vision, and robotics systems, and how they are aligned to human needs.\n\nIdentify and explain common sources of hallucinations and reasoning flaws.\nDefine the “alignment tax” and illustrate examples of safety-performance trade-offs.\nAssess the reliability of AI outputs in specific application scenarios.\n\nTheme: Identify and analyze the technical and practical limitations that challenge the reliability and safety of modern AI."
-  },
-  {
-    "objectID": "summaries/part-03_summary.html#learning-outcomes",
-    "href": "summaries/part-03_summary.html#learning-outcomes",
-    "title": "Understanding recent AI systems",
-    "section": "",
-    "text": "Students will be able to:\n\nDescribe the training and inference processes of large language models.\nExplain how alignment modifies base models to create chatbots.\nSummarize how diffusion models generate images from noise.\nDifferentiate reasoning models from general text-generation models.\nExplain current AI applications in robotics and their limitations.\nEvaluate the effectiveness and limitations of alignment strategies for AI systems.\n\nTheme: Learn how state-of-the-art AI models work, including language, vision, and robotics systems, and how they are aligned to human needs.\n\nIdentify and explain common sources of hallucinations and reasoning flaws.\nDefine the “alignment tax” and illustrate examples of safety-performance trade-offs.\nAssess the reliability of AI outputs in specific application scenarios.\n\nTheme: Identify and analyze the technical and practical limitations that challenge the reliability and safety of modern AI."
-  },
-  {
-    "objectID": "summaries/part-03_summary.html#select-topics",
-    "href": "summaries/part-03_summary.html#select-topics",
-    "title": "Understanding recent AI systems",
-    "section": "Select topics",
-    "text": "Select topics\n\nHow do large-scale, pretrained generative models work?\nApplications of generative models:\nHow do chat models work?\nHow do image generation systems work?\nHow do reasoning models work?\nHow are AI systems aligned to human preferences?\nWhat is the current state of the art in robotics?"
-  },
-  {
-    "objectID": "summaries/part-05_summary.html",
-    "href": "summaries/part-05_summary.html",
-    "title": "Possible AI Futures",
-    "section": "",
-    "text": "Students will be able to:\n\nEnvision and describe plausible societal changes due to AI advancement.\nDebate the benefits and risks of AGI and superhuman intelligence.\nExplain why current AI systems are not sentient.\nArticulate philosophical perspectives on consciousness.\nApply metaphors (e.g., corporations) to reason about superhuman AI behavior.\n\nTheme: Consider potential future developments in AI, including transformative benefits, risks, and philosophical questions."
-  },
-  {
-    "objectID": "summaries/part-05_summary.html#learning-outcomes",
-    "href": "summaries/part-05_summary.html#learning-outcomes",
-    "title": "Possible AI Futures",
-    "section": "",
-    "text": "Students will be able to:\n\nEnvision and describe plausible societal changes due to AI advancement.\nDebate the benefits and risks of AGI and superhuman intelligence.\nExplain why current AI systems are not sentient.\nArticulate philosophical perspectives on consciousness.\nApply metaphors (e.g., corporations) to reason about superhuman AI behavior.\n\nTheme: Consider potential future developments in AI, including transformative benefits, risks, and philosophical questions."
-  },
-  {
-    "objectID": "summaries/part-05_summary.html#select-topics",
-    "href": "summaries/part-05_summary.html#select-topics",
-    "title": "Possible AI Futures",
-    "section": "Select topics",
-    "text": "Select topics\n\nHow will our society change?\n\nAI entertainment and new art forms\nChanges in the structure of the workforce\nAI-powered social connections with real people\nAI friends\n\nAGI and Superhuman intelligence\n\nUsing the metaphor of a corporation to understand superhuman AI\nBenefits: problems we may need superhuman intelligence to address\nRisks and potential mitigations; existential risk\n\nSentience\n\nReasons to believe current AI systems are not sentient\nPhilosophical view on “the hard problem of consciousness”"
-  },
-  {
-    "objectID": "activities/discussion-06_activity.html",
-    "href": "activities/discussion-06_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-06_activity.html#steps",
-    "href": "activities/discussion-06_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-06_activity.html#resources",
-    "href": "activities/discussion-06_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-08_activity.html",
-    "href": "activities/discussion-08_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-08_activity.html#steps",
-    "href": "activities/discussion-08_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-08_activity.html#resources",
-    "href": "activities/discussion-08_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-04_activity.html",
-    "href": "activities/discussion-04_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-04_activity.html#steps",
-    "href": "activities/discussion-04_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-04_activity.html#resources",
-    "href": "activities/discussion-04_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-07_activity.html",
-    "href": "activities/discussion-07_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-07_activity.html#steps",
-    "href": "activities/discussion-07_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-07_activity.html#resources",
-    "href": "activities/discussion-07_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-11_activity.html",
-    "href": "activities/discussion-11_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-11_activity.html#steps",
-    "href": "activities/discussion-11_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-11_activity.html#resources",
-    "href": "activities/discussion-11_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-14_activity.html",
-    "href": "activities/discussion-14_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-14_activity.html#steps",
-    "href": "activities/discussion-14_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-14_activity.html#resources",
-    "href": "activities/discussion-14_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-05_activity.html",
-    "href": "activities/discussion-05_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-05_activity.html#steps",
-    "href": "activities/discussion-05_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-05_activity.html#resources",
-    "href": "activities/discussion-05_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "pre-activities/lecture-01_pre-activity.html#optional-videos",
-    "href": "pre-activities/lecture-01_pre-activity.html#optional-videos",
-    "title": " Pre-activity: Example",
-    "section": "Optional videos",
-    "text": "Optional videos\n\nShowing the differences between a traditional and a flipped classroom"
-  },
-  {
-    "objectID": "activities/discussion-02_activity.html",
-    "href": "activities/discussion-02_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-02_activity.html#steps",
-    "href": "activities/discussion-02_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-02_activity.html#resources",
-    "href": "activities/discussion-02_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-18_activity.html",
-    "href": "activities/discussion-18_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-18_activity.html#steps",
-    "href": "activities/discussion-18_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-18_activity.html#resources",
-    "href": "activities/discussion-18_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-09_activity.html",
-    "href": "activities/discussion-09_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-09_activity.html#steps",
-    "href": "activities/discussion-09_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-09_activity.html#resources",
-    "href": "activities/discussion-09_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-17_activity.html",
-    "href": "activities/discussion-17_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-17_activity.html#steps",
-    "href": "activities/discussion-17_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-17_activity.html#resources",
-    "href": "activities/discussion-17_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-16_activity.html",
-    "href": "activities/discussion-16_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-16_activity.html#steps",
-    "href": "activities/discussion-16_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-16_activity.html#resources",
-    "href": "activities/discussion-16_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-10_activity.html",
-    "href": "activities/discussion-10_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-10_activity.html#steps",
-    "href": "activities/discussion-10_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-10_activity.html#resources",
-    "href": "activities/discussion-10_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-03_activity.html",
-    "href": "activities/discussion-03_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-03_activity.html#steps",
-    "href": "activities/discussion-03_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-03_activity.html#resources",
-    "href": "activities/discussion-03_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-01_activity.html",
-    "href": "activities/discussion-01_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-01_activity.html#steps",
-    "href": "activities/discussion-01_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-01_activity.html#resources",
-    "href": "activities/discussion-01_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-13_activity.html",
-    "href": "activities/discussion-13_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-13_activity.html#steps",
-    "href": "activities/discussion-13_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-13_activity.html#resources",
-    "href": "activities/discussion-13_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-12_activity.html",
-    "href": "activities/discussion-12_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-12_activity.html#steps",
-    "href": "activities/discussion-12_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-12_activity.html#resources",
-    "href": "activities/discussion-12_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-19_activity.html",
-    "href": "activities/discussion-19_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-19_activity.html#steps",
-    "href": "activities/discussion-19_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-19_activity.html#resources",
-    "href": "activities/discussion-19_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "activities/discussion-15_activity.html",
-    "href": "activities/discussion-15_activity.html",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-15_activity.html#steps",
-    "href": "activities/discussion-15_activity.html#steps",
-    "title": " Activity",
-    "section": "",
-    "text": "First step.\nSecond step."
-  },
-  {
-    "objectID": "activities/discussion-15_activity.html#resources",
-    "href": "activities/discussion-15_activity.html#resources",
-    "title": " Activity",
-    "section": " Resources",
-    "text": "Resources"
-  },
-  {
-    "objectID": "summaries/part-01_summary.html",
-    "href": "summaries/part-01_summary.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "Students will be able to:\n\nDefine artificial intelligence and its major subfields.\nIdentify and describe at least three current real-world applications of AI.\nExplain the role of technological drivers such as how to learn from data, availability of massive amounts of data, the adaptation of GPU hardware to AI tasks, global connectivity, the existence of massive data centers, and the ability to compute in the cloud.\nDifferentiate between AI as a research discipline and AI as deployed technology.\n\nTheme: Explore what AI is, why it matters today, and the foundational context behind its rapid growth."
-  },
-  {
-    "objectID": "summaries/part-01_summary.html#learning-outcomes",
-    "href": "summaries/part-01_summary.html#learning-outcomes",
-    "title": "Introduction",
-    "section": "",
-    "text": "Students will be able to:\n\nDefine artificial intelligence and its major subfields.\nIdentify and describe at least three current real-world applications of AI.\nExplain the role of technological drivers such as how to learn from data, availability of massive amounts of data, the adaptation of GPU hardware to AI tasks, global connectivity, the existence of massive data centers, and the ability to compute in the cloud.\nDifferentiate between AI as a research discipline and AI as deployed technology.\n\nTheme: Explore what AI is, why it matters today, and the foundational context behind its rapid growth."
-  },
-  {
-    "objectID": "summaries/part-01_summary.html#select-topics",
-    "href": "summaries/part-01_summary.html#select-topics",
-    "title": "Introduction",
-    "section": "Select topics",
-    "text": "Select topics\n\nMotivating examples\nHow is it being used?\nWhy is it happening? (Technological breakthroughs in how to learn from data; availability of massive amounts of data; the adaptation of GPU hardware to AI tasks; global connectivity; the existence of massive data centers; and the ability to compute in the cloud.)"
-  },
-  {
-    "objectID": "summaries/part-04_summary.html",
-    "href": "summaries/part-04_summary.html",
-    "title": "Social impacts of AI systems",
-    "section": "",
-    "text": "Students will be able to:\n\n(Economic impacts) Analyze automation-related job displacement claims using the lump of labour fallacy.\n(Economic impacts) Predict which job categories are more/less automatable and justify reasoning.\n(Economic impacts) Describe scenarios for a post-scarcity economy.\n(Bias) Differentiate bias sources: training data, model alignment, and designer demographics.\n(Bias) Explain how transparency and standardization can mitigate bias.\n(Content creators) Evaluate the legal and cultural implications of generative AI on fair use and creative craft.\n(Education) Assess AI’s impact on student assessment and curriculum design.\n(Education) Propose strategies for adapting teaching in AI-rich environments.\n(Human relationships) Analyze the developmental and societal effects of AI companions.\n(Human relationships) Compare AI-based relationships to those that emerged from prior communication technologies.\n(Military use) Describe AI-enabled military technologies (e.g., drones, missile defense).\n(Military use) Debate the security and geopolitical implications of military AI.\n(Climate) Assess the environmental costs of AI training and inference.\n(Climate) Identify AI applications that could improve energy efficiency and reduce emissions.\n\nTheme: Examine the broad economic, ethical, cultural, and environmental implications of AI’s growing role in society."
-  },
-  {
-    "objectID": "summaries/part-04_summary.html#learning-outcomes",
-    "href": "summaries/part-04_summary.html#learning-outcomes",
-    "title": "Social impacts of AI systems",
-    "section": "",
-    "text": "Students will be able to:\n\n(Economic impacts) Analyze automation-related job displacement claims using the lump of labour fallacy.\n(Economic impacts) Predict which job categories are more/less automatable and justify reasoning.\n(Economic impacts) Describe scenarios for a post-scarcity economy.\n(Bias) Differentiate bias sources: training data, model alignment, and designer demographics.\n(Bias) Explain how transparency and standardization can mitigate bias.\n(Content creators) Evaluate the legal and cultural implications of generative AI on fair use and creative craft.\n(Education) Assess AI’s impact on student assessment and curriculum design.\n(Education) Propose strategies for adapting teaching in AI-rich environments.\n(Human relationships) Analyze the developmental and societal effects of AI companions.\n(Human relationships) Compare AI-based relationships to those that emerged from prior communication technologies.\n(Military use) Describe AI-enabled military technologies (e.g., drones, missile defense).\n(Military use) Debate the security and geopolitical implications of military AI.\n(Climate) Assess the environmental costs of AI training and inference.\n(Climate) Identify AI applications that could improve energy efficiency and reduce emissions.\n\nTheme: Examine the broad economic, ethical, cultural, and environmental implications of AI’s growing role in society."
-  },
-  {
-    "objectID": "summaries/part-04_summary.html#select-topics",
-    "href": "summaries/part-04_summary.html#select-topics",
-    "title": "Social impacts of AI systems",
-    "section": "Select topics",
-    "text": "Select topics\n\nOriginal category 1 proposal topics\n\nEconomic impacts\n\nLump of labour fallacy\nJobs that are likely to be automated\nJobs that are likely not to be automated\nJobs that are likely to be created\nWhat would a post-scarcity economy look like?\n\nBias\n\nBias introduced via training data\nBias introduced via alignment\nBias introduced via AI designers being poorly representative of broader society\nBias reduced via standardization and transparency (everyone gets the same AI system; the system can be audited)\n\nContent creators\n\nRelationship to fair use\nThe role of taste vs the role of craft\n\nEducation\n\nHow is assessment affected?\nIn what ways should we change what we teach?\nHow can the role of the teacher change?\nWhat skills do students need to develop to learn in this new environment?\n\nHuman Relationships\n\nSocial impacts of AI companions, AI therapists\nDevelopmental impacts of these tools being used by children\nDownstream social consequences; contrast with social networking\n\nMilitary use\n\nCurrent state of the art; lessons from recent military conflicts (drone warfare; missile defense; surveillance)\nWhat’s around the corner?\nWill these changes make the world safer or less safe?\nWhat political structures will they foster (insurgency vs large states; democracy vs authoritarianism)\n\nIntentionally harmful use\n\nDeep fakes\nDisinformation\nRisks to privacy, safety, security\n\nClimate\n\nEnergy intensity of generative AI\nProspect of reducing carbon emissions\n\nMaking other systems more energy efficient\nAdvancing electrification of transportation\nCompatibility of AI data centers with green energy\n\n\n\n\n\nSuggested revised topics\n\nEconomic impact\nPossible biases\nClimate impact\nImpact on human relationships\nImpact on relationships to governments\nImpact on relationships to companies (surveillance capitalism)\nInadvertent vs. intentional negative impacts\nHuman-machine relationships\n\n\n\nDongwook’s suggested topics\n\nWork: work, productivity and the economy\nCulture: culture, creativity and education\nFairness: bias, fairness, power, and inequality\nPower: governance, law, and poliitics\nSustainability: sustainability, infrastructure, and global impacts\nFutures: future trajectories, existential risk, and philosophical questions"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "The website and slides templates were created in Quarto by Dr. Stephan Koenig.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#contributors",
-    "href": "about.html#contributors",
-    "title": "About",
-    "section": "",
-    "text": "The website and slides templates were created in Quarto by Dr. Stephan Koenig.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "announcements.html",
-    "href": "announcements.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "No matching items",
-    "crumbs": [
-      "Course information",
-      "Announcements"
-    ]
-  },
-  {
-    "objectID": "slides/lecture-14_slides.html#announcements",
-    "href": "slides/lecture-14_slides.html#announcements",
-    "title": "Economic impacts",
+    "objectID": "slides/lecture-12_slides.html#announcements",
+    "href": "slides/lecture-12_slides.html#announcements",
+    "title": "Direct effects on individuals",
     "section": "Announcements",
     "text": "Announcements\n\nPresentation notes"
   },
   {
-    "objectID": "slides/lecture-14_slides.html#learning-outcomes",
-    "href": "slides/lecture-14_slides.html#learning-outcomes",
-    "title": "Economic impacts",
-    "section": "Learning outcomes",
-    "text": "Learning outcomes\n\nLearning outcome 1\nLearning outcome 2"
-  },
-  {
-    "objectID": "slides/lecture-03_slides.html#announcements",
-    "href": "slides/lecture-03_slides.html#announcements",
-    "title": "Search",
-    "section": "Announcements",
-    "text": "Announcements\n\nPresentation notes"
-  },
-  {
-    "objectID": "slides/lecture-03_slides.html#learning-outcomes",
-    "href": "slides/lecture-03_slides.html#learning-outcomes",
-    "title": "Search",
+    "objectID": "slides/lecture-12_slides.html#learning-outcomes",
+    "href": "slides/lecture-12_slides.html#learning-outcomes",
+    "title": "Direct effects on individuals",
     "section": "Learning outcomes",
     "text": "Learning outcomes\n\nLearning outcome 1\nLearning outcome 2"
   },
@@ -1129,7 +1234,7 @@
     "href": "index.html#schedule",
     "title": "AI 100: Introduction to artificial intelligence",
     "section": "Schedule",
-    "text": "Schedule\n\nBy unitBy week\n\n\n\n\n\n\n\n  \n    \n      \n      \n      Pre-activity\n      Slides\n      Activity\n      Video\n    \n  \n  \n    \n      Part IIntroductionWeek 1\n\n    \n    WedSep 9\n\nLecture 1What is AI?\n\n\n\n\n\n    2nd slot\n\nDiscussion 1Activity\n\n\n\n\n\n    \n      Part IIAI paradigms and their role in AI history\n\n    \n    FriSep 11\n\nLecture 2Rule-based systems and logical interference\n\n\n\n\n\n    Due: SunSep 13\n\nPlaceholder Problems of the week 1\n\n\n\n\n\n  \n  \n\n\n\n\n\n\n\n  \n    \n      \n      \n      Pre-activity\n      Slides\n      Activity\n      Video\n    \n  \n  \n    \n      Part IIntroductionWeek 1\n\n    \n    WedSep 9\n\nLecture 1What is AI?\n\n\n\n\n\n    2nd slot\n\nDiscussion 1Activity\n\n\n\n\n\n    \n      Part IIAI paradigms and their role in AI history\n\n    \n    FriSep 11\n\nLecture 2Rule-based systems and logical interference\n\n\n\n\n\n    Due: SunSep 13\n\nPlaceholder Problems of the week 1\n\n\n\n\n\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n  \n    \n      \n      \n        Lectures\n      \n      \n      \n        Discussions\n      \n      \n    \n    \n      \n      \n      \n        Wed\n      \n      \n      \n        Fri\n      \n      \n      \n        1st\n      \n      \n      \n        2nd\n      \n      \n      \n      \n      \n    \n    \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n    \n  \n  \n    \n      Part IIntroduction Part IIAI paradigms and their role in AI history\n\n    \n    Week 1starts Sep 7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 2starts Sep 14\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 3starts Sep 21\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 0Due: Sun Sep 27\n\n    \n      Part IIIUnderstanding recent AI systems\n\n    \n    Week 4starts Sep 28\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 5starts Oct 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 1Due: Sun Oct 11\n\n    \n      Part IVSocial impacts of AI systems\n\n    \n    Week 6starts Oct 12\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 7starts Oct 19\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 2Due: Sun Oct 25\n\n    Week 8starts Oct 26\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 9starts Nov 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 10starts Nov 9\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 11starts Nov 16\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 12starts Nov 23\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n      Part VPossible AI Futures\n\n    \n    Week 13starts Nov 30\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n\n\n\n\n\n\n\n  \n    \n      \n      \n        Lectures\n      \n      \n      \n        Discussions\n      \n      \n    \n    \n      \n      \n      \n        Wed\n      \n      \n      \n        Fri\n      \n      \n      \n        1st\n      \n      \n      \n        2nd\n      \n      \n      \n      \n      \n    \n    \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n    \n  \n  \n    \n      Part IIntroduction Part IIAI paradigms and their role in AI history\n\n    \n    Week 1starts Sep 7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 2starts Sep 14\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 3starts Sep 21\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 0Due: Sun Sep 27\n\n    \n      Part IIIUnderstanding recent AI systems\n\n    \n    Week 4starts Sep 28\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 5starts Oct 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 1Due: Sun Oct 11\n\n    \n      Part IVSocial impacts of AI systems\n\n    \n    Week 6starts Oct 12\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 7starts Oct 19\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 2Due: Sun Oct 25\n\n    Week 8starts Oct 26\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 9starts Nov 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 10starts Nov 9\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 11starts Nov 16\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 12starts Nov 23\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n      Part VPossible AI Futures\n\n    \n    Week 13starts Nov 30",
+    "text": "Schedule\n\nBy unitBy week\n\n\n\n\n\n\n\n  \n    \n      \n      \n      Pre-activity\n      Slides\n      Activity\n      Video\n    \n  \n  \n    \n      Part IIntroductionWeek 1\n\n    \n    WedSep 9\n\nLecture 1What is AI?\n\n\n\n\n\n    2nd slot\n\nDiscussion 1Activity\n\n\n\n\n\n    \n      Part IIAI paradigms and their role in AI history\n\n    \n    FriSep 11\n\nLecture 2Rule-based systems and logical interference\n\n\n\n\n\n    Due: SunSep 13\n\nPlaceholder Problems of the week 1\n\n\n\n\n\n  \n  \n\n\n\n\n\n\n\n  \n    \n      \n      \n      Pre-activity\n      Slides\n      Activity\n      Video\n    \n  \n  \n    \n      Part IIntroductionWeek 1\n\n    \n    WedSep 9\n\nLecture 1What is AI?\n\n\n\n\n\n    2nd slot\n\nDiscussion 1Activity\n\n\n\n\n\n    \n      Part IIAI paradigms and their role in AI history\n\n    \n    FriSep 11\n\nLecture 2Rule-based systems and logical interference\n\n\n\n\n\n    Due: SunSep 13\n\nPlaceholder Problems of the week 1\n\n\n\n\n\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n  \n    \n      \n      \n        Lectures\n      \n      \n      \n        Discussions\n      \n      \n    \n    \n      \n      \n      \n        Wed\n      \n      \n      \n        Fri\n      \n      \n      \n        1st\n      \n      \n      \n        2nd\n      \n      \n      \n      \n      \n    \n    \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n    \n  \n  \n    \n      Part IIntroduction Part IIAI paradigms and their role in AI history\n\n    \n    Week 1starts Sep 7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 2starts Sep 14\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 3starts Sep 21\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 0Due: Sun Sep 27\n\n    \n      Part IIIUnderstanding recent AI systems\n\n    \n    Week 4starts Sep 28\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 5starts Oct 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 1Due: Sun Oct 11\n\n    \n      Part IVSocial impacts of AI systems\n\n    \n    Week 6starts Oct 12\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 7starts Oct 19\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 2Due: Sun Oct 25\n\n    Week 8starts Oct 26\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 9starts Nov 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 10starts Nov 9\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 11starts Nov 16\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 12starts Nov 23\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n      Part VPossible AI Futures\n\n    \n    Week 13starts Nov 30\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n\n\n\n\n\n\n\n  \n    \n      \n      \n        Lectures\n      \n      \n      \n        Discussions\n      \n      \n    \n    \n      \n      \n      \n        Wed\n      \n      \n      \n        Fri\n      \n      \n      \n        1st\n      \n      \n      \n        2nd\n      \n      \n      \n      \n      \n    \n    \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n    \n  \n  \n    \n      Part IIntroduction Part IIAI paradigms and their role in AI history\n\n    \n    Week 1starts Sep 7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 2starts Sep 14\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 3starts Sep 21\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 0Due: Sun Sep 27\n\n    \n      Part IIIUnderstanding recent AI systems\n\n    \n    Week 4starts Sep 28\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 5starts Oct 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 1Due: Sun Oct 11\n\n    \n      Part IVSocial impacts of AI systems\n\n    \n    Week 6starts Oct 12\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 7starts Oct 19\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam 2Due: Sun Oct 25\n\n    Week 8starts Oct 26\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 9starts Nov 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 10starts Nov 9\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 11starts Nov 16\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Week 12starts Nov 23\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n      Part VPossible AI Futures\n\n    \n    Week 13starts Nov 30",
     "crumbs": [
       "Course information",
       "Schedule"
