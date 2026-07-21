@@ -1,4 +1,127 @@
 ---
-title: Example activity
-subtitle: "Lecture 6, {{< var course.code >}}, {{< var course.term >}}"
+title: "Lecture 6: Reinforcement learning"
+subtitle: >
+  {{< var course.code >}}, {{< var course.term >}}
+number-sections: false
 ---
+
+## Lecture overview
+### Learning outcomes
+- TODO
+
+### Pre-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+### Lecture timeline
+::: {.list-table}
+- - Topic
+  - Time
+  - Materials
+
+- - Admin
+  - 5 min
+
+- - [Differences from previous lectures](#sec-prev-lectures)
+  - 5 min
+
+- - [Reinforcement learning](#sec-rl)
+  - 20 min
+
+- - [Exploration-exploitation tradeoff](#sec-explore-exploit)
+  - 5 min
+
+- - [RL in gaming](#sec-gaming)
+  - 10 min
+
+- - [RL in robotics](#sec-robotics)
+  - 10 min
+
+- - [Multi-agent RL](#sec-multi-agent)
+  - 10 min
+
+- - [Wrap-up](#sec-wrap-up)
+  - 10 min
+
+- - Admin
+  - 5 min
+:::
+
+### Post-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+## Differences from previous lectures{#sec-prev-lectures}
+- TODO in previous lectures we were just classifying and were able to give the model feedback immediately based on the true label
+- TODO Often a complex sequence of actions must be taken before being able to give the model feedback, e.g. planning a sequence of actions - reinforcement learning is a machine learning framework for this
+- TODO we are supervising the agent by giving it rewards/punishments
+
+:::{.callout-tip}
+### Activity: TODO
+TODO some activity here. maybe an intuitive example of RL like training a dog, eg dog is incentivized to do desired behaviour because it is given treats when it does the desired behaviour
+:::
+
+## Reinforcement learning{#sec-rl}
+- TODO recall that in search we were using states and actions to find a path from an initial state to a goal state. in RL we are also using states and actions, but we are instead trying to figure out what action to take at each state in order to maximize the total reward we receive over time (define policy)
+- TODO define agent, which operates in an environment and receives rewards/punishments based on its actions - relate this to states. inputs: observations of current state and reward signal. outputs: action 
+- TODO what are we learning (parameters?) - we are learning the policy
+- TODO It is important to note  -> that we do not know all of these things (states, possible actions) - Sample from reward distributions 
+- TODO some visual of how RL is DIFFERENT from search, eg moving around in a gridworld - can see this being confusing
+
+:::{.callout-tip}
+### Activity: TODO
+TODO bring back the dog activity to have students interact with the vocabulary?
+:::
+
+- TODO some visual interactive thing here
+
+## Exploration-exploitation tradeoff{#sec-explore-exploit}
+:::{.callout-tip}
+### Activity: TODO
+TODO activity where students see why exploitation is not always the best strategy, e.g. they miss out on a clearly more efficient path
+:::
+- TODO can't always take the best action (exploit the policy) because there might be a better policy. need to also explore the environment to find better policies. define exploration-exploitation tradeoff
+- TODO discuss: is it better to explore or exploit early on? probably explore
+
+## RL in gaming{#sec-gaming}
+- TODO examples of RL in gaming: alphago, atari deepmind
+
+## RL in robotics{#sec-robotics}
+- TODO examples of RL in robotics: quadcopter, robotic hand from openai
+
+## Multi-agent RL{#sec-multi-agent}
+- TODO how can we do multi-agent RL? probably incorporate other players' info into the state. maybe discussion activity for them
+- TODO examples of multi-agent RL: cooperative games, competitive games
+
+## Wrap-up{#sec-wrap-up}
+
+:::{.callout-tip}
+### Activity: Discussion
+- TODO
+:::
