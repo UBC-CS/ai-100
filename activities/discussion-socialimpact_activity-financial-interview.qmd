@@ -1,0 +1,135 @@
+---
+title: "Social Impact Lab Activity — The Financial Times Scenario"
+subtitle: "Speculative business-journalism writing about your scaled-up app"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    embed-resources: true
+---
+
+<!--
+RENDERING NOTES (for instructors/TAs, not shown to students):
+- Student handout (default):   quarto render lab3-financial-times-scenario.qmd
+- TA version (adds hidden notes below each section):
+      quarto render lab3-financial-times-scenario.qmd --profile ta
+-->
+
+## Overview
+
+::: {.callout-note title="At a glance"}
+- **Duration:** 80 minutes
+- **Group size:** group (3-4), with a shadow group for peer review
+- **Deliverable:** a ~5 min technical news interview, presenting in the style of a business/tech publication like the *Economist*, *Wired*, or *Quanta*, imagining your app has become extremely successful.
+:::
+
+**Premise:** Financial journalists write about companies at scale with specific numbers, named (fictional, for this exercise) incidents, and quotes — not vague generalities. This lab asks you to hold an interview about your own app: what happens, in concrete detail, when it becomes extremely successful?
+
+::: {.callout-important title="Before you start: originality"}
+Write an **original** article inspired by the style of outlets like the *Economist*, *Wired*, or *Quanta* — do not copy or closely paraphrase real published text. Use real articles only as models for tone, structure, and the *kind* of detail they include, never as source text to lift from.
+:::
+
+### Style references
+
+Skim one or two real examples (may require a library/university login or free-article allowance) to notice tone, structure, and how specific the numbers and quotes are:
+
+- **The Economist — Business:** [economist.com/business](https://www.economist.com/business) — company-at-scale stories: margins, market share, regulatory exposure, told with a dry, analytical voice and frequent numbers-in-the-lede
+- **The Economist — Science & Technology:** [economist.com/science-and-technology](https://www.economist.com/science-and-technology) — good model for the infrastructure/environmental angle (data centers, energy, compute)
+- **Wired — Business:** [wired.com/category/business](https://www.wired.com/category/business/) — narrative, character-driven tech-company journalism; strong on "what changed and who felt it first"
+- **Quanta Magazine — Computer Science:** [quantamagazine.org/computer-science](https://www.quantamagazine.org/computer-science/) — Quanta's **Q&A / interview format** in particular (look for pieces framed as a conversation with a researcher or practitioner) is the closest structural match to this lab's oral-interview deliverable: a plainspoken interviewer question followed by a specific, technically grounded answer, not a vague soundbite
+- If your group can't access a specific paywalled piece, headline/lede skimming on the free preview is enough — you're studying *structure and voice*, not memorizing content
+
+### Learning objectives
+
+- Translate abstract "success at scale" into specific, plausible, checkable details
+- Practice journalistic structure: headline, lede, nut graph, supporting detail, quotes
+- Connect this lab's writing back to the financial/environmental numbers (if completed)
+- Distinguish vivid, specific writing from vague claims
+
+---
+
+## Timing
+
+| Phase | Activity | Time |
+|---|---|---|
+| 1 | Style read + headline/lede workshop | 10 min |
+| 2 | Gather your "facts" | 10 min |
+| 3 | Draft the article | 25 min |
+| 4 | Peer review swap | 10 min |
+| 5 | Revise | 10–15 min |
+
+::: {.content-hidden unless-profile="ta"}
+::: {.callout-important title="TA timing notes"}
+- Phase 1 (headline/lede workshop) is worth doing as a quick whole-class exercise even if short on time — a strong lede is the single biggest quality lever in this lab.
+- Phase 2 is where students should raid their Lab 1 report (financial/environmental numbers) if they did it — actively point this out, don't assume they'll think of it.
+- If time is tight, Phases 4–5 can be shortened to a single "read your partner's headline + lede only" pass rather than the full article.
+:::
+:::
+
+---
+
+## Step-by-step
+
+### 1. Headline + lede workshop (10 min)
+
+- Write **three** candidate headlines for your article. A good business-journalism headline names a specific consequence, not just a topic.
+  - Weak: "AI App Grows Very Popular"
+  - Stronger: "\[App\] Now Handles More Daily Queries Than Google Search in Three Countries"
+- Prepare your **lede** (opening 1–2 sentences): who/what/when/why-it-matters, as concretely as possible
+
+### 2. Gather your "facts" (10 min)
+
+Before drafting, jot down concrete details you'll use — treat this like a reporter's notebook:
+
+- 2–3 **numbers** (revenue, users, valuation, energy use, headcount — pull from previous lab if you have it)
+- 1 **specific incident** (an outage, a controversy, a regulatory fine, a viral feature, a labor dispute)
+- 1 **fictional quote** from a stakeholder (executive, regulator, user, competitor, analyst) — speak from their voice, not as a generic statement
+- 1 **feature or product detail** that's new or changed since today's version of your app
+
+### 3. Draft the interview (25 min)
+
+Use an inverted-pyramid structure — most important/newsworthy information first, supporting detail after:
+
+- **Headline** (from Step 1)
+- **Lede** (from Step 1) — 1–2 sentences
+- **Nut graph** — short remarks giving context: why does this matter now?
+- **Body** — your specific numbers, the incident, and analysis
+- **Quote(s)** — at least one fictional stakeholder quote, attributed by name and title
+- **Closing** — often a forward-looking line: what happens next, or an open question
+
+Target length: **4-6 minutes**.
+
+### 4. Peer review swap (10 min)
+
+Receive feedback from the shadow group on:
+
+- Is the lede specific enough that someone skimming would understand the story in one read?
+- Which detail is the *most* specific and effective? Which is the *most* vague and should be sharpened?
+- Does the quote sound like a real person in that role, or generic?
+
+### 5. Revise (10–15 min)
+
+Incorporate at least one piece of feedback. Sharpen your weakest detail.
+
+::: {.content-hidden unless-profile="ta"}
+---
+
+## TA facilitation guide
+
+::: {.callout-important title="Common pitfalls to watch for"}
+- **Vague quantities**: "the company grew a lot" instead of "revenue grew from $40M to $2.1B in 18 months." Push students to always prefer a guesstimate-but-specific number over a vague claim.
+- **Generic quotes**: a quote that could be said by anyone in any article ("We're excited about this milestone") isn't doing work. A good quote reveals the speaker's specific interest or tension.
+- **No incident**: articles that only describe steady growth with no complication read flat. Encourage at least one moment of friction — an outage, backlash, investigation, or leadership departure.
+- **Copying real article structure/text too closely**: if a student is clearly mirroring a specific real article's sentences (not just genre conventions), redirect them — remind them this should be original writing inspired by style, not paraphrase of specific source text.
+:::
+
+::: {.callout-note title="Suggested rubric (10 pts)"}
+- Headline names a specific consequence (0, 0.5, or 1 pt)
+- Lede is concrete and answers who/what/why-it-matters (0, 0.5, or 1 pt)
+- At least 2 specific, plausible numbers used, ideally traceable to a prior lab (0, 0.5, or 1 pt)
+- Includes one incident/complication, not just steady-growth narration (0, 0.5, or 1 pt)
+- Quote is voice-appropriate to the stakeholder role (0, 0.5, or 1 pt)
+:::
+
+:::

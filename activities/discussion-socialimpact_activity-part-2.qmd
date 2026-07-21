@@ -1,0 +1,51 @@
+---
+title: "{{< var icon.computer-activity >}} AI Social Impact"
+subtitle: "Lab 2, {{< var course.code >}}, {{< var course.term >}}"
+---
+
+Social Impact Lab - Part 2 of 2
+
+**Total time:** 80 minutes
+
+## {{< var icon.task >}} Steps
+
+### Task 1: Polish Your Presentation
+
+**Time:** 30 minutes
+
+Working as a group, revisit your activity from the previous lab. Focus on the following:
+
+- [ ] Select one person to present
+- [ ] Polish delivery
+- [ ] Anticipate questions
+- [ ] Identify gaps in your analysis
+
+::: {.content-hidden when-profile="student"}
+::: {.callout-tip collapse="true"}
+## TA note
+
+Circulate amongst groups and help them, while filling out your marking sheet.
+
+:::
+:::
+
+---
+
+### Task 2: Presentations
+
+**Time:** 50 minutes
+
+If you are not presenting, then fill out the feedback sheet. the shadow group will be providing feedback to the presenting group, and everyone else is expected to actively listen and ask questions.
+
+
+::: {.content-hidden when-profile="student"}
+::: {.callout-tip collapse="true"}
+## TA note
+
+Emphasize that shadow groups are helping another team notice blind spots and improving their work. 
+
+The goal is constructive feedback.
+:::
+:::
+
+---
