@@ -1,4 +1,263 @@
 ---
-title: Example activity
-subtitle: "Lecture 4, {{< var course.code >}}, {{< var course.term >}}"
+title: "Lecture 4: Machine learning"
+subtitle: >
+  {{< var course.code >}}, {{< var course.term >}}
+number-sections: false
 ---
+
+## Lecture overview
+### Learning outcomes
+By the end of this lecture, you will be able to:
+
+- Explain how machine learning differs from explicit programming and search, and give an example of a problem better suited to learning rules from data. <!-- Understand -->
+- Identify the features and labels in a supervised-learning dataset. <!-- Analyze -->
+- Describe how a model is trained on labelled examples to classify new, unseen examples. <!-- Understand -->
+- Recognize that a linear model separates two classes with a straight-line boundary. <!-- Remember -->
+- Assess, from data plotted by feature, whether two classes are linearly separable and how the number of features affects this. <!-- Analyze -->
+- Construct a decision tree that correctly separates a small labelled dataset into its classes. <!-- Apply -->
+- Explain why data is split into training and testing sets, and compute a model's accuracy on the testing set. <!-- Apply -->
+- Explain why a model with high training accuracy may still fail to generalize to new data. <!-- Understand -->
+
+### Pre-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+### Lecture timeline
+::: {.list-table}
+- - Topic
+  - Time
+  - Materials
+
+- - Admin
+  - 5 min
+
+- - [Differences from previous lectures](#sec-prev-lectures)
+  - 5 min
+
+- - [Credit card fraud detection](#sec-fraud-detection)
+    - Features and labels
+    - Linear models
+  - 20 min
+
+- - [Student mental health](#sec-student-life)
+    - Decision trees
+  - 10 min
+
+- - [Activity: Optimization](#sec-optimization)
+    - Training and testing data
+  - 20 min
+  - Tool TODO
+
+- - [Wrap-up](#sec-wrap-up)
+  - 10 min
+
+- - Admin
+  - 5 min
+:::
+
+### Post-class work
+::: {.content-hidden when-profile="student" when-profile="ta"}
+#### Instructors
+1. TODO
+
+#### Coordinators
+1. TODO
+:::
+
+::: {.content-hidden when-profile="student"}
+#### TAs
+1. TODO
+:::
+
+#### Learners
+1. TODO
+
+## Differences from previous lectures{#sec-prev-lectures}
+:::{.callout-tip}
+### Activity: Think, pair, share
+- What kinds of problems would be hard to solve with explicit programming or search?
+:::
+- We do not always want to use pre-defined, set rules or states and actions like we did in explicit rule-based programming and search.
+- In **machine learning**, we build a model that will learn the rules from the data.
+
+## Credit card fraud detection{#sec-fraud-detection}
+- Have you ever had your credit card declined on vacation? You were probably interacting with a credit card fraud detection model!
+- Being able to identify fraudulent transactions is useful: it protects businesses and credit card holders from financial loss after fraud attempts happen.
+- Billions of transactions are processed every day, so being able to identify these transactions programmatically is even better.
+
+:::{.callout-tip}
+### Activity: Think, pair, share
+What information could be used to identify whether a single transaction is fraudulent or not?
+:::
+
+### Features and labels
+- Data used to identify whether a transaction is fraudulent could include:
+
+::: {.list-table}
+- - User ID
+  - Amount ($)
+  - Distance from Home (km)
+  - Account Age (days)
+  - Fraud?
+
+- - 1
+  - 120
+  - 25
+  - 1190
+  - Legit
+- - 2
+  - 100
+  - 90
+  - 606
+  - Fraud
+- - 3
+  - 105
+  - 55
+  - 582
+  - Fraud
+- - 4
+  - 145
+  - 0
+  - 524
+  - Legit
+:::
+
+- Each row in the table above is an **example**. Each example has **features** and **labels**. 
+  - Features are things we already know about an example, like User ID, Amount, Distance from Home, and Account Age.
+  - Labels are things we would like to predict, like Fraud.
+  - We represent the features with X and represent the labels with Y.
+- We **train** a **model** on lots of examples with labels we already know so that the model can learn to **predict** labels for new examples. Predicting a label is also called **classification**.
+- Thus, our **inputs** to a machine learning problem are features and our **outputs** are labels.
+
+:::{.callout-tip}
+### Activity: Discussion
+How could you use each feature in the table to predict fraud? Are all of the features useful?
+:::
+- If you have lots of features, manually coming up with a rule for every possible example the model might see is not reasonable! With machine learning, the model learns the rules for you.
+- Open questions: What kind of rules does the model learn? How do the rules relate to the features and labels?
+
+### Linear models
+- We want to know whether a transaction is fraudulent or not based only on features. 
+- An easy way to do this is to use a **linear model**: we draw a 2D line (or 3D plane) between the two types of transactions, say that everything on one side is fraudulent, and say that everything on the other side is legitimate. [TODO: phrase this better, they might be intimidated by 2D vs 3D/planes]
+
+:::{.callout-tip}
+### Activity: Hands-on features
+Try out different combinations of features in the plot below. Are any combinations easily separable by a line or plane? Is it more useful to have more or fewer features?
+:::
+
+```{python}
+#| echo: false
+%run ../python/lecture-04_boundaries.py
+import pandas as pd
+
+# colours chosen from https://davidmathlogic.com/colorblind/
+# datasets fabricated using Claude Fable 5
+card_data = pd.read_csv('../data/lecture-04_card-transactions.csv')
+color_map_card = {'Legit': '#5D3A9B', 'Fraud': '#E66100'}
+
+boundary_plot_toggle_features(card_data, 'amount', 'distance_from_home', 'account_age', 'label', title='Fraud or Legit?',      color_map=color_map_card)
+```
+
+- The more information we have about the transactions, the easier it is to draw a line or plane that separates them. 
+
+:::{.callout-tip}
+### Activity: Discussion
+Let's consider two separator planes. Which one do you prefer? Why?
+:::
+
+```{python}
+#| echo: false
+
+boundary_plot_compare_3d(card_data, 'amount', 'distance_from_home', 'account_age', 'label', title='Fraud or Legit?', color_map=color_map_card, separator_a=(1/60, 1/25, -1/1050, -3.8), separator_b=(1/60, 1/25, -1/350, -1.8))
+```
+
+- Some planes represent the relationship between features and labels better than others. We want to find the best one possible so that we can make good predictions.
+- Lines and planes are represented by **parameters**. During the training process, the linear model tries to learn the parameters that give us the best one.
+
+## Student mental health{#sec-student-life}
+- Let's consider another scenario: we have a list of students, and we want know whether they are struggling or thriving at university.
+
+:::{.callout-tip}
+### Activity: Think, pair, share
+What might be some features we could use to make this prediction? What would the label be?
+:::
+
+- The features we'll use are hours spent doing coursework, hours spent doing social activities, and whether or not the student landed an internship (we'll use 1 to represent yes and 0 to represent no).
+- The label will be the group the student should belong to: struggling or thriving.
+
+```{python}
+#| echo: false
+outcome_data = pd.read_csv('../data/lecture-04_outcome-data.csv')
+color_map_outcome = {'thriving': '#0C7BDC', 'struggling': '#FFC20A'}
+boundary_plot_compare_3d(outcome_data, 'coursework_hours', 'social_hours', 'did_internship', 'study_outcome', title='Thriving or Struggling?', color_map=color_map_outcome)
+```
+
+:::{.callout-tip}
+### Activity: Discussion
+Is it possible to draw a line or plane to perfectly separate the two groups? What kind of shape might do a better job?
+:::
+
+### Decision trees
+- Instead of using a linear model, we could use a **decision tree** to separate the two groups.
+- A decision tree is like a 20 questions game: we ask a series of yes/no questions about the features to determine which group a student belongs to.
+
+:::{.callout-tip}
+### Activity: Think, pair, share
+What kinds of questions are more useful to ask at the start of a 20 questions game? What about later in the game?
+:::
+
+- Different questions will give us different decision trees, and some will do a better job of separating labels than others. 
+- Instead of finding the line or plane that best separates the labels, a decision tree finds the questions that best separate the labels at each step of the game. These questions are the parameters of the decision tree.
+
+:::{.callout-tip}
+### Activity: Build a decision tree
+Fill in the nodes of the decision tree below to separate the students into the correct groups. Then, compare your decision tree to your neighbours' trees.
+:::
+
+```{python}
+#| echo: false
+%run ../python/lecture-04_tree-builder.py
+
+decision_tree_builder_3d(outcome_data, 'coursework_hours', 'social_hours', 'did_internship', 'study_outcome', title="Thriving or Struggling?", color_map=color_map_outcome)
+```
+
+## Activity: Optimization{#sec-optimization}
+- TODO activity - needs a tool
+  - They pick a line, then new data is added and they see that another line might be better 
+  - Should show them that they can't necessarily rely on the training data/limits of training data - generalizability
+
+### Training and testing data
+- Once the model is deployed in the real world, we might see that the model doesn't really match up with relationships and trends in the real world.
+- To give us an idea of how a model will perform in the real world before deploying it, we set aside part of the data (the **testing set**) before training the model with the rest of the data (the **training set**). We then see how well the model performs on the testing set.
+- **Accuracy** is the percentage of predictions the model gets right. For example, if there are 10 examples in the testing set, and the model correctly predicts the target for 8 of them, the model has an accuracy of 8/10 = 80%.
+
+:::{.callout-tip}
+### Activity: Think, pair, share
+Why do you think it is so important that we don't train the model on the testing set?
+:::
+
+- Since the model has never seen the testing set before, it should perform about as well on the testing set as it will on data in the real world.
+
+## Wrap-up{#sec-wrap-up}
+
+:::{.callout-tip}
+### Activity: Discussion
+- What real-life applications of machine learning do you know? What features and labels might those models use?
+- Beyond lines/planes and decision trees, what other boundary shapes might be useful to have?
+- What makes one model better than another model?
+- [TODO: another question about generalizability?]
+:::
+
