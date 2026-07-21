@@ -136,7 +136,6 @@ include-in-header:
 Image created with GPT 5.6 Sol
 :::
 
-
 ## Task 6: Can AI Help?
 
 - Generative AI may help you think of users that you would not have thought about on your own.​
