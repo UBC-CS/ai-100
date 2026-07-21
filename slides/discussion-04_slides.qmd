@@ -37,7 +37,7 @@ include-in-header:
     - It is ok if the app provides some help but does not solve the entire problem!​
     - If you believe an app cannot help with one of the problems you identified, move onto the next problem!​
 - If it helps, you can add to the sentence you made before. 
-    - For example: "When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites, and I would like an app to collect and synthesize information about campsites near me and their availability."​
+    - For example: "When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites, and I would like an app to collect and synthesize information about campsites near me and their availability. I would also like to book the campsite through the app."​
 
 ## Task 4: Breaking Ties
 
