@@ -1,0 +1,79 @@
+### Feedback Sheet: Peer Presentation
+
+**Presenter's app:** ____________________________________  
+
+**Your name:** __________________________________________
+
+You are graded on the **quality of your feedback**. You are not grading the presenter.
+
+Your role is to notice what they neglected to account for — what they couldn't see from inside their own app.
+
+For each category, write **2–3 sentences**. Constructive criticism and genuine questions only — no scores, no "great job."
+
+---
+
+**1. Clarity of the account**
+
+*Could you retell what happened in their first lab session from this presentation alone? What was vague or missing?*
+
+&nbsp;
+
+&nbsp;
+
+**2. Honesty about gaps**
+
+*Where did they seem to know their app's limits — and where did they seem to be guessing or glossing over?*
+
+&nbsp;
+
+&nbsp;
+
+**3. The overlooked user**
+
+*Who is affected by this app but was absent from the presentation? What would that person ask?*
+
+&nbsp;
+
+&nbsp;
+
+**4. The fix**
+
+*Does their proposed change actually address the problem they sought to solve? Is  there a mismatch of problem and solution? Does the solution introduce new problems? What new problems?*
+
+&nbsp;
+
+&nbsp;
+
+**5. One question they should ask next**
+
+*Write an important question this presenter hasn't answered yet. It should be specific to their app that only they, as a designer, can answer.*
+
+&nbsp;
+
+&nbsp;
+
+---
+
+Questions for reflection:
+
+- What relationships are missing?
+- Who bears risks without meaningful consent?
+- What labour becomes invisible?
+- What assumptions about progress and the purpose of technology are being made?
+- What becomes easier to ignore because this app exists?
+- What tradeoffs are acknowledged? Which are missing?
+- What responsibilities are being assumed? Which are being ignored? Who is accountable for them?
+
+::: {.content-hidden when-profile="student"}
+::: {.callout-tip collapse="true"}
+## TA note
+
+Mark each category: **✓** full / **◐** half / **✗** empty.
+
+- **✓** — specific to *this* app, and either identifies something the presenter missed or asks a question that would genuinely change their thinking.
+- **◐** — completed but generic; could have been written about any app, or restates what the presenter already said.
+- **✗** — blank, one-liner, or pure praise/criticism with no substance ("it was good", "seemed fine").
+
+Watch for the failure mode of polite emptiness — students defaulting to compliments.
+:::
+:::
