@@ -1,0 +1,47 @@
+/* ============================================================
+   Used by both table and wheel.
+   ============================================================ */
+
+:root {
+  --bigram-paper: #eef1ec;
+  --bigram-paper-grid: rgba(22, 33, 29, 0.055);
+  --bigram-panel: #f8faf7;
+  --bigram-ink: #16211d;
+  --bigram-ink-soft: #3a463f;
+  --bigram-muted: #6f766c;
+  --bigram-line: #c9cfc5;
+  --bigram-line-strong: #a9b1a4;
+  --bigram-accent: #1f6f5c;
+  --bigram-accent-contrast: #f4faf8;
+  --bigram-accent-2: #b5502f;
+  --bigram-radius: 8px;
+  --bigram-radius-lg: 14px;
+  --bigram-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --bigram-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bigram-cat-0: #1f6f5c;
+  --bigram-cat-1: #b5502f;
+  --bigram-cat-2: #c79a3d;
+  --bigram-cat-3: #3e5c76;
+  --bigram-cat-4: #6b4a73;
+  --bigram-cat-5: #557153;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bigram-paper); color: var(--bigram-ink); font-family: var(--bigram-sans); -webkit-font-smoothing: antialiased; }
+
+.bigram-page {
+  background: var(--bigram-paper);
+  background-image:
+    linear-gradient(var(--bigram-paper-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bigram-paper-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border: 1px solid var(--bigram-line);
+  border-radius: var(--bigram-radius-lg);
+  padding: 24px 20px;
+  max-width: 900px;
+  margin: 24px auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+}

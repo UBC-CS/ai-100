@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tic-Tac-Toe Search Tree</title>
+<style>
+  :root{
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --line: #d6d6d6;
+    --x-color: #2563eb;
+    --o-color: #dc2626;
+    --bg: #fafafa;
+    --panel: #ffffff;
+    --border: #e2e2e2;
+    --text: #222222;
+    --muted: #888888;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    font-family: var(--font);
+    margin: 0;
+    padding: 16px;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .app{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .panel{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  h2{
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  /* left: game */
+  .left-panel{ width: 200px; flex-shrink: 0; }
+  .status{
+    font-size: 13px;
+    margin-bottom: 10px;
+    min-height: 18px;
+  }
+  .board{
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 4px;
+    background: #333;
+    border-radius: 4px;
+    padding: 4px;
+    width: fit-content;
+  }
+  .cell{
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+  .cell.x{ color: var(--x-color); }
+  .cell.o{ color: var(--o-color); }
+  .cell:not(.filled):hover{ background: #f0f0f0; }
+  button{
+    margin-top: 14px;
+    font-family: var(--font);
+    font-size: 12px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text);
+  }
+  button:hover{ background: #f2f2f2; }
+
+  /* right: tree */
+  .right-panel{
+    flex: 1 1 0;
+    min-width: 0;
+    overflow-x: auto;
+  }
+  .tree, .tree ul, .tree li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .tree{ text-align: center; padding-bottom: 8px; }
+  .tree ul{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    position: relative;
+  }
+  .tree li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 6px 0 6px;
+    position: relative;
+  }
+  .tree li::before, .tree li::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 50%;
+    height: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .tree li::after{
+    right: auto;
+    left: 50%;
+    border-left: 1px solid var(--line);
+  }
+  .tree li:only-child::before, .tree li:only-child::after{ display: none; }
+  .tree li:only-child{ padding-top: 0; }
+  .tree li:first-child::before, .tree li:last-child::after{ border: 0 none; }
+  .tree li:last-child::before{
+    border-right: 1px solid var(--line);
+    border-radius: 0 6px 0 0;
+  }
+  .tree li:first-child::after{ border-radius: 6px 0 0 0; }
+  .tree ul ul::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 20px;
+    border-left: 1px solid var(--line);
+  }
+  .tree > ul{ padding-top: 0; width: max-content; margin: 0 auto; }
+  .tree > ul > li::before, .tree > ul > li::after{ display: none; }
+
+  .node{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: #fff;
+  }
+  .node.root{ border-color: #333; }
+  .node.win-X{ background: #eaf1ff; }
+  .node.win-O{ background: #fdecea; }
+  .node.win-draw{ background: #f0f0f0; }
+  .result{ font-size: 9px; color: #777; margin-top: 2px; white-space: nowrap; }
+
+  .miniboard{
+    display: grid;
+    grid-template-columns: repeat(3, 12px);
+    grid-template-rows: repeat(3, 12px);
+    gap: 1px;
+    background: #bbb;
+  }
+  .mc{
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 600;
+  }
+  .mc.x{ color: var(--x-color); }
+  .mc.o{ color: var(--o-color); }
+  .mc.last{ background: #fef9c3; }
+
+  .trunc{
+    font-size: 15px;
+    color: #999;
+    padding: 9px 7px;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="panel left-panel">
+    <h2>Tic-Tac-Toe</h2>
+    <div class="status" id="status"></div>
+    <div class="board" id="board"></div>
+    <button id="resetBtn">Reset</button>
+  </div>
+  <div class="panel right-panel">
+    <h2>Game Tree</h2>
+    <div class="tree" id="tree"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var LINES = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  var MAX_DEPTH = 2;   // how many layers below the current position to show
+  var LIMITS = [2, 3]; // max children shown at each of those layers
+
+  var board = Array(9).fill(null);
+
+  function checkWinner(b){
+    for(var i=0;i<LINES.length;i++){
+      var a=LINES[i][0], c=LINES[i][1], d=LINES[i][2];
+      if(b[a] && b[a]===b[c] && b[a]===b[d]) return b[a];
+    }
+    if(b.every(function(v){return v;})) return 'draw';
+    return null;
+  }
+
+  function currentPlayer(b){
+    var marks = b.filter(function(v){return v;}).length;
+    return marks % 2 === 0 ? 'X' : 'O';
+  }
+
+  function buildTree(b, level, lastMove){
+    var winner = checkWinner(b);
+    var node = { board: b, winner: winner, lastMove: lastMove, children: [], truncated: 0 };
+    if(winner || level >= MAX_DEPTH) return node;
+    var player = currentPlayer(b);
+    var empties = [];
+    for(var i=0;i<9;i++) if(!b[i]) empties.push(i);
+    var limit = (LIMITS[level] !== undefined) ? LIMITS[level] : empties.length;
+    var shown = empties.slice(0, limit);
+    for(var j=0;j<shown.length;j++){
+      var idx = shown[j];
+      var nb = b.slice();
+      nb[idx] = player;
+      node.children.push(buildTree(nb, level+1, idx));
+    }
+    if(empties.length > limit) node.truncated = empties.length - limit;
+    return node;
+  }
+
+  function renderMini(b, lastMove){
+    var html = '<div class="miniboard">';
+    for(var i=0;i<9;i++){
+      var m = b[i];
+      var cls = 'mc';
+      if(m==='X') cls += ' x';
+      if(m==='O') cls += ' o';
+      if(i===lastMove) cls += ' last';
+      html += '<div class="'+cls+'">'+(m||'')+'</div>';
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function renderNode(node, isRoot){
+    var cls = 'node';
+    if(isRoot) cls += ' root';
+    if(node.winner==='X') cls += ' win-X';
+    if(node.winner==='O') cls += ' win-O';
+    if(node.winner==='draw') cls += ' win-draw';
+    var html = '<li><div class="'+cls+'">' + renderMini(node.board, node.lastMove);
+    if(node.winner){
+      var label = node.winner==='draw' ? 'draw' : node.winner + ' wins';
+      html += '<div class="result">'+label+'</div>';
+    }
+    html += '</div>';
+    if(node.children.length || node.truncated){
+      html += '<ul>';
+      for(var i=0;i<node.children.length;i++){
+        html += renderNode(node.children[i], false);
+      }
+      if(node.truncated){
+        html += '<li><div class="node trunc">+'+node.truncated+'</div></li>';
+      }
+      html += '</ul>';
+    }
+    html += '</li>';
+    return html;
+  }
+
+  function renderTree(){
+    var root = buildTree(board, 0, null);
+    var el = document.getElementById('tree');
+    el.innerHTML = '<ul>' + renderNode(root, true) + '</ul>';
+    centerOnRoot();
+  }
+
+  // The root node sits at the horizontal middle of the whole tree (its
+  // children spread out on both sides), not at the left edge. Scroll the
+  // panel so the root starts centered in view, so the user isn't dropped
+  // on some arbitrary edge of a wide tree.
+  function centerOnRoot(){
+    var panel = document.querySelector('.right-panel');
+    var rootEl = document.querySelector('.node.root');
+    if(!panel || !rootEl) return;
+    var panelRect = panel.getBoundingClientRect();
+    var rootRect = rootEl.getBoundingClientRect();
+    var rootCenter = (rootRect.left - panelRect.left) + rootRect.width / 2 + panel.scrollLeft;
+    var target = rootCenter - panel.clientWidth / 2;
+    var maxScroll = panel.scrollWidth - panel.clientWidth;
+    target = Math.max(0, Math.min(target, maxScroll));
+    panel.scrollLeft = target;
+  }
+
+  function renderBoard(){
+    var el = document.getElementById('board');
+    el.innerHTML = '';
+    board.forEach(function(v, i){
+      var cell = document.createElement('div');
+      cell.className = 'cell' + (v ? ' filled ' + v.toLowerCase() : '');
+      cell.textContent = v || '';
+      cell.addEventListener('click', function(){ handleClick(i); });
+      el.appendChild(cell);
+    });
+  }
+
+  function renderStatus(){
+    var el = document.getElementById('status');
+    var w = checkWinner(board);
+    if(w==='draw') el.textContent = "It's a draw.";
+    else if(w) el.textContent = w + ' wins!';
+    else el.textContent = currentPlayer(board) + ' to move';
+  }
+
+  function handleClick(i){
+    if(board[i]) return;
+    if(checkWinner(board)) return;
+    board[i] = currentPlayer(board);
+    renderAll();
+  }
+
+  function renderAll(){
+    renderBoard();
+    renderStatus();
+    renderTree();
+  }
+
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    board = Array(9).fill(null);
+    renderAll();
+  });
+
+  renderAll();
+})();
+</script>
+</body>
+</html>

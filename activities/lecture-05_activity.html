@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Example activity – AI 100: Introduction to artificial intelligence</title>
+<title>Lecture 5: Deep learning – AI 100: Introduction to artificial intelligence</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -23,7 +26,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -32,19 +35,18 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-69a118ed5aa843c5d3f13e92a12ee77e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f8de076aeb9658a6c96d343f1d6c5546.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-69a118ed5aa843c5d3f13e92a12ee77e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2baf9616dcd62a487e8517e630363ef5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a92316daa43a8c77deb54b5f2f92ea6f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2baf9616dcd62a487e8517e630363ef5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-09d5b3037bb00d8597e2ed3ef8e0c3bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f94a22943786215c51b6bb72b6d97a39.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-09d5b3037bb00d8597e2ed3ef8e0c3bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dad2a8cb5d2ae54854616d4db9873781.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-65f7c596f8bb4bccabd9cf1fff28d205.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dad2a8cb5d2ae54854616d4db9873781.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -72,15 +74,53 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles/styles.css">
-<meta property="og:title" content="Example activity – AI 100: Introduction to artificial intelligence">
-<meta property="og:description" content="Lecture 5, AI 100, 2026W1">
-<meta property="og:site_name" content="{{< var course.full-title >}}">
-<meta name="twitter:title" content="Example activity – AI 100: Introduction to artificial intelligence">
-<meta name="twitter:description" content="Lecture 5, AI 100, 2026W1">
-<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Lecture 5: Deep learning – AI 100: Introduction to artificial intelligence">
+<meta property="og:description" content="AI 100, 2026W1">
+<meta property="og:image" content="https://ubc-cs.github.io/ai-100/images/lecture-05_cat.png">
+<meta property="og:site_name" content="AI 100: Introduction to artificial intelligence">
+<meta property="og:image:height" content="2212">
+<meta property="og:image:width" content="2212">
+<meta name="twitter:title" content="Lecture 5: Deep learning – AI 100: Introduction to artificial intelligence">
+<meta name="twitter:description" content="AI 100, 2026W1">
+<meta name="twitter:image" content="https://ubc-cs.github.io/ai-100/images/lecture-05_cat.png">
+<meta name="twitter:image-height" content="2212">
+<meta name="twitter:image-width" content="2212">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -264,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Example activity</h1>
+          <h1 class="quarto-secondary-nav-title">Lecture 5: Deep learning</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -390,8 +430,36 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lecture-overview" id="toc-lecture-overview" class="nav-link active" data-scroll-target="#lecture-overview">Lecture overview</a>
+  <ul class="collapse">
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a></li>
+  <li><a href="#pre-class-work" id="toc-pre-class-work" class="nav-link" data-scroll-target="#pre-class-work">Pre-class work</a></li>
+  <li><a href="#lecture-timeline" id="toc-lecture-timeline" class="nav-link" data-scroll-target="#lecture-timeline">Lecture timeline</a></li>
+  <li><a href="#post-class-work" id="toc-post-class-work" class="nav-link" data-scroll-target="#post-class-work">Post-class work</a></li>
+  </ul></li>
+  <li><a href="#sec-prev-lectures" id="toc-sec-prev-lectures" class="nav-link" data-scroll-target="#sec-prev-lectures">Differences from previous lectures</a></li>
+  <li><a href="#sec-teachable-machine" id="toc-sec-teachable-machine" class="nav-link" data-scroll-target="#sec-teachable-machine">Activity: Google Teachable Machine</a></li>
+  <li><a href="#sec-neuron-weight" id="toc-sec-neuron-weight" class="nav-link" data-scroll-target="#sec-neuron-weight">Neurons, weights, and networks</a>
+  <ul class="collapse">
+  <li><a href="#neurons" id="toc-neurons" class="nav-link" data-scroll-target="#neurons">Neurons</a></li>
+  <li><a href="#weights" id="toc-weights" class="nav-link" data-scroll-target="#weights">Weights</a></li>
+  <li><a href="#neural-networks" id="toc-neural-networks" class="nav-link" data-scroll-target="#neural-networks">Neural networks</a></li>
+  </ul></li>
+  <li><a href="#sec-backprop" id="toc-sec-backprop" class="nav-link" data-scroll-target="#sec-backprop">Backpropagation</a></li>
+  <li><a href="#sec-bias" id="toc-sec-bias" class="nav-link" data-scroll-target="#sec-bias">Bias and fairness</a></li>
+  <li><a href="#sec-challenges" id="toc-sec-challenges" class="nav-link" data-scroll-target="#sec-challenges">Neural network challenges</a>
+  <ul class="collapse">
+  <li><a href="#scale" id="toc-scale" class="nav-link" data-scroll-target="#scale">Scale</a></li>
+  <li><a href="#transparency" id="toc-transparency" class="nav-link" data-scroll-target="#transparency">Transparency</a></li>
+  </ul></li>
+  <li><a href="#sec-wrap-up" id="toc-sec-wrap-up" class="nav-link" data-scroll-target="#sec-wrap-up">Wrap-up</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/ai-100/blob/main/activities/lecture-05_activity.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/ai-100/edit/main/activities/lecture-05_activity.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/ai-100/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -399,8 +467,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Example activity</h1>
-<p class="subtitle lead">Lecture 5, AI 100, 2026W1</p>
+<h1 class="title d-none d-lg-block">Lecture 5: Deep learning</h1>
+<p class="subtitle lead">AI 100, 2026W1</p>
 </div>
 
 
@@ -417,8 +485,586 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="lecture-overview" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-overview">Lecture overview</h2>
+<section id="learning-outcomes" class="level3">
+<h3 class="anchored" data-anchor-id="learning-outcomes">Learning outcomes</h3>
+<p>By the end of this lecture, you will be able to:</p>
+<ul>
+<li>Recognize that deep learning can learn directly from raw data (such as image pixels), without features chosen by people. <!-- Remember --></li>
+<li>Recognize that an artificial neuron takes in several inputs and produces one output. <!-- Remember --></li>
+<li>Explain that the weights are the parameters a network learns during training and that they set how much each input influences the output. <!-- Understand --></li>
+<li>Describe how neurons are arranged into input, hidden, and output layers to form a deep neural network. <!-- Understand --></li>
+<li>Distinguish what is chosen before training (the number of layers and neurons) from what is learned during training (the weights). <!-- Analyze --></li>
+<li>Recognize that a network improves by comparing its predictions to the correct answers and adjusting its weights (a process called backpropagation). <!-- Remember --></li>
+<li>Explain how the distribution of the training data affects a model’s overall accuracy and its accuracy for individual groups. <!-- Understand --></li>
+<li>Explain, using a real example such as facial-analysis systems, how unrepresentative training data can make a model biased and unfair. <!-- Understand --></li>
+<li>Explain why a deep neural network’s predictions are hard to interpret (the transparency problem), and compare its interpretability with that of a decision tree. <!-- Analyze --></li>
+</ul>
+</section>
+<section id="pre-class-work" class="level3">
+<h3 class="anchored" data-anchor-id="pre-class-work">Pre-class work</h3>
+<section id="learners" class="level4">
+<h4 class="anchored" data-anchor-id="learners">Learners</h4>
+<ol type="1">
+<li>TODO</li>
+</ol>
+</section>
+</section>
+<section id="lecture-timeline" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-timeline">Lecture timeline</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Time</th>
+<th>Materials</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Admin</td>
+<td>5 min</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#sec-prev-lectures">Differences from previous lectures</a></td>
+<td>5 min</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#sec-teachable-machine">Activity: Google Teachable Machine</a></td>
+<td>10 min</td>
+<td><a href="https://teachablemachine.withgoogle.com/train/image">Website: Google Teachable Machine</a></td>
+</tr>
+<tr class="even">
+<td><a href="#sec-neuron-weight">Neurons, weights, and networks</a></td>
+<td>10 min</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#sec-backprop">Backpropagation</a></td>
+<td>15 min</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#sec-bias">Bias and fairness</a></td>
+<td>15 min</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#sec-challenges">Neural network challenges</a>
+<ul>
+<li>Scale</li>
+<li>Transparency</li>
+</ul></td>
+<td>5 min</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#sec-wrap-up">Wrap-up</a></td>
+<td>10 min</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Admin</td>
+<td>5 min</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="post-class-work" class="level3">
+<h3 class="anchored" data-anchor-id="post-class-work">Post-class work</h3>
+<section id="learners-1" class="level4">
+<h4 class="anchored" data-anchor-id="learners-1">Learners</h4>
+<ol type="1">
+<li>TODO</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="sec-prev-lectures" class="level2">
+<h2 class="anchored" data-anchor-id="sec-prev-lectures">Differences from previous lectures</h2>
+<ul>
+<li>In machine learning, we start by choosing which features we want to use to train our model.</li>
+<li>However, identifying and engineering features can be very time consuming, and may require expert knowledge.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity: Guess who?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In pairs, you will each be given a picture of a cat or a dog. Don’t show the picture to your partner! Instead, describe what you see in the picture, and see if they can guess correctly. What properties of the picture helped your partner the most?</p>
+</div>
+</div>
+<ul>
+<li>It is relatively easy for humans to identify properties that differentiate dogs and cats - for example, you might have used ear shape to guess which animal your partner had. However, the machine learning problems we’ve seen so far require these properties to be formally identified and given to the model as features. Imagine looking at thousands of images of dogs and cats and manually filling in which ear shape each one has… very boring!</li>
+<li>Instead of trying to come up with features ourselves, it might be better to just give the images to the model and let it figure out these useful properties as part of the training process.</li>
+<li>Computers can’t “see” like we can, so we represent an image using the colour of each of its pixels.</li>
+</ul>
+</section>
+<section id="sec-teachable-machine" class="level2">
+<h2 class="anchored" data-anchor-id="sec-teachable-machine">Activity: Google Teachable Machine</h2>
+<ul>
+<li>TODO what are we trying to get across here? is this just another example of deep learning?</li>
+<li>TODO formalize instructions</li>
+<li>[TODO: any issues with using the webcam/images of prof or students? alternatively have a set of images ready to upload]</li>
+<li>have prof or volunteer student come up to front and use webcam to record images of them doing 2 distinct things (smiling/frowning, left/right of screen, wearing hat/not wearing hat, etc). train model, then test whether it can differentiate the 2 distinct things</li>
+<li>with ~100 images per class and 2 classes, takes ~2 min to train. do not switch tabs during training as it will stop</li>
+<li>after demonstration at front, could let students try on their own:
+<ul>
+<li>add more classes</li>
+<li>train with object added to/removed from background between two different unrelated classes (e.g.&nbsp;smiling with water bottle, frowning without) and see how adding/removing the object during testing changes the accuracy</li>
+<li>train with one person smiling/frowning and use another person smiling/frowning to test
+<ul>
+<li>see if model improves if both people are used to train</li>
+</ul></li>
+<li>do something that wasn’t in either class and see which class it is more like (e.g.&nbsp;shocked face). why do you think that is/what properties probably make that the case? (e.g.&nbsp;if shocked is most like smiling, eyebrow movements might be similar, etc…)</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-neuron-weight" class="level2">
+<h2 class="anchored" data-anchor-id="sec-neuron-weight">Neurons, weights, and networks</h2>
+<div id="fig-cat-dog" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cat-dog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../images/lecture-05_cat.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../images/lecture-05_dog.jpg" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cat-dog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Images of a cat (Ripley) and a dog (Midnight).
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>In the figure above, you are probably able to identify which picture is a cat and which picture is a dog pretty quickly. Humans are able to do these kinds of classification tasks very efficiently.</li>
+<li>To simulate the same level of performance with a machine, we took inspiration from biological neural networks (our brains!) when designing a new type of model: <strong>artificial neural networks</strong>.</li>
+</ul>
+<section id="neurons" class="level3">
+<h3 class="anchored" data-anchor-id="neurons">Neurons</h3>
+<div id="fig-neurons" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-neurons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../images/lecture-05_bio-neuron.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../images/lecture-05_art-neuron.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-neurons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Biological and artificial neurons. Base image of biological neuron from OpenClipart-Vectors on Pixabay.
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>Neural networks are made up of neurons. Just like the neurons that make up our brains, each neuron takes some number of <strong>inputs</strong> and produces an <strong>output</strong>. Inputs can be raw data, e.g.&nbsp;pixels from the original image, or outputs from other neurons.</li>
+<li>In the image above, the artificial neuron has three inputs (<span class="math inline">\(x_1, x_2, x_3\)</span>), and its output is <span class="math inline">\(y\)</span>.</li>
+</ul>
+</section>
+<section id="weights" class="level3">
+<h3 class="anchored" data-anchor-id="weights">Weights</h3>
+<ul>
+<li>Inside each neuron, inputs are <strong>combined</strong> to produce an output.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity: Think, pair, share
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a neuron that takes nine inputs: the colour of each pixel in a small 3x3 image. We want the output of the neuron to represent whether a particular image shows an X or an O.</p>
+<div id="fig-x-o" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-x-o-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="../images/lecture-05_xo-neuron.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="../images/lecture-05_x.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="../images/lecture-05_o.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-x-o-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The pixels of small 3x3 images are given as input to a neuron (left). Each image may be an X (middle) or an O (right). Each input is labelled A through I.
+</figcaption>
+</figure>
+</div>
+<p>Are all of the inputs equally important to consider? If not, which ones might be more important, and why?</p>
+</div>
+</div>
+<ul>
+<li>Not every input is equally as important to a neuron - it might be more valuable to <strong>weigh</strong> inputs differently.</li>
+<li>When combining inputs, we multiply each input by its respective weight. Important inputs are assigned larger weights: this way they make a larger impact on the output than the other inputs. Similarly, less important inputs are assigned smaller weights.</li>
+<li>In the image above, input <span class="math inline">\(x_1\)</span>’s weight is <span class="math inline">\(w_1\)</span>, <span class="math inline">\(x_2\)</span>’s weight is <span class="math inline">\(w_2\)</span>, and <span class="math inline">\(x_3\)</span>’s weight is <span class="math inline">\(w_3\)</span>.</li>
+<li>Weights are a neural network’s <strong>parameters</strong>: during the training process, the network learns how important each input is and thus what weight it should have.</li>
+</ul>
+</section>
+<section id="neural-networks" class="level3">
+<h3 class="anchored" data-anchor-id="neural-networks">Neural networks</h3>
+<div id="fig-network" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-network-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/lecture-05_network.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-network-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: A neural network.
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>We can stack <strong>layers</strong> of neurons to make a <strong>neural network</strong>.
+<ul>
+<li>Since we input each example (e.g.&nbsp;the pixels of a training image) into the network in the first layer, we call it the <strong>input layer</strong>.</li>
+<li>The last layer is called the <strong>output layer</strong>. Each neuron in this layer outputs something we want to know, like a prediction of whether an image is a cat or a dog.</li>
+<li>We can add layers of neurons between the input and output layers: these are called <strong>hidden layers</strong>. The more hidden layers we add, the better the neural network gets at modelling complex relationships between examples and their associated labels.</li>
+<li>We call a neural network with lots of layers a <strong>deep</strong> neural network - this is why we call the overall approach <strong>deep learning</strong>.</li>
+<li>Note that the structure of the neural network is <strong>not</strong> learned - before the training process starts, we decide how many layers and neurons we want.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="sec-backprop" class="level2">
+<h2 class="anchored" data-anchor-id="sec-backprop">Backpropagation</h2>
+<ul>
+<li>How do we train a neural network? In other words, for each neuron in the network, how do we figure out which weights its inputs should have?</li>
+<li>We use an approach called <strong>backpropagation</strong>:
+<ul>
+<li>To start, we set each weight to a random number. Then, we use the network to predict the label for each example in the training data. Since all of the weights were randomized, they don’t necessarily reflect how important each neuron’s inputs are - these initial predictions probably won’t be very good!</li>
+<li>We compare each prediction to the actual label to know how accurate the predictions were. Then, we use this feedback to make small changes to the weights - we think these changes might make the model a little more accurate, but we don’t really know.</li>
+<li>We repeat this process - predict labels for the training data, compare to the real labels, and adjust the weights - until we feel satisfied that the model is accurate enough, or until changing the weights doesn’t make the model any more accurate.</li>
+</ul></li>
+</ul>
+<div id="b12844b6" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+
+<div class="nnwrap">
+  <style>
+    .nnwrap{
+      --accent:#6366f1;
+      max-width:680px;margin:0 auto;padding:18px 18px 14px;
+      background:linear-gradient(180deg,#ffffff,#f8fafc);
+      border:1px solid #e5e9f0;border-radius:18px;
+      box-shadow:0 10px 30px -12px rgba(15,23,42,.25);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    }
+    .nnwrap .net{width:100%;height:auto;display:block;}
+    .nnwrap .wt{
+      font-size:12px;font-weight:600;text-anchor:middle;
+      dominant-baseline:central;font-variant-numeric:tabular-nums;
+      paint-order:stroke;stroke:#f8fafc;stroke-width:3px;
+      stroke-linejoin:round;pointer-events:none;
+    }
+    .nnwrap .acc-val{
+      font-size:26px;font-weight:700;text-anchor:middle;
+      dominant-baseline:central;font-variant-numeric:tabular-nums;
+      fill:#475569;
+    }
+    .nnwrap .acc-lbl{
+      font-size:11px;font-weight:600;text-anchor:middle;
+      dominant-baseline:central;fill:#64748b;letter-spacing:2px;
+    }
+    .nnwrap .pulse{transform-box:fill-box;transform-origin:center;
+      animation:nnpulse 2.6s ease-in-out infinite;}
+    @keyframes nnpulse{
+      0%,100%{opacity:.5;transform:scale(1);}
+      50%{opacity:0;transform:scale(1.45);}
+    }
+    .nnbar{display:flex;align-items:center;gap:14px;margin-top:6px;}
+    .nnbtn{
+      width:46px;height:46px;flex:0 0 auto;border:none;cursor:pointer;
+      border-radius:50%;background:var(--accent);color:#fff;
+      display:grid;place-items:center;
+      box-shadow:0 6px 16px -4px rgba(99,102,241,.6);
+      transition:transform .15s ease,background .15s ease,box-shadow .15s ease;
+    }
+    .nnbtn:hover{background:#4f46e5;transform:translateY(-1px);
+      box-shadow:0 8px 20px -4px rgba(79,70,229,.7);}
+    .nnbtn:active{transform:translateY(0) scale(.96);}
+    .nnbtn svg{width:20px;height:20px;fill:#fff;}
+    .nntrack{flex:1;height:6px;border-radius:99px;background:#e5e9f0;
+      overflow:hidden;}
+    .nnfill{height:100%;width:0%;border-radius:99px;
+      background:linear-gradient(90deg,#818cf8,#6366f1);}
+    @media (prefers-reduced-motion:reduce){.nnwrap .pulse{animation:none;}}
+  </style>
+
+  <svg id="nn7_svg" viewbox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" class="net"><defs><radialgradient id="nodeFill" cx="38%" cy="34%" r="80%"><stop offset="0%" stop-color="#ffffff"></stop><stop offset="100%" stop-color="#eef2f7"></stop></radialgradient><filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><fedropshadow dx="0" dy="1.5" stddeviation="2.2" flood-color="#0f172a" flood-opacity="0.18"></fedropshadow></filter></defs><g><line id="e_0_0_0" x1="90.0" y1="81.0" x2="276.7" y2="114.0" stroke="#f43f5e" stroke-width="1.84" stroke-opacity="0.32" stroke-linecap="round"></line><line id="e_0_0_1" x1="90.0" y1="81.0" x2="276.7" y2="180.0" stroke="#10b981" stroke-width="3.76" stroke-opacity="0.58" stroke-linecap="round"></line><line id="e_0_0_2" x1="90.0" y1="81.0" x2="276.7" y2="246.0" stroke="#10b981" stroke-width="2.76" stroke-opacity="0.44" stroke-linecap="round"></line><line id="e_0_1_0" x1="90.0" y1="147.0" x2="276.7" y2="114.0" stroke="#f43f5e" stroke-width="1.36" stroke-opacity="0.25" stroke-linecap="round"></line><line id="e_0_1_1" x1="90.0" y1="147.0" x2="276.7" y2="180.0" stroke="#f43f5e" stroke-width="1.88" stroke-opacity="0.32" stroke-linecap="round"></line><line id="e_0_1_2" x1="90.0" y1="147.0" x2="276.7" y2="246.0" stroke="#10b981" stroke-width="3.60" stroke-opacity="0.56" stroke-linecap="round"></line><line id="e_0_2_0" x1="90.0" y1="213.0" x2="276.7" y2="114.0" stroke="#f43f5e" stroke-width="4.36" stroke-opacity="0.66" stroke-linecap="round"></line><line id="e_0_2_1" x1="90.0" y1="213.0" x2="276.7" y2="180.0" stroke="#10b981" stroke-width="2.28" stroke-opacity="0.38" stroke-linecap="round"></line><line id="e_0_2_2" x1="90.0" y1="213.0" x2="276.7" y2="246.0" stroke="#10b981" stroke-width="1.28" stroke-opacity="0.24" stroke-linecap="round"></line><line id="e_0_3_0" x1="90.0" y1="279.0" x2="276.7" y2="114.0" stroke="#f43f5e" stroke-width="2.32" stroke-opacity="0.38" stroke-linecap="round"></line><line id="e_0_3_1" x1="90.0" y1="279.0" x2="276.7" y2="180.0" stroke="#f43f5e" stroke-width="1.64" stroke-opacity="0.29" stroke-linecap="round"></line><line id="e_0_3_2" x1="90.0" y1="279.0" x2="276.7" y2="246.0" stroke="#f43f5e" stroke-width="3.60" stroke-opacity="0.56" stroke-linecap="round"></line><line id="e_1_0_0" x1="276.7" y1="114.0" x2="463.3" y2="114.0" stroke="#10b981" stroke-width="1.88" stroke-opacity="0.32" stroke-linecap="round"></line><line id="e_1_0_1" x1="276.7" y1="114.0" x2="463.3" y2="180.0" stroke="#10b981" stroke-width="3.44" stroke-opacity="0.54" stroke-linecap="round"></line><line id="e_1_0_2" x1="276.7" y1="114.0" x2="463.3" y2="246.0" stroke="#f43f5e" stroke-width="3.64" stroke-opacity="0.56" stroke-linecap="round"></line><line id="e_1_1_0" x1="276.7" y1="180.0" x2="463.3" y2="114.0" stroke="#10b981" stroke-width="3.52" stroke-opacity="0.55" stroke-linecap="round"></line><line id="e_1_1_1" x1="276.7" y1="180.0" x2="463.3" y2="180.0" stroke="#10b981" stroke-width="3.40" stroke-opacity="0.53" stroke-linecap="round"></line><line id="e_1_1_2" x1="276.7" y1="180.0" x2="463.3" y2="246.0" stroke="#10b981" stroke-width="4.64" stroke-opacity="0.70" stroke-linecap="round"></line><line id="e_1_2_0" x1="276.7" y1="246.0" x2="463.3" y2="114.0" stroke="#f43f5e" stroke-width="2.24" stroke-opacity="0.37" stroke-linecap="round"></line><line id="e_1_2_1" x1="276.7" y1="246.0" x2="463.3" y2="180.0" stroke="#f43f5e" stroke-width="3.88" stroke-opacity="0.60" stroke-linecap="round"></line><line id="e_1_2_2" x1="276.7" y1="246.0" x2="463.3" y2="246.0" stroke="#f43f5e" stroke-width="4.80" stroke-opacity="0.72" stroke-linecap="round"></line><line id="e_2_0_0" x1="463.3" y1="114.0" x2="650.0" y2="180.0" stroke="#f43f5e" stroke-width="3.64" stroke-opacity="0.56" stroke-linecap="round"></line><line id="e_2_1_0" x1="463.3" y1="180.0" x2="650.0" y2="180.0" stroke="#f43f5e" stroke-width="2.76" stroke-opacity="0.44" stroke-linecap="round"></line><line id="e_2_2_0" x1="463.3" y1="246.0" x2="650.0" y2="180.0" stroke="#f43f5e" stroke-width="1.56" stroke-opacity="0.28" stroke-linecap="round"></line></g><g><circle id="n_0_0" data-r="17" data-ring="#94a3b8" cx="90.0" cy="81.0" r="17" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle id="n_0_1" data-r="17" data-ring="#94a3b8" cx="90.0" cy="147.0" r="17" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle id="n_0_2" data-r="17" data-ring="#94a3b8" cx="90.0" cy="213.0" r="17" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle id="n_0_3" data-r="17" data-ring="#94a3b8" cx="90.0" cy="279.0" r="17" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle id="n_1_0" data-r="15" data-ring="#94a3b8" cx="276.7" cy="114.0" r="15" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle id="n_1_1" data-r="15" data-ring="#94a3b8" cx="276.7" cy="180.0" r="15" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle id="n_1_2" data-r="15" data-ring="#94a3b8" cx="276.7" cy="246.0" r="15" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle id="n_2_0" data-r="15" data-ring="#94a3b8" cx="463.3" cy="114.0" r="15" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle id="n_2_1" data-r="15" data-ring="#94a3b8" cx="463.3" cy="180.0" r="15" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle id="n_2_2" data-r="15" data-ring="#94a3b8" cx="463.3" cy="246.0" r="15" fill="url(#nodeFill)" stroke="#94a3b8" stroke-width="1.5" filter="url(#soft)"></circle><circle class="pulse" cx="650.0" cy="180.0" r="20" fill="none" stroke="#6366f1"></circle><circle id="n_3_0" data-r="20" data-ring="#6366f1" cx="650.0" cy="180.0" r="20" fill="url(#nodeFill)" stroke="#6366f1" stroke-width="2.2" filter="url(#soft)"></circle><circle id="outfill" cx="650.0" cy="180.0" r="18" fill="#6366f1" opacity="0"></circle></g><g id="acc" opacity="0"><text id="acc_val" class="acc-val" x="732.0" y="178.0">62%</text><text class="acc-lbl" x="732.0" y="202.0">accuracy</text></g><g><text id="w_0_0_0" class="wt" x="149.7" y="91.6" fill="#be123c">-0.21</text><text id="w_0_0_1" class="wt" x="185.2" y="131.5" fill="#047857">+0.69</text><text id="w_0_0_2" class="wt" x="220.7" y="196.5" fill="#047857">+0.44</text><text id="w_0_1_0" class="wt" x="149.7" y="136.4" fill="#be123c">-0.09</text><text id="w_0_1_1" class="wt" x="185.2" y="163.8" fill="#be123c">-0.22</text><text id="w_0_1_2" class="wt" x="220.7" y="216.3" fill="#047857">+0.65</text><text id="w_0_2_0" class="wt" x="149.7" y="181.3" fill="#be123c">-0.84</text><text id="w_0_2_1" class="wt" x="185.2" y="196.2" fill="#047857">+0.32</text><text id="w_0_2_2" class="wt" x="220.7" y="236.1" fill="#047857">+0.07</text><text id="w_0_3_0" class="wt" x="149.7" y="226.2" fill="#be123c">-0.33</text><text id="w_0_3_1" class="wt" x="185.2" y="228.5" fill="#be123c">-0.16</text><text id="w_0_3_2" class="wt" x="220.7" y="255.9" fill="#be123c">-0.65</text><text id="w_1_0_0" class="wt" x="336.4" y="114.0" fill="#047857">+0.22</text><text id="w_1_0_1" class="wt" x="371.9" y="147.7" fill="#047857">+0.61</text><text id="w_1_0_2" class="wt" x="407.3" y="206.4" fill="#be123c">-0.66</text><text id="w_1_1_0" class="wt" x="336.4" y="158.9" fill="#047857">+0.63</text><text id="w_1_1_1" class="wt" x="371.9" y="180.0" fill="#047857">+0.60</text><text id="w_1_1_2" class="wt" x="407.3" y="226.2" fill="#047857">+0.91</text><text id="w_1_2_0" class="wt" x="336.4" y="203.8" fill="#be123c">-0.31</text><text id="w_1_2_1" class="wt" x="371.9" y="212.3" fill="#be123c">-0.72</text><text id="w_1_2_2" class="wt" x="407.3" y="246.0" fill="#be123c">-0.95</text><text id="w_2_0_0" class="wt" x="523.1" y="135.1" fill="#be123c">-0.66</text><text id="w_2_1_0" class="wt" x="523.1" y="180.0" fill="#be123c">-0.44</text><text id="w_2_2_0" class="wt" x="523.1" y="224.9" fill="#be123c">-0.14</text></g></svg>
+
+  <div class="nnbar">
+    <button class="nnbtn" id="nn7_btn" aria-label="Play animation">
+      <svg id="nn7_play" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+      <svg id="nn7_pause" viewbox="0 0 24 24" style="display:none">
+        <path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+    </button>
+    <div class="nntrack"><div class="nnfill" id="nn7_fill"></div></div>
+  </div>
+
+  <script>(function(){
+    var DATA={"layers": [4, 3, 3, 1], "kf": [[[[-0.21, 0.69, 0.44], [-0.09, -0.22, 0.65], [-0.84, 0.32, 0.07], [-0.33, -0.16, -0.65]], [[0.22, 0.61, -0.66], [0.63, 0.6, 0.91], [-0.31, -0.72, -0.95]], [[-0.66], [-0.44], [-0.14]]], [[[-0.08, 0.12, 0.51], [-0.49, -0.09, 0.82], [-0.49, 0.85, 0.26], [-0.08, -0.4, -0.48]], [[0.44, 0.49, -0.5], [0.57, 0.6, 0.72], [-0.08, -0.4, -0.39]], [[-0.46], [0.39], [-0.31]]], [[[-0.2, 0.27, 0.12], [-0.07, 0.32, 0.51], [-0.19, 0.63, -0.06], [-0.44, 0.16, -0.62]], [[0.65, 0.16, -0.49], [0.75, 0.31, 0.44], [-0.25, -0.23, -0.38]], [[-0.34], [0.55], [-0.03]]], [[[-0.42, -0.09, 0.01], [0.09, 0.84, 0.5], [0.21, 0.83, -0.48], [-0.58, 0.19, -0.78]], [[0.73, 0.09, -0.54], [0.65, 0.24, 0.12], [-0.21, -0.15, -0.44]], [[-0.26], [0.76], [0.12]]]], "xs": [90.0, 276.7, 463.3, 650.0], "ph": {"fwd": 1300, "p1": 450, "cmp": 850, "p2": 450, "adj": 1100, "p3": 550, "reset": 900}, "acc": [0.24, 0.62, 0.95]};
+    var root=document.currentScript.parentNode;
+    var q=function(id){return root.querySelector("#"+id);};
+    var btn=q("nn7_btn"), icoPlay=q("nn7_play"),
+        icoPause=q("nn7_pause"), fill=q("nn7_fill"),
+        svg=q("nn7_svg"), accEl=q("acc"), accVal=q("acc_val"),
+        outfill=q("outfill");
+
+    var L=DATA.layers, KF=DATA.kf, XS=DATA.xs, PH=DATA.ph, ACC=DATA.acc;
+    var iters=KF.length-1;
+    var segs=[["fwd",PH.fwd],["p1",PH.p1],["cmp",PH.cmp],
+              ["p2",PH.p2],["adj",PH.adj],["p3",PH.p3]];
+    var iterDur=segs.reduce(function(a,s){return a+s[1];},0);
+    var total=iters*iterDur+PH.reset;
+    var minX=XS[0]-30, maxX=XS[XS.length-1]+30, BAND=135;
+    var outX=XS[XS.length-1];
+
+    function cl(t){return t<0?0:(t>1?1:t);}
+    function ease(t){return t*t*(3-2*t);}
+    function lerp(a,b,t){return a+(b-a)*t;}
+    function ec(w){return w>=0?"#10b981":"#f43f5e";}
+    function tc(w){return w>=0?"#047857":"#be123c";}
+    function fmt(w){return (w>=0?"+":"")+w.toFixed(2);}
+    function h2(x){return ("0"+x.toString(16)).slice(-2);}
+    function hexLerp(a,b,t){a=a.slice(1);b=b.slice(1);var o="";
+      for(var k=0;k<3;k++){var av=parseInt(a.substr(k*2,2),16),
+        bv=parseInt(b.substr(k*2,2),16);
+        o+=h2(Math.round(av+(bv-av)*t));}return "#"+o;}
+    function interp(A,B,f){var R=[];for(var g=0;g<A.length;g++){var m=[];
+      for(var i=0;i<A[g].length;i++){var r=[];
+        for(var j=0;j<A[g][i].length;j++){
+          r.push(A[g][i][j]+(B[g][i][j]-A[g][i][j])*f);}m.push(r);}
+      R.push(m);}return R;}
+
+    var playing=false, raf=null, startT=null, lastTs=0, elapsed=0;
+
+    function draw(ms){
+      var t=ms%total;
+      fill.style.width=(t/total*100).toFixed(1)+"%";
+
+      var e, phase, lp, dim=1;
+      if(t<iters*iterDur){
+        e=Math.floor(t/iterDur); var lt=t-e*iterDur, acc=0;
+        for(var s=0;s<segs.length;s++){
+          if(lt<acc+segs[s][1]){phase=segs[s][0];lp=(lt-acc)/segs[s][1];break;}
+          acc+=segs[s][1];
+        }
+      } else { phase="reset"; e=iters; lp=(t-iters*iterDur)/PH.reset; }
+
+      // current weights
+      var curW;
+      if(phase==="adj") curW=interp(KF[e],KF[e+1],ease(lp));
+      else if(phase==="p3") curW=KF[e+1];
+      else if(phase==="reset"){curW=interp(KF[iters],KF[0],ease(lp));
+        dim=0.35+0.65*Math.abs(2*lp-1);}
+      else curW=KF[e];
+
+      // traveling highlight
+      var flowX=null;
+      if(phase==="fwd") flowX=lerp(minX,maxX,ease(lp));
+      else if(phase==="adj") flowX=lerp(maxX,minX,ease(lp));
+
+      // accuracy value + reveal (shown only once the signal reaches output)
+      var eIdx=Math.min(e,ACC.length-1);
+      var accCur=(phase==="reset")?ACC[ACC.length-1]:ACC[eIdx];
+
+      var vis=0, outReveal=0;
+      if(phase==="fwd"){
+        outReveal=cl((flowX-outX)/50);
+        vis=(flowX>=outX)?1:0;          // appears when the signal arrives
+      }
+      else if(phase==="reset"){vis=0; outReveal=0;}
+      else {vis=1; outReveal=1;}
+
+      svg.style.opacity=dim.toFixed(3);
+
+      // edges + weight labels
+      for(var g=0;g<L.length-1;g++){
+        var mx=(XS[g]+XS[g+1])/2;
+        var hlE=(flowX===null)?0:cl(1-Math.abs(mx-flowX)/BAND);
+        for(var i=0;i<L[g];i++){
+          for(var j=0;j<L[g+1];j++){
+            var w=curW[g][i][j], aw=Math.abs(w);
+            var e_=q("e_"+g+"_"+i+"_"+j);
+            var col=ec(w); if(hlE>0.02) col=hexLerp(col,"#6366f1",0.75*hlE);
+            e_.setAttribute("stroke",col);
+            e_.setAttribute("stroke-width",(1+4*aw+2*hlE).toFixed(2));
+            e_.setAttribute("stroke-opacity",Math.min(1,0.20+0.55*aw+0.4*hlE).toFixed(2));
+            var tx=q("w_"+g+"_"+i+"_"+j);
+            tx.setAttribute("fill",tc(w));
+            tx.textContent=fmt(w);
+            tx.style.fontSize=(12+3*hlE).toFixed(1)+"px";
+          }
+        }
+      }
+
+      // nodes
+      for(var l=0;l<L.length;l++){
+        var nx=XS[l];
+        var hlN=(flowX===null)?0:cl(1-Math.abs(nx-flowX)/BAND);
+        for(var k=0;k<L[l];k++){
+          var nd=q("n_"+l+"_"+k); if(!nd) continue;
+          var br=parseFloat(nd.getAttribute("data-r"));
+          var ring=nd.getAttribute("data-ring");
+          nd.setAttribute("r",(br+2.5*hlN).toFixed(2));
+          nd.setAttribute("stroke",hlN>0.02?hexLerp(ring,"#6366f1",hlN):ring);
+        }
+      }
+
+      // output prediction tint
+      outfill.setAttribute("opacity",(outReveal*(0.12+0.5*accCur)).toFixed(3));
+
+      // accuracy readout
+      accEl.setAttribute("opacity",vis.toFixed(3));
+      accVal.textContent=Math.round(accCur*100)+"%";
+      accVal.setAttribute("fill",hexLerp("#475569","#059669",cl(accCur)));
+      var fs=26; if(phase==="cmp") fs=26+2*(0.5+0.5*Math.sin(lp*Math.PI*2));
+      accVal.style.fontSize=fs.toFixed(1)+"px";
+    }
+
+    function frame(ts){
+      if(startT===null) startT=ts;
+      lastTs=ts; draw(elapsed+(ts-startT));
+      raf=requestAnimationFrame(frame);
+    }
+    function play(){
+      if(playing) return; playing=true; startT=null;
+      icoPlay.style.display="none"; icoPause.style.display="";
+      btn.setAttribute("aria-label","Pause animation");
+      raf=requestAnimationFrame(frame);
+    }
+    function pause(){
+      if(!playing) return; playing=false;
+      if(raf) cancelAnimationFrame(raf);
+      if(startT!==null) elapsed+=(lastTs-startT); startT=null;
+      icoPlay.style.display=""; icoPause.style.display="none";
+      btn.setAttribute("aria-label","Play animation");
+    }
+    btn.addEventListener("click",function(){ playing?pause():play(); });
+
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(es){
+        es.forEach(function(en){ if(!en.isIntersecting && playing) pause(); });
+      },{threshold:0.12}).observe(root);
+    }
+
+    draw(0);
+  })();</script>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-bias" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bias">Bias and fairness</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity: Distribution of training data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imagine an emotion recognition tool. We have a dataset of 240 faces, labelled as either sad or happy, and we want to predict whether new faces are sad or happy. This is a great application for deep learning!</p>
+<p>Some of the faces in our dataset have dark skin, and others have light skin. The sliders in the visualization below allows you to adjust how many faces from each group are in the dataset of 240 faces. In the visualization below, the plot on the left shows the number of happy and sad faces across the two groups. The plot on the right shows the overall accuracy (number of correct predictions in the entire dataset), as well as the per-group accuracy (number of correct predictions for people with a particular skin colour).</p>
+<p>Use the sliders to change the distribution of skin colour and emotion in the dataset, and discuss the following with your neighbours:</p>
+<ul>
+<li>What effect does the skin colour slider have on the accuracy scores? What effect do the label sliders have?</li>
+<li>Do you trust any of the accuracy scores more or less than the others?</li>
+<li>What arrangement of sliders would you say produces the best model? Why is it the best?</li>
+<li>This activity is based on <a href="https://www.media.mit.edu/projects/gender-shades/overview/">Dr.&nbsp;Joy Buolamwini’s research</a> on facial recognition. As a Black woman, her experience with leading tech companies’ facial recognition software differed significantly from her colleagues: not only did the tools struggle to identify her face, but they often incorrectly classified her as a man.
+<ul>
+<li>Considering Dr.&nbsp;Buolamwini’s experience, what do you think the distribution of skin colour in the dataset might have looked like? What about the gender distribution?</li>
+<li>Why do you think the dataset ended up like this? Could any real-life biases be involved?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<iframe src="../html/lecture-05_bias-visualizer.html" width="100%" height="800px" style="border:none;"></iframe>
+<ul>
+<li>As we’ve seen, differences in the distribution of the training set can lead to very different models.</li>
+<li>If our labels aren’t balanced, our model won’t have the chance to learn enough from each label to make meaningful predictions, and will perform poorly overall.
+<ul>
+<li>For example, if most of the training set is made up of happy faces, the model won’t be able to see enough sad faces to learn what the differences are.</li>
+</ul></li>
+<li>Even if our labels are perfectly balanced, imbalances in the groups included in the dataset can lead to <strong>biased</strong> models that perform differently for different groups. In AI, we call this difference an issue of <strong>fairness</strong>.
+<ul>
+<li>For example, if most of the faces in the training set have light skin, the model should perform well on people with light skin. However, it won’t be able to see enough happy and sad people with dark skin to learn what the differences are for them.</li>
+</ul></li>
+<li>In this example, bias was easy to spot, but this isn’t always the case. We are all biased, and that bias influences the data we collect in ways we might not initially notice.</li>
+</ul>
+</section>
+<section id="sec-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="sec-challenges">Neural network challenges</h2>
+<section id="scale" class="level3">
+<h3 class="anchored" data-anchor-id="scale">Scale</h3>
+<ul>
+<li>Since images can have lots of pixels, and we use each individual pixel as an input to a neural network, we can end up with a very large input layer. Similarly, if each connection between neurons needs a weight, we end up with a lot of parameters!</li>
+<li>Training models this large is very challenging for a few reasons:
+<ul>
+<li>As seen above, bias is a concern. We need our model to be able to look at a lot of data with lots of variety to make sure it behaves well, both in general and across groups.</li>
+<li>Training a neural network involves a huge number of calculations. We’d like these calculations to happen as quickly as possible, so that we can finish training our model in a reasonable amount of time.</li>
+</ul></li>
+<li>Depending on your computer’s hardware, it can perform a certain number of calculations per second. Computers with good GPUs are particularly fast at doing the kinds of calculations we need for model training.</li>
+<li>We call this resource <strong>compute</strong>, and the bigger our models get, the more compute they need for the training process.</li>
+</ul>
+</section>
+<section id="transparency" class="level3">
+<h3 class="anchored" data-anchor-id="transparency">Transparency</h3>
+<ul>
+<li>Another problem arises when we try to understand why certain predictions are being made.
+<ul>
+<li>We can get some sense of what is going on in the input layer. Pixels from the original image are used as input to the first hidden layer, and each pixel has an associated weight. From the weights, we can tell that different neurons find certain pixels more important than others, and we know how the neurons combine the pixels into outputs. However, we can’t assign any natural-language meaning to what any given neuron does.</li>
+<li>As we move deeper into the network, it becomes even more difficult to understand what each neuron is actually doing. By the time we reach the output layer, it is impossible to explain exactly why we predicted the label we did.</li>
+</ul></li>
+<li>Imagine your job application being rejected because the company used a neural network to predict how good of an employee you will be. You would likely have questions for the hiring manager about what aspects of your profile caused you to be rejected - and since they used a neural network, they can’t really answer those questions in a satisfying way.</li>
+<li>In AI, we call this an issue of <strong>transparency</strong>.</li>
+</ul>
+</section>
+</section>
+<section id="sec-wrap-up" class="level2">
+<h2 class="anchored" data-anchor-id="sec-wrap-up">Wrap-up</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity: Discussion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>TODO</li>
+<li>Does a decision tree have the same transparency problems as a neural network? Why or why not?</li>
+</ul>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -842,7 +1488,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/ai-100/blob/main/activities/lecture-05_activity.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/ai-100/edit/main/activities/lecture-05_activity.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/ai-100/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/ai-100/blob/main/activities/lecture-05_activity.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/ai-100/edit/main/activities/lecture-05_activity.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/ai-100/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
 </div>

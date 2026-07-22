@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lecture-07_shared.css">
+    <style>
+      .bigram-table-scroll { overflow-x: auto; border-radius: var(--bigram-radius); border: 1px solid var(--bigram-line); }
+      table.bigram-matrix { border-collapse: collapse; width: 100%; min-width: 560px; font-family: var(--bigram-mono); font-size: 13px; background: #fff; }
+      table.bigram-matrix th, table.bigram-matrix td { border-bottom: 1px solid var(--bigram-line); border-right: 1px solid var(--bigram-line); padding: 0; text-align: center; }
+      table.bigram-matrix th.bigram-corner { background: var(--bigram-panel); border-top-left-radius: var(--bigram-radius); position: sticky; left: 0; z-index: 2; }
+      .bigram-matrix thead th { background: var(--bigram-panel); color: var(--bigram-ink-soft); font-weight: 600; padding: 10px 8px; white-space: nowrap; }
+      .bigram-matrix thead th.bigram-end-col { border-left: 2px solid var(--bigram-line-strong); font-style: italic; color: var(--bigram-accent-2); }
+      .bigram-matrix tbody th.bigram-row-label { background: var(--bigram-panel); text-align: left; padding: 8px 10px; white-space: nowrap; position: sticky; left: 0; z-index: 1; font-weight: 600; color: var(--bigram-ink); }
+      td.bigram-cell { border-left: none; }
+      td.bigram-cell.bigram-end-col { border-left: 2px solid var(--bigram-line-strong); }
+      td.bigram-cell input { width: 100%; height: 40px; border: none; background: transparent; text-align: center; font-family: var(--bigram-mono); font-size: 13px; color: inherit; -moz-appearance: textfield; }
+      td.bigram-cell input::-webkit-outer-spin-button, td.bigram-cell input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+      td.bigram-cell input:focus-visible { outline: 2px solid var(--bigram-accent); outline-offset: -2px; background: #fff; }
+      td.bigram-total { background: var(--bigram-panel); color: var(--bigram-ink-soft); font-weight: 600; border-left: 2px solid var(--bigram-line-strong); }
+      .bigram-matrix thead th.bigram-total-col { background: var(--bigram-panel); }
+      .bigram-legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 14px; font-family: var(--bigram-mono); font-size: 12px; color: var(--bigram-muted); }
+      .bigram-legend .bigram-sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+    </style>
+    <script type="application/javascript" src="./lecture-07_shared.js"></script>
+  </head>
+  <body>
+    <div class="bigram-page">
+      <div class="bigram-table-scroll">
+        <div id="bigram-matrix-table"></div>
+      </div>
+    </div>
+    <script>
+      /* ---- table widget : counts only, vocabulary is fixed ---- */
+      (function () {
+        let data = bigramLoad();
+        const escapeHtml = bigramEscapeHtml;
+        const matrixEl = document.getElementById('bigram-matrix-table');
+
+        // shading is relative to each row's own total, so e.g. 3/6 and 1/2 match
+        function cellStyle(count, rowTotal) {
+          if (!count || !rowTotal) return '';
+          const proportion = count / rowTotal;
+          const intensity = 0.15 + 0.75 * proportion;
+          const textColor = 'var(--bigram-ink)';
+          return `background: rgba(31,111,92, ${intensity}); color: ${textColor}; font-weight:600;`;
+        }
+
+        function render() {
+          const cols = bigramColumns(data);
+          let html = '<thead><tr><th class="bigram-corner"></th>';
+          cols.forEach((c) => { html += `<th class="${c === BIGRAM_END_TOKEN ? 'bigram-end-col' : ''}">${escapeHtml(c)}</th>`; });
+          html += '<th class="bigram-total-col">total</th></tr></thead><tbody>';
+
+          data.vocab.forEach((row) => {
+            const rowTotal = bigramRowTotal(data, row);
+            html += `<tr><th class="bigram-row-label">${escapeHtml(row)}</th>`;
+            cols.forEach((col) => {
+              const count = bigramGetCount(data, row, col);
+              const isEnd = col === BIGRAM_END_TOKEN;
+              html += `<td class="bigram-cell${isEnd ? ' bigram-end-col' : ''}" style="${cellStyle(count, rowTotal)}">
+                <input type="number" min="0" step="1" value="${count || ''}" placeholder="0"
+                      data-row="${escapeHtml(row)}" data-col="${escapeHtml(col)}" inputmode="numeric">
+              </td>`;
+            });
+            html += `<td class="bigram-total">${rowTotal}</td></tr>`;
+          });
+          html += '</tbody>';
+          // the <table> tag itself is only ever written here, inside JS — never as
+          // literal markup in the page source — so pandoc's raw-html table parser
+          // never sees it and can't drop it for being "empty" at compile time.
+          matrixEl.innerHTML = '<table class="bigram-matrix">' + html + '</table>';
+
+          matrixEl.querySelectorAll('input[type="number"]').forEach((input) => {
+            input.addEventListener('change', (e) => {
+              bigramSetCount(data, e.target.dataset.row, e.target.dataset.col, e.target.value);
+              bigramSave(data);
+              render();
+            });
+          });
+        }
+
+        render();
+      })();
+    </script>
+  </body>
+</html>

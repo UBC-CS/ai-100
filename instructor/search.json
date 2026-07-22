@@ -16,9 +16,9 @@
   {
     "objectID": "lesson-plans/lecture-06_lesson-plan.html",
     "href": "lesson-plans/lecture-06_lesson-plan.html",
-    "title": "Reinforcement learning",
+    "title": "Lecture 6: Reinforcement learning",
     "section": "",
-    "text": "How different from previous topic\nAlgorithmic idea\n\nFoundations\nRepresentation\nAlgorithm\n\nHistorical impact and applications\nWorked example\n\nNLP\nGraphs\n\nBreakout"
+    "text": "This space is reserved for instructor/TA notes. All student-facing content is in the Lecture 6 activity."
   },
   {
     "objectID": "lesson-plans/lecture-02_lesson-plan.html",
@@ -30,9 +30,9 @@
   {
     "objectID": "lesson-plans/lecture-03_lesson-plan.html",
     "href": "lesson-plans/lecture-03_lesson-plan.html",
-    "title": "Search",
+    "title": "Lecture 3: Search",
     "section": "",
-    "text": "How different from previous topic\nAlgorithmic idea\n\nFoundations\nRepresentation\nAlgorithm\n\nHistorical impact and applications\nWorked example\n\nNLP\nGraphs\n\nBreakout"
+    "text": "This space is reserved for instructor/TA notes. All student-facing content is in the Lecture 3 activity."
   },
   {
     "objectID": "slides/lecture-10_slides.html#announcements",
@@ -175,8 +175,8 @@
     "text": "Task 4: Breaking Ties (cont’d)"
   },
   {
-    "objectID": "slides/discussion-04_slides.html#personas-and-pain-points",
-    "href": "slides/discussion-04_slides.html#personas-and-pain-points",
+    "objectID": "slides/discussion-04_slides.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-personas-and-pain-points",
+    "href": "slides/discussion-04_slides.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-personas-and-pain-points",
     "title": " Design Thinking and AI",
     "section": " Personas and Pain Points",
     "text": "Personas and Pain Points\n\nAt this point, you should have identified a problem you would like to solve and have a basic intuition of how a potential app could help – great!​\n\nYou may want to jump right into implementation, but that would be unwise, as you just started thinking about this.​\n\nDesign thinking teaches us to solve problems not by guessing, but by talking to the people affected. Those users are the best way to understand real pain points that they experience, before we try to provide fixes for them.​\n\nSo, the first step is to think about who your users are and what their pain points are.​"
@@ -339,15 +339,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-15_activity.html#steps",
-    "href": "activities/discussion-15_activity.html#steps",
+    "objectID": "activities/discussion-15_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-15_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-15_activity.html#resources",
-    "href": "activities/discussion-15_activity.html#resources",
+    "objectID": "activities/discussion-15_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-15_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -360,15 +360,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-19_activity.html#steps",
-    "href": "activities/discussion-19_activity.html#steps",
+    "objectID": "activities/discussion-19_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-19_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-19_activity.html#resources",
-    "href": "activities/discussion-19_activity.html#resources",
+    "objectID": "activities/discussion-19_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-19_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -381,15 +381,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-12_activity.html#steps",
-    "href": "activities/discussion-12_activity.html#steps",
+    "objectID": "activities/discussion-12_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-12_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-12_activity.html#resources",
-    "href": "activities/discussion-12_activity.html#resources",
+    "objectID": "activities/discussion-12_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-12_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -402,15 +402,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-13_activity.html#steps",
-    "href": "activities/discussion-13_activity.html#steps",
+    "objectID": "activities/discussion-13_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-13_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-13_activity.html#resources",
-    "href": "activities/discussion-13_activity.html#resources",
+    "objectID": "activities/discussion-13_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-13_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -423,15 +423,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-01_activity.html#steps",
-    "href": "activities/discussion-01_activity.html#steps",
+    "objectID": "activities/discussion-01_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-01_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-01_activity.html#resources",
-    "href": "activities/discussion-01_activity.html#resources",
+    "objectID": "activities/discussion-01_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-01_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -444,15 +444,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-03_activity.html#steps",
-    "href": "activities/discussion-03_activity.html#steps",
+    "objectID": "activities/discussion-03_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-03_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-03_activity.html#resources",
-    "href": "activities/discussion-03_activity.html#resources",
+    "objectID": "activities/discussion-03_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-03_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -465,15 +465,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-10_activity.html#steps",
-    "href": "activities/discussion-10_activity.html#steps",
+    "objectID": "activities/discussion-10_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-10_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-10_activity.html#resources",
-    "href": "activities/discussion-10_activity.html#resources",
+    "objectID": "activities/discussion-10_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-10_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -486,15 +486,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-16_activity.html#steps",
-    "href": "activities/discussion-16_activity.html#steps",
+    "objectID": "activities/discussion-16_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-16_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-16_activity.html#resources",
-    "href": "activities/discussion-16_activity.html#resources",
+    "objectID": "activities/discussion-16_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-16_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -507,15 +507,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-17_activity.html#steps",
-    "href": "activities/discussion-17_activity.html#steps",
+    "objectID": "activities/discussion-17_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-17_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-17_activity.html#resources",
-    "href": "activities/discussion-17_activity.html#resources",
+    "objectID": "activities/discussion-17_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-17_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -528,15 +528,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-09_activity.html#steps",
-    "href": "activities/discussion-09_activity.html#steps",
+    "objectID": "activities/discussion-09_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-09_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-09_activity.html#resources",
-    "href": "activities/discussion-09_activity.html#resources",
+    "objectID": "activities/discussion-09_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-09_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -549,15 +549,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-18_activity.html#steps",
-    "href": "activities/discussion-18_activity.html#steps",
+    "objectID": "activities/discussion-18_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-18_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-18_activity.html#resources",
-    "href": "activities/discussion-18_activity.html#resources",
+    "objectID": "activities/discussion-18_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-18_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -570,15 +570,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-02_activity.html#steps",
-    "href": "activities/discussion-02_activity.html#steps",
+    "objectID": "activities/discussion-02_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-02_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-02_activity.html#resources",
-    "href": "activities/discussion-02_activity.html#resources",
+    "objectID": "activities/discussion-02_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-02_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -591,6 +591,118 @@
     "text": "Optional videos\n\nShowing the differences between a traditional and a flipped classroom"
   },
   {
+    "objectID": "activities/lecture-07_activity.html",
+    "href": "activities/lecture-07_activity.html",
+    "title": "Lecture 7: Self-supervision and generative AI",
+    "section": "",
+    "text": "TODO\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n5 min\n\n\n\nNext token prediction\n30 min\n\n\n\nDiffusion models\n10 min\n\n\n\nImages and text\n25 min\n\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-07_activity.html#lecture-overview",
+    "href": "activities/lecture-07_activity.html#lecture-overview",
+    "title": "Lecture 7: Self-supervision and generative AI",
+    "section": "",
+    "text": "TODO\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n5 min\n\n\n\nNext token prediction\n30 min\n\n\n\nDiffusion models\n10 min\n\n\n\nImages and text\n25 min\n\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-07_activity.html#sec-prev-lectures",
+    "href": "activities/lecture-07_activity.html#sec-prev-lectures",
+    "title": "Lecture 7: Self-supervision and generative AI",
+    "section": "Differences from previous lectures",
+    "text": "Differences from previous lectures\n\nUp until now, we’ve been supervising AI systems to some extent - i.e., giving models feedback from an explicit, human-generated source as they learn.\n\nIn machine learning and deep learning, we supervise the model by labelling our training examples and comparing our labels to the model’s output.\n\nWe also have a desire to use bigger datasets to improve performance and reduce bias. However, labelling large datasets manually can be both difficult and costly.\n\nIn deep learning, we reduce the human workload somewhat by having the model interact with the raw data instead of explicit features. Could this be possible with labels?\n\nWith a self-supervision approach, models get feedback from the unlabelled data itself."
+  },
+  {
+    "objectID": "activities/lecture-07_activity.html#sec-next-token",
+    "href": "activities/lecture-07_activity.html#sec-next-token",
+    "title": "Lecture 7: Self-supervision and generative AI",
+    "section": "Next-token prediction",
+    "text": "Next-token prediction\n\n\n\n\n\n\nTipActivity: Continue the sentence\n\n\n\nForm groups of 4-5. A piece of paper with an incomplete sentence on it will be passed around your group. When the paper comes around to you, add whichever word you think should continue the sentence and pass it to your neighbour.\n\n\n\nWhy did you choose to write the words you did? You probably looked at the rest of the sentence - especially the previous word - and used your experience with the English language to pick the word that made the most sense.\nThis is one example of self-supervision!\n\nAs input, we give the model the beginning of a sample sentence, often taken from a book or a website. The model then predicts and outputs the next word.\nSince we already know the rest of the sentence, we can check whether the model got it right, and the model adjusts its parameters to better represent the relationship between the start of the sentence and the next word. Eventually, the model should have a good sense of which word should come next.\nNotice that we didn’t have to do any extra work - the sentence already existed when we approached the problem!\n\nInstead of working with full words, models can use tokens instead. Tokens are word chunks of various sizes, e.g. the word “friendly” could be broken into two tokens: “friend” and “ly”.\n\n\n\n\n\n\n\nTipActivity: Hands-on next-word prediction\n\n\n\nLet’s get a more intuitive sense of how the words that came before can help predict the word that comes next. Consider these sample sentences:\n\nthe dog is eating\nthe dog loves the food\nthe dog loves eating food\nis the dog eating\nthe dog loves the dog food\nthe food is dog food\n\nCount how many times each word is immediately followed by each other word, and fill in the table below. The first row is already complete - “dog” follows “the” 6 times in the sentences above, and “food” follows “the” twice. Use the final  column to count how often each word ends a sentence.\n\nThe numbers in the table above represent how common it is for one word to follow another. For example, “the dog” shows up more often than “the food”.\nLet’s try generating a new sentence! Starting from “the”, imagine we always pick the most common next word:\n\nthe dog loves the dog loves the dog loves the…\n\nWhat’s the problem here? Always picking the most likely word means we end up getting the same few words over and over. Let’s add some randomness instead: we’ll pick the next word at random, but weigh the odds so that more common words are more likely to come up. Use the wheel below to generate some random sentences.\n\nNow reflect on the sentences you generated:\n\nDid randomization improve the output?\nWhat could you change to make the wheel more likely to create coherent and varied sentences?\nCan you generate any sentences that are exactly the same as the sample sentences? How do you feel about this?\n\n\n\n\nNotice that, instead of just labelling data, we created brand new sentences word-by-word. AI that creates new content like this is called Generative AI."
+  },
+  {
+    "objectID": "activities/lecture-07_activity.html#sec-diffusion",
+    "href": "activities/lecture-07_activity.html#sec-diffusion",
+    "title": "Lecture 7: Self-supervision and generative AI",
+    "section": "Diffusion models",
+    "text": "Diffusion models\n\nDiffusion models also rely on self-supervision.\n\nDuring training, they use images as both input and output. A small amount of noise is added to an input image, and the model learns how to remove that noise to restore the original image.\n\n\n\n\nThis process is then repeated at increasing levels of noise: more noise is added to the already-noisy image, and the model learns to reverse that step too. The model’s parameters define how to remove a small amount of noise at any given noise level.\n\n\n\nEventually, the model is able to gradually turn random noise into a coherent image, step by step. If we train the model on lots of different images, it learns to output a completely new picture from random noise."
+  },
+  {
+    "objectID": "activities/lecture-07_activity.html#sec-image-text",
+    "href": "activities/lecture-07_activity.html#sec-image-text",
+    "title": "Lecture 7: Self-supervision and generative AI",
+    "section": "Images and text",
+    "text": "Images and text\n\nAs described above, diffusion models cannot be asked to generate any particular image via text input - they just remove noise step by step.\nHowever, the diffusion approach can be combined with a bit of supervision to get an image-to-text model, like Stable Diffusion or DALL-E.\n\nLike diffusion models, images are used as both input and output during training. Each input image is also paired with a caption, like “a dog on a leash”.\nThe model is trained to do two tasks at the same time. It learns to remove noise from image step-by-step, but also learns to associate images and their captions. [TODO: what are the parameters]\nOnce the model is trained, it can use an input prompt to guide the way the noise is removed, leading to an output image that matches the text prompt.\n\n\n\n\n\n\n\n\nTipActivity: Text to image\n\n\n\nForm groups of 4-5. Choose someone in the group to draw a random shape on a piece of paper.\nNow, consider the prompt “Draw a potted plant”. Pass the paper around within your group. Each person may make one small change to the drawing when the paper comes around to them, e.g. adding a simple shape or erasing a small part of the drawing. Every change you make should make your drawing more similar to the prompt.\nThe instructor will compare a few different drawings. How do the drawings differ? How are they similar?\n\n\n\nTODO more content needed?"
+  },
+  {
+    "objectID": "activities/lecture-07_activity.html#sec-wrap-up",
+    "href": "activities/lecture-07_activity.html#sec-wrap-up",
+    "title": "Lecture 7: Self-supervision and generative AI",
+    "section": "Wrap-up",
+    "text": "Wrap-up\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\n\nTODO\nwhat other uses of self-supervision can you imagine existing? eg masking"
+  },
+  {
+    "objectID": "activities/lecture-05_activity.html",
+    "href": "activities/lecture-05_activity.html",
+    "title": "Lecture 5: Deep learning",
+    "section": "",
+    "text": "By the end of this lecture, you will be able to:\n\nRecognize that deep learning can learn directly from raw data (such as image pixels), without features chosen by people. \nRecognize that an artificial neuron takes in several inputs and produces one output. \nExplain that the weights are the parameters a network learns during training and that they set how much each input influences the output. \nDescribe how neurons are arranged into input, hidden, and output layers to form a deep neural network. \nDistinguish what is chosen before training (the number of layers and neurons) from what is learned during training (the weights). \nRecognize that a network improves by comparing its predictions to the correct answers and adjusting its weights (a process called backpropagation). \nExplain how the distribution of the training data affects a model’s overall accuracy and its accuracy for individual groups. \nExplain, using a real example such as facial-analysis systems, how unrepresentative training data can make a model biased and unfair. \nExplain why a deep neural network’s predictions are hard to interpret (the transparency problem), and compare its interpretability with that of a decision tree. \n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n5 min\n\n\n\nActivity: Google Teachable Machine\n10 min\nWebsite: Google Teachable Machine\n\n\nNeurons, weights, and networks\n10 min\n\n\n\nBackpropagation\n15 min\n\n\n\nBias and fairness\n15 min\n\n\n\nNeural network challenges\n\nScale\nTransparency\n\n5 min\n\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-05_activity.html#lecture-overview",
+    "href": "activities/lecture-05_activity.html#lecture-overview",
+    "title": "Lecture 5: Deep learning",
+    "section": "",
+    "text": "By the end of this lecture, you will be able to:\n\nRecognize that deep learning can learn directly from raw data (such as image pixels), without features chosen by people. \nRecognize that an artificial neuron takes in several inputs and produces one output. \nExplain that the weights are the parameters a network learns during training and that they set how much each input influences the output. \nDescribe how neurons are arranged into input, hidden, and output layers to form a deep neural network. \nDistinguish what is chosen before training (the number of layers and neurons) from what is learned during training (the weights). \nRecognize that a network improves by comparing its predictions to the correct answers and adjusting its weights (a process called backpropagation). \nExplain how the distribution of the training data affects a model’s overall accuracy and its accuracy for individual groups. \nExplain, using a real example such as facial-analysis systems, how unrepresentative training data can make a model biased and unfair. \nExplain why a deep neural network’s predictions are hard to interpret (the transparency problem), and compare its interpretability with that of a decision tree. \n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n5 min\n\n\n\nActivity: Google Teachable Machine\n10 min\nWebsite: Google Teachable Machine\n\n\nNeurons, weights, and networks\n10 min\n\n\n\nBackpropagation\n15 min\n\n\n\nBias and fairness\n15 min\n\n\n\nNeural network challenges\n\nScale\nTransparency\n\n5 min\n\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-05_activity.html#sec-prev-lectures",
+    "href": "activities/lecture-05_activity.html#sec-prev-lectures",
+    "title": "Lecture 5: Deep learning",
+    "section": "Differences from previous lectures",
+    "text": "Differences from previous lectures\n\nIn machine learning, we start by choosing which features we want to use to train our model.\nHowever, identifying and engineering features can be very time consuming, and may require expert knowledge.\n\n\n\n\n\n\n\nTipActivity: Guess who?\n\n\n\nIn pairs, you will each be given a picture of a cat or a dog. Don’t show the picture to your partner! Instead, describe what you see in the picture, and see if they can guess correctly. What properties of the picture helped your partner the most?\n\n\n\nIt is relatively easy for humans to identify properties that differentiate dogs and cats - for example, you might have used ear shape to guess which animal your partner had. However, the machine learning problems we’ve seen so far require these properties to be formally identified and given to the model as features. Imagine looking at thousands of images of dogs and cats and manually filling in which ear shape each one has… very boring!\nInstead of trying to come up with features ourselves, it might be better to just give the images to the model and let it figure out these useful properties as part of the training process.\nComputers can’t “see” like we can, so we represent an image using the colour of each of its pixels."
+  },
+  {
+    "objectID": "activities/lecture-05_activity.html#sec-teachable-machine",
+    "href": "activities/lecture-05_activity.html#sec-teachable-machine",
+    "title": "Lecture 5: Deep learning",
+    "section": "Activity: Google Teachable Machine",
+    "text": "Activity: Google Teachable Machine\n\nTODO what are we trying to get across here? is this just another example of deep learning?\nTODO formalize instructions\n[TODO: any issues with using the webcam/images of prof or students? alternatively have a set of images ready to upload]\nhave prof or volunteer student come up to front and use webcam to record images of them doing 2 distinct things (smiling/frowning, left/right of screen, wearing hat/not wearing hat, etc). train model, then test whether it can differentiate the 2 distinct things\nwith ~100 images per class and 2 classes, takes ~2 min to train. do not switch tabs during training as it will stop\nafter demonstration at front, could let students try on their own:\n\nadd more classes\ntrain with object added to/removed from background between two different unrelated classes (e.g. smiling with water bottle, frowning without) and see how adding/removing the object during testing changes the accuracy\ntrain with one person smiling/frowning and use another person smiling/frowning to test\n\nsee if model improves if both people are used to train\n\ndo something that wasn’t in either class and see which class it is more like (e.g. shocked face). why do you think that is/what properties probably make that the case? (e.g. if shocked is most like smiling, eyebrow movements might be similar, etc…)"
+  },
+  {
+    "objectID": "activities/lecture-05_activity.html#sec-neuron-weight",
+    "href": "activities/lecture-05_activity.html#sec-neuron-weight",
+    "title": "Lecture 5: Deep learning",
+    "section": "Neurons, weights, and networks",
+    "text": "Neurons, weights, and networks\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Images of a cat (Ripley) and a dog (Midnight).\n\n\n\n\nIn the figure above, you are probably able to identify which picture is a cat and which picture is a dog pretty quickly. Humans are able to do these kinds of classification tasks very efficiently.\nTo simulate the same level of performance with a machine, we took inspiration from biological neural networks (our brains!) when designing a new type of model: artificial neural networks.\n\n\nNeurons\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Biological and artificial neurons. Base image of biological neuron from OpenClipart-Vectors on Pixabay.\n\n\n\n\nNeural networks are made up of neurons. Just like the neurons that make up our brains, each neuron takes some number of inputs and produces an output. Inputs can be raw data, e.g. pixels from the original image, or outputs from other neurons.\nIn the image above, the artificial neuron has three inputs (\\(x_1, x_2, x_3\\)), and its output is \\(y\\).\n\n\n\nWeights\n\nInside each neuron, inputs are combined to produce an output.\n\n\n\n\n\n\n\nTipActivity: Think, pair, share\n\n\n\nConsider a neuron that takes nine inputs: the colour of each pixel in a small 3x3 image. We want the output of the neuron to represent whether a particular image shows an X or an O.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: The pixels of small 3x3 images are given as input to a neuron (left). Each image may be an X (middle) or an O (right). Each input is labelled A through I.\n\n\n\nAre all of the inputs equally important to consider? If not, which ones might be more important, and why?\n\n\n\nNot every input is equally as important to a neuron - it might be more valuable to weigh inputs differently.\nWhen combining inputs, we multiply each input by its respective weight. Important inputs are assigned larger weights: this way they make a larger impact on the output than the other inputs. Similarly, less important inputs are assigned smaller weights.\nIn the image above, input \\(x_1\\)’s weight is \\(w_1\\), \\(x_2\\)’s weight is \\(w_2\\), and \\(x_3\\)’s weight is \\(w_3\\).\nWeights are a neural network’s parameters: during the training process, the network learns how important each input is and thus what weight it should have.\n\n\n\nNeural networks\n\n\n\n\n\n\nFigure 4: A neural network.\n\n\n\n\nWe can stack layers of neurons to make a neural network.\n\nSince we input each example (e.g. the pixels of a training image) into the network in the first layer, we call it the input layer.\nThe last layer is called the output layer. Each neuron in this layer outputs something we want to know, like a prediction of whether an image is a cat or a dog.\nWe can add layers of neurons between the input and output layers: these are called hidden layers. The more hidden layers we add, the better the neural network gets at modelling complex relationships between examples and their associated labels.\nWe call a neural network with lots of layers a deep neural network - this is why we call the overall approach deep learning.\nNote that the structure of the neural network is not learned - before the training process starts, we decide how many layers and neurons we want."
+  },
+  {
+    "objectID": "activities/lecture-05_activity.html#sec-backprop",
+    "href": "activities/lecture-05_activity.html#sec-backprop",
+    "title": "Lecture 5: Deep learning",
+    "section": "Backpropagation",
+    "text": "Backpropagation\n\nHow do we train a neural network? In other words, for each neuron in the network, how do we figure out which weights its inputs should have?\nWe use an approach called backpropagation:\n\nTo start, we set each weight to a random number. Then, we use the network to predict the label for each example in the training data. Since all of the weights were randomized, they don’t necessarily reflect how important each neuron’s inputs are - these initial predictions probably won’t be very good!\nWe compare each prediction to the actual label to know how accurate the predictions were. Then, we use this feedback to make small changes to the weights - we think these changes might make the model a little more accurate, but we don’t really know.\nWe repeat this process - predict labels for the training data, compare to the real labels, and adjust the weights - until we feel satisfied that the model is accurate enough, or until changing the weights doesn’t make the model any more accurate.\n\n\n\n\n\n\n  \n\n  62%accuracy-0.21+0.69+0.44-0.09-0.22+0.65-0.84+0.32+0.07-0.33-0.16-0.65+0.22+0.61-0.66+0.63+0.60+0.91-0.31-0.72-0.95-0.66-0.44-0.14"
+  },
+  {
+    "objectID": "activities/lecture-05_activity.html#sec-bias",
+    "href": "activities/lecture-05_activity.html#sec-bias",
+    "title": "Lecture 5: Deep learning",
+    "section": "Bias and fairness",
+    "text": "Bias and fairness\n\n\n\n\n\n\nTipActivity: Distribution of training data\n\n\n\nImagine an emotion recognition tool. We have a dataset of 240 faces, labelled as either sad or happy, and we want to predict whether new faces are sad or happy. This is a great application for deep learning!\nSome of the faces in our dataset have dark skin, and others have light skin. The sliders in the visualization below allows you to adjust how many faces from each group are in the dataset of 240 faces. In the visualization below, the plot on the left shows the number of happy and sad faces across the two groups. The plot on the right shows the overall accuracy (number of correct predictions in the entire dataset), as well as the per-group accuracy (number of correct predictions for people with a particular skin colour).\nUse the sliders to change the distribution of skin colour and emotion in the dataset, and discuss the following with your neighbours:\n\nWhat effect does the skin colour slider have on the accuracy scores? What effect do the label sliders have?\nDo you trust any of the accuracy scores more or less than the others?\nWhat arrangement of sliders would you say produces the best model? Why is it the best?\nThis activity is based on Dr. Joy Buolamwini’s research on facial recognition. As a Black woman, her experience with leading tech companies’ facial recognition software differed significantly from her colleagues: not only did the tools struggle to identify her face, but they often incorrectly classified her as a man.\n\nConsidering Dr. Buolamwini’s experience, what do you think the distribution of skin colour in the dataset might have looked like? What about the gender distribution?\nWhy do you think the dataset ended up like this? Could any real-life biases be involved?\n\n\n\n\n\n\nAs we’ve seen, differences in the distribution of the training set can lead to very different models.\nIf our labels aren’t balanced, our model won’t have the chance to learn enough from each label to make meaningful predictions, and will perform poorly overall.\n\nFor example, if most of the training set is made up of happy faces, the model won’t be able to see enough sad faces to learn what the differences are.\n\nEven if our labels are perfectly balanced, imbalances in the groups included in the dataset can lead to biased models that perform differently for different groups. In AI, we call this difference an issue of fairness.\n\nFor example, if most of the faces in the training set have light skin, the model should perform well on people with light skin. However, it won’t be able to see enough happy and sad people with dark skin to learn what the differences are for them.\n\nIn this example, bias was easy to spot, but this isn’t always the case. We are all biased, and that bias influences the data we collect in ways we might not initially notice."
+  },
+  {
+    "objectID": "activities/lecture-05_activity.html#sec-challenges",
+    "href": "activities/lecture-05_activity.html#sec-challenges",
+    "title": "Lecture 5: Deep learning",
+    "section": "Neural network challenges",
+    "text": "Neural network challenges\n\nScale\n\nSince images can have lots of pixels, and we use each individual pixel as an input to a neural network, we can end up with a very large input layer. Similarly, if each connection between neurons needs a weight, we end up with a lot of parameters!\nTraining models this large is very challenging for a few reasons:\n\nAs seen above, bias is a concern. We need our model to be able to look at a lot of data with lots of variety to make sure it behaves well, both in general and across groups.\nTraining a neural network involves a huge number of calculations. We’d like these calculations to happen as quickly as possible, so that we can finish training our model in a reasonable amount of time.\n\nDepending on your computer’s hardware, it can perform a certain number of calculations per second. Computers with good GPUs are particularly fast at doing the kinds of calculations we need for model training.\nWe call this resource compute, and the bigger our models get, the more compute they need for the training process.\n\n\n\nTransparency\n\nAnother problem arises when we try to understand why certain predictions are being made.\n\nWe can get some sense of what is going on in the input layer. Pixels from the original image are used as input to the first hidden layer, and each pixel has an associated weight. From the weights, we can tell that different neurons find certain pixels more important than others, and we know how the neurons combine the pixels into outputs. However, we can’t assign any natural-language meaning to what any given neuron does.\nAs we move deeper into the network, it becomes even more difficult to understand what each neuron is actually doing. By the time we reach the output layer, it is impossible to explain exactly why we predicted the label we did.\n\nImagine your job application being rejected because the company used a neural network to predict how good of an employee you will be. You would likely have questions for the hiring manager about what aspects of your profile caused you to be rejected - and since they used a neural network, they can’t really answer those questions in a satisfying way.\nIn AI, we call this an issue of transparency."
+  },
+  {
+    "objectID": "activities/lecture-05_activity.html#sec-wrap-up",
+    "href": "activities/lecture-05_activity.html#sec-wrap-up",
+    "title": "Lecture 5: Deep learning",
+    "section": "Wrap-up",
+    "text": "Wrap-up\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\n\nTODO\nDoes a decision tree have the same transparency problems as a neural network? Why or why not?"
+  },
+  {
     "objectID": "activities/discussion-05_activity.html",
     "href": "activities/discussion-05_activity.html",
     "title": " Activity",
@@ -598,18 +710,67 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-05_activity.html#steps",
-    "href": "activities/discussion-05_activity.html#steps",
+    "objectID": "activities/discussion-05_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-05_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-05_activity.html#resources",
-    "href": "activities/discussion-05_activity.html#resources",
+    "objectID": "activities/discussion-05_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-05_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
+  },
+  {
+    "objectID": "activities/lecture-03_activity.html",
+    "href": "activities/lecture-03_activity.html",
+    "title": "Lecture 3: Search",
+    "section": "",
+    "text": "TODO\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n10 min\n\n\n\nSearch inputs and outputs\n\nTic-tac-toe\n\n10 min\n\n\n\nTrees\n\nTic-tac-toe as a tree\n\n10 min\n\n\n\nSearch algorithms\n\nDepth- and breadth-first search\nMinimax\n\n30 min\n\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-03_activity.html#lecture-overview",
+    "href": "activities/lecture-03_activity.html#lecture-overview",
+    "title": "Lecture 3: Search",
+    "section": "",
+    "text": "TODO\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n10 min\n\n\n\nSearch inputs and outputs\n\nTic-tac-toe\n\n10 min\n\n\n\nTrees\n\nTic-tac-toe as a tree\n\n10 min\n\n\n\nSearch algorithms\n\nDepth- and breadth-first search\nMinimax\n\n30 min\n\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-03_activity.html#sec-prev-lectures",
+    "href": "activities/lecture-03_activity.html#sec-prev-lectures",
+    "title": "Lecture 3: Search",
+    "section": "Differences from previous lectures",
+    "text": "Differences from previous lectures\n\nWe can explicitly write a set of instructions to perform a task or reach a goal.\nHowever, we might not always know what those instructions should be, or what instructions are best. We want to start moving away from the idea of programming everything manually.\nSearch gives us a structured way to come up with these instructions.\n\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\nImagine planning a trip from Vancouver to Antarctica without using a travel guide or map software. What information would you need to plan the route? What might make one route better than another?"
+  },
+  {
+    "objectID": "activities/lecture-03_activity.html#sec-inputs-outputs",
+    "href": "activities/lecture-03_activity.html#sec-inputs-outputs",
+    "title": "Lecture 3: Search",
+    "section": "Search inputs and outputs",
+    "text": "Search inputs and outputs\n\nWe have a few important inputs:\n\nEach situation we could be in is called a state. We know what situation we are in now: this is the initial state. We also know what kind of situation we want to end up in: this is the goal state.\nIn each state, we know what actions we could take to reach other states: these are state transitions.\n\nWe ultimately want to know the series of actions we need to take to reach our goal: this is our output.\nIn the trip planning example:\n\nWe know we are starting in Vancouver and that we will be happy if we reach Antarctica.\nWe know that from Vancouver we could fly (to Dublin, Seoul, Denver, Buenos Aires…), drive (to Chilliwack, Calgary, Squamish), take the train (to Seattle, Portland, Toronto), and so on. We also know about the other cities and towns around the world, and the transportation options between them.\nWe would like to know the list of steps we should take to reach Antarctica.\n\n\n\nTic-tac-toe\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\nWhat would the inputs be if we wanted to represent tic-tac-toe with search? What would the output be?\n\n\n\nStates are a particular layout of the board and an indicator of whose turn it is. The initial state is an empty board with X as the current player, and the goal state is any board with three Xs or Os in a row. [TODO: full board/tie??]\nIn each state, the current player can place one of their symbols in a free space. This action causes the game to transition from the current state to a different state: in this new state, it will be the other player’s turn, and there will be another symbol on the board."
+  },
+  {
+    "objectID": "activities/lecture-03_activity.html#sec-trees",
+    "href": "activities/lecture-03_activity.html#sec-trees",
+    "title": "Lecture 3: Search",
+    "section": "Trees",
+    "text": "Trees\n\nWe can represent states and transitions visually using a tree diagram. States are shown as circles, and transitions are arrows linking different states.\nFor example, we could build a smaller version of the Vancouver-to-Antarctica problem as a tree.\n\nIn the tree below, the only possible states are Vancouver, Buenos Aires, Antarctica, New York, Toronto, Ottawa, Atlanta, and Boston, and the only possible transitions are the ones shown alongside the arrows (e.g. fly from Vancouver to Buenos Aires, drive from Toronto to Ottawa, etc).\nThe tree allows us to see clearly that, to go from the initial state (Vancouver) to the goal state (Antarctica), we could take the train to Toronto, fly to Atlanta, and then fly to Antarctica. Alternatively, we could fly to Buenos Aires and then take a boat to Antarctica.\nThe real problem would be a lot bigger! Imagine how many states and transitions you would need to represent the entire breadth of places you could go from Vancouver, and how big the tree would be.\n\n\n\n\nTic-tac-toe as a tree\n\n\n\n\n\n\nTipActivity: Tic-tac-tree\n\n\n\nPlay a few games of tic-tac-toe with the widget below and follow along with the tree. TODO: what reflection questions should go here"
+  },
+  {
+    "objectID": "activities/lecture-03_activity.html#sec-algos",
+    "href": "activities/lecture-03_activity.html#sec-algos",
+    "title": "Lecture 3: Search",
+    "section": "Search algorithms",
+    "text": "Search algorithms\n\nWe can use trees to search for goal states in a more structured way!\nThere are lots of ways we can search through trees, including depth-first search (DFS) and breadth-first search (DFS).\n\n\nDepth- and breadth-first search\n\nIn DFS, we follow transitions from a state as far as possible before moving left-to-right along a layer of states. TODO: phrase this better lol\n\n\n\nIn BFS, we fully explore each layer of states left-to-right before moving on to the next layer.\n\n\n\n\n\n\n\n\nTipActivity: Think, pair, share\n\n\n\nIn the widgets above, DFS and BFS end up finding different goal states.\n\nWhat kinds of problems do you think DFS is better suited for? What kinds of problems do you think BFS is better suited for?\nWhich goal state is better? Which approach is better overall for this problem?\n\n\n\n\nIn this example, you probably want to take the fewest number of steps to reach Antarctica.\nDFS is not the best solution in this case - if some goal states are further away from the initial state than others, DFS might find the further states first. On the other hand, since BFS visits all of the states in order, it is guaranteed to find whichever goal state is closest to the initial state.\nHowever, consider a different example where all goal states should be around the same level, much further down in the tree. BFS would waste a lot of time checking all of the states higher up, while DFS would find a goal state much faster.\nDFS and BFS don’t consider whether any of the transitions are better than others - if you get seasick, you might prefer to fly to Antarctica via Atlanta, but this preference is not represented in either approach.\nIt would also be difficult to use DFS or BFS for a problem like tic-tac-toe, since your next move depends on the other player’s actions.\nLots of other search strategies exist! We will focus on minimax search, as it addresses this two-player problem.\n\n\n\nMinimax search\n\nInstead of just checking whether we’ve reached a goal state, we give every goal state a utility: a number describing how good that outcome is for one of the players. For example, we could give a utility of 1 to any state where X has won, -1 to any state where O has won, and 0 to a draw.\n\nThis means that X wants to end up in a state with the highest utility possible, and O wants to end up in a state with the lowest utility possible.\n\nWe already know the utility of every goal state. For any other state, we can only work out its utility once we know the utility of every state it could transition to.\n\nIf it’s X’s turn, the state’s utility is the highest utility among the states it could transition to, i.e. we assume that X does the thing that ultimately works out best for them.\nIf it’s O’s turn, the state’s utility is the lowest utility among the states it could transition to, i.e. we assume that O does the thing that ultimately works out best for them.\n\nWe repeat this, working upward from the goal states toward the initial state, until every state in the tree has a utility.\nOnce the initial state has a utility, we know which move to make! We follow whichever transition leads to the state that gave the initial state its utility, and so on, until we reach a goal state.\n\n\n\n\n\n\n\nTipActivity: TODO\n\n\n\nTODO minimax activity would be good, but what? Ideas:\n\ntic-tac-toe like the widget above with hints (two-player)\ntic-tac-toe vs the computer who has minimax (single-player)\nfiguring out the minimax decision for a small subtree - better done as a visualization like above??"
+  },
+  {
+    "objectID": "activities/lecture-03_activity.html#sec-wrap-up",
+    "href": "activities/lecture-03_activity.html#sec-wrap-up",
+    "title": "Lecture 3: Search",
+    "section": "Wrap-up",
+    "text": "Wrap-up\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\n\nTODO: when is search not ideal? -&gt; large search space, have to figure out all actions and states…\nTODO: more questions"
   },
   {
     "objectID": "activities/discussion-14_activity.html",
@@ -619,15 +780,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-14_activity.html#steps",
-    "href": "activities/discussion-14_activity.html#steps",
+    "objectID": "activities/discussion-14_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-14_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-14_activity.html#resources",
-    "href": "activities/discussion-14_activity.html#resources",
+    "objectID": "activities/discussion-14_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-14_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -640,18 +801,67 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-11_activity.html#steps",
-    "href": "activities/discussion-11_activity.html#steps",
+    "objectID": "activities/discussion-11_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-11_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-11_activity.html#resources",
-    "href": "activities/discussion-11_activity.html#resources",
+    "objectID": "activities/discussion-11_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-11_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
+  },
+  {
+    "objectID": "activities/lecture-04_activity.html",
+    "href": "activities/lecture-04_activity.html",
+    "title": "Lecture 4: Machine learning",
+    "section": "",
+    "text": "By the end of this lecture, you will be able to:\n\nExplain how machine learning differs from explicit programming and search, and give an example of a problem better suited to learning rules from data. \nIdentify the features and labels in a supervised-learning dataset. \nDescribe how a model is trained on labelled examples to classify new, unseen examples. \nRecognize that a linear model separates two classes with a straight-line boundary. \nAssess, from data plotted by feature, whether two classes are linearly separable and how the number of features affects this. \nConstruct a decision tree that correctly separates a small labelled dataset into its classes. \nExplain why data is split into training and testing sets, and compute a model’s accuracy on the testing set. \nExplain why a model with high training accuracy may still fail to generalize to new data. \n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n5 min\n\n\n\nCredit card fraud detection\n\nFeatures and labels\nLinear models\n\n20 min\n\n\n\nStudent mental health\n\nDecision trees\n\n10 min\n\n\n\nActivity: Optimization\n\nTraining and testing data\n\n20 min\nTool TODO\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-04_activity.html#lecture-overview",
+    "href": "activities/lecture-04_activity.html#lecture-overview",
+    "title": "Lecture 4: Machine learning",
+    "section": "",
+    "text": "By the end of this lecture, you will be able to:\n\nExplain how machine learning differs from explicit programming and search, and give an example of a problem better suited to learning rules from data. \nIdentify the features and labels in a supervised-learning dataset. \nDescribe how a model is trained on labelled examples to classify new, unseen examples. \nRecognize that a linear model separates two classes with a straight-line boundary. \nAssess, from data plotted by feature, whether two classes are linearly separable and how the number of features affects this. \nConstruct a decision tree that correctly separates a small labelled dataset into its classes. \nExplain why data is split into training and testing sets, and compute a model’s accuracy on the testing set. \nExplain why a model with high training accuracy may still fail to generalize to new data. \n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n5 min\n\n\n\nCredit card fraud detection\n\nFeatures and labels\nLinear models\n\n20 min\n\n\n\nStudent mental health\n\nDecision trees\n\n10 min\n\n\n\nActivity: Optimization\n\nTraining and testing data\n\n20 min\nTool TODO\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-04_activity.html#sec-prev-lectures",
+    "href": "activities/lecture-04_activity.html#sec-prev-lectures",
+    "title": "Lecture 4: Machine learning",
+    "section": "Differences from previous lectures",
+    "text": "Differences from previous lectures\n\n\n\n\n\n\nTipActivity: Think, pair, share\n\n\n\n\nWhat kinds of problems would be hard to solve with explicit programming or search?\n\n\n\n\nWe do not always want to use pre-defined, set rules or states and actions like we did in explicit rule-based programming and search.\nIn machine learning, we build a model that will learn the rules from the data."
+  },
+  {
+    "objectID": "activities/lecture-04_activity.html#sec-fraud-detection",
+    "href": "activities/lecture-04_activity.html#sec-fraud-detection",
+    "title": "Lecture 4: Machine learning",
+    "section": "Credit card fraud detection",
+    "text": "Credit card fraud detection\n\nHave you ever had your credit card declined on vacation? You were probably interacting with a credit card fraud detection model!\nBeing able to identify fraudulent transactions is useful: it protects businesses and credit card holders from financial loss after fraud attempts happen.\nBillions of transactions are processed every day, so being able to identify these transactions programmatically is even better.\n\n\n\n\n\n\n\nTipActivity: Think, pair, share\n\n\n\nWhat information could be used to identify whether a single transaction is fraudulent or not?\n\n\n\nFeatures and labels\n\nData used to identify whether a transaction is fraudulent could include:\n\n\n\n\nUser ID\nAmount ($)\nDistance from Home (km)\nAccount Age (days)\nFraud?\n\n\n\n\n1\n120\n25\n1190\nLegit\n\n\n2\n100\n90\n606\nFraud\n\n\n3\n105\n55\n582\nFraud\n\n\n4\n145\n0\n524\nLegit\n\n\n\n\nEach row in the table above is an example. Each example has features and labels.\n\nFeatures are things we already know about an example, like User ID, Amount, Distance from Home, and Account Age.\nLabels are things we would like to predict, like Fraud.\nWe represent the features with X and represent the labels with Y.\n\nWe train a model on lots of examples with labels we already know so that the model can learn to predict labels for new examples. Predicting a label is also called classification.\nThus, our inputs to a machine learning problem are features and our outputs are labels.\n\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\nHow could you use each feature in the table to predict fraud? Are all of the features useful?\n\n\n\nIf you have lots of features, manually coming up with a rule for every possible example the model might see is not reasonable! With machine learning, the model learns the rules for you.\nOpen questions: What kind of rules does the model learn? How do the rules relate to the features and labels?\n\n\n\nLinear models\n\nWe want to know whether a transaction is fraudulent or not based only on features.\nAn easy way to do this is to use a linear model: we draw a 2D line (or 3D plane) between the two types of transactions, say that everything on one side is fraudulent, and say that everything on the other side is legitimate. [TODO: phrase this better, they might be intimidated by 2D vs 3D/planes]\n\n\n\n\n\n\n\nTipActivity: Hands-on features\n\n\n\nTry out different combinations of features in the plot below. Are any combinations easily separable by a line or plane? Is it more useful to have more or fewer features?\n\n\n\n\nFeatures:  amount distance from home account age                        \n                                            \n\n\n\nThe more information we have about the transactions, the easier it is to draw a line or plane that separates them.\n\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\nLet’s consider two separator planes. Which one do you prefer? Why?\n\n\n\n\n                            \n                                            \n\n\n\nSome planes represent the relationship between features and labels better than others. We want to find the best one possible so that we can make good predictions.\nLines and planes are represented by parameters. During the training process, the linear model tries to learn the parameters that give us the best one."
+  },
+  {
+    "objectID": "activities/lecture-04_activity.html#sec-student-life",
+    "href": "activities/lecture-04_activity.html#sec-student-life",
+    "title": "Lecture 4: Machine learning",
+    "section": "Student mental health",
+    "text": "Student mental health\n\nLet’s consider another scenario: we have a list of students, and we want know whether they are struggling or thriving at university.\n\n\n\n\n\n\n\nTipActivity: Think, pair, share\n\n\n\nWhat might be some features we could use to make this prediction? What would the label be?\n\n\n\nThe features we’ll use are hours spent doing coursework, hours spent doing social activities, and whether or not the student landed an internship (we’ll use 1 to represent yes and 0 to represent no).\nThe label will be the group the student should belong to: struggling or thriving.\n\n\n\n                            \n                                            \n\n\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\nIs it possible to draw a line or plane to perfectly separate the two groups? What kind of shape might do a better job?\n\n\n\nDecision trees\n\nInstead of using a linear model, we could use a decision tree to separate the two groups.\nA decision tree is like a 20 questions game: we ask a series of yes/no questions about the features to determine which group a student belongs to.\n\n\n\n\n\n\n\nTipActivity: Think, pair, share\n\n\n\nWhat kinds of questions are more useful to ask at the start of a 20 questions game? What about later in the game?\n\n\n\nDifferent questions will give us different decision trees, and some will do a better job of separating labels than others.\nInstead of finding the line or plane that best separates the labels, a decision tree finds the questions that best separate the labels at each step of the game. These questions are the parameters of the decision tree.\n\n\n\n\n\n\n\nTipActivity: Build a decision tree\n\n\n\nFill in the nodes of the decision tree below to separate the students into the correct groups. Then, compare your decision tree to your neighbours’ trees.\n\n\n\n\n\n\n  \n\n  \n    Thriving or Struggling?\n    Accuracy: --\n      \n    Reset tree\n  \n\n  \n    \n      \n      \n        \n          Mark mistakes\n        \n          Show split planes\n      \n      For a numeric feature, a point goes left\n        when its value is ≤ threshold, otherwise right. Pick a\n        yes/no feature and the threshold turns into its two branches\n        automatically."
+  },
+  {
+    "objectID": "activities/lecture-04_activity.html#sec-optimization",
+    "href": "activities/lecture-04_activity.html#sec-optimization",
+    "title": "Lecture 4: Machine learning",
+    "section": "Activity: Optimization",
+    "text": "Activity: Optimization\n\nTODO activity - needs a tool\n\nThey pick a line, then new data is added and they see that another line might be better\nShould show them that they can’t necessarily rely on the training data/limits of training data - generalizability\n\n\n\nTraining and testing data\n\nOnce the model is deployed in the real world, we might see that the model doesn’t really match up with relationships and trends in the real world.\nTo give us an idea of how a model will perform in the real world before deploying it, we set aside part of the data (the testing set) before training the model with the rest of the data (the training set). We then see how well the model performs on the testing set.\nAccuracy is the percentage of predictions the model gets right. For example, if there are 10 examples in the testing set, and the model correctly predicts the target for 8 of them, the model has an accuracy of 8/10 = 80%.\n\n\n\n\n\n\n\nTipActivity: Think, pair, share\n\n\n\nWhy do you think it is so important that we don’t train the model on the testing set?\n\n\n\nSince the model has never seen the testing set before, it should perform about as well on the testing set as it will on data in the real world."
+  },
+  {
+    "objectID": "activities/lecture-04_activity.html#sec-wrap-up",
+    "href": "activities/lecture-04_activity.html#sec-wrap-up",
+    "title": "Lecture 4: Machine learning",
+    "section": "Wrap-up",
+    "text": "Wrap-up\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\n\nWhat real-life applications of machine learning do you know? What features and labels might those models use?\nBeyond lines/planes and decision trees, what other boundary shapes might be useful to have?\nWhat makes one model better than another model?\n[TODO: another question about generalizability?]"
   },
   {
     "objectID": "activities/discussion-07_activity.html",
@@ -661,15 +871,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-07_activity.html#steps",
-    "href": "activities/discussion-07_activity.html#steps",
+    "objectID": "activities/discussion-07_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-07_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-07_activity.html#resources",
-    "href": "activities/discussion-07_activity.html#resources",
+    "objectID": "activities/discussion-07_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-07_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -682,18 +892,81 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-08_activity.html#steps",
-    "href": "activities/discussion-08_activity.html#steps",
+    "objectID": "activities/discussion-08_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-08_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-08_activity.html#resources",
-    "href": "activities/discussion-08_activity.html#resources",
+    "objectID": "activities/discussion-08_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-08_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
+  },
+  {
+    "objectID": "activities/lecture-06_activity.html",
+    "href": "activities/lecture-06_activity.html",
+    "title": "Lecture 6: Reinforcement learning",
+    "section": "",
+    "text": "TODO\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n5 min\n\n\n\nReinforcement learning\n20 min\n\n\n\nExploration-exploitation tradeoff\n5 min\n\n\n\nRL in gaming\n10 min\n\n\n\nRL in robotics\n10 min\n\n\n\nMulti-agent RL\n10 min\n\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-06_activity.html#lecture-overview",
+    "href": "activities/lecture-06_activity.html#lecture-overview",
+    "title": "Lecture 6: Reinforcement learning",
+    "section": "",
+    "text": "TODO\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nAdmin\n5 min\n\n\n\nDifferences from previous lectures\n5 min\n\n\n\nReinforcement learning\n20 min\n\n\n\nExploration-exploitation tradeoff\n5 min\n\n\n\nRL in gaming\n10 min\n\n\n\nRL in robotics\n10 min\n\n\n\nMulti-agent RL\n10 min\n\n\n\nWrap-up\n10 min\n\n\n\nAdmin\n5 min\n\n\n\n\n\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO\n\n\n\n\n\nTODO"
+  },
+  {
+    "objectID": "activities/lecture-06_activity.html#sec-prev-lectures",
+    "href": "activities/lecture-06_activity.html#sec-prev-lectures",
+    "title": "Lecture 6: Reinforcement learning",
+    "section": "Differences from previous lectures",
+    "text": "Differences from previous lectures\n\nTODO in previous lectures we were just classifying and were able to give the model feedback immediately based on the true label\nTODO Often a complex sequence of actions must be taken before being able to give the model feedback, e.g. planning a sequence of actions - reinforcement learning is a machine learning framework for this\nTODO we are supervising the agent by giving it rewards/punishments\n\n\n\n\n\n\n\nTipActivity: TODO\n\n\n\nTODO some activity here. maybe an intuitive example of RL like training a dog, eg dog is incentivized to do desired behaviour because it is given treats when it does the desired behaviour"
+  },
+  {
+    "objectID": "activities/lecture-06_activity.html#sec-rl",
+    "href": "activities/lecture-06_activity.html#sec-rl",
+    "title": "Lecture 6: Reinforcement learning",
+    "section": "Reinforcement learning",
+    "text": "Reinforcement learning\n\nTODO recall that in search we were using states and actions to find a path from an initial state to a goal state. in RL we are also using states and actions, but we are instead trying to figure out what action to take at each state in order to maximize the total reward we receive over time (define policy)\nTODO define agent, which operates in an environment and receives rewards/punishments based on its actions - relate this to states. inputs: observations of current state and reward signal. outputs: action\nTODO what are we learning (parameters?) - we are learning the policy\nTODO It is important to note -&gt; that we do not know all of these things (states, possible actions) - Sample from reward distributions\nTODO some visual of how RL is DIFFERENT from search, eg moving around in a gridworld - can see this being confusing\n\n\n\n\n\n\n\nTipActivity: TODO\n\n\n\nTODO bring back the dog activity to have students interact with the vocabulary?\n\n\n\nTODO some visual interactive thing here"
+  },
+  {
+    "objectID": "activities/lecture-06_activity.html#sec-explore-exploit",
+    "href": "activities/lecture-06_activity.html#sec-explore-exploit",
+    "title": "Lecture 6: Reinforcement learning",
+    "section": "Exploration-exploitation tradeoff",
+    "text": "Exploration-exploitation tradeoff\n\n\n\n\n\n\nTipActivity: TODO\n\n\n\nTODO activity where students see why exploitation is not always the best strategy, e.g. they miss out on a clearly more efficient path\n\n\n\nTODO can’t always take the best action (exploit the policy) because there might be a better policy. need to also explore the environment to find better policies. define exploration-exploitation tradeoff\nTODO discuss: is it better to explore or exploit early on? probably explore"
+  },
+  {
+    "objectID": "activities/lecture-06_activity.html#sec-gaming",
+    "href": "activities/lecture-06_activity.html#sec-gaming",
+    "title": "Lecture 6: Reinforcement learning",
+    "section": "RL in gaming",
+    "text": "RL in gaming\n\nTODO examples of RL in gaming: alphago, atari deepmind"
+  },
+  {
+    "objectID": "activities/lecture-06_activity.html#sec-robotics",
+    "href": "activities/lecture-06_activity.html#sec-robotics",
+    "title": "Lecture 6: Reinforcement learning",
+    "section": "RL in robotics",
+    "text": "RL in robotics\n\nTODO examples of RL in robotics: quadcopter, robotic hand from openai"
+  },
+  {
+    "objectID": "activities/lecture-06_activity.html#sec-multi-agent",
+    "href": "activities/lecture-06_activity.html#sec-multi-agent",
+    "title": "Lecture 6: Reinforcement learning",
+    "section": "Multi-agent RL",
+    "text": "Multi-agent RL\n\nTODO how can we do multi-agent RL? probably incorporate other players’ info into the state. maybe discussion activity for them\nTODO examples of multi-agent RL: cooperative games, competitive games"
+  },
+  {
+    "objectID": "activities/lecture-06_activity.html#sec-wrap-up",
+    "href": "activities/lecture-06_activity.html#sec-wrap-up",
+    "title": "Lecture 6: Reinforcement learning",
+    "section": "Wrap-up",
+    "text": "Wrap-up\n\n\n\n\n\n\nTipActivity: Discussion\n\n\n\n\nTODO"
   },
   {
     "objectID": "activities/discussion-06_activity.html",
@@ -703,15 +976,15 @@
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-06_activity.html#steps",
-    "href": "activities/discussion-06_activity.html#steps",
+    "objectID": "activities/discussion-06_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "activities/discussion-06_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Activity",
     "section": "",
     "text": "First step.\nSecond step."
   },
   {
-    "objectID": "activities/discussion-06_activity.html#resources",
-    "href": "activities/discussion-06_activity.html#resources",
+    "objectID": "activities/discussion-06_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "activities/discussion-06_activity.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Activity",
     "section": " Resources",
     "text": "Resources"
@@ -974,7 +1247,7 @@
     "href": "slides/lecture-01_slides.html#where-to-start",
     "title": "What is AI?",
     "section": "Where to start?",
-    "text": "Where to start?\nCanvas: [https://canvas.ubc.ca/courses/](https://canvas.ubc.ca/courses/)\nCourse Website: [https://stephan-koenig.github.io/ai-100](https://stephan-koenig.github.io/ai-100)\nPrairieLearn: [https://us.prairielearn.com/pl/course_instance/](https://us.prairielearn.com/pl/course_instance/)"
+    "text": "Where to start?\nCanvas: https://canvas.ubc.ca/courses/\nCourse Website: https://stephan-koenig.github.io/ai-100\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/"
   },
   {
     "objectID": "slides/lecture-01_slides.html#about-this-course",
@@ -1012,8 +1285,8 @@
     "text": "Course overview"
   },
   {
-    "objectID": "slides/lecture-01_slides.html#example-activity",
-    "href": "slides/lecture-01_slides.html#example-activity",
+    "objectID": "slides/lecture-01_slides.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-example-activity",
+    "href": "slides/lecture-01_slides.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-example-activity",
     "title": "What is AI?",
     "section": " Example activity",
     "text": "Example activity\nActivity instructions\n\nFirst step.\nSecond step.\n\n\n \n\nPresentation notes"
@@ -1044,7 +1317,7 @@
     "href": "slides/lecture-template_slides.html#where-to-start",
     "title": "Topic",
     "section": "Where to start?",
-    "text": "Where to start?\nCanvas: [https://canvas.ubc.ca/courses/](https://canvas.ubc.ca/courses/)\nCourse Website: [https://stephan-koenig.github.io/ai-100](https://stephan-koenig.github.io/ai-100)\nPrairieLearn: [https://us.prairielearn.com/pl/course_instance/](https://us.prairielearn.com/pl/course_instance/)"
+    "text": "Where to start?\nCanvas: https://canvas.ubc.ca/courses/\nCourse Website: https://stephan-koenig.github.io/ai-100\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/"
   },
   {
     "objectID": "slides/lecture-template_slides.html#about-this-course",
@@ -1089,8 +1362,8 @@
     "text": "Learning outcomes\n\n\nLearning outcome 1\nLearning outcome 2"
   },
   {
-    "objectID": "slides/lecture-template_slides.html#example-activity",
-    "href": "slides/lecture-template_slides.html#example-activity",
+    "objectID": "slides/lecture-template_slides.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-example-activity",
+    "href": "slides/lecture-template_slides.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-example-activity",
     "title": "Topic",
     "section": " Example activity",
     "text": "Example activity\nActivity instructions\n\nFirst step.\nSecond step.\n\n\n \n\nPresentation notes"
@@ -1215,9 +1488,9 @@
   {
     "objectID": "lesson-plans/lecture-07_lesson-plan.html",
     "href": "lesson-plans/lecture-07_lesson-plan.html",
-    "title": "Self-supervision and generative AI",
+    "title": "Lecture 7: Self-supervision and generative AI",
     "section": "",
-    "text": "How different from previous topic\nAlgorithmic idea\n\nFoundations\nRepresentation\nAlgorithm\n\nHistorical impact and applications\nWorked example\n\nNLP\nGraphs\n\nBreakout"
+    "text": "This space is reserved for instructor/TA notes. All student-facing content is in the Lecture 7 activity."
   },
   {
     "objectID": "lesson-plans/lecture-10_lesson-plan.html",
@@ -1241,15 +1514,15 @@
     "text": "Overview\n\nIn today’s activity, you will learn elements of the design process that will help you design a good project with a real-world basis.\nYou will also learn to use AI to simulate steps of the design process when access to other resources is limited."
   },
   {
-    "objectID": "lesson-plans/discussion-04_lesson-plan.html#choosing-a-project",
-    "href": "lesson-plans/discussion-04_lesson-plan.html#choosing-a-project",
+    "objectID": "lesson-plans/discussion-04_lesson-plan.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-choosing-a-project",
+    "href": "lesson-plans/discussion-04_lesson-plan.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-choosing-a-project",
     "title": "Design Thinking and AI",
     "section": " Choosing a Project",
     "text": "Choosing a Project\n\nTask 1: Your Interests\nTime: 2-3 minutes\n\nThe best topic for a project is one you care about.​\nStart by writing down 2-3 areas or topics that matter to you or that you care about. Some examples:​\n\nHiking​\nPlaying chess​\nDoing well in school​\nStaying in touch with friends​\n…really anything goes!​\n\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nAt this point, students should be thinking about topics, NOT problems or apps. Give 2 minutes, then ask for some answers. Use this opportunity to give feedback and make sure the students are on track.\nGood answers: hiking, my dog, yoga… Bad answers: I have a hard time teaching my dog tricks (already a problem); I want an app to help me teach my dog tricks (already an app).\n\n\n\n\n\nTask 2: Identify a Problem\nTime: 3 minutes\n\nFor each of your areas of interest, identify a problem that you are affected by and would like to solve.\nIf it helps, you can try completing this sentence: “When I __________ [hike/play chess/study…], I sometimes have trouble with __________ .”\n\nFor example: “When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites.”\n\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nSame as before, give students 2-3 minutes to think of problems they would like to solve, then have them share some answers and give feedback. Correct students if they already give solutions (apps) in their answers.\n\n\n\n\n\nTask 3: Could an App Help?\nTime: 5 minutes\n\nCan you imagine an app helping you with the problem you described?​\nIdentify 2-3 tasks that you would like the app to do, which you think would provide a solution to your problem.\n\nIt is ok if the app provides some help but does not solve the entire problem!​\nIf you believe an app cannot help with one of the problems you identified, move onto the next problem!​\n\nIf it helps, you can add to the sentence you made before.\n\nFor example: “When I plan a camping trip, I sometimes have trouble with finding a campsite on provincial websites, and I would like an app to collect and synthesize information about campsites near me and their availability. I would also like to book the campsite through the app.”​\n\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nAfter 3-4 minutes of reflection, ask the students to share. At this point, they should start thinking in terms of an app and what they would like it to do for them. Encourage them to be specific.\n\n\n\n\n\nTask 4: Breaking Ties\nTime: 3 minutes\n\nIf you have multiple good contenders, consider the following points that might help you break the tie:\n\nProblem importance: Is this a problem that genuinely affects me or people like me?​\nFrequency: How often does this problem occur?​\nImpact: If solved, how much would it improve someone’s life or experience?​\nFeasibility: Could I realistically develop this app concept within the next two months?\nPersonal motivation: Am I excited enough about this idea to focus my energy on it for the rest of the term?​\nAI usage: Does it make sense to apply AI to this problem?\n\nFinalize your choice of problem!\n\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nGo over these two slides and give the students a couple of minutes to finalize their choice of problem to work on. If time allows it, you can also ask the students to share their idea with their neighbor and get some quick feedback from them (whether they like the idea, or they think it is clear enough)."
   },
   {
-    "objectID": "lesson-plans/discussion-04_lesson-plan.html#personas-and-pain-points",
-    "href": "lesson-plans/discussion-04_lesson-plan.html#personas-and-pain-points",
+    "objectID": "lesson-plans/discussion-04_lesson-plan.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-personas-and-pain-points",
+    "href": "lesson-plans/discussion-04_lesson-plan.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-personas-and-pain-points",
     "title": "Design Thinking and AI",
     "section": " Personas and Pain Points",
     "text": "Personas and Pain Points\n\nAt this point, you should have identified a problem you would like to solve and have a basic intuition of how a potential app could help – great!​\nYou may want to jump right into implementation, but that would be unwise, as you just started thinking about this.​\nDesign thinking teaches us to solve problems not by guessing, but by talking to the people affected. Those users are the best way to understand real pain points that they experience, before we try to provide fixes for them.​\nSo, the first step is to think about who your users are and what their pain points are.​\n\n\nTask 5: Identifying Users\nTime: 5 minutes\n\nBrainstorm and write down a list of different types of users that would use your app to solve or address the problem at hand. We call these types of users personas.\nFor example, there are lots of different types of campers: experienced campers, novice campers, elderly campers, families with small kids, campers who have accessibility needs (like a wheelchair), etc. Each of those are a persona.\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nIn ~3 minutes, have the students write down as many personas as possible, including traits, wishes and needs. Then, have them share their list with a neighbor. The neihgbor should provide feedback (asking for clarifications, or suggest another persona).\nHave the students share some answers as an opportunity to give feedback to the entire class.\nIf time is short, cut paired sharing and go straight to collecting and reviewing answers with the whole class.\n\n\n\n\n\nTask 6: Can AI Help?\nTime: 6 minutes\n\nGenerative AI may help you think of users that you would not have thought about on your own.​\nWrite a prompt to ask an AI chatbot to generate a bigger list of users for your app, including interesting details about them.\n\nPrompts should be specific and give enough context for the model to understand what you want.\nWhat kinds of things should be included in this prompt?\n\nPrompt the AI and compare its response to your original list.\n\nDoes it include users or details you did not think about?​\nDoes it fail to include users you think are important?\n\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nHave a brief discussions with the whole class to lead them toward the fact that a useful prompt should include a detailed description of the app and a request for personas to identify more user needs.\nGive students a couple of minutes to review the output of the AI. Ask them to share what tehy think of the result.\n\n\n\n\n\nTask 7: User Interview Questions\nTime: 3 minutes\n\nAt this point in design thinking, you would reach out to potential users of your app to interview them, learn about their experiences and preferences, and overall try to empathize with their perspective. ​\nPick two of your personas that you want to learn more about and come up with some interview questions for each one.\n\nAsk about the personas themselves, their personal experiences with the problem, what they already do (if anything) to help them with the problem…​\n\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nAsk students to share questions and converge to a list of helpful questions (you may write it down). Push back on unhelpful questions. They list should include something of the sort:​ - Tell me about yourself (background, age, ethnicity)​ - Tell me about your last experience with [project topic]​ - What was the most frustrating part of that experience?​ - What took the most time or effort?​ - Was there anything that didn’t work the way you expected?​ - How do you currently deal with that problem?​ - What would make you actually use a solution like this regularly?​ - Is there anything I didn’t ask that you think is important?​\nNot good questions: anything related to the app as if it was already built (it is not); for example: which features of my app do you like?\n\n\n\n\n\nTask 8: Simulating User Interviews\nTime: 10 minutes\n\nReal users are the best source, but can be hard to come by - this is where GenAI can help through simulated interviews.​\nAsk AI to conduct two persona interviews, acting as each of your personas. The goal here is to figure out who they are, how they are engaging with the problem, and what their specific pain points are.\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nTell the students to instruct the AI to act as a user persona. Remind them to provide details about the persona and the goal of the interview (understanding user needs) before starting to ask questions. Encourage them to take note of anything insightful emerging from these interviews.\n\n\n\n\n\nTask 9: Evaluating AI\nTime: 3 minutes\n\nBefore we summarize our findings from these interviews, let’s assess their quality. Discuss the following with your neighbours:\n\nDid you feel that the users answered questions in a way that matched their character?​\nDid you notice odd similarities between answers?​\nDo you think it matters that the Gen AI experiences are not real? Does your answer change if we consider using this approach in the long term instead of just this once?\n\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nHave the students engage in a brief discussion with their neighbors about their AI interviews using the questions on the slides. If time allows it, ask a couple of students to share.\n\n\n\n\n\nTask 10: Findings and Insights\nTime: 6 minutes\n\nUsing the interviews and your own notes, create a summary of the top 3-5 tasks that your app needs to complete.\n\nDraw a star next to the tasks that you hadn’t considered initially. Did any core functionalities of your app change once you learned more about the personas? How? ​\n\nSummarize your findings to someone you haven’t talked to yet! ​Don’t forget to include:\n\nWhat problem are you trying to solve?​\nWhich personas are particularly important?​\nHow did the interviews change the direction of your app?\n\n\n\n\n\n\n\n\nTipTA note\n\n\n\n\n\nAfter the students had some time to write and share their summaries, ask them to share with the whole class to provide feedback.\nConclude saying that in the next lab the students will start implementing their ideas.\n\n\n\nTODOs:\n\ndo we want any references to a PL assignment/do we want to use a PL assignment for deliverables?"
@@ -1257,9 +1530,9 @@
   {
     "objectID": "lesson-plans/lecture-05_lesson-plan.html",
     "href": "lesson-plans/lecture-05_lesson-plan.html",
-    "title": "Deep learning",
+    "title": "Lecture 5: Deep learning",
     "section": "",
-    "text": "How different from previous topic\nAlgorithmic idea\n\nFoundations\nRepresentation\nAlgorithm\n\nHistorical impact and applications\nWorked example\n\nNLP\nGraphs\n\nBreakout"
+    "text": "This space is reserved for instructor/TA notes. All student-facing content is in the Lecture 5 activity."
   },
   {
     "objectID": "lesson-plans/lecture-08_lesson-plan.html",
@@ -1273,14 +1546,14 @@
     "href": "lesson-plans/lecture-template_lesson-plan.html",
     "title": "Lecture 0: Lesson Plan Template",
     "section": "",
-    "text": "Learning outcome 1\nLearning outcome 2\n\n\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\nTopic 1\n\nKey point 1\nKey point 2\n\n20 min\nWebsite 1\n\n\nTopic 2\n\nKey point 1\nKey point 2\n\n20 min\n\n\nTopic 3\n\nKey point 1\nKey point 2\n\n20 min\nWebsite 2\n\n\n\n\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2."
+    "text": "Learning outcome 1\nLearning outcome 2\n\n\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nTopic 1\n\nKey point 1\nKey point 2\n\n20 min\nWebsite 1\n\n\nTopic 2\n\nKey point 1\nKey point 2\n\n20 min\n\n\n\nTopic 3\n\nKey point 1\nKey point 2\n\n20 min\nWebsite 2\n\n\n\n\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2."
   },
   {
     "objectID": "lesson-plans/lecture-template_lesson-plan.html#lecture-overview",
     "href": "lesson-plans/lecture-template_lesson-plan.html#lecture-overview",
     "title": "Lecture 0: Lesson Plan Template",
     "section": "",
-    "text": "Learning outcome 1\nLearning outcome 2\n\n\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\nTopic 1\n\nKey point 1\nKey point 2\n\n20 min\nWebsite 1\n\n\nTopic 2\n\nKey point 1\nKey point 2\n\n20 min\n\n\nTopic 3\n\nKey point 1\nKey point 2\n\n20 min\nWebsite 2\n\n\n\n\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2."
+    "text": "Learning outcome 1\nLearning outcome 2\n\n\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\n\n\n\nTopic\nTime\nMaterials\n\n\n\n\nTopic 1\n\nKey point 1\nKey point 2\n\n20 min\nWebsite 1\n\n\nTopic 2\n\nKey point 1\nKey point 2\n\n20 min\n\n\n\nTopic 3\n\nKey point 1\nKey point 2\n\n20 min\nWebsite 2\n\n\n\n\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2.\n\n\n\n\n\nDo Thing 1.\nDo Thing 2."
   },
   {
     "objectID": "lesson-plans/lecture-template_lesson-plan.html#sec-topic-1",
@@ -1327,9 +1600,9 @@
   {
     "objectID": "lesson-plans/lecture-04_lesson-plan.html",
     "href": "lesson-plans/lecture-04_lesson-plan.html",
-    "title": "Machine learning",
+    "title": "Lecture 4: Machine learning",
     "section": "",
-    "text": "How different from previous topic\nAlgorithmic idea\n\nFoundations\nRepresentation\nAlgorithm\n\nHistorical impact and applications\nWorked example\n\nNLP\nGraphs\n\nBreakout"
+    "text": "This space is reserved for instructor/TA notes. All student-facing content is in the Lecture 4 activity."
   },
   {
     "objectID": "LICENSE.html",

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Depth-First Search</title>
+<style>
+  :root{
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --bg: #fafafa;
+    --panel: #ffffff;
+    --border: #e2e2e2;
+    --text: #222222;
+    --muted: #888888;
+    --blue: #1b5fa8;
+    --red: #c0392b;
+    --accent: #7c3aed;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    font-family: var(--font);
+    margin: 0;
+    padding: 16px;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .app{ display: flex; justify-content: center; }
+  .panel{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    max-width: 760px;
+  }
+  h2{
+    margin: 0 0 4px 0;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #555;
+  }
+  
+  svg{ width: 100%; height: auto; display: block; }
+
+  .node ellipse{ stroke: #181818; stroke-width: 2; }
+  .node text{
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 600;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+  }
+  .node.frontier ellipse{ stroke: var(--accent); stroke-width: 3; stroke-dasharray: 6 4; }
+  .node.expanded ellipse{ stroke: var(--accent); stroke-width: 3; }
+  .badge circle{ fill: var(--accent); }
+  .badge text{
+    font-family: var(--font);
+    font-size: 12px;
+    font-weight: 700;
+    fill: #fff;
+    text-anchor: middle;
+    dominant-baseline: central;
+  }
+
+  .edge line{ stroke: #333; stroke-width: 1.5; }
+  .edge text{
+    font-family: var(--font);
+    font-size: 12px;
+    fill: #333;
+    text-anchor: middle;
+  }
+  .edge.used line{ stroke: var(--accent); stroke-width: 2.5; marker-end: url(#arrowAccent); }
+  .edge.used text{ fill: var(--accent); font-weight: 600; }
+
+  .tag{ font-family: var(--font); font-size: 13px; text-anchor: middle; }
+  .tag-start{ fill: var(--blue); }
+  .tag-goal{ fill: var(--red); }
+
+  .controls{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  button{
+    font-family: var(--font);
+    font-size: 12px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text);
+  }
+  button:hover:not(:disabled){ background: #f2f2f2; }
+  button:disabled{ opacity: .4; cursor: default; }
+  .frontier{
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    text-align: center;
+    font-family: var(--mono);
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="panel">
+    <h2>Depth-First Search</h2>
+    <svg id="tree" viewBox="0 0 700 530"></svg>
+    <div class="controls">
+      <button id="resetBtn">&#8634; Reset</button>
+      <button id="prevBtn">&#9664; Prev</button>
+      <button id="playBtn">&#9654; Play</button>
+      <button id="nextBtn">Next &#9654;</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var MODE = 'dfs';
+  var BLUE = '#1b5fa8';
+  var RED  = '#c0392b';
+  var RX = 58, RY = 37;
+
+  var nodes = {
+    vancouver:     {label:'Vancouver',    x:350, y:86,  fill:BLUE, tc:'#fff'},
+    toronto:       {label:'Toronto',      x:178, y:188, fill:'#fff', tc:'#181818'},
+    buenosaires:   {label:'Buenos Aires', x:521, y:189, fill:'#fff', tc:'#181818'},
+    ottawa:        {label:'Ottawa',       x:91,  y:312, fill:'#fff', tc:'#181818'},
+    atlanta:       {label:'Atlanta',      x:278, y:312, fill:'#fff', tc:'#181818'},
+    antarctica_ba: {label:'Antarctica',   x:429, y:314, fill:RED,  tc:'#fff'},
+    newyork:       {label:'New York',     x:617, y:314, fill:'#fff', tc:'#181818'},
+    antarctica_at: {label:'Antarctica',   x:285, y:447, fill:RED,  tc:'#fff'},
+    boston:        {label:'Boston',       x:617, y:448, fill:'#fff', tc:'#181818'}
+  };
+
+  var edges = [
+    {p:'vancouver', c:'toronto',       label:'take the train', lx:238, ly:124},
+    {p:'vancouver', c:'buenosaires',   label:'fly',             lx:462, ly:124},
+    {p:'toronto',   c:'ottawa',        label:'drive',           lx:103, ly:238},
+    {p:'toronto',   c:'atlanta',       label:'fly',             lx:250, ly:238},
+    {p:'atlanta',   c:'antarctica_at', label:'fly',             lx:253, ly:382},
+    {p:'buenosaires', c:'antarctica_ba', label:'take a boat',   lx:418, ly:238},
+    {p:'buenosaires', c:'newyork',     label:'fly',             lx:585, ly:238},
+    {p:'newyork',   c:'boston',        label:'drive',           lx:656, ly:382}
+  ];
+
+  var START = 'vancouver';
+  var GOALS = {antarctica_ba:true, antarctica_at:true};
+  var childrenOf = {};
+  edges.forEach(function(e){
+    (childrenOf[e.p] = childrenOf[e.p] || []).push(e.c);
+  });
+
+  function edgePoint(node, ux, uy, sign){
+    var denom = Math.sqrt((ux*ux)/(RX*RX) + (uy*uy)/(RY*RY));
+    var t = 1/denom;
+    return [node.x + sign*ux*t, node.y + sign*uy*t];
+  }
+
+  function buildSvg(){
+    var defs = '<defs>' +
+      '<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">' +
+      '<path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>' +
+      '<marker id="arrowAccent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">' +
+      '<path d="M0,0 L10,5 L0,10 z" fill="' + '#7c3aed' + '"/></marker>' +
+      '</defs>';
+
+    var edgesSvg = edges.map(function(e){
+      var a = nodes[e.p], b = nodes[e.c];
+      var dx = b.x-a.x, dy = b.y-a.y;
+      var len = Math.sqrt(dx*dx+dy*dy);
+      var ux = dx/len, uy = dy/len;
+      var p1 = edgePoint(a, ux, uy, 1);
+      var p2 = edgePoint(b, ux, uy, -1);
+      var id = 'edge-' + e.p + '-' + e.c;
+      return '<g class="edge" id="' + id + '">' +
+        '<line x1="' + p1[0].toFixed(1) + '" y1="' + p1[1].toFixed(1) + '" x2="' + p2[0].toFixed(1) + '" y2="' + p2[1].toFixed(1) + '" marker-end="url(#arrow)"/>' +
+        '<text x="' + e.lx + '" y="' + e.ly + '">' + e.label + '</text>' +
+        '</g>';
+    }).join('');
+
+    var nodesSvg = Object.keys(nodes).map(function(id){
+      var n = nodes[id];
+      return '<g class="node" id="node-' + id + '">' +
+        '<ellipse cx="' + n.x + '" cy="' + n.y + '" rx="' + RX + '" ry="' + RY + '" fill="' + n.fill + '"/>' +
+        '<text x="' + n.x + '" y="' + n.y + '" fill="' + n.tc + '">' + n.label + '</text>' +
+        '<g class="badge" id="badge-' + id + '" opacity="0">' +
+        '<circle cx="' + (n.x-RX+9) + '" cy="' + (n.y-RY+3) + '" r="12"/>' +
+        '<text x="' + (n.x-RX+9) + '" y="' + (n.y-RY+3) + '">0</text>' +
+        '</g></g>';
+    }).join('');
+
+    var staticLabels =
+      '<text class="tag tag-start" x="' + nodes.vancouver.x + '" y="' + (nodes.vancouver.y-RY-16) + '">initial state</text>' +
+      '<text class="tag tag-goal" x="' + nodes.antarctica_ba.x + '" y="' + (nodes.antarctica_ba.y+RY+22) + '">goal state</text>' +
+      '<text class="tag tag-goal" x="' + nodes.antarctica_at.x + '" y="' + (nodes.antarctica_at.y+RY+22) + '">goal state</text>';
+
+    document.getElementById('tree').innerHTML = defs + edgesSvg + nodesSvg + staticLabels;
+  }
+
+  function simulate(mode){
+    var frames = [];
+    var frontier = [START];
+    var expandedList = [];
+    var usedEdges = {};
+    var stepNum = 0;
+    var goal = null;
+
+    function snap(cur){
+      return {
+        current: cur,
+        expanded: expandedList.map(function(x){ return {id:x.id, order:x.order}; }),
+        frontier: frontier.slice(),
+        usedEdges: Object.keys(usedEdges),
+        goal: goal
+      };
+    }
+
+    frames.push(snap(null));
+
+    while(frontier.length){
+      var nodeId = mode === 'dfs' ? frontier.pop() : frontier.shift();
+      stepNum++;
+      expandedList.push({id: nodeId, order: stepNum});
+
+      if(GOALS[nodeId]){
+        goal = nodeId;
+        frames.push(snap(nodeId));
+        break;
+      }
+
+      var kids = (childrenOf[nodeId] || []).slice();
+      var ordered = mode === 'dfs' ? kids.reverse() : kids;
+      ordered.forEach(function(cid){
+        frontier.push(cid);
+        usedEdges[nodeId + '|' + cid] = true;
+      });
+
+      frames.push(snap(nodeId));
+    }
+
+    return frames;
+  }
+
+  function cityName(id){ return nodes[id].label; }
+
+  function render(frame){
+    Object.keys(nodes).forEach(function(id){
+      var g = document.getElementById('node-' + id);
+      g.classList.remove('frontier', 'expanded');
+      document.getElementById('badge-' + id).setAttribute('opacity', '0');
+    });
+    edges.forEach(function(e){
+      document.getElementById('edge-' + e.p + '-' + e.c).classList.remove('used');
+    });
+
+    frame.expanded.forEach(function(item){
+      var g = document.getElementById('node-' + item.id);
+      g.classList.add('expanded');
+      var badge = document.getElementById('badge-' + item.id);
+      badge.setAttribute('opacity', '1');
+      badge.querySelector('text').textContent = item.order;
+    });
+    frame.frontier.forEach(function(id){
+      document.getElementById('node-' + id).classList.add('frontier');
+    });
+    frame.usedEdges.forEach(function(key){
+      var domId = 'edge-' + key.replace('|', '-');
+      var el = document.getElementById(domId);
+      if(el) el.classList.add('used');
+    });
+  }
+
+  function updateInfo(frame, total){
+
+    var last = frame.expanded[frame.expanded.length-1];
+
+    var orderedFrontier = MODE === 'dfs' ? frame.frontier.slice().reverse() : frame.frontier.slice();
+    var names = orderedFrontier.map(cityName);
+    var structureLabel = MODE === 'dfs' ? 'Frontier (stack, next on top)' : 'Frontier (queue, next in front)';
+  }
+
+  buildSvg();
+  var frames = simulate(MODE);
+  var idx = 0;
+  var timer = null;
+
+  function goTo(i){
+    idx = Math.max(0, Math.min(i, frames.length - 1));
+    render(frames[idx]);
+    updateInfo(frames[idx], frames.length);
+    document.getElementById('prevBtn').disabled = idx === 0;
+    var atEnd = idx === frames.length - 1;
+    document.getElementById('nextBtn').disabled = atEnd;
+    if(atEnd) pause();
+  }
+  function step(delta){ goTo(idx + delta); }
+  function play(){
+    if(timer) return;
+    document.getElementById('playBtn').innerHTML = '&#9616;&#9616; Pause';
+    timer = setInterval(function(){
+      if(idx >= frames.length - 1){ pause(); return; }
+      step(1);
+    }, 1100);
+  }
+  function pause(){
+    clearInterval(timer);
+    timer = null;
+    document.getElementById('playBtn').innerHTML = '&#9654; Play';
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', function(){ pause(); step(-1); });
+  document.getElementById('nextBtn').addEventListener('click', function(){ pause(); step(1); });
+  document.getElementById('resetBtn').addEventListener('click', function(){ pause(); goTo(0); });
+  document.getElementById('playBtn').addEventListener('click', function(){ timer ? pause() : play(); });
+
+  goTo(0);
+})();
+</script>
+</body>
+</html>

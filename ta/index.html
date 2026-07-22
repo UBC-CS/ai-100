@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>AI 100: Introduction to artificial intelligence – {{&lt; var course.full-title &gt;}}---TA version</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-69a118ed5aa843c5d3f13e92a12ee77e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f8de076aeb9658a6c96d343f1d6c5546.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-69a118ed5aa843c5d3f13e92a12ee77e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2baf9616dcd62a487e8517e630363ef5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-a92316daa43a8c77deb54b5f2f92ea6f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2baf9616dcd62a487e8517e630363ef5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1499e9137f16715dbfece0771355a818.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-b9bd4e28bcba4ae06a2982d9804277ea.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-1499e9137f16715dbfece0771355a818.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5f539791b8241140464557785ea3c8eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-39945247aed190d2445041fbf81b6597.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5f539791b8241140464557785ea3c8eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -105,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -137,7 +139,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles/styles.css">
 <meta property="og:title" content="AI 100: Introduction to artificial intelligence – AI 100: Introduction to artificial intelligence—TA version">
 <meta property="og:description" content="Course website for AI 100">
-<meta property="og:site_name" content="{{< var course.full-title >}}---TA version">
+<meta property="og:site_name" content="AI 100: Introduction to artificial intelligence—TA version">
 <meta name="twitter:title" content="AI 100: Introduction to artificial intelligence – AI 100: Introduction to artificial intelligence—TA version">
 <meta name="twitter:description" content="Course website for AI 100">
 <meta name="twitter:card" content="summary">
@@ -488,7 +490,7 @@ window.Quarto = {
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Contact</strong><br>
-<iconify-icon role="img" inline="" icon="fa6-solid:envelope" aria-label="Icon envelope from fa6-solid Iconify.design set." title="Icon envelope from fa6-solid Iconify.design set."></iconify-icon> [some.email@somewhere.ca](mailto:some.email@somewhere.ca)<br>
+<iconify-icon role="img" inline="" icon="fa6-solid:envelope" aria-label="Icon envelope from fa6-solid Iconify.design set." title="Icon envelope from fa6-solid Iconify.design set."></iconify-icon> <a href="mailto:some.email@somewhere.ca">some.email@somewhere.ca</a><br>
 <iconify-icon role="img" inline="" icon="fa6-solid:clock" aria-label="Icon clock from fa6-solid Iconify.design set." title="Icon clock from fa6-solid Iconify.design set."></iconify-icon> Day, start – end <a href="link">appointment</a><br>
 <iconify-icon role="img" inline="" icon="fa6-solid:building" aria-label="Icon building from fa6-solid Iconify.design set." title="Icon building from fa6-solid Iconify.design set."></iconify-icon> Building Room · <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a></p>
 </div><div class="column" style="width:50%;">
@@ -514,24 +516,24 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell" data-renderings="[&quot;light&quot;,&quot;dark&quot;]">
-<div class="light-content">
-<div id="ldnzkykgam" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ldnzkykgam table {
+<div class="cell-output-display light-content">
+<div id="kemygqneiz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kemygqneiz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ldnzkykgam thead, #ldnzkykgam tbody, #ldnzkykgam tfoot, #ldnzkykgam tr, #ldnzkykgam td, #ldnzkykgam th {
+#kemygqneiz thead, #kemygqneiz tbody, #kemygqneiz tfoot, #kemygqneiz tr, #kemygqneiz td, #kemygqneiz th {
   border-style: none;
 }
 
-#ldnzkykgam p {
+#kemygqneiz p {
   margin: 0;
   padding: 0;
 }
 
-#ldnzkykgam .gt_table {
+#kemygqneiz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -557,12 +559,12 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-left-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_caption {
+#kemygqneiz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ldnzkykgam .gt_title {
+#kemygqneiz .gt_title {
   color: #000000;
   font-size: 125%;
   font-weight: initial;
@@ -574,7 +576,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-width: 0;
 }
 
-#ldnzkykgam .gt_subtitle {
+#kemygqneiz .gt_subtitle {
   color: #000000;
   font-size: 85%;
   font-weight: initial;
@@ -586,7 +588,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-width: 0;
 }
 
-#ldnzkykgam .gt_heading {
+#kemygqneiz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -598,13 +600,13 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_bottom_border {
+#kemygqneiz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_col_headings {
+#kemygqneiz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -619,7 +621,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_col_heading {
+#kemygqneiz .gt_col_heading {
   color: #000000;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -639,7 +641,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#ldnzkykgam .gt_column_spanner_outer {
+#kemygqneiz .gt_column_spanner_outer {
   color: #000000;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -651,15 +653,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 4px;
 }
 
-#ldnzkykgam .gt_column_spanner_outer:first-child {
+#kemygqneiz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ldnzkykgam .gt_column_spanner_outer:last-child {
+#kemygqneiz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ldnzkykgam .gt_column_spanner {
+#kemygqneiz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -671,11 +673,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   width: 100%;
 }
 
-#ldnzkykgam .gt_spanner_row {
+#kemygqneiz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ldnzkykgam .gt_group_heading {
+#kemygqneiz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -701,7 +703,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   text-align: left;
 }
 
-#ldnzkykgam .gt_empty_group_heading {
+#kemygqneiz .gt_empty_group_heading {
   padding: 0.5px;
   color: #000000;
   background-color: #FFFFFF;
@@ -716,15 +718,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: middle;
 }
 
-#ldnzkykgam .gt_from_md > :first-child {
+#kemygqneiz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ldnzkykgam .gt_from_md > :last-child {
+#kemygqneiz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ldnzkykgam .gt_row {
+#kemygqneiz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -743,7 +745,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#ldnzkykgam .gt_stub {
+#kemygqneiz .gt_stub {
   color: #000000;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -756,7 +758,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ldnzkykgam .gt_stub_row_group {
+#kemygqneiz .gt_stub_row_group {
   color: #000000;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -770,15 +772,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: top;
 }
 
-#ldnzkykgam .gt_row_group_first td {
+#kemygqneiz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ldnzkykgam .gt_row_group_first th {
+#kemygqneiz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ldnzkykgam .gt_summary_row {
+#kemygqneiz .gt_summary_row {
   color: #000000;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -788,16 +790,16 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ldnzkykgam .gt_first_summary_row {
+#kemygqneiz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_first_summary_row.thick {
+#kemygqneiz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ldnzkykgam .gt_last_summary_row {
+#kemygqneiz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -807,7 +809,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_grand_summary_row {
+#kemygqneiz .gt_grand_summary_row {
   color: #000000;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -817,7 +819,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ldnzkykgam .gt_first_grand_summary_row {
+#kemygqneiz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -827,7 +829,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_last_grand_summary_row_top {
+#kemygqneiz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -837,11 +839,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_striped {
+#kemygqneiz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ldnzkykgam .gt_table_body {
+#kemygqneiz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -850,7 +852,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_footnotes {
+#kemygqneiz .gt_footnotes {
   color: #000000;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -864,7 +866,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_footnote {
+#kemygqneiz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -873,7 +875,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ldnzkykgam .gt_sourcenotes {
+#kemygqneiz .gt_sourcenotes {
   color: #000000;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -887,7 +889,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#ldnzkykgam .gt_sourcenote {
+#kemygqneiz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -895,72 +897,72 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ldnzkykgam .gt_left {
+#kemygqneiz .gt_left {
   text-align: left;
 }
 
-#ldnzkykgam .gt_center {
+#kemygqneiz .gt_center {
   text-align: center;
 }
 
-#ldnzkykgam .gt_right {
+#kemygqneiz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ldnzkykgam .gt_font_normal {
+#kemygqneiz .gt_font_normal {
   font-weight: normal;
 }
 
-#ldnzkykgam .gt_font_bold {
+#kemygqneiz .gt_font_bold {
   font-weight: bold;
 }
 
-#ldnzkykgam .gt_font_italic {
+#kemygqneiz .gt_font_italic {
   font-style: italic;
 }
 
-#ldnzkykgam .gt_super {
+#kemygqneiz .gt_super {
   font-size: 65%;
 }
 
-#ldnzkykgam .gt_footnote_marks {
+#kemygqneiz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ldnzkykgam .gt_asterisk {
+#kemygqneiz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ldnzkykgam .gt_indent_1 {
+#kemygqneiz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ldnzkykgam .gt_indent_2 {
+#kemygqneiz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ldnzkykgam .gt_indent_3 {
+#kemygqneiz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ldnzkykgam .gt_indent_4 {
+#kemygqneiz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ldnzkykgam .gt_indent_5 {
+#kemygqneiz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ldnzkykgam .katex-display {
+#kemygqneiz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ldnzkykgam div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kemygqneiz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1442,24 +1444,24 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
 </table>
 </div>
 </div>
-<div class="dark-content">
-<div id="pgfjoahyar" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pgfjoahyar table {
+<div class="cell-output-display dark-content">
+<div id="haibctjbjd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#haibctjbjd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pgfjoahyar thead, #pgfjoahyar tbody, #pgfjoahyar tfoot, #pgfjoahyar tr, #pgfjoahyar td, #pgfjoahyar th {
+#haibctjbjd thead, #haibctjbjd tbody, #haibctjbjd tfoot, #haibctjbjd tr, #haibctjbjd td, #haibctjbjd th {
   border-style: none;
 }
 
-#pgfjoahyar p {
+#haibctjbjd p {
   margin: 0;
   padding: 0;
 }
 
-#pgfjoahyar .gt_table {
+#haibctjbjd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1485,12 +1487,12 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-left-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_caption {
+#haibctjbjd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pgfjoahyar .gt_title {
+#haibctjbjd .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -1502,7 +1504,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-width: 0;
 }
 
-#pgfjoahyar .gt_subtitle {
+#haibctjbjd .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -1514,7 +1516,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-width: 0;
 }
 
-#pgfjoahyar .gt_heading {
+#haibctjbjd .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -1526,13 +1528,13 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_bottom_border {
+#haibctjbjd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_col_headings {
+#haibctjbjd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1547,7 +1549,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_col_heading {
+#haibctjbjd .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1567,7 +1569,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#pgfjoahyar .gt_column_spanner_outer {
+#haibctjbjd .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1579,15 +1581,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 4px;
 }
 
-#pgfjoahyar .gt_column_spanner_outer:first-child {
+#haibctjbjd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pgfjoahyar .gt_column_spanner_outer:last-child {
+#haibctjbjd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pgfjoahyar .gt_column_spanner {
+#haibctjbjd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1599,11 +1601,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   width: 100%;
 }
 
-#pgfjoahyar .gt_spanner_row {
+#haibctjbjd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pgfjoahyar .gt_group_heading {
+#haibctjbjd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1629,7 +1631,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   text-align: left;
 }
 
-#pgfjoahyar .gt_empty_group_heading {
+#haibctjbjd .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -1644,15 +1646,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: middle;
 }
 
-#pgfjoahyar .gt_from_md > :first-child {
+#haibctjbjd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pgfjoahyar .gt_from_md > :last-child {
+#haibctjbjd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pgfjoahyar .gt_row {
+#haibctjbjd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1671,7 +1673,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#pgfjoahyar .gt_stub {
+#haibctjbjd .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1684,7 +1686,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#pgfjoahyar .gt_stub_row_group {
+#haibctjbjd .gt_stub_row_group {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1698,15 +1700,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: top;
 }
 
-#pgfjoahyar .gt_row_group_first td {
+#haibctjbjd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pgfjoahyar .gt_row_group_first th {
+#haibctjbjd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pgfjoahyar .gt_summary_row {
+#haibctjbjd .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1716,16 +1718,16 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#pgfjoahyar .gt_first_summary_row {
+#haibctjbjd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_first_summary_row.thick {
+#haibctjbjd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pgfjoahyar .gt_last_summary_row {
+#haibctjbjd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1735,7 +1737,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_grand_summary_row {
+#haibctjbjd .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1745,7 +1747,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#pgfjoahyar .gt_first_grand_summary_row {
+#haibctjbjd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1755,7 +1757,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_last_grand_summary_row_top {
+#haibctjbjd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1765,11 +1767,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_striped {
+#haibctjbjd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pgfjoahyar .gt_table_body {
+#haibctjbjd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1778,7 +1780,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_footnotes {
+#haibctjbjd .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1792,7 +1794,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_footnote {
+#haibctjbjd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1801,7 +1803,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#pgfjoahyar .gt_sourcenotes {
+#haibctjbjd .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1815,7 +1817,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#pgfjoahyar .gt_sourcenote {
+#haibctjbjd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1823,72 +1825,72 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#pgfjoahyar .gt_left {
+#haibctjbjd .gt_left {
   text-align: left;
 }
 
-#pgfjoahyar .gt_center {
+#haibctjbjd .gt_center {
   text-align: center;
 }
 
-#pgfjoahyar .gt_right {
+#haibctjbjd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pgfjoahyar .gt_font_normal {
+#haibctjbjd .gt_font_normal {
   font-weight: normal;
 }
 
-#pgfjoahyar .gt_font_bold {
+#haibctjbjd .gt_font_bold {
   font-weight: bold;
 }
 
-#pgfjoahyar .gt_font_italic {
+#haibctjbjd .gt_font_italic {
   font-style: italic;
 }
 
-#pgfjoahyar .gt_super {
+#haibctjbjd .gt_super {
   font-size: 65%;
 }
 
-#pgfjoahyar .gt_footnote_marks {
+#haibctjbjd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pgfjoahyar .gt_asterisk {
+#haibctjbjd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pgfjoahyar .gt_indent_1 {
+#haibctjbjd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pgfjoahyar .gt_indent_2 {
+#haibctjbjd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pgfjoahyar .gt_indent_3 {
+#haibctjbjd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pgfjoahyar .gt_indent_4 {
+#haibctjbjd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pgfjoahyar .gt_indent_5 {
+#haibctjbjd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pgfjoahyar .katex-display {
+#haibctjbjd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pgfjoahyar div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#haibctjbjd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2374,24 +2376,24 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell" data-renderings="[&quot;light&quot;,&quot;dark&quot;]">
-<div class="light-content">
-<div id="ntmlmuyunk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ntmlmuyunk table {
+<div class="cell-output-display light-content">
+<div id="eubfudhdjb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eubfudhdjb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ntmlmuyunk thead, #ntmlmuyunk tbody, #ntmlmuyunk tfoot, #ntmlmuyunk tr, #ntmlmuyunk td, #ntmlmuyunk th {
+#eubfudhdjb thead, #eubfudhdjb tbody, #eubfudhdjb tfoot, #eubfudhdjb tr, #eubfudhdjb td, #eubfudhdjb th {
   border-style: none;
 }
 
-#ntmlmuyunk p {
+#eubfudhdjb p {
   margin: 0;
   padding: 0;
 }
 
-#ntmlmuyunk .gt_table {
+#eubfudhdjb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2417,12 +2419,12 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-left-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_caption {
+#eubfudhdjb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ntmlmuyunk .gt_title {
+#eubfudhdjb .gt_title {
   color: #000000;
   font-size: 125%;
   font-weight: initial;
@@ -2434,7 +2436,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-width: 0;
 }
 
-#ntmlmuyunk .gt_subtitle {
+#eubfudhdjb .gt_subtitle {
   color: #000000;
   font-size: 85%;
   font-weight: initial;
@@ -2446,7 +2448,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-width: 0;
 }
 
-#ntmlmuyunk .gt_heading {
+#eubfudhdjb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2458,13 +2460,13 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_bottom_border {
+#eubfudhdjb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_col_headings {
+#eubfudhdjb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2479,7 +2481,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_col_heading {
+#eubfudhdjb .gt_col_heading {
   color: #000000;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2499,7 +2501,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#ntmlmuyunk .gt_column_spanner_outer {
+#eubfudhdjb .gt_column_spanner_outer {
   color: #000000;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2511,15 +2513,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 4px;
 }
 
-#ntmlmuyunk .gt_column_spanner_outer:first-child {
+#eubfudhdjb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ntmlmuyunk .gt_column_spanner_outer:last-child {
+#eubfudhdjb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ntmlmuyunk .gt_column_spanner {
+#eubfudhdjb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2531,11 +2533,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   width: 100%;
 }
 
-#ntmlmuyunk .gt_spanner_row {
+#eubfudhdjb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ntmlmuyunk .gt_group_heading {
+#eubfudhdjb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2561,7 +2563,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   text-align: left;
 }
 
-#ntmlmuyunk .gt_empty_group_heading {
+#eubfudhdjb .gt_empty_group_heading {
   padding: 0.5px;
   color: #000000;
   background-color: #FFFFFF;
@@ -2576,15 +2578,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: middle;
 }
 
-#ntmlmuyunk .gt_from_md > :first-child {
+#eubfudhdjb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ntmlmuyunk .gt_from_md > :last-child {
+#eubfudhdjb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ntmlmuyunk .gt_row {
+#eubfudhdjb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2603,7 +2605,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#ntmlmuyunk .gt_stub {
+#eubfudhdjb .gt_stub {
   color: #000000;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2616,7 +2618,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ntmlmuyunk .gt_stub_row_group {
+#eubfudhdjb .gt_stub_row_group {
   color: #000000;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2630,15 +2632,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: top;
 }
 
-#ntmlmuyunk .gt_row_group_first td {
+#eubfudhdjb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ntmlmuyunk .gt_row_group_first th {
+#eubfudhdjb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ntmlmuyunk .gt_summary_row {
+#eubfudhdjb .gt_summary_row {
   color: #000000;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2648,16 +2650,16 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ntmlmuyunk .gt_first_summary_row {
+#eubfudhdjb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_first_summary_row.thick {
+#eubfudhdjb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ntmlmuyunk .gt_last_summary_row {
+#eubfudhdjb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2667,7 +2669,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_grand_summary_row {
+#eubfudhdjb .gt_grand_summary_row {
   color: #000000;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2677,7 +2679,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ntmlmuyunk .gt_first_grand_summary_row {
+#eubfudhdjb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2687,7 +2689,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_last_grand_summary_row_top {
+#eubfudhdjb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2697,11 +2699,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_striped {
+#eubfudhdjb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ntmlmuyunk .gt_table_body {
+#eubfudhdjb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2710,7 +2712,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_footnotes {
+#eubfudhdjb .gt_footnotes {
   color: #000000;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2724,7 +2726,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_footnote {
+#eubfudhdjb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2733,7 +2735,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ntmlmuyunk .gt_sourcenotes {
+#eubfudhdjb .gt_sourcenotes {
   color: #000000;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2747,7 +2749,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#ntmlmuyunk .gt_sourcenote {
+#eubfudhdjb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2755,72 +2757,72 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#ntmlmuyunk .gt_left {
+#eubfudhdjb .gt_left {
   text-align: left;
 }
 
-#ntmlmuyunk .gt_center {
+#eubfudhdjb .gt_center {
   text-align: center;
 }
 
-#ntmlmuyunk .gt_right {
+#eubfudhdjb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ntmlmuyunk .gt_font_normal {
+#eubfudhdjb .gt_font_normal {
   font-weight: normal;
 }
 
-#ntmlmuyunk .gt_font_bold {
+#eubfudhdjb .gt_font_bold {
   font-weight: bold;
 }
 
-#ntmlmuyunk .gt_font_italic {
+#eubfudhdjb .gt_font_italic {
   font-style: italic;
 }
 
-#ntmlmuyunk .gt_super {
+#eubfudhdjb .gt_super {
   font-size: 65%;
 }
 
-#ntmlmuyunk .gt_footnote_marks {
+#eubfudhdjb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ntmlmuyunk .gt_asterisk {
+#eubfudhdjb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ntmlmuyunk .gt_indent_1 {
+#eubfudhdjb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ntmlmuyunk .gt_indent_2 {
+#eubfudhdjb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ntmlmuyunk .gt_indent_3 {
+#eubfudhdjb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ntmlmuyunk .gt_indent_4 {
+#eubfudhdjb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ntmlmuyunk .gt_indent_5 {
+#eubfudhdjb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ntmlmuyunk .katex-display {
+#eubfudhdjb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ntmlmuyunk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eubfudhdjb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3232,24 +3234,24 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
 </table>
 </div>
 </div>
-<div class="dark-content">
-<div id="smljpsroer" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#smljpsroer table {
+<div class="cell-output-display dark-content">
+<div id="mxcghahvww" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mxcghahvww table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#smljpsroer thead, #smljpsroer tbody, #smljpsroer tfoot, #smljpsroer tr, #smljpsroer td, #smljpsroer th {
+#mxcghahvww thead, #mxcghahvww tbody, #mxcghahvww tfoot, #mxcghahvww tr, #mxcghahvww td, #mxcghahvww th {
   border-style: none;
 }
 
-#smljpsroer p {
+#mxcghahvww p {
   margin: 0;
   padding: 0;
 }
 
-#smljpsroer .gt_table {
+#mxcghahvww .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3275,12 +3277,12 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-left-color: #D3D3D3;
 }
 
-#smljpsroer .gt_caption {
+#mxcghahvww .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#smljpsroer .gt_title {
+#mxcghahvww .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -3292,7 +3294,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-width: 0;
 }
 
-#smljpsroer .gt_subtitle {
+#mxcghahvww .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -3304,7 +3306,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-width: 0;
 }
 
-#smljpsroer .gt_heading {
+#mxcghahvww .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -3316,13 +3318,13 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#smljpsroer .gt_bottom_border {
+#mxcghahvww .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#smljpsroer .gt_col_headings {
+#mxcghahvww .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3337,7 +3339,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#smljpsroer .gt_col_heading {
+#mxcghahvww .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -3357,7 +3359,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#smljpsroer .gt_column_spanner_outer {
+#mxcghahvww .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -3369,15 +3371,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 4px;
 }
 
-#smljpsroer .gt_column_spanner_outer:first-child {
+#mxcghahvww .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#smljpsroer .gt_column_spanner_outer:last-child {
+#mxcghahvww .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#smljpsroer .gt_column_spanner {
+#mxcghahvww .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3389,11 +3391,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   width: 100%;
 }
 
-#smljpsroer .gt_spanner_row {
+#mxcghahvww .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#smljpsroer .gt_group_heading {
+#mxcghahvww .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3419,7 +3421,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   text-align: left;
 }
 
-#smljpsroer .gt_empty_group_heading {
+#mxcghahvww .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -3434,15 +3436,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: middle;
 }
 
-#smljpsroer .gt_from_md > :first-child {
+#mxcghahvww .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#smljpsroer .gt_from_md > :last-child {
+#mxcghahvww .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#smljpsroer .gt_row {
+#mxcghahvww .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3461,7 +3463,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#smljpsroer .gt_stub {
+#mxcghahvww .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -3474,7 +3476,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#smljpsroer .gt_stub_row_group {
+#mxcghahvww .gt_stub_row_group {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -3488,15 +3490,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: top;
 }
 
-#smljpsroer .gt_row_group_first td {
+#mxcghahvww .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#smljpsroer .gt_row_group_first th {
+#mxcghahvww .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#smljpsroer .gt_summary_row {
+#mxcghahvww .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -3506,16 +3508,16 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#smljpsroer .gt_first_summary_row {
+#mxcghahvww .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#smljpsroer .gt_first_summary_row.thick {
+#mxcghahvww .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#smljpsroer .gt_last_summary_row {
+#mxcghahvww .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3525,7 +3527,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#smljpsroer .gt_grand_summary_row {
+#mxcghahvww .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -3535,7 +3537,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#smljpsroer .gt_first_grand_summary_row {
+#mxcghahvww .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3545,7 +3547,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-color: #D3D3D3;
 }
 
-#smljpsroer .gt_last_grand_summary_row_top {
+#mxcghahvww .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3555,11 +3557,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#smljpsroer .gt_striped {
+#mxcghahvww .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#smljpsroer .gt_table_body {
+#mxcghahvww .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3568,7 +3570,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#smljpsroer .gt_footnotes {
+#mxcghahvww .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -3582,7 +3584,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#smljpsroer .gt_footnote {
+#mxcghahvww .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3591,7 +3593,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#smljpsroer .gt_sourcenotes {
+#mxcghahvww .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -3605,7 +3607,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#smljpsroer .gt_sourcenote {
+#mxcghahvww .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3613,72 +3615,72 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#smljpsroer .gt_left {
+#mxcghahvww .gt_left {
   text-align: left;
 }
 
-#smljpsroer .gt_center {
+#mxcghahvww .gt_center {
   text-align: center;
 }
 
-#smljpsroer .gt_right {
+#mxcghahvww .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#smljpsroer .gt_font_normal {
+#mxcghahvww .gt_font_normal {
   font-weight: normal;
 }
 
-#smljpsroer .gt_font_bold {
+#mxcghahvww .gt_font_bold {
   font-weight: bold;
 }
 
-#smljpsroer .gt_font_italic {
+#mxcghahvww .gt_font_italic {
   font-style: italic;
 }
 
-#smljpsroer .gt_super {
+#mxcghahvww .gt_super {
   font-size: 65%;
 }
 
-#smljpsroer .gt_footnote_marks {
+#mxcghahvww .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#smljpsroer .gt_asterisk {
+#mxcghahvww .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#smljpsroer .gt_indent_1 {
+#mxcghahvww .gt_indent_1 {
   text-indent: 5px;
 }
 
-#smljpsroer .gt_indent_2 {
+#mxcghahvww .gt_indent_2 {
   text-indent: 10px;
 }
 
-#smljpsroer .gt_indent_3 {
+#mxcghahvww .gt_indent_3 {
   text-indent: 15px;
 }
 
-#smljpsroer .gt_indent_4 {
+#mxcghahvww .gt_indent_4 {
   text-indent: 20px;
 }
 
-#smljpsroer .gt_indent_5 {
+#mxcghahvww .gt_indent_5 {
   text-indent: 25px;
 }
 
-#smljpsroer .katex-display {
+#mxcghahvww .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#smljpsroer div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mxcghahvww div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

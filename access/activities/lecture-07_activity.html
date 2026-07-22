@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Example activity – AI 100: Introduction to artificial intelligence—Accessibility version</title>
+<title>Lecture 7: Self-supervision and generative AI – AI 100: Introduction to artificial intelligence—Accessibility version</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -32,19 +35,18 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-69a118ed5aa843c5d3f13e92a12ee77e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f8de076aeb9658a6c96d343f1d6c5546.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-69a118ed5aa843c5d3f13e92a12ee77e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2baf9616dcd62a487e8517e630363ef5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a92316daa43a8c77deb54b5f2f92ea6f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2baf9616dcd62a487e8517e630363ef5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-09fc7e5fac1f8820cca6709a3bb22c83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ea3067472020c9da0c5c9d3eac2a2ce3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-09fc7e5fac1f8820cca6709a3bb22c83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ed4545ec6924c46dabdd2f7c8755c685.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-893847b3e68dce0095268289b51c8d3b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-ed4545ec6924c46dabdd2f7c8755c685.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -75,12 +77,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles/styles.css">
-<meta property="og:title" content="Example activity – AI 100: Introduction to artificial intelligence—Accessibility version">
-<meta property="og:description" content="Lecture 7, AI 100, 2026W1">
-<meta property="og:site_name" content="{{< var course.full-title >}}---Accessibility version">
-<meta name="twitter:title" content="Example activity – AI 100: Introduction to artificial intelligence—Accessibility version">
-<meta name="twitter:description" content="Lecture 7, AI 100, 2026W1">
-<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Lecture 7: Self-supervision and generative AI – AI 100: Introduction to artificial intelligence—Accessibility version">
+<meta property="og:description" content="AI 100, 2026W1">
+<meta property="og:image" content="https://ubc-cs.github.io/ai-100/images/lecture-07_diffusion-step.png">
+<meta property="og:site_name" content="AI 100: Introduction to artificial intelligence—Accessibility version">
+<meta property="og:image:height" content="1146">
+<meta property="og:image:width" content="1297">
+<meta name="twitter:title" content="Lecture 7: Self-supervision and generative AI – AI 100: Introduction to artificial intelligence—Accessibility version">
+<meta name="twitter:description" content="AI 100, 2026W1">
+<meta name="twitter:image" content="https://ubc-cs.github.io/ai-100/images/lecture-07_diffusion-step.png">
+<meta name="twitter:image-height" content="1146">
+<meta name="twitter:image-width" content="1297">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -264,7 +272,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Example activity</h1>
+          <h1 class="quarto-secondary-nav-title">Lecture 7: Self-supervision and generative AI</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -390,8 +398,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lecture-overview" id="toc-lecture-overview" class="nav-link active" data-scroll-target="#lecture-overview">Lecture overview</a>
+  <ul class="collapse">
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a></li>
+  <li><a href="#pre-class-work" id="toc-pre-class-work" class="nav-link" data-scroll-target="#pre-class-work">Pre-class work</a></li>
+  <li><a href="#lecture-timeline" id="toc-lecture-timeline" class="nav-link" data-scroll-target="#lecture-timeline">Lecture timeline</a></li>
+  <li><a href="#post-class-work" id="toc-post-class-work" class="nav-link" data-scroll-target="#post-class-work">Post-class work</a></li>
+  </ul></li>
+  <li><a href="#sec-prev-lectures" id="toc-sec-prev-lectures" class="nav-link" data-scroll-target="#sec-prev-lectures">Differences from previous lectures</a></li>
+  <li><a href="#sec-next-token" id="toc-sec-next-token" class="nav-link" data-scroll-target="#sec-next-token">Next-token prediction</a></li>
+  <li><a href="#sec-diffusion" id="toc-sec-diffusion" class="nav-link" data-scroll-target="#sec-diffusion">Diffusion models</a></li>
+  <li><a href="#sec-image-text" id="toc-sec-image-text" class="nav-link" data-scroll-target="#sec-image-text">Images and text</a></li>
+  <li><a href="#sec-wrap-up" id="toc-sec-wrap-up" class="nav-link" data-scroll-target="#sec-wrap-up">Wrap-up</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/ai-100/blob/main/activities/lecture-07_activity.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/ai-100/edit/main/activities/lecture-07_activity.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/ai-100/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -399,8 +424,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Example activity</h1>
-<p class="subtitle lead">Lecture 7, AI 100, 2026W1</p>
+<h1 class="title d-none d-lg-block">Lecture 7: Self-supervision and generative AI</h1>
+<p class="subtitle lead">AI 100, 2026W1</p>
 </div>
 
 
@@ -417,8 +442,230 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="lecture-overview" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-overview">Lecture overview</h2>
+<section id="learning-outcomes" class="level3">
+<h3 class="anchored" data-anchor-id="learning-outcomes">Learning outcomes</h3>
+<ul>
+<li>TODO</li>
+</ul>
+</section>
+<section id="pre-class-work" class="level3">
+<h3 class="anchored" data-anchor-id="pre-class-work">Pre-class work</h3>
+<section id="learners" class="level4">
+<h4 class="anchored" data-anchor-id="learners">Learners</h4>
+<ol type="1">
+<li>TODO</li>
+</ol>
+</section>
+</section>
+<section id="lecture-timeline" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-timeline">Lecture timeline</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Time</th>
+<th>Materials</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Admin</td>
+<td>5 min</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#sec-prev-lectures">Differences from previous lectures</a></td>
+<td>5 min</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#sec-next-token">Next token prediction</a></td>
+<td>30 min</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#sec-diffusion">Diffusion models</a></td>
+<td>10 min</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#sec-image-text">Images and text</a></td>
+<td>25 min</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#sec-wrap-up">Wrap-up</a></td>
+<td>10 min</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Admin</td>
+<td>5 min</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="post-class-work" class="level3">
+<h3 class="anchored" data-anchor-id="post-class-work">Post-class work</h3>
+<section id="learners-1" class="level4">
+<h4 class="anchored" data-anchor-id="learners-1">Learners</h4>
+<ol type="1">
+<li>TODO</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="sec-prev-lectures" class="level2">
+<h2 class="anchored" data-anchor-id="sec-prev-lectures">Differences from previous lectures</h2>
+<ul>
+<li>Up until now, we’ve been <strong>supervising</strong> AI systems to some extent - i.e., giving models feedback from an explicit, human-generated source as they learn.
+<ul>
+<li>In machine learning and deep learning, we supervise the model by labelling our training examples and comparing our labels to the model’s output.</li>
+</ul></li>
+<li>We also have a desire to use bigger datasets to improve performance and reduce bias. However, labelling large datasets manually can be both difficult and costly.
+<ul>
+<li>In deep learning, we reduce the human workload somewhat by having the model interact with the raw data instead of explicit features. Could this be possible with labels?</li>
+</ul></li>
+<li>With a <strong>self-supervision</strong> approach, models get feedback from the unlabelled data itself.</li>
+</ul>
+</section>
+<section id="sec-next-token" class="level2">
+<h2 class="anchored" data-anchor-id="sec-next-token">Next-token prediction</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity: Continue the sentence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Form groups of 4-5. A piece of paper with an incomplete sentence on it will be passed around your group. When the paper comes around to you, add whichever word you think should continue the sentence and pass it to your neighbour.</p>
+</div>
+</div>
+<ul>
+<li>Why did you choose to write the words you did? You probably looked at the rest of the sentence - especially the previous word - and used your experience with the English language to pick the word that made the most sense.</li>
+<li>This is one example of self-supervision!
+<ul>
+<li>As <strong>input</strong>, we give the model the beginning of a sample sentence, often taken from a book or a website. The model then predicts and <strong>outputs</strong> the next word.</li>
+<li>Since we already know the rest of the sentence, we can check whether the model got it right, and the model adjusts its <strong>parameters</strong> to better represent the relationship between the start of the sentence and the next word. Eventually, the model should have a good sense of which word should come next.</li>
+<li>Notice that we didn’t have to do any extra work - the sentence already existed when we approached the problem!</li>
+</ul></li>
+<li>Instead of working with full words, models can use <strong>tokens</strong> instead. Tokens are word chunks of various sizes, e.g.&nbsp;the word “friendly” could be broken into two tokens: “friend” and “ly”.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity: Hands-on next-word prediction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s get a more intuitive sense of how the words that came before can help predict the word that comes next. Consider these sample sentences:</p>
+<blockquote class="blockquote">
+<p>the dog is eating<br>
+the dog loves the food<br>
+the dog loves eating food<br>
+is the dog eating<br>
+the dog loves the dog food<br>
+the food is dog food</p>
+</blockquote>
+<p>Count how many times each word is immediately followed by each other word, and fill in the table below. The first row is already complete - “dog” follows “the” 6 times in the sentences above, and “food” follows “the” twice. Use the final <end> column to count how often each word ends a sentence.</end></p>
+<iframe data-external="1" src="../html/lecture-07_table.html" width="100%" height="400px" style="border:none;"></iframe>
+<p>The numbers in the table above represent how common it is for one word to follow another. For example, “the dog” shows up more often than “the food”.</p>
+<p>Let’s try generating a new sentence! Starting from “the”, imagine we always pick the most common next word:</p>
+<blockquote class="blockquote">
+<p>the dog loves the dog loves the dog loves the…</p>
+</blockquote>
+<p>What’s the problem here? Always picking the most likely word means we end up getting the same few words over and over. Let’s add some randomness instead: we’ll pick the next word at random, but weigh the odds so that more common words are more likely to come up. Use the wheel below to generate some random sentences.</p>
+<iframe data-external="1" src="../html/lecture-07_wheel.html" width="100%" height="450px" style="border:none;"></iframe>
+<p>Now reflect on the sentences you generated:</p>
+<ul>
+<li>Did randomization improve the output?</li>
+<li>What could you change to make the wheel more likely to create coherent and varied sentences?</li>
+<li>Can you generate any sentences that are exactly the same as the sample sentences? How do you feel about this?</li>
+</ul>
+</div>
+</div>
+<ul>
+<li>Notice that, instead of just labelling data, we created brand new sentences word-by-word. AI that creates new content like this is called <strong>Generative AI</strong>.</li>
+</ul>
+</section>
+<section id="sec-diffusion" class="level2">
+<h2 class="anchored" data-anchor-id="sec-diffusion">Diffusion models</h2>
+<ul>
+<li><strong>Diffusion models</strong> also rely on self-supervision.
+<ul>
+<li>During training, they use images as both <strong>input</strong> and <strong>output</strong>. A small amount of <strong>noise</strong> is added to an input image, and the model learns how to remove that noise to restore the original image.</li>
+</ul></li>
+</ul>
+<p><img src="../images/lecture-07_diffusion-step.png" class="img-fluid"></p>
+<ul>
+<li>This process is then repeated at increasing levels of noise: more noise is added to the already-noisy image, and the model learns to reverse that step too. The model’s <strong>parameters</strong> define how to remove a small amount of noise at any given noise level.</li>
+</ul>
+<p><img src="../images/lecture-07_diffusion-train.png" class="img-fluid"></p>
+<ul>
+<li>Eventually, the model is able to gradually turn random noise into a coherent image, step by step. If we train the model on lots of different images, it learns to <strong>output</strong> a completely new picture from random noise.</li>
+</ul>
+<p><img src="../images/lecture-07_diffusion-deploy.png" class="img-fluid"></p>
+</section>
+<section id="sec-image-text" class="level2">
+<h2 class="anchored" data-anchor-id="sec-image-text">Images and text</h2>
+<ul>
+<li>As described above, diffusion models cannot be asked to generate any particular image via text input - they just remove noise step by step.</li>
+<li>However, the diffusion approach can be combined with a bit of <strong>supervision</strong> to get an image-to-text model, like Stable Diffusion or DALL-E.
+<ul>
+<li>Like diffusion models, images are used as both <strong>input</strong> and <strong>output</strong> during training. Each input image is also paired with a caption, like “a dog on a leash”.</li>
+<li>The model is trained to do two tasks at the same time. It learns to remove noise from image step-by-step, but also learns to associate images and their captions. [TODO: what are the parameters]</li>
+<li>Once the model is trained, it can use an <strong>input</strong> prompt to guide the way the noise is removed, leading to an <strong>output</strong> image that matches the text prompt.</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity: Text to image
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Form groups of 4-5. Choose someone in the group to draw a random shape on a piece of paper.</p>
+<p>Now, consider the prompt “Draw a potted plant”. Pass the paper around within your group. Each person may make one small change to the drawing when the paper comes around to them, e.g.&nbsp;adding a simple shape or erasing a small part of the drawing. Every change you make should make your drawing more similar to the prompt.</p>
+<p>The instructor will compare a few different drawings. How do the drawings differ? How are they similar?</p>
+</div>
+</div>
+<ul>
+<li>TODO more content needed?</li>
+</ul>
+</section>
+<section id="sec-wrap-up" class="level2">
+<h2 class="anchored" data-anchor-id="sec-wrap-up">Wrap-up</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity: Discussion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>TODO</li>
+<li>what other uses of self-supervision can you imagine existing? eg masking</li>
+</ul>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -842,7 +1089,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/ai-100/blob/main/activities/lecture-07_activity.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/ai-100/edit/main/activities/lecture-07_activity.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/ai-100/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/ai-100/blob/main/activities/lecture-07_activity.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/ai-100/edit/main/activities/lecture-07_activity.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/ai-100/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
 </div>
