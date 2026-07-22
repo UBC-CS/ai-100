@@ -1,16 +1,8 @@
 ---
-title: "Chat models and image generation systems"
+title: "Lecture 8: Large-scale, pre-trained language models"
 subtitle: >
-  Lecture 8 lesson plan, {{< var course.code >}}, {{< var course.term >}}
+  Lesson plan - {{< var course.code >}}, {{< var course.term >}}
+number-sections: false
 ---
 
-1. How different from previous topic
-2. Algorithmic idea
-    - Foundations
-    - Representation
-    - Algorithm
-3. Historical impact and applications
-4. Worked example
-    - NLP
-    - Graphs
-5. Breakout
+This space is reserved for instructor/TA notes. All student-facing content is in the Lecture 8 activity.
