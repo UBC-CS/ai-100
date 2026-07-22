@@ -135,7 +135,7 @@ What information could be used to identify whether a single transaction is fraud
   - Legit
 :::
 
-- Each row in the table above is an **example**. Each example has **features** and **labels**. 
+- Each row in the table above is an **example**. Each example has **features** and **labels**.
   - Features are things we already know about an example, like User ID, Amount, Distance from Home, and Account Age.
   - Labels are things we would like to predict, like Fraud.
   - We represent the features with X and represent the labels with Y.
@@ -150,7 +150,7 @@ How could you use each feature in the table to predict fraud? Are all of the fea
 - Open questions: What kind of rules does the model learn? How do the rules relate to the features and labels?
 
 ### Linear models
-- We want to know whether a transaction is fraudulent or not based only on features. 
+- We want to know whether a transaction is fraudulent or not based only on features.
 - An easy way to do this is to use a **linear model**: we draw a 2D line (or 3D plane) between the two types of transactions, say that everything on one side is fraudulent, and say that everything on the other side is legitimate. [TODO: phrase this better, they might be intimidated by 2D vs 3D/planes]
 
 :::{.callout-tip}
@@ -171,7 +171,7 @@ color_map_card = {'Legit': '#5D3A9B', 'Fraud': '#E66100'}
 boundary_plot_toggle_features(card_data, 'amount', 'distance_from_home', 'account_age', 'label', title='Fraud or Legit?',      color_map=color_map_card)
 ```
 
-- The more information we have about the transactions, the easier it is to draw a line or plane that separates them. 
+- The more information we have about the transactions, the easier it is to draw a line or plane that separates them.
 
 :::{.callout-tip}
 ### Activity: Discussion
@@ -219,7 +219,7 @@ Is it possible to draw a line or plane to perfectly separate the two groups? Wha
 What kinds of questions are more useful to ask at the start of a 20 questions game? What about later in the game?
 :::
 
-- Different questions will give us different decision trees, and some will do a better job of separating labels than others. 
+- Different questions will give us different decision trees, and some will do a better job of separating labels than others.
 - Instead of finding the line or plane that best separates the labels, a decision tree finds the questions that best separate the labels at each step of the game. These questions are the parameters of the decision tree.
 
 :::{.callout-tip}
@@ -236,7 +236,7 @@ decision_tree_builder_3d(outcome_data, 'coursework_hours', 'social_hours', 'did_
 
 ## Activity: Optimization{#sec-optimization}
 - TODO activity - needs a tool
-  - They pick a line, then new data is added and they see that another line might be better 
+  - They pick a line, then new data is added and they see that another line might be better
   - Should show them that they can't necessarily rely on the training data/limits of training data - generalizability
 
 ### Training and testing data
@@ -260,4 +260,3 @@ Why do you think it is so important that we don't train the model on the testing
 - What makes one model better than another model?
 - [TODO: another question about generalizability?]
 :::
-

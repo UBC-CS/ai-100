@@ -19,23 +19,30 @@ jobs:
     steps:
     - uses: actions/checkout@v6
 
-    - name: Install Nix
-      uses: DeterminateSystems/determinate-nix-action@v3
+    - name: Set up Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
 
-    - name: Cache Nix binaries
-      uses: DeterminateSystems/magic-nix-cache-action@v13
+    # GitHub caches Python versions with the runner thus likely faster than uv
+    - name: Set up Python
+      uses: actions/setup-python@v6
       with:
-        use-flakehub: false
+        python-version-file: pyproject.toml
 
-    - name: Load development environment from Nix flake
-      uses: nicknovitski/nix-develop@v1
+    - name: Install uv
+      uses: astral-sh/setup-uv@v7
+
+    - name: Install R
+      uses: r-lib/actions/setup-r@v2
       with:
-        arguments: "--accept-flake-config"
+        r-version: renv
+
+    - name: Install R dependencies
+      uses: r-lib/actions/setup-renv@v2
 
     - name: Render Quarto project profiles
       run: |
         for profile in student student,access instructor ta coordinator; do
-          quarto render --profile "$profile"
+          uv run quarto render --profile "$profile"
         done
 
     - name: Publish Quarto project
