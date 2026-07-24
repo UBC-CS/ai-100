@@ -41,12 +41,14 @@ number-sections: false
 - - [GPT-3](#sec-gpt-3)
     - Data
     - Parameters
-  - 10 min
+  - 15 min
 
 - - [Pre-trained language model performance](#sec-performance)
-  - 20 min
+  - 15 min
 
 - - [Improving model performance](#sec-improve)
+    - Fine-tuning
+    - Zero-shot and in-context learning
   - 20 min
 
 - - [Wrap-up](#sec-wrap-up)
@@ -76,51 +78,70 @@ number-sections: false
 ## Differences from previous lectures{#sec-prev-lectures}
 - Last lecture, we discussed next-word and next-token prediction, and generated new sentences using a simple next-word predictor.
     - Models that can predict human language patterns like this are called **language models**.
-- Suppose we gain access to a neural network that has been trained to perform next-token prediction. We say that a model like this is **pre-trained**: its parameters have already been set, and it already has an idea of language.
+- Suppose we gain access to a neural network that has been trained to perform next-token prediction. We say that a model like this is **pre-trained**: its parameters have already been set, and it already has some understanding of language.
 - What kinds of tasks could we perform with a model that can already interpret and produce human language?
 
 ## GPT-3{#sec-gpt-3}
+- First, some context...
 - In 2020, OpenAI released GPT-3. [TODO: what exactly do we want to say about gpt-3? "largest non-sparse language model" at the time?]
-- TODO scale of training data, number of parameters - scaling up self supervised learning
+- TODO GPT-3's improved performance is due to the scale of training data, number of parameters - scaling up self supervised learning
 - TODO define **LLM**?
-- TODO define **transformer**? instead of looking at only the last word in the sentence, can get a better sense of context we need to draw from all parts of the sentence?
+- TODO define **transformer**? can get a better sense of context we need to draw from all parts of the sentence?
 
 ### Data
 
 :::{.callout-tip}
 ### Activity: Sourcing data
-Imagine you're on the GPT-3 development team. You want to train the largest language model yet, and you need a huge amount of text data to do this. Where could you get this data? Are there any possible sources of data you should avoid?
+Imagine you're on the GPT-3 development team. You want to train the largest language model yet, and you need a huge amount of text data to do this. Where could you get this data? Do you foresee any problems with any of this data?
 :::
 
 - GPT-3 was trained on a massive amount of text data. This includes most of the Internet, books and news articles, and conversation transcripts.
-- However, since no human is manually reviewing all this text, a few problems arise:
-    - TODO quality of data - gigo. How bad is this in practice?
-    - TODO bias in text making it into the model - hurtful examples and harder to identify examples
+- Recall our discussion on **bias** in deep learning - a biased dataset creates a biased model.
+  - If a model is trained to perform next-token prediction using harmful comments from the Internet, for example, it may generate hurtful content when deployed.
+  - If the data a model is trained on is not overtly harmful, but contains harmful patterns, the model will perpetuate these patterns when deployed. For example, if most of the stories used to train the model feature male doctors and female nurses, the model will be more likely to write about male doctors and female nurses when generating a new story.
+  - If a model is trained on nonsense text, the text it generates will be similarly nonsensical - we call this **garbage in, garbage out**. [TODO: how much of a problem is this in practice?]
 
 ### Parameters
-- TODO a model with more parameters can learn more complex things - think back to how adding more hidden layers/more neurons per layer in a neural network increased complexity of the relationship that can be learned
-- TODO compare scale to GPT-2 (100sB vs 1.5B)
-- TODO compare scale of different models including newest GPT, claude
+- A model with more parameters can learn more complex relationships and patterns.
+  - For example, the more hidden layers (and thus the more neurons) a neural network has, the better it is at representing complex relationships.
+- GPT-2 has 1.5 billion parameters, while GPT-3 has 175 billion. Models have continued to grow since.
+
+<iframe src="../html/lecture-08_parameters.html" width="100%" height="650" style="border:none;"></iframe>
 
 ## Pre-trained language model performance{#sec-performance}
-- TODO can you just use pre-trained language models to follow instructions? 
+- Can pre-trained language models follow instructions?
 
 :::{.callout-tip}
-### Activity: Prompting GPT-3
-TODO let them investigate how bad it is to prompt early LM
+### Activity: Investigating GPT-2
+Try using the text box below to ask GPT-2 to do a few different things, e.g. answer some questions or generate something specific. What do you notice?
+<iframe src="../html/lecture-08_gpt-2.html" width="100%" height="260" style="border:none;"></iframe>
 :::
 
-- TODO what problems do you notice? (repetition etc)
+- You may have noticed that GPT-2's responses don't typically align with the task you asked for. 
+  - For example, when asked to answer a question, it doesn't get the answer right. Often, it doesn't even *respond*, just continues the text in a somewhat coherent way.
 
 ## Improving model performance{#sec-improve}
-- TODO how can we improve them? 
-    - TODO: fine tuning
-        - TODO: catastropic forgetting - lose some generalization here
-    - TODO: zero-shot learning/ICL/prompting
+- How do we guide a language model to perform tasks? We need to show it an example of what a good output looks like. 
+- There are multiple ways to do this!
+
+### Fine-tuning
+- One approach is called **fine-tuning**:
+  - The model is given a **fine-tuning dataset** of inputs and desired model outputs, specific to a particular task. For example, if the model should be good at answering factual questions correctly, its dataset should contain question-answer pairs like *Q: What is the capital of Canada? A: Ottawa.*
+  - The model is then retrained using the fine-tuning dataset.
+- Unfortunately, once a model is fine-tuned to a task, its performance on other tasks may suffer. This problem is called **catastrophic forgetting** - because this approach involves retraining the model, its parameters may have changed so drastically that it can no longer represent patterns outside of the task it was fine-tuned for.
+
+### Zero-shot and in-context learning
+- If we want our model to remain a generalist, we could restrict our definition of a good output to the user's input.
+- Prompting a model without giving it any such examples is called **zero-shot learning** - you've been doing this so far!
+  - The model is expected to use its understanding of patterns in language to try to produce a good output. 
+  - However, as seen above, this understanding might not be enough.
+- We can include a few examples of good outputs in our prompt. These examples are similar to the inputs and outputs in the fine-tuning dataset, but the model is not being trained on them. This approach is called **in-context learning**.
+  - Including these examples in the input help the model recognize and use the correct patterns in its output. [TODO: is my understanding correct? anything else to add?]
 
 :::{.callout-tip}
 ### Activity: Fine-tuning, zero-shot learning, and ICL
-TODO let them see how doing each of these things affects the model
+- TODO could we pre-fine-tune a model like gpt-2 and host it on our end? alternatively do this live via colab?
+- TODO if so, we could compare the fine-tuned model with zero-shot and icl results on the non-fine-tuned model
 :::
 
 ## Wrap-up{#sec-wrap-up}

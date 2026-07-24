@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLM Parameter Counts</title>
+<style>
+  :root{
+    --ink:#1f2328;
+    --muted:#6b7280;
+    --border:#e2e4e8;
+    --bg:#ffffff;
+    --grid:#eceef1;
+    --openai:#0f9d8a;
+    --anthropic:#c1633f;
+    --google:#4285f4;
+    --other:#7a828e;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    padding:20px 24px 28px;
+  }
+  h1{
+    font-size:16px;
+    font-weight:600;
+    margin:0 0 14px;
+  }
+  .controls{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 14px;
+    align-items:center;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    margin-bottom:14px;
+    font-size:12.5px;
+  }
+  .controls label{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    cursor:pointer;
+    user-select:none;
+    color:var(--ink);
+  }
+  .controls input[type=checkbox]{
+    width:13px;height:13px;
+    accent-color:#4b5563;
+    cursor:pointer;
+  }
+  .swatch{
+    width:9px;height:9px;
+    border-radius:2px;
+    display:inline-block;
+    flex:none;
+  }
+  .controls .count{color:var(--muted);}
+  .controls .sep{
+    width:1px;
+    align-self:stretch;
+    background:var(--border);
+    margin:0 2px;
+  }
+  .chart-shell{
+    border:1px solid var(--border);
+    border-radius:8px;
+    display:flex;
+  }
+  .y-axis{
+    flex:none;
+    width:52px;
+    position:relative;
+    height:380px;
+    margin:16px 0 0 0;
+    border-right:1px solid var(--border);
+  }
+  .y-tick-label{
+    position:absolute;
+    right:8px;
+    transform:translateY(50%);
+    font-size:10.5px;
+    color:var(--muted);
+  }
+  .scroll-area{
+    flex:1;
+    overflow-x:auto;
+  }
+  .plot-wrap{
+    width:max-content;
+    min-width:100%;
+    padding:16px 16px 14px 12px;
+  }
+  .bars-row{
+    position:relative;
+    height:380px;
+    display:flex;
+    align-items:flex-end;
+  }
+  .gridline{
+    position:absolute;
+    left:0;right:0;
+    height:1px;
+    background:var(--grid);
+  }
+  .bar-col{
+    flex:none;
+    width:76px;
+    height:100%;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+  }
+  .bar{
+    width:32px;
+    border-radius:2px 2px 0 0;
+    cursor:default;
+    transition:filter .1s ease;
+  }
+  .bar.estimate{
+    opacity:.55;
+    border:1px dashed rgba(0,0,0,.35);
+    border-bottom:none;
+  }
+  .bar:hover{
+    filter:brightness(0.9);
+  }
+  .labels-row{
+    display:flex;
+    margin-top:8px;
+  }
+  .label-col{
+    flex:none;
+    width:76px;
+    text-align:center;
+    font-size:10.5px;
+    line-height:1.3;
+    color:var(--ink);
+    padding:0 2px;
+    word-break:break-word;
+  }
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    align-items:center;
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:12px;
+  }
+  .legend .item{display:inline-flex;align-items:center;gap:6px;}
+  .legend .demo-solid, .legend .demo-dashed{
+    width:16px;height:11px;border-radius:2px;
+    background:#9aa1ab;
+  }
+  .legend .demo-dashed{opacity:.55;border:1px dashed rgba(0,0,0,.35);}
+  #tooltip{
+    position:fixed;
+    pointer-events:none;
+    background:#1f2328;
+    color:#fff;
+    font-size:11.5px;
+    line-height:1.5;
+    padding:8px 10px;
+    border-radius:6px;
+    max-width:260px;
+    box-shadow:0 4px 14px rgba(0,0,0,.18);
+    opacity:0;
+    transition:opacity .08s ease;
+    z-index:10;
+  }
+  #tooltip b{font-size:12px;}
+  #tooltip .muted{color:#aab0bb;}
+</style>
+</head>
+<body>
+
+<h1>Parameter Counts of LLMs</h1>
+
+<div class="controls" id="controls"></div>
+
+<div class="chart-shell">
+  <div class="y-axis" id="yAxis"></div>
+  <div class="scroll-area">
+    <div class="plot-wrap">
+      <div class="bars-row" id="barsRow"></div>
+      <div class="labels-row" id="labelsRow"></div>
+    </div>
+  </div>
+</div>
+
+<div class="legend" id="legend"></div>
+<div id="tooltip"></div>
+
+<script>
+/* ============================================================
+   DATA
+   Add a new model by pushing an object into MODELS below.
+     name       - display name (shown under the bar, and used as
+                  the x-axis label)
+     family     - group used for the toggle controls / color
+                  (e.g. 'OpenAI', 'Anthropic', 'Google', 'Other',
+                  or any new string - a new checkbox is created
+                  automatically)
+     date       - 'YYYY-MM', used for chronological sort along
+                  the x-axis (not displayed)
+     params     - total parameters in BILLIONS (number), or null
+                  if no public figure/estimate exists - null
+                  entries are skipped entirely
+     active     - active parameters per token in BILLIONS for
+                  mixture-of-experts models, or null
+     confidence - 'official' (self-reported by the lab) or
+                  'estimate' (third-party / leaked approximation)
+     note       - short source/caveat shown in the tooltip
+   ============================================================ */
+const MODELS = [
+  // ---- OpenAI ----
+  { name:'GPT-1', family:'OpenAI', date:'2018-06', params:0.117, active:null, confidence:'official', note:'Official, OpenAI paper' },
+  { name:'GPT-2', family:'OpenAI', date:'2019-02', params:1.5, active:null, confidence:'official', note:'Official, OpenAI paper' },
+  { name:'GPT-3', family:'OpenAI', date:'2020-06', params:175, active:null, confidence:'official', note:'Official, OpenAI paper' },
+  { name:'GPT-4', family:'OpenAI', date:'2023-03', params:1760, active:280, confidence:'estimate', note:'Undisclosed. Leaked MoE architecture (SemiAnalysis, 2023): 16 experts × ~111B, ~280B active per token' },
+  { name:'GPT-4o', family:'OpenAI', date:'2024-05', params:200, active:null, confidence:'estimate', note:'Undisclosed. Third-party estimate' },
+  { name:'GPT-5.5', family:'OpenAI', date:'2026-06', params:3000, active:null, confidence:'estimate', note:'Undisclosed. Third-party estimate; ChatGPT default as of Jul 2026' },
+
+  // ---- Anthropic: most recent Haiku / Sonnet / Opus only ----
+  { name:'Claude Haiku 4.5', family:'Anthropic', date:'2025-10', params:30, active:null, confidence:'estimate', note:'Undisclosed. Third-party estimates vary ~20-30B; low confidence' },
+  { name:'Claude Sonnet 4.6', family:'Anthropic', date:'2026-03', params:1000, active:null, confidence:'estimate', note:'Undisclosed. Third-party estimate' },
+  { name:'Claude Opus 4.8', family:'Anthropic', date:'2026-06', params:5000, active:null, confidence:'estimate', note:'Undisclosed. Third-party estimate' },
+
+  // ---- Other: most recent Gemini, DeepSeek, and Grok ----
+  { name:'Gemini 3.1 Pro', family:'Other', date:'2026-05', params:3000, active:null, confidence:'estimate', note:'Undisclosed. Third-party estimate; current Gemini flagship' },
+  { name:'DeepSeek-V3', family:'Other', date:'2024-12', params:685, active:37, confidence:'official', note:'Official, DeepSeek, open-weights MoE, ~37B active/token' },
+  { name:'Grok 4', family:'Other', date:'2025-07', params:3000, active:null, confidence:'estimate', note:'Undisclosed, xAI. Third-party estimate' },
+];
+
+/* ============================================================
+   COLORS (flat per family - no tier shading)
+   ============================================================ */
+const FAMILY_COLOR = {
+  OpenAI: '#0f9d8a',
+  Anthropic: '#c1633f',
+  Other: '#7a828e',
+};
+function colorFor(m){ return FAMILY_COLOR[m.family] || '#7a828e'; }
+
+/* ============================================================
+   SCALE / FORMATTING
+   ============================================================ */
+const DOMAIN_MIN = -1.05;  // log10(params), ~0.09B
+const DOMAIN_MAX = 3.85;   // log10(params), ~7,100B
+const TICKS = [0.1, 1, 10, 100, 1000];
+const TICK_LABELS = ['100M','1B','10B','100B','1T'];
+
+function heightPct(params){
+  const l = Math.log10(params);
+  return Math.max(0, Math.min(100, (l - DOMAIN_MIN) / (DOMAIN_MAX - DOMAIN_MIN) * 100));
+}
+function fmtParams(b){
+  if(b === null || b === undefined) return 'undisclosed, no estimate';
+  if(b >= 1000) return (Math.round(b/100)/10) + 'T';
+  if(b >= 1) return (Math.round(b*10)/10) + 'B';
+  return Math.round(b*1000) + 'M';
+}
+function fmtDate(d){
+  const [y,m] = d.split('-');
+  const months = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return months[parseInt(m,10)] + ' ' + y;
+}
+
+/* ============================================================
+   STATE + RENDER
+   ============================================================ */
+const DATA = MODELS.filter(m => m.params !== null && m.params !== undefined);
+const families = [...new Set(DATA.map(m => m.family))];
+const state = Object.fromEntries(families.map(f => [f, true]));
+
+function buildControls(){
+  const el = document.getElementById('controls');
+  el.innerHTML = '';
+  families.forEach((f, i) => {
+    const count = DATA.filter(m => m.family === f).length;
+    const label = document.createElement('label');
+    label.innerHTML = `<input type="checkbox" ${state[f] ? 'checked' : ''} data-family="${f}">
+      <span class="swatch" style="background:${FAMILY_COLOR[f] || '#7a828e'}"></span>${f} <span class="count">(${count})</span>`;
+    el.appendChild(label);
+    if(i < families.length - 1){
+      const sep = document.createElement('span');
+      sep.className = 'sep';
+      el.appendChild(sep);
+    }
+  });
+  el.querySelectorAll('input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', e => {
+      state[e.target.dataset.family] = e.target.checked;
+      renderPlot();
+    });
+  });
+}
+
+function buildYAxis(){
+  const axis = document.getElementById('yAxis');
+  axis.innerHTML = '';
+  TICKS.forEach((t, i) => {
+    const pct = heightPct(t);
+    const gl = document.createElement('div');
+    gl.className = 'y-tick-label';
+    gl.style.bottom = `${pct}%`;
+    gl.textContent = TICK_LABELS[i];
+    axis.appendChild(gl);
+  });
+}
+
+const tooltip = document.getElementById('tooltip');
+function showTooltip(evt, m){
+  const conf = m.confidence === 'official' ? 'Officially disclosed' : 'Estimated (not officially disclosed)';
+  tooltip.innerHTML = `<b>${m.name}</b><br>` +
+    `${fmtDate(m.date)} &middot; ${m.family}<br>` +
+    `${fmtParams(m.params)} total${m.active ? `, ~${fmtParams(m.active)} active/token` : ''}<br>` +
+    `<span class="muted">${conf}${m.note ? ' — ' + m.note : ''}</span>`;
+  tooltip.style.opacity = 1;
+  moveTooltip(evt);
+}
+function moveTooltip(evt){
+  const pad = 14;
+  let x = evt.clientX + pad;
+  let y = evt.clientY + pad;
+  if(x + 270 > window.innerWidth) x = evt.clientX - 270 - pad;
+  if(y + 100 > window.innerHeight) y = evt.clientY - 100 - pad;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top = y + 'px';
+}
+function hideTooltip(){ tooltip.style.opacity = 0; }
+
+function renderPlot(){
+  const barsRow = document.getElementById('barsRow');
+  const labelsRow = document.getElementById('labelsRow');
+  barsRow.innerHTML = '';
+  labelsRow.innerHTML = '';
+
+  // gridlines, positioned relative to the fixed-height bars row only
+  TICKS.forEach(t => {
+    const gl = document.createElement('div');
+    gl.className = 'gridline';
+    gl.style.bottom = heightPct(t) + '%';
+    barsRow.appendChild(gl);
+  });
+
+  const visible = DATA.filter(m => state[m.family]).sort((a,b) => a.date.localeCompare(b.date));
+
+  visible.forEach(m => {
+    const col = document.createElement('div');
+    col.className = 'bar-col';
+    const bar = document.createElement('div');
+    bar.className = 'bar' + (m.confidence === 'estimate' ? ' estimate' : '');
+    bar.style.height = heightPct(m.params) + '%';
+    bar.style.background = colorFor(m);
+    bar.addEventListener('mouseenter', e => showTooltip(e, m));
+    bar.addEventListener('mousemove', moveTooltip);
+    bar.addEventListener('mouseleave', hideTooltip);
+    col.appendChild(bar);
+    barsRow.appendChild(col);
+
+    const labelCol = document.createElement('div');
+    labelCol.className = 'label-col';
+    labelCol.textContent = m.name;
+    labelsRow.appendChild(labelCol);
+  });
+}
+
+function buildLegend(){
+  const el = document.getElementById('legend');
+  el.innerHTML = `
+    <span class="item"><span class="demo-solid"></span>Officially disclosed</span>
+    <span class="item"><span class="demo-dashed"></span>Third-party estimate</span>
+  `;
+}
+
+buildControls();
+buildYAxis();
+buildLegend();
+renderPlot();
+</script>
+</body>
+</html>
